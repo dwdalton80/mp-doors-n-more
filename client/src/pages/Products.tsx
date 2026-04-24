@@ -134,11 +134,9 @@ export default function Products() {
                         <Phone className="w-4 h-4" />
                         (903) 421-1305
                       </a>
-                      <Link href="/contact">
-                        <a className="flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded font-bold hover:bg-primary hover:text-white transition">
-                          View Details
-                          <ArrowRight className="w-4 h-4" />
-                        </a>
+                      <Link href="/contact" className="flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded font-bold hover:bg-primary hover:text-white transition">
+                        View Details
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>
@@ -170,10 +168,8 @@ export default function Products() {
               Contact us today to discuss your project and find the perfect materials at the best prices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <a className="bg-primary text-white px-8 py-3 rounded font-bold hover:bg-primary/90 transition">
-                  Send an Inquiry
-                </a>
+              <Link href="/contact" className="bg-primary text-white px-8 py-3 rounded font-bold hover:bg-primary/90 transition">
+                Send an Inquiry
               </Link>
               <a href="tel:9034211305" className="bg-secondary text-white px-8 py-3 rounded font-bold hover:bg-secondary/90 transition">
                 Call Us Today

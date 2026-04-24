@@ -85,15 +85,11 @@ export default function About() {
                 </p>
 
                 <div className="flex gap-8">
-                  <Link href="/products">
-                    <a className="bg-primary text-white px-6 py-3 rounded font-bold hover:bg-primary/90 transition">
-                      Browse Products
-                    </a>
+                  <Link href="/products" className="bg-primary text-white px-6 py-3 rounded font-bold hover:bg-primary/90 transition">
+                    Browse Products
                   </Link>
-                  <Link href="/contact">
-                    <a className="border-2 border-primary text-primary px-6 py-3 rounded font-bold hover:bg-primary hover:text-white transition">
-                      Contact Us
-                    </a>
+                  <Link href="/contact" className="border-2 border-primary text-primary px-6 py-3 rounded font-bold hover:bg-primary hover:text-white transition">
+                    Contact Us
                   </Link>
                 </div>
               </div>
@@ -199,12 +195,17 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Map Placeholder / Image */}
-              <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-                <div className="text-center text-gray-600">
-                  <MapPin className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p>3200 N Texoma Pkwy<br />Sherman, TX 75090</p>
-                </div>
+              {/* Google Maps */}
+              <div className="rounded-lg h-96 overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.5555555555556!2d-96.6333333!3d33.7333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1c1c1c1c1c1d%3A0x1c1c1c1c1c1c1c1c!2s3200%20N%20Texoma%20Pkwy%2C%20Sherman%2C%20TX%2075090!5e0!3m2!1sen!2sus!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>

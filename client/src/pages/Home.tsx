@@ -77,27 +77,28 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Header />
+      {/* Hero Section with Header Overlay */}
+      <div
+        className="relative min-h-screen flex flex-col"
+        style={{
+          backgroundImage: `url('${IMAGES.heroEntryway.compressed}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section
-          className="relative h-screen flex items-center justify-center text-white overflow-hidden"
-          style={{
-            backgroundImage: `url('${IMAGES.heroEntryway.compressed}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
-          }}
-        >
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/40"></div>
+        {/* Header */}
+        <Header />
 
-          {/* Hero Content */}
-          <div className="container relative z-10 max-w-2xl">
-            <div className="text-center">
-              <p className="text-accent text-sm font-bold tracking-widest mb-4">SHERMAN, TEXAS • EST 2024</p>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        {/* Hero Content - Left Aligned */}
+        <main className="flex-1 flex items-center relative z-10">
+          <div className="container">
+            <div className="max-w-2xl">
+              <p className="text-white text-sm font-bold tracking-widest mb-4">SHERMAN, TEXAS • EST 2024</p>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
                 Quality Materials.<br />
                 <span className="text-primary">Honest Prices.</span>
               </h1>
@@ -106,35 +107,34 @@ export default function Home() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Link href="/products">
-                  <a className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded font-bold flex items-center justify-center gap-2 transition">
-                    Shop Products
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Link href="/products" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded font-bold flex items-center justify-center gap-2 transition">
+                  Shop Products
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/contact">
-                  <a className="border-2 border-accent text-white hover:bg-accent hover:text-secondary px-8 py-3 rounded font-bold transition">
-                    Contact Us
-                  </a>
+                <Link href="/contact" className="border-2 border-accent text-white hover:bg-accent hover:text-secondary px-8 py-3 rounded font-bold transition">
+                  Contact Us
                 </Link>
               </div>
 
               {/* Contact Info */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-                <a href="tel:9034211305" className="flex items-center justify-center gap-2 hover:text-accent transition">
+              <div className="flex flex-col sm:flex-row gap-4 text-sm">
+                <a href="tel:9034211305" className="flex items-center gap-2 hover:text-accent transition text-white">
                   <Phone className="w-4 h-4" />
                   (903) 421-1305
                 </a>
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center gap-2 text-white">
                   <MapPin className="w-4 h-4" />
                   3200 N Texoma Pkwy, Sherman TX
                 </div>
-                <div>Mon–Sat 8AM–6PM</div>
+                <div className="text-white">Mon–Sat 8AM–6PM</div>
               </div>
             </div>
           </div>
-        </section>
+        </main>
+      </div>
+
+      <main className="flex-1">
 
         {/* Value Propositions Section */}
         <section className="py-16 md:py-24 bg-white">
@@ -165,34 +165,30 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {products.map((product, idx) => (
-                <Link key={idx} href={product.link}>
-                  <a className="group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition">
-                    <div className="relative h-64 overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                      />
-                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
-                    </div>
-                    <div className="p-6 bg-white">
-                      <h3 className="text-2xl font-bold mb-2 text-secondary">{product.title}</h3>
-                      <p className="text-gray-600 mb-4">{product.description}</p>
-                      <span className="text-primary font-bold flex items-center gap-2">
-                        Learn more
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </div>
-                  </a>
+                <Link key={idx} href={product.link} className="group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition block">
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                  </div>
+                  <div className="p-6 bg-white">
+                    <h3 className="text-2xl font-bold mb-2 text-secondary">{product.title}</h3>
+                    <p className="text-gray-600 mb-4">{product.description}</p>
+                    <span className="text-primary font-bold flex items-center gap-2">
+                      Learn more
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
 
             <div className="text-center">
-              <Link href="/products">
-                <a className="inline-block bg-secondary text-white px-8 py-3 rounded font-bold hover:bg-secondary/90 transition">
-                  View All Products
-                </a>
+              <Link href="/products" className="inline-block bg-secondary text-white px-8 py-3 rounded font-bold hover:bg-secondary/90 transition">
+                View All Products
               </Link>
             </div>
           </div>
@@ -270,10 +266,8 @@ export default function Home() {
               <a href="tel:9034211305" className="bg-primary text-white px-8 py-3 rounded font-bold hover:bg-primary/90 transition">
                 Call (903) 421-1305
               </a>
-              <Link href="/contact">
-                <a className="bg-secondary text-white px-8 py-3 rounded font-bold hover:bg-secondary/90 transition">
-                  Send a Message
-                </a>
+              <Link href="/contact" className="bg-secondary text-white px-8 py-3 rounded font-bold hover:bg-secondary/90 transition">
+                Send a Message
               </Link>
             </div>
           </div>

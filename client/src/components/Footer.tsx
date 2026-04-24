@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { Phone, Mail, MapPin, Facebook } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 /**
  * Footer Component
@@ -13,16 +13,12 @@ export default function Footer() {
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="bg-accent text-secondary px-3 py-2 rounded font-bold">
-                MP
-              </div>
-              <div>
-                <h3 className="font-bold">MP Doors & More</h3>
-                <p className="text-xs text-secondary-foreground/70">Sherman, TX</p>
-              </div>
+          <div className="text-center">
+            <div className="flex justify-center mb-2">
+              <img src="/manus-storage/Untitleddesign4_a825de6f.png" alt="MP Doors & More" className="h-12 w-auto" />
             </div>
+            <h3 className="font-bold text-sm mb-1">Doors & More</h3>
+            <p className="text-xs text-secondary-foreground/70 mb-4">Sherman, TX</p>
             <p className="text-sm text-secondary-foreground/80">
               Your trusted local supplier of doors, windows, vinyl flooring, siding, and shingles. A grade material at B grade prices.
             </p>
@@ -32,17 +28,17 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <nav className="flex flex-col gap-2 text-sm">
-              <Link href="/">
-                <a className="hover:text-accent transition">Home</a>
+              <Link href="/" className="hover:text-accent transition">
+                Home
               </Link>
-              <Link href="/about">
-                <a className="hover:text-accent transition">About Us</a>
+              <Link href="/about" className="hover:text-accent transition">
+                About Us
               </Link>
-              <Link href="/products">
-                <a className="hover:text-accent transition">Products</a>
+              <Link href="/products" className="hover:text-accent transition">
+                Products
               </Link>
-              <Link href="/contact">
-                <a className="hover:text-accent transition">Contact Us</a>
+              <Link href="/contact" className="hover:text-accent transition">
+                Contact Us
               </Link>
             </nav>
           </div>
@@ -77,8 +73,28 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className="border-t border-secondary-foreground/10 pt-8 mb-8">
-          <h4 className="font-bold mb-4">Follow Us</h4>
+        <div className="border-t border-secondary-foreground/10 py-3">
+          <div className="flex items-center gap-3 mb-3">
+            <h4 className="font-bold text-sm">Follow Us</h4>
+            <div className="flex gap-2">
+              <a
+                href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary-foreground hover:text-accent transition"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary-foreground hover:text-accent transition"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
           <a
             href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
             target="_blank"
@@ -91,7 +107,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-secondary-foreground/10 pt-8 text-center text-sm text-secondary-foreground/70">
+        <div className="border-t border-secondary-foreground/10 pt-2 text-center text-sm text-secondary-foreground/70">
           <p>© 2026 MP Doors & More. All rights reserved.</p>
           <p className="mt-2">Made with Manus</p>
         </div>

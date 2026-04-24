@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Facebook } from 'lucide-react';
 
 /**
  * Header Component
@@ -42,11 +42,9 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="bg-accent text-secondary px-3 py-2 rounded font-bold text-lg">
-              MP
-            </div>
+            <img src="/manus-storage/Untitleddesign4_a825de6f.png" alt="MP Doors & More" className="h-12 w-auto" />
             <div className="flex flex-col leading-tight">
-              <span className="font-bold text-lg">MP Doors & More</span>
+              <span className="font-bold text-lg">Doors & More</span>
               <span className="text-xs text-accent">SHERMAN, TEXAS</span>
             </div>
           </Link>
@@ -54,20 +52,21 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a className="hover:text-accent transition font-medium">
-                  {link.label}
-                </a>
+              <Link key={link.href} href={link.href} className="hover:text-accent transition font-medium">
+                {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* CTA Button - Desktop */}
-          <Link href="/contact" className="hidden md:block">
-            <a className="bg-primary text-primary-foreground px-6 py-2 rounded font-bold hover:bg-primary/90 transition">
-              Get a Quote
-            </a>
-          </Link>
+          {/* Facebook Button - Desktop */}
+          <a
+            href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-2 text-secondary-foreground hover:text-accent transition"
+          >
+            <Facebook className="w-5 h-5" />
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -83,23 +82,25 @@ export default function Header() {
         {isMenuOpen && (
           <nav className="md:hidden pb-4 border-t border-secondary-foreground/10 flex flex-col gap-2">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a
-                  className="block px-4 py-2 hover:bg-secondary-foreground/10 rounded transition"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </Link>
-            ))}
-            <Link href="/contact">
-              <a
-                className="block px-4 py-2 bg-primary text-primary-foreground rounded font-bold hover:bg-primary/90 transition text-center"
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block px-4 py-2 hover:bg-secondary-foreground/10 rounded transition"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get a Quote
-              </a>
-            </Link>
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-2 text-secondary-foreground hover:text-accent transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Facebook className="w-5 h-5" />
+              Follow on Facebook
+            </a>
           </nav>
         )}
       </div>
