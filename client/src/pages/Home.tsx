@@ -29,25 +29,49 @@ const features = [
   { icon: CheckCircle2, title: "Wide Selection", desc: "Doors, windows, flooring, siding, shingles — everything you need for your home improvement project." },
 ];
 
-// Static Google Reviews (embedded via Google Reviews widget approach)
+// Real Google Reviews from MP Doors & More Google Business page
 const reviews = [
   {
-    name: "James R.",
+    name: "Josh Cole",
     rating: 5,
-    date: "2 months ago",
-    text: "Incredible selection and prices. I found a beautiful front door that would have cost me twice as much at a big box store. The staff was helpful and knowledgeable.",
+    date: "8 months ago",
+    text: "I absolutely love this place! Amazing people and amazing products! Rafael is wonderful along with his whole crew! They always go above and beyond in helping me out. I would certainly recommend them to anyone.",
   },
   {
-    name: "Maria T.",
+    name: "Howard Cochran",
+    rating: 5,
+    date: "9 months ago",
+    text: "Rafael took very good care of us. I live quite a ways away from Sherman and he saw to it that the two doors I was buying would be ready for me when I got there. Excellent customer service.",
+  },
+  {
+    name: "Layth Fadhil",
+    rating: 5,
+    date: "7 months ago",
+    text: "Amazing door selections and great customer service. You are treated like family in this place and they are ready to answer all of your questions. Give them a call.",
+  },
+  {
+    name: "Jenn Smith",
     rating: 5,
     date: "3 months ago",
-    text: "MP Doors & More is a hidden gem in Sherman. Got vinyl flooring for my whole house at an amazing price. Installation was straightforward and it looks fantastic!",
+    text: "Great place. Very friendly and helpful.",
   },
   {
-    name: "David K.",
+    name: "Monica Mackey",
     rating: 5,
-    date: "1 month ago",
-    text: "Bought shingles and siding for my renovation project. Great quality, great price. Will definitely be back for my next project.",
+    date: "a year ago",
+    text: "Beautiful doors and wonderful customer service! If you need any doors check this place out!",
+  },
+  {
+    name: "el oso",
+    rating: 5,
+    date: "a month ago",
+    text: "Excellent service from these guys! We have been there a handful of times and never disappointed. Thank you MP Doors and More!",
+  },
+  {
+    name: "Julie Cruz",
+    rating: 5,
+    date: "a month ago",
+    text: "Nice place great prices very courteous thanks a million.",
   },
 ];
 
