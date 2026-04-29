@@ -34,7 +34,7 @@ const products = [
     title: "Patio & Sliding Doors",
     imageUrl: "/manus-storage/PatioandSlidingDoor_35da1cfc.png",
     description: "Beautiful patio doors to bring natural light and access to your outdoor spaces.",
-    brands: ["Anderson", "Milgard", "Jeld-Wen"],
+    brands: ["Anderson"],
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
     rating: 5,
   },
