@@ -16,7 +16,7 @@ const products = [
     title: "Entry Doors",
     imageUrl: "/manus-storage/EntryDoor_eb33858e.png",
     description: "Premium entry doors with security and style. Energy-efficient designs to keep your home comfortable year-round.",
-    brands: ["Therma-Tru", "Pella", "Jeld-Wen", "Masonite"],
+    brands: ["Masonite", "Woodgrain", "Trimlite", "Frame Port"],
     features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes available", "Security glass options"],
     rating: 5,
   },
@@ -25,7 +25,7 @@ const products = [
     title: "Interior Doors",
     imageUrl: "/manus-storage/InteriorDoor_f8466bea.png",
     description: "Quality interior doors for bedrooms, bathrooms, and closets. Available in various styles and finishes.",
-    brands: ["Jeld-Wen", "Masonite", "Prehung Door Co.", "Simpson"],
+    brands: ["Jeld-Wen", "Trimlite", "Trimlite", "Frame Port"],
     features: ["Pre-hung options", "Hollow & solid core", "Adjustable frames", "Hardware included"],
     rating: 5,
   },
@@ -34,7 +34,7 @@ const products = [
     title: "Patio & Sliding Doors",
     imageUrl: "/manus-storage/PatioandSlidingDoor_35da1cfc.png",
     description: "Beautiful patio doors to bring natural light and access to your outdoor spaces.",
-    brands: ["Pella", "Andersen", "Milgard", "Jeld-Wen"],
+    brands: ["Anderson", "Milgard", "Jeld-Wen"],
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
     rating: 5,
   },
@@ -43,7 +43,7 @@ const products = [
     title: "Storm Doors",
     imageUrl: "/manus-storage/StormDoor_9c4836b7.jpg",
     description: "Protective storm doors that add an extra layer of security and energy efficiency.",
-    brands: ["Larson", "Emco", "Pella", "Andersen"],
+    brands: ["Larson"],
     features: ["Aluminum frames", "Interchangeable glass/screen", "Multiple colors", "Weather-tight seals"],
     rating: 4.8,
   },
@@ -151,7 +151,7 @@ export default function ProductDoors() {
             Let's Find Your Perfect Door
           </h2>
           <p className="text-white/70 text-lg max-w-xl mx-auto mb-8">
-            Contact us today for a free consultation and pricing on any of our premium door options.
+            Call or contact us today for product availability, free consultation and pricing on any of our door door options.
           </p>
           <Link href="/contact" className="inline-block btn-accent">
             Request a Quote
