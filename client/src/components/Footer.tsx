@@ -117,8 +117,8 @@ export default function Footer() {
 
           <div className="mt-5 pt-4 border-t border-white/10">
             <p className="text-white/50 text-xs font-label tracking-wide uppercase">Hours</p>
-            <p className="text-white/65 text-sm mt-1">Mon – Sat: 8:00 AM – 6:00 PM</p>
-            <p className="text-white/65 text-sm">Sunday: Closed</p>
+            <p className="text-white/65 text-sm mt-1">Mon – Fri: 7 AM – 5 PM</p>
+            <p className="text-white/65 text-sm">Saturday: 7 AM - 3 PM</p>
           </div>
         </div>
       </div>

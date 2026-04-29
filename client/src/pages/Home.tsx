@@ -119,7 +119,7 @@ export default function Home() {
         <div className="relative container pt-32 pb-20">
           <div className="max-w-2xl">
             <div className="section-label text-[#a61c00] mb-4">
-              Sherman, Texas · Est. 2024
+              Sherman, Texas · Est. 2023
             </div>
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.05] mb-6">
               Quality Materials.
