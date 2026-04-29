@@ -5,6 +5,8 @@
  */
 
 import { useState } from "react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 import { Phone, Mail, MapPin, Clock, Facebook, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
@@ -15,21 +17,34 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const sendMessage = trpc.contact.sendMessage.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      setLoading(false);
+    },
+    onError: (err) => {
+      setLoading(false);
+      toast.error(err.message || "Failed to send message. Please try again or call us directly.");
+    },
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
-  };
+    sendMessage.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      subject: formData.subject || undefined,
+      message: formData.message,
+    });
+  };;
 
   return (
     <div className="min-h-screen">
