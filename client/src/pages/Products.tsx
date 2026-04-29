@@ -170,10 +170,10 @@ export default function Products() {
         <div className="container text-center">
           <div className="section-label text-[#a61c00] mb-3">And More</div>
           <h2 className="font-display font-black text-3xl sm:text-4xl text-white mb-4">
-            Trim, Accessories & Construction Materials
+            Accessories & Construction Materials
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto mb-8">
-            In addition to our main product categories, we also carry trim boards, molding, and a variety of other construction materials. If you don't see what you need, give us a call — we may be able to source it for you.
+            In addition to our main product categories, we also carry a variety of other construction materials. If you don't see what you need, give us a call — we may be able to source it for you.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="tel:9034211305" className="btn-accent">
