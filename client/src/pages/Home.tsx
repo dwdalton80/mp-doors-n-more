@@ -13,13 +13,13 @@ const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5Tb
 const DOORS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors-k6uQ2prwjDGFQjGmGhVFk3.webp";
 const WINDOWS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-windows-PXTs3yR42MpCtjM66Wo53F.webp";
 const FLOORING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-flooring-RfCxtdvLU9XE8VY2nSVEwA.webp";
-const SIDING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-siding-shingles-fKLGGBqMKdEog8eBUzkgpC.webp";
+const TRIM_IMAGE = "/manus-storage/Trim-moulding_7a9873c5.jpg";
 
 const products = [
   { title: "Doors", desc: "Interior & exterior doors in every style — from solid wood entry doors to French doors and barn doors.", image: DOORS_IMAGE, href: "/products#doors" },
   { title: "Windows", desc: "Energy-efficient vinyl windows that let the Texas sunshine in while keeping your home comfortable.", image: WINDOWS_IMAGE, href: "/products#windows" },
   { title: "Vinyl Flooring", desc: "Luxury vinyl plank flooring with the look of hardwood at a fraction of the cost.", image: FLOORING_IMAGE, href: "/products#flooring" },
-  { title: "Trim & Molding", desc: "Quality trim and molding options to add the perfect finishing touches to your home's interior.", image: SIDING_IMAGE, href: "/products/trim" },
+  { title: "Trim & Molding", desc: "Quality trim and molding options to add the perfect finishing touches to your home's interior.", image: TRIM_IMAGE, href: "/products/trim" },
 ];
 
 const features = [
