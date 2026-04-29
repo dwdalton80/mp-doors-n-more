@@ -19,6 +19,7 @@ import ProductDoors from "./pages/ProductDoors";
 import ProductWindows from "./pages/ProductWindows";
 import ProductFlooring from "./pages/ProductFlooring";
 import ProductSiding from "./pages/ProductSiding";
+import ProductTrim from "./pages/ProductTrim";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/AdminDashboard";
 
@@ -43,6 +44,7 @@ function Router() {
         <Route path="/products/windows" component={ProductWindows} />
         <Route path="/products/flooring" component={ProductFlooring} />
         <Route path="/products/siding" component={ProductSiding} />
+        <Route path="/products/trim" component={ProductTrim} />
         <Route path="/contact" component={Contact} />
         <Route path="/admin" component={AdminDashboard} />
         <Route path="/404" component={NotFound} />
