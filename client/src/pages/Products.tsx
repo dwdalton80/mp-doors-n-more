@@ -11,7 +11,7 @@ const DOORS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5T
 const WINDOWS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-windows-PXTs3yR42MpCtjM66Wo53F.webp";
 const FLOORING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-flooring-RfCxtdvLU9XE8VY2nSVEwA.webp";
 const SIDING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-siding-shingles-fKLGGBqMKdEog8eBUzkgpC.webp";
-const TRIM_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-trim-molding.webp";
+const TRIM_IMAGE = "/manus-storage/Trim-moulding_7a9873c5.jpg";
 
 const categories = [
   {
