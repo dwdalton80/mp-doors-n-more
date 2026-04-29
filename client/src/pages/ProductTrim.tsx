@@ -14,7 +14,7 @@ const products = [
   {
     id: "baseboards",
     title: "Baseboards & Shoe Molding",
-    imageUrl: "/manus-storage/Trim-moulding_7a9873c5.jpg",
+    imageUrl: "/manus-storage/baseboard-shoe_0278999b.png",
     description: "Quality baseboards and shoe molding to finish the bottom of your walls. Available in various profiles and materials.",
     brands: ["Masonite", "Woodgrain", "Jeld-Wen", "Trimlite"],
     features: ["Multiple profile options", "Pre-primed & paintable", "Easy installation", "Durable materials"],
@@ -23,7 +23,7 @@ const products = [
   {
     id: "crown-molding",
     title: "Crown Molding",
-    imageUrl: "/manus-storage/Trim-moulding_7a9873c5.jpg",
+    imageUrl: "/manus-storage/crown-moulding_243def21.png",
     description: "Elegant crown molding to add architectural detail where walls meet ceilings. Transform any room with classic elegance.",
     brands: ["Masonite", "Trimlite", "Woodgrain", "Frame Port"],
     features: ["Decorative profiles", "Pre-primed options", "Easy to install", "Adds visual interest"],
@@ -32,7 +32,7 @@ const products = [
   {
     id: "door-casings",
     title: "Door & Window Casings",
-    imageUrl: "/manus-storage/Trim-moulding_7a9873c5.jpg",
+    imageUrl: "/manus-storage/door-trim_27e16ea0.png",
     description: "Professional door and window casings to frame your openings beautifully. Available in multiple styles and finishes.",
     brands: ["Jeld-Wen", "Masonite", "Trimlite", "Woodgrain"],
     features: ["Standard & custom profiles", "Pre-finished options", "Quality construction", "Professional appearance"],
@@ -41,7 +41,7 @@ const products = [
   {
     id: "decorative-trim",
     title: "Decorative Trim Boards",
-    imageUrl: "/manus-storage/Trim-moulding_7a9873c5.jpg",
+    imageUrl: "/manus-storage/decorative-trim_4f46313b.png",
     description: "Add character and charm with decorative trim boards. Perfect for wainscoting, accents, and architectural details.",
     brands: ["Trimlite", "Woodgrain", "Masonite", "Frame Port"],
     features: ["Various styles", "Paintable surfaces", "Durable construction", "Design flexibility"],
