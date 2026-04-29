@@ -25,7 +25,7 @@ const products = [
     title: "Interior Doors",
     imageUrl: "/manus-storage/InteriorDoor_f8466bea.png",
     description: "Quality interior doors for bedrooms, bathrooms, and closets. Available in various styles and finishes.",
-    brands: ["Jeld-Wen", "Trimlite", "Trimlite", "Frame Port", "Woodgrain"],
+    brands: ["Jeld-Wen", "Trimlite", "Masonite", "Frame Port", "Woodgrain"],
     features: ["Pre-hung options", "Hollow & solid core", "Adjustable frames", "Hardware included"],
     rating: 5,
   },
