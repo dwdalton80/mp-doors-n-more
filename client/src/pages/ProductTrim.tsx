@@ -103,18 +103,6 @@ export default function ProductTrim() {
                       <span className="text-sm text-gray-600">{product.rating}/5</span>
                     </div>
 
-                    {/* Brands */}
-                    <div className="mb-4">
-                      <p className="text-xs font-semibold text-gray-700 mb-2">Available Brands:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {product.brands.map((brand) => (
-                          <span key={brand} className="text-xs bg-white border border-[#a61c00] text-[#a61c00] px-2 py-1 rounded">
-                            {brand}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
                     {/* Features */}
                     <div className="mb-6">
                       <p className="text-xs font-semibold text-gray-700 mb-2">Key Features:</p>
