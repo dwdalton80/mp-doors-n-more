@@ -208,9 +208,10 @@ export default function Home() {
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e45]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e45]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </div>
                 <div className="p-5 bg-white">
                   <h3 className="font-display font-bold text-[#1a2e45] text-lg mb-2 group-hover:text-[#a61c00] transition-colors">
