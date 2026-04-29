@@ -14,7 +14,7 @@ const products = [
   {
     id: "double-hung",
     title: "Double Hung Windows",
-    imageUrl: "/manus-storage/DoubleHungWindow_a5966fda.png",
+    imageUrl: "/manus-storage/doublehungwindows_aee37039.png",
     description: "Classic double hung windows with smooth operation and excellent ventilation control.",
     brands: ["Pella", "Andersen", "Jeld-Wen", "Milgard"],
     features: ["Tilt-in sashes for easy cleaning", "Low-E glass", "Multiple color options", "Energy Star certified"],
@@ -23,7 +23,7 @@ const products = [
   {
     id: "casement",
     title: "Casement Windows",
-    imageUrl: "/manus-storage/CasementWindow_d1b2aba9.png",
+    imageUrl: "/manus-storage/casement-window_04331195.png",
     description: "Modern casement windows with superior weather sealing and maximum ventilation.",
     brands: ["Andersen", "Pella", "Marvin", "Jeld-Wen"],
     features: ["Crank-operated opening", "Weather-tight seals", "Picture & bay options", "Vinyl frames"],
@@ -32,7 +32,7 @@ const products = [
   {
     id: "sliding",
     title: "Sliding Windows",
-    imageUrl: "/manus-storage/slidingwindow_3db1304b.png",
+    imageUrl: "/manus-storage/slidingwindow_174ca486.png",
     description: "Sleek sliding windows perfect for contemporary and traditional homes.",
     brands: ["Pella", "Milgard", "Jeld-Wen", "Simonton"],
     features: ["Smooth gliding operation", "Low maintenance", "Energy efficient", "Multiple sizes"],
@@ -41,7 +41,7 @@ const products = [
   {
     id: "specialty",
     title: "Specialty & Bay Windows",
-    imageUrl: "/manus-storage/BayWindow_68987e48.png",
+    imageUrl: "/manus-storage/baywindows_3367388a.jpg",
     description: "Picture, bay, and bow windows to add character and natural light to any room.",
     brands: ["Andersen", "Pella", "Marvin", "Thermal"],
     features: ["Custom shapes available", "Premium glass options", "Structural support included", "Design flexibility"],
