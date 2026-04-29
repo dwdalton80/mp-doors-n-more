@@ -7,6 +7,7 @@
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
 
@@ -61,6 +62,13 @@ export default function ProductDoors() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f1e30]/90 via-[#0f1e30]/70 to-transparent" />
 
         <div className="relative container">
+          <div className="mb-6">
+            <Breadcrumbs items={[
+              { label: "Home", href: "/" },
+              { label: "Products", href: "/products" },
+              { label: "Doors" },
+            ]} />
+          </div>
           <Link href="/products" className="inline-flex items-center gap-2 text-[#a61c00] font-display font-semibold hover:text-white transition-colors mb-6 text-sm">
             <ChevronLeft size={16} />
             Back to Products
