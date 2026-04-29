@@ -1,109 +1,146 @@
-import { useState } from 'react';
-import { Link } from 'wouter';
-import { Menu, X, Phone, Facebook } from 'lucide-react';
-
-/**
- * Header Component
- * Design: Professional navigation with dark navy background, red accents
- * Features: Responsive mobile menu, logo, navigation links, CTA button
+/*
+ * Navbar — MP Doors & More
+ * Design: Modern Farmhouse / Texas Contemporary
+ * Sticky nav with transparent-to-solid scroll behavior
+ * Slate blue (#2D4A6B) background on scroll, transparent on top
  */
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
+import { Menu, X, Phone } from "lucide-react";
 
-  const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Products', href: '/products' },
-    { label: 'Contact', href: '/contact' },
-  ];
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Products", href: "/products" },
+  { label: "Contact", href: "/contact" },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isHome = location === "/";
 
   return (
-    <header className="bg-secondary text-secondary-foreground sticky top-0 z-50 border-b-4 border-accent">
-      <div className="container">
-        {/* Top Bar with Contact Info */}
-        <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-secondary-foreground/10">
-          <div className="flex items-center gap-4">
-            <a href="tel:9034211305" className="flex items-center gap-1 hover:text-accent transition">
-              <Phone className="w-4 h-4" />
-              (903) 421-1305
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled || !isHome
+          ? "bg-[#1e3450] shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
+      {/* Top bar */}
+      <div className={`border-b transition-all duration-300 ${scrolled || !isHome ? "border-white/10" : "border-white/20"}`}>
+        <div className="container flex items-center justify-between py-2">
+          <div className="flex items-center gap-4 text-white/80 text-sm">
+            <a href="tel:9034211305" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Phone size={13} />
+              <span className="font-label">(903) 421-1305</span>
             </a>
-            <span>3200 N Texoma Pkwy, Sherman, TX 75090</span>
+            <span className="hidden sm:block text-white/40">|</span>
+            <span className="hidden sm:block text-white/70 text-xs">3200 N Texoma Pkwy, Sherman, TX 75090</span>
           </div>
-          <div className="flex items-center gap-4">
-            <span>Mon–Sat 8AM–6PM</span>
-            <a href="https://www.facebook.com/p/MP-Doors-More-61550671844372/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
-              Follow Us
-            </a>
-          </div>
-        </div>
-
-        {/* Main Navigation */}
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/manus-storage/Untitleddesign4_a825de6f.png" alt="MP Doors & More" className="h-12 w-auto" />
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-lg">Doors & More</span>
-              <span className="text-xs text-accent">SHERMAN, TEXAS</span>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-accent transition font-medium">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Facebook Button - Desktop */}
           <a
             href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 text-secondary-foreground hover:text-accent transition"
+            className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-sm"
           >
-            <Facebook className="w-5 h-5" />
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span className="hidden sm:block font-label text-xs tracking-wide">Follow Us</span>
           </a>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 hover:bg-secondary-foreground/10 rounded transition"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className="md:hidden pb-4 border-t border-secondary-foreground/10 flex flex-col gap-2">
+      {/* Main nav */}
+      <div className="container flex items-center justify-between py-4">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/mp-doors-logo_9851a1c6.png" alt="MP Doors & More Logo" className="h-14 w-auto" />
+          <div>
+            <div className="text-white font-display font-bold text-lg leading-tight tracking-tight">
+              MP Doors & More
+            </div>
+            <div className="text-white/60 text-xs font-label tracking-widest uppercase">
+              Sherman, Texas
+            </div>
+          </div>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`font-display font-semibold text-sm tracking-wide transition-colors relative group ${
+                location === link.href
+                  ? "text-[#a61c00]"
+                  : "text-white/85 hover:text-white"
+              }`}
+            >
+              {link.label}
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#a61c00] transition-all duration-200 ${
+                location === link.href ? "w-full" : "w-0 group-hover:w-full"
+              }`} />
+            </Link>
+          ))}
+          <a
+            href="/contact"
+            className="btn-accent text-sm py-2 px-5"
+          >
+            Get a Quote
+          </a>
+        </nav>
+
+        {/* Mobile menu toggle */}
+        <button
+          className="md:hidden text-white p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#1e3450] border-t border-white/10">
+          <nav className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-2 hover:bg-secondary-foreground/10 rounded transition"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => setMenuOpen(false)}
+                className={`font-display font-semibold py-3 px-2 border-b border-white/10 transition-colors ${
+                  location === link.href
+                    ? "text-[#a61c00]"
+                    : "text-white/85 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
             <a
-              href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-2 text-secondary-foreground hover:text-accent transition"
-              onClick={() => setIsMenuOpen(false)}
+              href="/contact"
+              className="btn-accent text-sm py-2 px-5"
+              onClick={() => setMenuOpen(false)}
             >
-              <Facebook className="w-5 h-5" />
-              Follow on Facebook
+              Get a Quote
             </a>
           </nav>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
 }

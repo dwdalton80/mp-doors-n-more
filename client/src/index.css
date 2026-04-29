@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+/*
+ * MP Doors & More — Design System
+ * Philosophy: Modern Farmhouse / Texas Contemporary
+ * Primary: Slate Blue (#2D4A6B) — dependable, Texan sky
+ * Accent: Deep Red (#a61c00) — bold, striking, memorable
+ * Background: Cream (#FAF7F2) — warm, inviting
+ * Typography: Raleway (display) + Lato (body) + Oswald (labels)
+ */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -44,76 +52,42 @@
 }
 
 :root {
-  /* MP Doors & More Brand Colors */
-  --primary: #C41E3A;  /* Red accent */
-  --primary-foreground: #ffffff;
-  --sidebar-primary: #C41E3A;
-  --sidebar-primary-foreground: #ffffff;
-  --chart-1: #22c55e;
-  --chart-2: #C41E3A;
-  --chart-3: #1a2332;
-  --chart-4: #0f1419;
-  --chart-5: #22c55e;
   --radius: 0.5rem;
-  --background: oklch(1 0 0);  /* White */
-  --foreground: oklch(0.1 0 0);  /* Near black */
+  /* Slate Blue primary */
+  --primary: oklch(0.38 0.08 240);
+  --primary-foreground: oklch(0.98 0.005 240);
+  /* Deep Red accent */
+  --accent: oklch(0.42 0.18 25);
+  --accent-foreground: oklch(0.98 0.005 25);
+  /* Cream background */
+  --background: oklch(0.98 0.008 80);
+  --foreground: oklch(0.22 0.02 240);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.1 0 0);
+  --card-foreground: oklch(0.22 0.02 240);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.1 0 0);
-  --secondary: #1a2332;  /* Dark navy */
-  --secondary-foreground: #ffffff;
-  --muted: #f5f5f5;
-  --muted-foreground: #666666;
-  --accent: #1a2332;  /* Dark navy - matches header */
-  --accent-foreground: #ffffff;
-  --destructive: #C41E3A;
-  --destructive-foreground: #ffffff;
-  --border: #e5e5e5;
-  --input: #f5f5f5;
-  --ring: #C41E3A;
-  --sidebar: #1a2332;
-  --sidebar-foreground: #ffffff;
-  --sidebar-accent: #C41E3A;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #333333;
-  --sidebar-ring: #C41E3A;
-}
-
-.dark {
-  /* MP Doors & More Dark Theme */
-  --primary: #C41E3A;
-  --primary-foreground: #ffffff;
-  --sidebar-primary: #C41E3A;
-  --sidebar-primary-foreground: #ffffff;
-  --background: #0f1419;
-  --foreground: #ffffff;
-  --card: #1a2332;
-  --card-foreground: #ffffff;
-  --popover: #1a2332;
-  --popover-foreground: #ffffff;
-  --secondary: #1a2332;
-  --secondary-foreground: #ffffff;
-  --muted: #333333;
-  --muted-foreground: #999999;
-  --accent: #22c55e;
-  --accent-foreground: #ffffff;
-  --destructive: #C41E3A;
-  --destructive-foreground: #ffffff;
-  --border: #333333;
-  --input: #1a2332;
-  --ring: #C41E3A;
-  --chart-1: #22c55e;
-  --chart-2: #C41E3A;
-  --chart-3: #1a2332;
-  --chart-4: #0f1419;
-  --chart-5: #22c55e;
-  --sidebar: #0f1419;
-  --sidebar-foreground: #ffffff;
-  --sidebar-accent: #C41E3A;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #333333;
-  --sidebar-ring: #C41E3A;
+  --popover-foreground: oklch(0.22 0.02 240);
+  --secondary: oklch(0.94 0.01 240);
+  --secondary-foreground: oklch(0.38 0.08 240);
+  --muted: oklch(0.94 0.008 80);
+  --muted-foreground: oklch(0.52 0.02 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.01 240);
+  --input: oklch(0.88 0.01 240);
+  --ring: oklch(0.38 0.08 240);
+  --chart-1: oklch(0.38 0.08 240);
+  --chart-2: oklch(0.42 0.18 25);
+  --chart-3: oklch(0.65 0.1 80);
+  --chart-4: oklch(0.48 0.09 240);
+  --chart-5: oklch(0.45 0.15 25);
+  --sidebar: oklch(0.25 0.05 240);
+  --sidebar-foreground: oklch(0.95 0.005 240);
+  --sidebar-primary: oklch(0.42 0.18 25);
+  --sidebar-primary-foreground: oklch(0.98 0.005 25);
+  --sidebar-accent: oklch(0.32 0.06 240);
+  --sidebar-accent-foreground: oklch(0.95 0.005 240);
+  --sidebar-border: oklch(0.32 0.06 240);
+  --sidebar-ring: oklch(0.42 0.18 25);
 }
 
 @layer base {
@@ -122,20 +96,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-  }
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
-  }
-  h2 {
-    @apply text-3xl md:text-4xl;
-  }
-  h3 {
-    @apply text-2xl md:text-3xl;
+    font-family: 'Raleway', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -151,24 +115,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -179,16 +130,95 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+
+  .font-display {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .font-label {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: oklch(0.42 0.18 25);
+  }
+
+  .section-heading {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    color: oklch(0.22 0.02 240);
+  }
+
+  .btn-primary {
+    background-color: oklch(0.38 0.08 240);
+    color: oklch(0.98 0.005 240);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background-color: oklch(0.32 0.08 240);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px oklch(0.38 0.08 240 / 0.3);
+  }
+
+  .btn-accent {
+    background-color: oklch(0.42 0.18 25);
+    color: oklch(0.98 0.005 25);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .btn-accent:hover {
+    background-color: oklch(0.35 0.18 25);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px oklch(0.42 0.18 25 / 0.3);
+  }
 }
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
