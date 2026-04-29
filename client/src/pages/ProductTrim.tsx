@@ -16,7 +16,7 @@ const products = [
     title: "Baseboards & Shoe Molding",
     imageUrl: "/manus-storage/baseboard-shoe_0278999b.png",
     description: "Quality baseboards and shoe molding to finish the bottom of your walls. Available in various profiles and materials.",
-    brands: ["Masonite", "Woodgrain", "Jeld-Wen", "Trimlite"],
+    brands: ["Nova", "Woodgrain"],
     features: ["Multiple profile options", "Pre-primed & paintable", "Easy installation", "Durable materials"],
     rating: 5,
   },
@@ -25,7 +25,7 @@ const products = [
     title: "Crown Molding",
     imageUrl: "/manus-storage/crown-moulding_243def21.png",
     description: "Elegant crown molding to add architectural detail where walls meet ceilings. Transform any room with classic elegance.",
-    brands: ["Masonite", "Trimlite", "Woodgrain", "Frame Port"],
+    brands: ["Nova", "Woodgrain"],
     features: ["Decorative profiles", "Pre-primed options", "Easy to install", "Adds visual interest"],
     rating: 5,
   },
@@ -34,7 +34,7 @@ const products = [
     title: "Door & Window Casings",
     imageUrl: "/manus-storage/door-trim_27e16ea0.png",
     description: "Professional door and window casings to frame your openings beautifully. Available in multiple styles and finishes.",
-    brands: ["Jeld-Wen", "Masonite", "Trimlite", "Woodgrain"],
+    brands: ["Nova", "Woodgrain"],
     features: ["Standard & custom profiles", "Pre-finished options", "Quality construction", "Professional appearance"],
     rating: 5,
   },
@@ -43,7 +43,7 @@ const products = [
     title: "Decorative Trim Boards",
     imageUrl: "/manus-storage/decorative-trim_4f46313b.png",
     description: "Add character and charm with decorative trim boards. Perfect for wainscoting, accents, and architectural details.",
-    brands: ["Trimlite", "Woodgrain", "Masonite", "Frame Port"],
+    brands: ["Nova", "Woodgrain"],
     features: ["Various styles", "Paintable surfaces", "Durable construction", "Design flexibility"],
     rating: 4.8,
   },
@@ -104,7 +104,7 @@ export default function ProductTrim() {
                     </div>
 
                     {/* Features */}
-                    <div className="mb-6 flex-1">
+                    <div className="mb-4 flex-1">
                       <p className="text-xs font-semibold text-gray-700 mb-2">Key Features:</p>
                       <ul className="text-xs text-gray-600 space-y-1">
                         {product.features.map((feature) => (
@@ -114,6 +114,18 @@ export default function ProductTrim() {
                           </li>
                         ))}
                       </ul>
+                    </div>
+
+                    {/* Available Brands */}
+                    <div className="mb-6">
+                      <p className="text-xs font-semibold text-gray-700 mb-2">Available Brands:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.brands.map((brand) => (
+                          <span key={brand} className="inline-block bg-[#2D4A6B]/10 text-[#2D4A6B] text-xs font-label px-3 py-1 rounded">
+                            {brand}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
                     {/* CTA */}
