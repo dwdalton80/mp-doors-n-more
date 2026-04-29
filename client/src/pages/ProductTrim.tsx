@@ -82,10 +82,10 @@ export default function ProductTrim() {
             {products.map((product) => (
               <div key={product.id} className="group">
                 {/* Product Card */}
-                <div className="bg-[#FAF7F2] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                <div className="bg-[#FAF7F2] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full">
                   <ProductImagePlaceholder imageUrl={product.imageUrl} title={product.title} />
 
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <h3 className="font-display font-bold text-2xl text-[#1a2e45] mb-2">{product.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{product.description}</p>
 
@@ -104,7 +104,7 @@ export default function ProductTrim() {
                     </div>
 
                     {/* Features */}
-                    <div className="mb-6">
+                    <div className="mb-6 flex-1">
                       <p className="text-xs font-semibold text-gray-700 mb-2">Key Features:</p>
                       <ul className="text-xs text-gray-600 space-y-1">
                         {product.features.map((feature) => (
