@@ -23,7 +23,7 @@ const products = [
   {
     id: "vinyl-tile",
     title: "Vinyl Tile Flooring",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-tile-flooring-tarkett-GmExYqvuXgjYzPYGv3v.webp",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-tile-flooring-tarkett-GmUDPLpJ5rbpeDTRj8khrz.webp",
     description: "Durable vinyl tiles perfect for kitchens, bathrooms, and high-traffic areas.",
     brands: ["Tarkett", "Mannington", "Karndean", "Armstrong"],
     features: ["Stone-look options", "Slip-resistant", "Low maintenance", "Multiple colors"],
