@@ -4,9 +4,11 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
+import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
@@ -51,6 +53,14 @@ const products = [
 ];
 
 export default function ProductDoors() {
+  useEffect(() => {
+    document.title = "Interior & Exterior Doors in Sherman, TX | MP Doors & More";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Shop premium entry doors, interior doors, patio doors, and storm doors from top brands. A-grade quality at B-grade prices in Sherman, TX.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* ── PAGE HERO ── */}

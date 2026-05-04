@@ -4,6 +4,7 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
@@ -50,6 +51,14 @@ const products = [
 ];
 
 export default function ProductFlooring() {
+  useEffect(() => {
+    document.title = "Luxury Vinyl Flooring in Sherman, TX | MP Doors & More";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Shop luxury vinyl plank, vinyl tile, sheet vinyl, and vinyl composite flooring. Waterproof, durable, and affordable options in Sherman, TX.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* ── PAGE HERO ── */}

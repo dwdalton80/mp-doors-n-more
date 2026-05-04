@@ -4,6 +4,7 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
@@ -50,6 +51,14 @@ const products = [
 ];
 
 export default function ProductSiding() {
+  useEffect(() => {
+    document.title = "Vinyl Siding & Roofing Shingles in Sherman, TX | MP Doors & More";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Premium vinyl siding, fiber cement, asphalt shingles, and architectural shingles. Protect and beautify your home with quality materials in Sherman, TX.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* ── PAGE HERO ── */}

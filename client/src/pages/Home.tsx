@@ -8,6 +8,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { Star, ChevronRight, Phone, MapPin, Clock, CheckCircle2, Facebook } from "lucide-react";
+import { generateLocalBusinessSchema, injectSchema } from "@/lib/schema";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/hero-banner-JGKqZgmMvV9heZ7iiLwaZQ.webp";
 const DOORS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors-k6uQ2prwjDGFQjGmGhVFk3.webp";
@@ -112,6 +113,8 @@ export default function Home() {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Shop premium doors, windows, vinyl flooring, and trim in Sherman, TX. A-grade materials at B-grade prices. Local supplier serving Texoma.');
     }
+    // Inject LocalBusiness schema
+    injectSchema(generateLocalBusinessSchema());
   }, []);
 
   return (

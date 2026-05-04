@@ -4,6 +4,7 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
@@ -51,6 +52,14 @@ const products = [
 ];
 
 export default function ProductTrim() {
+  useEffect(() => {
+    document.title = "Quality Trim & Molding in Sherman, TX | MP Doors & More";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Shop baseboards, crown molding, door casings, and decorative trim from Nova and Woodgrain. Add finishing touches to your home in Sherman, TX.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* ── PAGE HERO ── */}

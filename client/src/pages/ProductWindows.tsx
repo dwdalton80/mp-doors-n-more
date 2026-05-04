@@ -4,6 +4,7 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
@@ -51,6 +52,14 @@ const products = [
 ];
 
 export default function ProductWindows() {
+  useEffect(() => {
+    document.title = "Energy-Efficient Vinyl Windows in Sherman, TX | MP Doors & More";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Browse energy-efficient vinyl windows including double-hung, casement, sliding, and bay windows. Premium quality at affordable prices in Sherman, TX.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* ── PAGE HERO ── */}
