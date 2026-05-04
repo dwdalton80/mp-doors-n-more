@@ -4,11 +4,59 @@
  * Deep slate blue background, warm terracotta accents
  */
 
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    // Inject LocalBusiness schema with extended details
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MP Doors & More",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/mp-doors-logo_9851a1c6.png",
+      "description": "Premium doors, windows, vinyl flooring, siding, and trim & molding supplier in Sherman, TX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3200 N Texoma Pkwy",
+        "addressLocality": "Sherman",
+        "addressRegion": "TX",
+        "postalCode": "75090",
+        "addressCountry": "US"
+      },
+      "telephone": "(903) 421-1305",
+      "email": "Mpdoorsnmore232@gmail.com",
+      "url": "https://www.mpdoorsnmore.com",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "07:00",
+          "closes": "15:00"
+        }
+      ],
+      "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
+      "sameAs": [
+        "https://www.facebook.com/p/MP-Doors-More-61550671844372/"
+      ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }, []);
+
 
   return (
     <footer className="bg-[#1a2e45] text-white">
