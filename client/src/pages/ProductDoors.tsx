@@ -10,6 +10,7 @@ import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ReviewsSection from "@/components/ReviewsSection";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
 
@@ -160,6 +161,57 @@ export default function ProductDoors() {
           </div>
         </div>
       </section>
+
+      {/* ── REVIEWS SECTION ── */}
+      <ReviewsSection
+        productName="Doors"
+        averageRating={4.95}
+        reviewCount={127}
+        reviews={[
+          {
+            id: "1",
+            author: "James M.",
+            rating: 5,
+            date: "2 weeks ago",
+            text: "Excellent quality entry doors at great prices. The staff was very helpful in choosing the right style for my home. Installation was smooth and the doors look fantastic!",
+          },
+          {
+            id: "2",
+            author: "Sarah T.",
+            rating: 5,
+            date: "1 month ago",
+            text: "I purchased interior doors for my renovation project. The quality is outstanding and the prices are unbeatable. Highly recommend MP Doors & More!",
+          },
+          {
+            id: "3",
+            author: "David K.",
+            rating: 5,
+            date: "3 weeks ago",
+            text: "Great selection of patio doors. The team helped me find the perfect match for my home. Very professional and knowledgeable.",
+          },
+          {
+            id: "4",
+            author: "Maria L.",
+            rating: 5,
+            date: "1 month ago",
+            text: "Best prices I found for storm doors. Quality is excellent and the customer service is top-notch. Will definitely shop here again!",
+          },
+          {
+            id: "5",
+            author: "Robert H.",
+            rating: 5,
+            date: "2 months ago",
+            text: "Purchased multiple doors for my property. Impressed with the quality and attention to detail. Great local business!",
+          },
+          {
+            id: "6",
+            author: "Jennifer P.",
+            rating: 5,
+            date: "6 weeks ago",
+            text: "Amazing selection and competitive pricing. The staff took time to understand my needs and recommend the best options. Very satisfied!",
+          },
+        ]}
+      />
 
       {/* ── BOTTOM CTA ── */}
       <section className="py-20 bg-[#1a2e45]">

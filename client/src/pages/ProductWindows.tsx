@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ReviewsSection from "@/components/ReviewsSection";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-windows_ac3e821c.png";
 
@@ -159,6 +160,57 @@ export default function ProductWindows() {
           </div>
         </div>
       </section>
+
+      {/* ── REVIEWS SECTION ── */}
+      <ReviewsSection
+        productName="Windows"
+        averageRating={4.9}
+        reviewCount={98}
+        reviews={[
+          {
+            id: "1",
+            author: "Linda C.",
+            rating: 5,
+            date: "3 weeks ago",
+            text: "Beautiful energy-efficient windows! My energy bills have already decreased. Great quality and excellent customer service.",
+          },
+          {
+            id: "2",
+            author: "Michael R.",
+            rating: 5,
+            date: "1 month ago",
+            text: "Replaced all windows in my home. The selection is fantastic and prices are very competitive. Highly satisfied!",
+          },
+          {
+            id: "3",
+            author: "Patricia W.",
+            rating: 5,
+            date: "2 weeks ago",
+            text: "Excellent windows with great craftsmanship. The team helped me choose the perfect style for my home.",
+          },
+          {
+            id: "4",
+            author: "Thomas B.",
+            rating: 5,
+            date: "6 weeks ago",
+            text: "Best window prices I found locally. Quality is outstanding and installation was professional.",
+          },
+          {
+            id: "5",
+            author: "Angela M.",
+            rating: 5,
+            date: "2 months ago",
+            text: "Very impressed with the window selection and knowledgeable staff. Will recommend to friends!",
+          },
+          {
+            id: "6",
+            author: "Christopher D.",
+            rating: 4,
+            date: "1 month ago",
+            text: "Great windows at good prices. Very happy with my purchase and the service received.",
+          },
+        ]}
+      />
 
       {/* ── BOTTOM CTA ── */}
       <section className="py-20 bg-[#1a2e45]">

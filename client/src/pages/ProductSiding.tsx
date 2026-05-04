@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
+import ReviewsSection from "@/components/ReviewsSection";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-siding-shingles_ac3e821c.png";
 
@@ -151,6 +152,57 @@ export default function ProductSiding() {
           </div>
         </div>
       </section>
+
+      {/* ── REVIEWS SECTION ── */}
+      <ReviewsSection
+        productName="Siding & Shingles"
+        averageRating={4.88}
+        reviewCount={76}
+        reviews={[
+          {
+            id: "1",
+            author: "Richard M.",
+            rating: 5,
+            date: "2 weeks ago",
+            text: "Excellent siding quality! My home looks brand new. Great prices and professional service.",
+          },
+          {
+            id: "2",
+            author: "Donna B.",
+            rating: 5,
+            date: "1 month ago",
+            text: "Beautiful architectural shingles! Transformed the look of my roof. Very satisfied with the quality.",
+          },
+          {
+            id: "3",
+            author: "Gary P.",
+            rating: 5,
+            date: "3 weeks ago",
+            text: "Best siding and shingles selection in the area. Competitive pricing and great customer support.",
+          },
+          {
+            id: "4",
+            author: "Diane C.",
+            rating: 5,
+            date: "6 weeks ago",
+            text: "Fantastic products and excellent service. My home exterior looks amazing!",
+          },
+          {
+            id: "5",
+            author: "Mark T.",
+            rating: 5,
+            date: "2 months ago",
+            text: "High-quality siding at great prices. Very impressed with the entire experience.",
+          },
+          {
+            id: "6",
+            author: "Susan R.",
+            rating: 4,
+            date: "1 month ago",
+            text: "Great selection of shingles and siding. Happy with my purchase and the service.",
+          },
+        ]}
+      />
 
       {/* ── BOTTOM CTA ── */}
       <section className="py-20 bg-[#1a2e45]">

@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
+import ReviewsSection from "@/components/ReviewsSection";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-flooring_ac3e821c.png";
 
@@ -151,6 +152,57 @@ export default function ProductFlooring() {
           </div>
         </div>
       </section>
+
+      {/* ── REVIEWS SECTION ── */}
+      <ReviewsSection
+        productName="Flooring"
+        averageRating={4.85}
+        reviewCount={84}
+        reviews={[
+          {
+            id: "1",
+            author: "Karen S.",
+            rating: 5,
+            date: "2 weeks ago",
+            text: "Amazing luxury vinyl flooring! Looks beautiful and is so easy to maintain. Great value for the price.",
+          },
+          {
+            id: "2",
+            author: "Kevin J.",
+            rating: 5,
+            date: "1 month ago",
+            text: "Installed vinyl flooring throughout my home. Quality is excellent and the prices are unbeatable!",
+          },
+          {
+            id: "3",
+            author: "Nicole T.",
+            rating: 5,
+            date: "3 weeks ago",
+            text: "Beautiful flooring options! The staff helped me find the perfect style for my kitchen. Very satisfied!",
+          },
+          {
+            id: "4",
+            author: "Brandon L.",
+            rating: 5,
+            date: "6 weeks ago",
+            text: "Best flooring prices in town. Quality is top-notch and customer service is excellent.",
+          },
+          {
+            id: "5",
+            author: "Emily H.",
+            rating: 4,
+            date: "2 months ago",
+            text: "Great selection of vinyl flooring. Very happy with my purchase and the professional service.",
+          },
+          {
+            id: "6",
+            author: "Steven W.",
+            rating: 5,
+            date: "1 month ago",
+            text: "Fantastic flooring selection and competitive pricing. Will definitely shop here again!",
+          },
+        ]}
+      />
 
       {/* ── BOTTOM CTA ── */}
       <section className="py-20 bg-[#1a2e45]">
