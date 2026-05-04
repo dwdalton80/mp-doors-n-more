@@ -14,7 +14,7 @@ const products = [
   {
     id: "luxury-vinyl",
     title: "Luxury Vinyl Plank (LVP)",
-    imageUrl: "/manus-storage/LuxuryVinylPlank_c8d5e20a.jpg",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/luxury-vinyl-plank-mohawk-6U9k5xcmHEMjneeX5i8YTk.webp",
     description: "Premium vinyl plank flooring that mimics the look of hardwood with superior durability and easy maintenance.",
     brands: ["Mohawk", "Shaw", "Pergo", "Armstrong"],
     features: ["Waterproof construction", "Realistic wood grain", "Easy installation", "Scratch resistant"],
@@ -23,7 +23,7 @@ const products = [
   {
     id: "vinyl-tile",
     title: "Vinyl Tile Flooring",
-    imageUrl: "/manus-storage/VinylTileFlooring_fba081b8.jpg",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-tile-flooring-tarkett-GmExYqvuXgjYzPYGv3v.webp",
     description: "Durable vinyl tiles perfect for kitchens, bathrooms, and high-traffic areas.",
     brands: ["Tarkett", "Mannington", "Karndean", "Armstrong"],
     features: ["Stone-look options", "Slip-resistant", "Low maintenance", "Multiple colors"],
@@ -32,7 +32,7 @@ const products = [
   {
     id: "sheet-vinyl",
     title: "Sheet Vinyl Flooring",
-    imageUrl: "/manus-storage/sheetvinylfloor_93c61de7.jpg",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/sheet-vinyl-armstrong-nPJpdZVDDRznBXjwmRucYo.webp",
     description: "Seamless sheet vinyl for a clean, modern look with excellent water resistance.",
     brands: ["Tarkett", "Armstrong", "Congoleum", "Karndean"],
     features: ["Seamless installation", "Waterproof", "Comfortable underfoot", "Easy to clean"],
@@ -41,7 +41,7 @@ const products = [
   {
     id: "vinyl-composite",
     title: "Vinyl Composite Tile (VCT)",
-    imageUrl: "/manus-storage/vinylcompositetile_f3acba27.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-composite-tile-armstrong-eVhhaqaekg3QN8QgqvD5jG.webp",
     description: "Commercial-grade vinyl composite tiles ideal for commercial and residential applications.",
     brands: ["Armstrong", "Tarkett", "Mannington", "Congoleum"],
     features: ["Durable construction", "Commercial grade", "Cost-effective", "Wide color range"],

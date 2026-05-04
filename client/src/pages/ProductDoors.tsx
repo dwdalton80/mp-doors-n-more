@@ -15,7 +15,7 @@ const products = [
   {
     id: "entry-doors",
     title: "Entry Doors",
-    imageUrl: "/manus-storage/EntryDoor_eb33858e.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
     description: "Premium entry doors with security and style. Energy-efficient designs to keep your home comfortable year-round.",
     brands: ["Masonite", "Woodgrain", "Trimlite", "Frame Port", "Jeld-Wen"],
     features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes available", "Security glass options"],
@@ -24,7 +24,7 @@ const products = [
   {
     id: "interior-doors",
     title: "Interior Doors",
-    imageUrl: "/manus-storage/InteriorDoor_f8466bea.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
     description: "Quality interior doors for bedrooms, bathrooms, and closets. Available in various styles and finishes.",
     brands: ["Jeld-Wen", "Trimlite", "Masonite", "Frame Port", "Woodgrain"],
     features: ["Pre-hung options", "Hollow & solid core", "Adjustable frames", "Hardware included"],
@@ -33,7 +33,7 @@ const products = [
   {
     id: "patio-doors",
     title: "Patio & Sliding Doors",
-    imageUrl: "/manus-storage/PatioandSlidingDoor_35da1cfc.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
     description: "Beautiful patio doors to bring natural light and access to your outdoor spaces.",
     brands: ["Anderson"],
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
@@ -42,7 +42,7 @@ const products = [
   {
     id: "storm-doors",
     title: "Storm Doors",
-    imageUrl: "/manus-storage/StormDoor_9c4836b7.jpg",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/storm-doors-larson-MsKDojBrbzmE4jTVEd5Bgw.webp",
     description: "Protective storm doors that add an extra layer of security and energy efficiency.",
     brands: ["Larson"],
     features: ["Aluminum frames", "Interchangeable glass/screen", "Multiple colors", "Weather-tight seals"],

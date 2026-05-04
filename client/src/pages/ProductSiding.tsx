@@ -14,7 +14,7 @@ const products = [
   {
     id: "vinyl-siding",
     title: "Vinyl Siding",
-    imageUrl: "/manus-storage/VinylSiding_f606a5f8.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-siding-certainteed-nEXe9HMrZqcujhvPB4TRDY.webp",
     description: "Durable, low-maintenance vinyl siding that protects your home while enhancing its curb appeal.",
     brands: ["Certainteed", "Mastic", "Norandex", "Wolverine"],
     features: ["Weather-resistant", "Multiple colors", "Low maintenance", "Insulated options"],
@@ -23,7 +23,7 @@ const products = [
   {
     id: "fiber-cement",
     title: "Fiber Cement Siding",
-    imageUrl: "/manus-storage/FiberCementSiding_827d3f47.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/fiber-cement-james-hardie-BY5HrwRhA4oECsudubk6Jm.webp",
     description: "Premium fiber cement siding that mimics the look of wood with superior durability and fire resistance.",
     brands: ["James Hardie", "Allura", "Fiber Cement Co.", "Cemplank"],
     features: ["Fire resistant", "Realistic wood look", "Long-lasting", "Paintable finishes"],
@@ -32,7 +32,7 @@ const products = [
   {
     id: "asphalt-shingles",
     title: "Asphalt Shingles",
-    imageUrl: "/manus-storage/AsphaltShingles_7b072bbc.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/asphalt-shingles-gaf-N8qChrpSSotvLHumApRL3g.webp",
     description: "Affordable and reliable asphalt shingles for residential roofing applications.",
     brands: ["Certainteed", "GAF", "Owens Corning", "Malarkey"],
     features: ["Weather-resistant", "Multiple colors", "Impact resistant", "Warranty included"],
@@ -41,7 +41,7 @@ const products = [
   {
     id: "architectural-shingles",
     title: "Architectural Shingles",
-    imageUrl: "/manus-storage/ArchitectualShingles_72a0a0de.jpg",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/architectural-shingles-owens-corning-fnVjpTzfvz6JsDJc9Lryg8.webp",
     description: "Premium architectural shingles with enhanced dimension and style for your roof.",
     brands: ["Owens Corning", "GAF Timberline", "Certainteed", "Malarkey"],
     features: ["Dimensional design", "Superior protection", "Long warranty", "Fade resistant"],
