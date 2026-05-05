@@ -16,10 +16,10 @@ const products = [
   {
     id: "lp-smart-siding",
     title: "LP Smart Siding and Trim",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-siding-certainteed-nEXe9HMrZqcujhvPB4TRDY.webp",
-    description: "Premium LP Smart Siding and Trim engineered for superior durability, protection, and beautiful curb appeal.",
-    brands: ["LP Smart Siding"],
-    features: ["Weather-resistant", "Engineered durability", "Low maintenance", "Trim solutions included"],
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/lp-smartside-siding-trim-E6EvXPacjMJ5knmnZ3NfAx.webp",
+    description: "Premium LP SmartSide fiber cement siding and trim engineered for superior durability, protection, and beautiful curb appeal.",
+    brands: ["LP SmartSide"],
+    features: ["Fiber cement durability", "Engineered for performance", "Low maintenance", "Integrated trim solutions"],
     rating: 5,
   },
   {
