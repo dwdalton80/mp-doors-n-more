@@ -14,38 +14,38 @@ const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5Tb
 
 const products = [
   {
-    id: "luxury-vinyl",
-    title: "Luxury Vinyl Plank (LVP)",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/luxury-vinyl-plank-mohawk-6U9k5xcmHEMjneeX5i8YTk.webp",
-    description: "Premium vinyl plank flooring that mimics the look of hardwood with superior durability and easy maintenance.",
-    brands: ["Mohawk", "Shaw", "Pergo", "Armstrong"],
+    id: "spc",
+    title: "SPC Flooring",
+    imageUrl: "/manus-storage/IMG_3510_bf1f5299.JPG",
+    description: "Stone Plastic Composite flooring with superior durability and waterproof protection for any room.",
+    brands: ["Lawson"],
     features: ["Waterproof construction", "Realistic wood grain", "Easy installation", "Scratch resistant"],
     rating: 5,
   },
   {
-    id: "vinyl-tile",
-    title: "Vinyl Tile Flooring",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-tile-flooring-tarkett-GmUDPLpJ5rbpeDTRj8khrz.webp",
-    description: "Durable vinyl tiles perfect for kitchens, bathrooms, and high-traffic areas.",
-    brands: ["Tarkett", "Mannington", "Karndean", "Armstrong"],
+    id: "lvp-glue-down",
+    title: "LVP (Glue-Down)",
+    imageUrl: "/manus-storage/IMG_3511_be4494b4.JPG",
+    description: "Luxury Vinyl Plank with glue-down installation for a secure, professional finish.",
+    brands: ["Lawson"],
     features: ["Stone-look options", "Slip-resistant", "Low maintenance", "Multiple colors"],
     rating: 4.9,
   },
   {
-    id: "sheet-vinyl",
-    title: "Sheet Vinyl Flooring",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/sheet-vinyl-armstrong-nPJpdZVDDRznBXjwmRucYo.webp",
-    description: "Seamless sheet vinyl for a clean, modern look with excellent water resistance.",
-    brands: ["Tarkett", "Armstrong", "Congoleum", "Karndean"],
+    id: "laminate",
+    title: "Laminate Flooring",
+    imageUrl: "/manus-storage/IMG_3512_15a2d594.JPG",
+    description: "Durable laminate flooring with authentic wood appearance and superior scratch resistance.",
+    brands: ["Lawson"],
     features: ["Seamless installation", "Waterproof", "Comfortable underfoot", "Easy to clean"],
     rating: 4.8,
   },
   {
-    id: "vinyl-composite",
-    title: "Vinyl Composite Tile (VCT)",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-composite-tile-armstrong-eVhhaqaekg3QN8QgqvD5jG.webp",
-    description: "Commercial-grade vinyl composite tiles ideal for commercial and residential applications.",
-    brands: ["Armstrong", "Tarkett", "Mannington", "Congoleum"],
+    id: "hardwood",
+    title: "Hardwood Flooring",
+    imageUrl: "/manus-storage/IMG_3513_30148280.JPG",
+    description: "Premium hardwood flooring with natural beauty and timeless elegance for any home.",
+    brands: ["Lawson"],
     features: ["Durable construction", "Commercial grade", "Cost-effective", "Wide color range"],
     rating: 4.7,
   },
@@ -53,10 +53,10 @@ const products = [
 
 export default function ProductFlooring() {
   useEffect(() => {
-    document.title = "Luxury Vinyl Flooring in Sherman, TX | MP Doors & More";
+    document.title = "Flooring Options in Sherman, TX | MP Doors & More";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Shop luxury vinyl plank, vinyl tile, sheet vinyl, and vinyl composite flooring. Waterproof, durable, and affordable options in Sherman, TX.');
+      metaDescription.setAttribute('content', 'Shop SPC, LVP, laminate, and hardwood flooring from Lawson. Durable, waterproof, and affordable options in Sherman, TX.');
     }
   }, []);
 
