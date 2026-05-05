@@ -19,7 +19,7 @@ const products = [
     title: "Baseboards & Shoe Molding",
     imageUrl: "/manus-storage/baseboard-shoe_0278999b.png",
     description: "Quality baseboards and shoe molding to finish the bottom of your walls. Available in various profiles and materials.",
-    brands: ["Nova", "Woodgrain"],
+    brands: ["Novo", "Woodgrain"],
     features: ["Multiple profile options", "Pre-primed & paintable", "Easy installation", "Durable materials"],
     rating: 5,
   },
@@ -28,7 +28,7 @@ const products = [
     title: "Crown Molding",
     imageUrl: "/manus-storage/crown-moulding_243def21.png",
     description: "Elegant crown molding to add architectural detail where walls meet ceilings. Transform any room with classic elegance.",
-    brands: ["Nova", "Woodgrain"],
+    brands: ["Novo", "Woodgrain"],
     features: ["Decorative profiles", "Pre-primed options", "Easy to install", "Adds visual interest"],
     rating: 5,
   },
@@ -37,7 +37,7 @@ const products = [
     title: "Door & Window Casings",
     imageUrl: "/manus-storage/door-trim_27e16ea0.png",
     description: "Professional door and window casings to frame your openings beautifully. Available in multiple styles and finishes.",
-    brands: ["Nova", "Woodgrain"],
+    brands: ["Novo", "Woodgrain"],
     features: ["Standard & custom profiles", "Pre-finished options", "Quality construction", "Professional appearance"],
     rating: 5,
   },
@@ -46,7 +46,7 @@ const products = [
     title: "Decorative Trim Boards",
     imageUrl: "/manus-storage/decorative-trim_4f46313b.png",
     description: "Add character and charm with decorative trim boards. Perfect for wainscoting, accents, and architectural details.",
-    brands: ["Nova", "Woodgrain"],
+    brands: ["Novo", "Woodgrain"],
     features: ["Various styles", "Paintable surfaces", "Durable construction", "Design flexibility"],
     rating: 4.8,
   },
@@ -57,7 +57,7 @@ export default function ProductTrim() {
     document.title = "Quality Trim & Molding in Sherman, TX | MP Doors & More";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Shop baseboards, crown molding, door casings, and decorative trim from Nova and Woodgrain. Add finishing touches to your home in Sherman, TX.');
+      metaDescription.setAttribute('content', 'Shop baseboards, crown molding, door casings, and decorative trim from Novo and Woodgrain. Add finishing touches to your home in Sherman, TX.');
     }
   }, []);
 
