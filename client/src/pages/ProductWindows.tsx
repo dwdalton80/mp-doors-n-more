@@ -19,7 +19,7 @@ const products = [
     title: "Single Hung Windows",
     imageUrl: "/manus-storage/doublehungwindows_aee37039.png",
     description: "Classic single hung windows with smooth operation and excellent ventilation control.",
-    brands: ["Pella", "Andersen", "Jeld-Wen", "Milgard"],
+    brands: ["Synergy", "Westlake"],
     features: ["Tilt-in sashes for easy cleaning", "Low-E glass", "Multiple color options", "Energy Star certified"],
     rating: 5,
   },
@@ -28,7 +28,7 @@ const products = [
     title: "Casement Windows",
     imageUrl: "/manus-storage/casement-window_04331195.png",
     description: "Modern casement windows with superior weather sealing and maximum ventilation.",
-    brands: ["Andersen", "Pella", "Marvin", "Jeld-Wen"],
+    brands: ["Synergy", "Westlake"],
     features: ["Crank-operated opening", "Weather-tight seals", "Picture & bay options", "Vinyl frames"],
     rating: 5,
   },
@@ -37,19 +37,11 @@ const products = [
     title: "Sliding Windows",
     imageUrl: "/manus-storage/slidingwindow_174ca486.png",
     description: "Sleek sliding windows perfect for contemporary and traditional homes.",
-    brands: ["Pella", "Milgard", "Jeld-Wen", "Simonton"],
+    brands: ["Synergy", "Westlake"],
     features: ["Smooth gliding operation", "Low maintenance", "Energy efficient", "Multiple sizes"],
     rating: 4.9,
   },
-  {
-    id: "specialty",
-    title: "Specialty & Bay Windows",
-    imageUrl: "/manus-storage/baywindows_3367388a.jpg",
-    description: "Picture, bay, and bow windows to add character and natural light to any room.",
-    brands: ["Andersen", "Pella", "Marvin", "Thermal"],
-    features: ["Custom shapes available", "Premium glass options", "Structural support included", "Design flexibility"],
-    rating: 5,
-  },
+
 ];
 
 export default function ProductWindows() {
@@ -57,7 +49,7 @@ export default function ProductWindows() {
     document.title = "Energy-Efficient Vinyl Windows in Sherman, TX | MP Doors & More";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Browse energy-efficient vinyl windows including single-hung, casement, sliding, and bay windows. Premium quality at affordable prices in Sherman, TX.');
+      metaDescription.setAttribute('content', 'Browse energy-efficient vinyl windows from Synergy and Westlake including single-hung, casement, and sliding windows. Premium quality at affordable prices in Sherman, TX.');
     }
   }, []);
 
