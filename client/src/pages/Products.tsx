@@ -37,9 +37,9 @@ const categories = [
     subtitle: "Energy-Efficient Vinyl",
     image: WINDOWS_IMAGE,
     description:
-      "Our windows are designed for the Texas climate — energy-efficient, durable, and beautiful. We carry double-hung, casement, sliding, and picture windows in a variety of sizes and styles to fit any home.",
+      "Our windows are designed for the Texas climate — energy-efficient, durable, and beautiful. We carry single-hung, casement, sliding, and picture windows in a variety of sizes and styles to fit any home.",
     features: [
-      "Double-hung windows",
+      "Single-hung windows",
       "Casement & awning windows",
       "Sliding windows",
       "Picture & bay windows",

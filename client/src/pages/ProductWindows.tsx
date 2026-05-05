@@ -15,10 +15,10 @@ const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5Tb
 
 const products = [
   {
-    id: "double-hung",
-    title: "Double Hung Windows",
+    id: "single-hung",
+    title: "Single Hung Windows",
     imageUrl: "/manus-storage/doublehungwindows_aee37039.png",
-    description: "Classic double hung windows with smooth operation and excellent ventilation control.",
+    description: "Classic single hung windows with smooth operation and excellent ventilation control.",
     brands: ["Pella", "Andersen", "Jeld-Wen", "Milgard"],
     features: ["Tilt-in sashes for easy cleaning", "Low-E glass", "Multiple color options", "Energy Star certified"],
     rating: 5,
@@ -57,7 +57,7 @@ export default function ProductWindows() {
     document.title = "Energy-Efficient Vinyl Windows in Sherman, TX | MP Doors & More";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Browse energy-efficient vinyl windows including double-hung, casement, sliding, and bay windows. Premium quality at affordable prices in Sherman, TX.');
+      metaDescription.setAttribute('content', 'Browse energy-efficient vinyl windows including single-hung, casement, sliding, and bay windows. Premium quality at affordable prices in Sherman, TX.');
     }
   }, []);
 
