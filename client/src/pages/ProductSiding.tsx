@@ -14,12 +14,12 @@ const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5Tb
 
 const products = [
   {
-    id: "vinyl-siding",
-    title: "Vinyl Siding",
+    id: "lp-smart-siding",
+    title: "LP Smart Siding and Trim",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/vinyl-siding-certainteed-nEXe9HMrZqcujhvPB4TRDY.webp",
-    description: "Durable, low-maintenance vinyl siding that protects your home while enhancing its curb appeal.",
-    brands: ["Certainteed", "Mastic", "Norandex", "Wolverine"],
-    features: ["Weather-resistant", "Multiple colors", "Low maintenance", "Insulated options"],
+    description: "Premium LP Smart Siding and Trim engineered for superior durability, protection, and beautiful curb appeal.",
+    brands: ["LP Smart Siding"],
+    features: ["Weather-resistant", "Engineered durability", "Low maintenance", "Trim solutions included"],
     rating: 5,
   },
   {
@@ -53,10 +53,10 @@ const products = [
 
 export default function ProductSiding() {
   useEffect(() => {
-    document.title = "Vinyl Siding & Roofing Shingles in Sherman, TX | MP Doors & More";
+    document.title = "LP Smart Siding, Fiber Cement & Shingles in Sherman, TX | MP Doors & More";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Premium vinyl siding, fiber cement, asphalt shingles, and architectural shingles. Protect and beautify your home with quality materials in Sherman, TX.');
+      metaDescription.setAttribute('content', 'Premium LP Smart Siding and Trim, fiber cement, asphalt shingles, and architectural shingles. Protect and beautify your home with quality materials in Sherman, TX.');
     }
   }, []);
 
