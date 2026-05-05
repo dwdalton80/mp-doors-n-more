@@ -89,14 +89,14 @@ export default function Contact() {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:Mpdoorsnmore232@gmail.com" className="flex items-start gap-4 group">
+                  <a href="mailto:mpdoorsnmore23@gmail.com" className="flex items-start gap-4 group">
                     <div className="w-10 h-10 rounded-md bg-[#2D4A6B] flex items-center justify-center shrink-0">
                       <Mail size={18} className="text-white" />
                     </div>
                     <div>
                       <div className="font-display font-bold text-[#1a2e45] text-sm mb-0.5">Email</div>
                       <div className="text-gray-600 text-sm group-hover:text-[#a61c00] transition-colors break-all">
-                        Mpdoorsnmore232@gmail.com
+                        mpdoorsnmore23@gmail.com
                       </div>
                     </div>
                   </a>

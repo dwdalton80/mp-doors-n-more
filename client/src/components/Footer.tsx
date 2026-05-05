@@ -28,7 +28,7 @@ export default function Footer() {
         "addressCountry": "US"
       },
       "telephone": "(903) 421-1305",
-      "email": "Mpdoorsnmore232@gmail.com",
+      "email": "mpdoorsnmore23@gmail.com",
       "url": "https://www.mpdoorsnmore.com",
       "priceRange": "$$",
       "openingHoursSpecification": [
@@ -145,9 +145,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:Mpdoorsnmore232@gmail.com" className="flex items-start gap-3 text-white/65 hover:text-white transition-colors text-sm">
+              <a href="mailto:mpdoorsnmore23@gmail.com" className="flex items-start gap-3 text-white/65 hover:text-white transition-colors text-sm">
                 <Mail size={15} className="mt-0.5 text-[#a61c00] shrink-0" />
-                <span>Mpdoorsnmore232@gmail.com</span>
+                <span>mpdoorsnmore23@gmail.com</span>
               </a>
             </li>
             <li>
