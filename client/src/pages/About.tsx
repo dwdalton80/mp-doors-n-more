@@ -69,9 +69,9 @@ export default function About() {
               />
               {/* Floating badge */}
               <div className="absolute -bottom-6 -left-6 bg-[#a61c00] text-white rounded-lg p-5 shadow-xl">
-                <div className="font-display font-black text-3xl leading-none">A Grade</div>
+                <div className="font-display font-black text-3xl leading-none">A-Grade</div>
                 <div className="font-label text-sm tracking-widest uppercase mt-1 text-white/80">Materials</div>
-                <div className="font-display font-black text-3xl leading-none mt-2">B Grade</div>
+                <div className="font-display font-black text-3xl leading-none mt-2">B-Grade</div>
                 <div className="font-label text-sm tracking-widest uppercase text-white/80">Prices</div>
               </div>
             </div>

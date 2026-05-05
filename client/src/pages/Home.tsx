@@ -24,8 +24,8 @@ const products = [
 ];
 
 const features = [
-  { icon: CheckCircle2, title: "A Grade Materials", desc: "We source only top-quality construction materials — the same grade used by professional contractors." },
-  { icon: CheckCircle2, title: "B Grade Prices", desc: "Our buying power means you get premium materials without the premium markup. Real savings, every time." },
+  { icon: CheckCircle2, title: "A-Grade Materials", desc: "We source only top-quality construction materials — the same grade used by professional contractors." },
+  { icon: CheckCircle2, title: "B-Grade Prices", desc: "Our buying power means you get premium materials without the premium markup. Real savings, every time." },
   { icon: CheckCircle2, title: "Local & Trusted", desc: "Proudly serving Sherman and the Texoma area. We're your neighbors, and we stand behind every product." },
   { icon: CheckCircle2, title: "Wide Selection", desc: "Doors, windows, flooring, siding, shingles — everything you need for your home improvement project." },
 ];
@@ -137,7 +137,7 @@ export default function Home() {
               <span className="block text-[#a61c00]">Honest Prices.</span>
             </h1>
             <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
-              MP Doors & More is your local source for premium entry doors, interior doors, patio doors, energy-efficient windows, luxury vinyl flooring, and quality trim & molding in Sherman, TX. A grade materials at B grade prices.
+              MP Doors & More is your local source for premium entry doors, interior doors, patio doors, energy-efficient windows, luxury vinyl flooring, and quality trim & molding in Sherman, TX. A-grade materials at B-grade prices.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products" className="btn-accent text-base">
