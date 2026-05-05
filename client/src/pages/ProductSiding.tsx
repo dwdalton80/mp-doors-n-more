@@ -27,7 +27,7 @@ const products = [
     title: "Fiber Cement Siding",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/fiber-cement-james-hardie-BY5HrwRhA4oECsudubk6Jm.webp",
     description: "Premium fiber cement siding that mimics the look of wood with superior durability and fire resistance.",
-    brands: ["James Hardie", "Allura", "Fiber Cement Co.", "Cemplank"],
+    brands: ["James Hardie", "Nichiha"],
     features: ["Fire resistant", "Realistic wood look", "Long-lasting", "Paintable finishes"],
     rating: 5,
   },
