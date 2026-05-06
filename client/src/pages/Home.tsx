@@ -108,10 +108,10 @@ function useScrollReveal() {
 
 export default function Home() {
   useEffect(() => {
-    document.title = "MP Doors & More | Quality Doors, Windows & Flooring in Sherman, TX";
+    document.title = "Doors, Windows & Flooring in Sherman, TX";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Shop premium doors, windows, vinyl flooring, and trim in Sherman, TX. A-grade materials at B-grade prices. Local supplier serving Texoma.');
+      metaDescription.setAttribute('content', 'Shop premium doors, windows, vinyl flooring, siding, trim & molding in Sherman, TX. A-grade materials at B-grade prices. Local supplier serving Texoma.');
     }
     // Inject LocalBusiness schema
     injectSchema(generateLocalBusinessSchema());
@@ -137,7 +137,7 @@ export default function Home() {
               <span className="block text-[#a61c00]">Honest Prices.</span>
             </h1>
             <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
-              MP Doors & More is your local source for premium entry doors, interior doors, patio doors, energy-efficient windows, luxury vinyl flooring, and quality trim & molding in Sherman, TX. A-grade materials at B-grade prices.
+              MP Doors & More is your local source for premium entry doors, interior doors, patio doors, energy-efficient windows, luxury vinyl plank flooring, vinyl siding, shingles, and quality trim & molding in Sherman, TX. A-grade materials at B-grade prices. Serving Texoma with quality home improvement products.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products" className="btn-accent text-base">
