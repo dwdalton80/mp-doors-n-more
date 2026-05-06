@@ -21,7 +21,7 @@ User-agent: WhatsApp
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.mpdoorsnmore.com/sitemap.xml
+Sitemap: https://mpdoorsnmore.com/sitemap.xml
 Sitemap: https://mpdoorsnmore.manus.space/sitemap.xml
 
 # Crawl delay (optional - in seconds)
