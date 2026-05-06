@@ -98,9 +98,14 @@ export default function ReviewsSection({
           <p className="text-gray-600 mb-4">
             Have you purchased from us? Share your experience!
           </p>
-          <button className="btn-accent">
+          <a
+            href="https://www.google.com/maps/place/MP+Doors+%26+More/@33.6705702,-96.5961385,17z/data=!4m18!1m9!3m8!1s0x864c897632db665d:0xbe1a54ed55193c88!2sMP+Doors+%26+More!8m2!3d33.6705658!4d-96.5935636!9m1!1b1!16s%2Fg%2F11l2cz4p91!3m7!1s0x864c897632db665d:0xbe1a54ed55193c88!8m2!3d33.6705658!4d-96.5935636!9m1!1b1!16s%2Fg%2F11l2cz4p91?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-accent inline-block"
+          >
             Leave a Review
-          </button>
+          </a>
         </div>
       </div>
     </section>
