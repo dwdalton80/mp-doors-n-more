@@ -6,7 +6,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { ChevronLeft, Star, X } from "lucide-react";
+import { ChevronLeft, Star, X, Search } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -129,11 +129,19 @@ export default function InteriorDoorsInStock() {
             {inStockDoors.map((door) => (
               <div key={door.id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-200 flex flex-col">
                 {/* Image */}
-                <div className="relative h-48 bg-gray-100 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setEnlargedImage(door.imageUrl)}>
+                <div className="relative h-48 bg-gray-100 overflow-hidden cursor-pointer group" onClick={() => setEnlargedImage(door.imageUrl)}>
                   <ProductImagePlaceholder
                     imageUrl={door.imageUrl}
                     title={door.title}
                   />
+                  {/* Hover overlay with click indicator */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-200 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <div className="bg-white text-[#a61c00] rounded-full p-3 shadow-lg">
+                        <Search className="w-6 h-6" />
+                      </div>
+                    </div>
+                  </div>
                   <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     In Stock
                   </div>
