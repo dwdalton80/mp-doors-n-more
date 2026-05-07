@@ -77,10 +77,10 @@ export default function ProductFlooring() {
           </Link>
           <div className="section-label text-[#a61c00] mb-3">Vinyl Flooring</div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white mb-4">
-            Durable Vinyl Flooring Solutions
+            Durable Flooring Solutions
           </h1>
           <p className="text-white/70 text-lg max-w-2xl">
-            Beautiful, waterproof vinyl flooring that's easy to maintain and budget-friendly. Perfect for any room in your home.
+            Beautiful, luxury flooring that's easy to maintain and budget-friendly. Perfect for any room in your home.
           </p>
         </div>
       </section>
