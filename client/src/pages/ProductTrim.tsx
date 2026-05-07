@@ -137,12 +137,34 @@ export default function ProductTrim() {
                     {/* Available Brands */}
                     <div className="mb-6">
                       <p className="text-xs font-semibold text-gray-700 mb-2">Available Brands:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {product.brands.map((brand) => (
-                          <span key={brand} className="inline-block bg-[#2D4A6B]/10 text-[#2D4A6B] text-xs font-label px-3 py-1 rounded">
-                            {brand}
-                          </span>
-                        ))}
+                      <div className="flex flex-wrap gap-3">
+                        {product.brands.map((brand) => {
+                          const brandMap: Record<string, { logo: string; url: string }> = {
+                            'Novo': { logo: '/manus-storage/novo_logo.png', url: 'https://www.novotrim.com' },
+                            'Woodgrain': { logo: '/manus-storage/woodgrain_logo.png', url: 'https://woodgrain.com' },
+                          };
+                          const brandInfo = brandMap[brand];
+                          return (
+                            <a
+                              key={brand}
+                              href={brandInfo?.url || '#'}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md transition-all duration-200 h-10"
+                              title={`Visit ${brand} website`}
+                            >
+                              {brandInfo?.logo ? (
+                                <img
+                                  src={brandInfo.logo}
+                                  alt={brand}
+                                  className="h-6 object-contain"
+                                />
+                              ) : (
+                                <span className="text-xs font-label text-[#2D4A6B] text-center px-2">{brand}</span>
+                              )}
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
 

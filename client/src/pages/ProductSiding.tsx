@@ -129,12 +129,40 @@ export default function ProductSiding() {
                     {/* Brands */}
                     <div className="mb-6">
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-2">Available Brands:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {product.brands.map((brand) => (
-                          <span key={brand} className="inline-block bg-[#2D4A6B]/10 text-[#2D4A6B] text-xs font-label px-3 py-1 rounded">
-                            {brand}
-                          </span>
-                        ))}
+                      <div className="flex flex-wrap gap-3">
+                        {product.brands.map((brand) => {
+                          const brandMap: Record<string, { logo: string; url: string }> = {
+                            'LP SmartSide': { logo: '/manus-storage/lp_smartside_logo.png', url: 'https://www.lpcorp.com' },
+                            'James Hardie': { logo: '/manus-storage/james_hardie_logo.png', url: 'https://www.jameshardie.com' },
+                            'Nichiha': { logo: '/manus-storage/nichiha_logo.png', url: 'https://www.nichiha.com' },
+                            'Certainteed': { logo: '/manus-storage/certainteed_logo.png', url: 'https://www.certainteed.com' },
+                            'GAF': { logo: '/manus-storage/gaf_logo.png', url: 'https://www.gaf.com' },
+                            'Owens Corning': { logo: '/manus-storage/owens_corning_logo.png', url: 'https://www.owenscorning.com' },
+                            'Malarkey': { logo: '/manus-storage/malarkey_logo.png', url: 'https://www.malarkeyroofing.com' },
+                            'GAF Timberline': { logo: '/manus-storage/gaf_logo.png', url: 'https://www.gaf.com' },
+                          };
+                          const brandInfo = brandMap[brand];
+                          return (
+                            <a
+                              key={brand}
+                              href={brandInfo?.url || '#'}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md transition-all duration-200 h-12"
+                              title={`Visit ${brand} website`}
+                            >
+                              {brandInfo?.logo ? (
+                                <img
+                                  src={brandInfo.logo}
+                                  alt={brand}
+                                  className="h-8 object-contain"
+                                />
+                              ) : (
+                                <span className="text-xs font-label text-[#2D4A6B] text-center px-2">{brand}</span>
+                              )}
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
 
