@@ -22,7 +22,7 @@ const inStockDoors = [
     description: "Classic 6-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$89 - $129",
     quantity: "12 in stock",
-    features: ["Pre-hung", "Adjustable frame", "Hardware included", "Various finishes"],
+    features: ["Pre hung", "Various finishes", "All sizes available"],
     rating: 5,
   },
   {
@@ -33,7 +33,7 @@ const inStockDoors = [
     description: "Santa Fe hollow core door for a modern, clean look. Perfect for interior rooms.",
     price: "$149 - $199",
     quantity: "8 in stock",
-    features: ["Pre-hung", "Adjustable frame", "Various finishes", "Smooth surface"],
+    features: ["Pre hung", "Various finishes", "All sizes available"],
     rating: 5,
   },
   {
@@ -44,7 +44,7 @@ const inStockDoors = [
     description: "Classic 2-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$79 - $119",
     quantity: "15 in stock",
-    features: ["Pre-hung", "All sizes available", "Various finishes", "Smooth operation"],
+    features: ["Pre hung", "Various finishes", "All sizes available"],
     rating: 5,
   },
   {
@@ -55,7 +55,7 @@ const inStockDoors = [
     description: "Classic 2-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$199 - $299",
     quantity: "6 in stock",
-    features: ["Pre-hung", "All sizes available", "Various finishes", "Elegant design"],
+    features: ["Pre hung", "Various finishes", "All sizes available"],
     rating: 5,
   },
   {
@@ -66,7 +66,7 @@ const inStockDoors = [
     description: "Modern pocket sliding doors that disappear into the wall. Perfect for open concept living.",
     price: "$249 - $349",
     quantity: "5 in stock",
-    features: ["Pre-hung", "All sizes available", "Various finishes", "Contemporary style"],
+    features: ["Pre hung", "Various finishes", "All sizes available"],
     rating: 5,
   },
   {
@@ -77,7 +77,7 @@ const inStockDoors = [
     description: "Trendy barn-style sliding doors with rustic charm. Great for farmhouse design.",
     price: "$179 - $249",
     quantity: "10 in stock",
-    features: ["Rustic design", "Sliding hardware", "Durable wood", "Farmhouse style"],
+    features: ["Pre hung", "Various finishes", "All sizes available"],
     rating: 5,
   },
 ];
