@@ -4,9 +4,9 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { ChevronLeft, Star } from "lucide-react";
+import { ChevronLeft, Star, X } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -17,7 +17,7 @@ const inStockDoors = [
   {
     id: "hollow-core-6panel",
     title: "Hollow Core 6-Panel",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
+    imageUrl: "/manus-storage/07662845.jpg_61295038.avif",
     brand: "Jeld-Wen",
     description: "Classic 6-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$89 - $129",
@@ -83,6 +83,8 @@ const inStockDoors = [
 ];
 
 export default function InteriorDoorsInStock() {
+  const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+
   useEffect(() => {
     injectSchema({
       "@context": "https://schema.org",
@@ -138,7 +140,7 @@ export default function InteriorDoorsInStock() {
             {inStockDoors.map((door) => (
               <div key={door.id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-200">
                 {/* Image */}
-                <div className="relative h-48 bg-gray-100 overflow-hidden">
+                <div className="relative h-48 bg-gray-100 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setEnlargedImage(door.imageUrl)}>
                   <ProductImagePlaceholder
                     imageUrl={door.imageUrl}
                     title={door.title}
@@ -219,6 +221,21 @@ export default function InteriorDoorsInStock() {
           </div>
         </div>
       </section>
+
+      {/* ── IMAGE MODAL ── */}
+      {enlargedImage && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setEnlargedImage(null)}>
+          <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setEnlargedImage(null)}
+              className="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition-colors z-10"
+            >
+              <X className="w-6 h-6 text-black" />
+            </button>
+            <img src={enlargedImage} alt="Enlarged product" className="w-full h-auto rounded-lg" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
