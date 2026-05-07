@@ -190,8 +190,8 @@ export default function InteriorDoorsInStock() {
       {/* ── CTA SECTION ── */}
       <section className="py-16 md:py-24 bg-secondary text-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Upgrade Your Interior?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1e3450]">Ready to Upgrade Your Interior?</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-[#1e3450]">
             Visit MP Doors & More in Sherman, TX to see our full selection of in-stock interior doors. Our team is ready to help you find the perfect doors for your home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
