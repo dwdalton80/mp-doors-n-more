@@ -146,7 +146,7 @@ export default function ProductDoors() {
                             'Trimlite': { logo: '/manus-storage/trimlite_cf6ce7db.png', url: 'https://trimlite.com/' },
                             'Frame Port': { logo: '/manus-storage/frameport_4e20b9d2.jpg', url: 'https://www.frameportamerica.com' },
                             'Thermatru': { logo: '/manus-storage/thermatru_7ccab93c.png', url: 'https://www.thermatru.com' },
-                            'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg', url: 'https://www.glasscraftdoor.com' },
+                            'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg', url: 'https://glasscraft.com/' },
                             'Jeld-Wen': { logo: '/manus-storage/jeldwen-new_5d78f820.png', url: 'https://www.jeldwen.com' },
                             'Anderson': { logo: '/manus-storage/anderson_fa14d188.png', url: 'https://www.andersenwindows.com' },
                             'Larson': { logo: '/manus-storage/larson_aaf43b2e.png', url: 'https://www.larsonmfg.com' },
