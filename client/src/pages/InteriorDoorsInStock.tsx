@@ -98,7 +98,7 @@ export default function InteriorDoorsInStock() {
 
       {/* ── HERO SECTION ── */}
       <section
-        className="relative min-h-96 flex items-center justify-center bg-cover bg-center"
+        className="relative min-h-96 flex items-center justify-center bg-cover bg-center pt-20 md:pt-24"
         style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
