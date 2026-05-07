@@ -39,7 +39,7 @@ const inStockDoors = [
   {
     id: "bifold-closet",
     title: "Two-Panel Arch Top Hollow Core",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
+    imageUrl: "/manus-storage/primed-white-masonite-slab-doors-33334-e1_600.jpg_4d0837d9.avif",
     brand: "Trimlite",
     description: "Classic 2-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$79 - $119",
