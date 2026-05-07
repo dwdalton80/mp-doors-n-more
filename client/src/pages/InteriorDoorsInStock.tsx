@@ -28,7 +28,7 @@ const inStockDoors = [
   {
     id: "solid-core-flush",
     title: "Santa Fe Hollow Core",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
+    imageUrl: "/manus-storage/primed-jeld-wen-single-prehung-doors-thdjw136700668-e1_600.jpg_a36eb55b.avif",
     brand: "Masonite",
     description: "Santa Fe hollow core door for a modern, clean look. Perfect for interior rooms.",
     price: "$149 - $199",
