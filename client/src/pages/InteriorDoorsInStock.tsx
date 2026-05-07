@@ -61,7 +61,7 @@ const inStockDoors = [
   {
     id: "pocket-slide",
     title: "5 Panel Raised Hollow Core",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
+    imageUrl: "/manus-storage/light-gray-jeld-wen-slab-doors-thdjw137400019-40_600.jpg_72f99564.avif",
     brand: "Frame Port",
     description: "Modern pocket sliding doors that disappear into the wall. Perfect for open concept living.",
     price: "$249 - $349",
