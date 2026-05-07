@@ -18,6 +18,7 @@ const inStockDoors = [
     id: "hollow-core-6panel",
     title: "Hollow Core 6-Panel",
     imageUrl: "/manus-storage/07662845.jpg_61295038.avif",
+    imageUrl2: "/manus-storage/primed-jeld-wen-single-prehung-doors-thdjw136700668-e1_600.jpg_a36eb55b.avif",
     brand: "Jeld-Wen",
     description: "Classic 6-panel design with timeless appeal. Ideal for creating a traditional look in any room.",
     price: "$89 - $129",
@@ -29,6 +30,7 @@ const inStockDoors = [
     id: "solid-core-flush",
     title: "Santa Fe Hollow Core",
     imageUrl: "/manus-storage/primed-jeld-wen-single-prehung-doors-thdjw136700668-e1_600.jpg_a36eb55b.avif",
+    imageUrl2: "/manus-storage/primed-white-masonite-slab-doors-33334-e1_600.jpg_4d0837d9.avif",
     brand: "Masonite",
     description: "Modern Santa Fe style with clean lines and contemporary design. Perfect for contemporary interiors.",
     price: "$149 - $199",
@@ -40,6 +42,7 @@ const inStockDoors = [
     id: "bifold-closet",
     title: "Two-Panel Arch Top Hollow Core",
     imageUrl: "/manus-storage/primed-white-masonite-slab-doors-33334-e1_600.jpg_4d0837d9.avif",
+    imageUrl2: "/manus-storage/09738639.jpg_a8a4f3c4.avif",
     brand: "Woodgrain",
     description: "Elegant arch top design adds architectural interest. Perfect for creating a sophisticated, refined entrance.",
     price: "$79 - $119",
@@ -51,6 +54,7 @@ const inStockDoors = [
     id: "french-glass",
     title: "2-Panel Square Top Hollow Core",
     imageUrl: "/manus-storage/09738639.jpg_a8a4f3c4.avif",
+    imageUrl2: "/manus-storage/light-gray-jeld-wen-slab-doors-thdjw137400019-40_600.jpg_72f99564.avif",
     brand: "Woodgrain",
     description: "Clean square top design with classic 2-panel styling. Versatile option for any interior space.",
     price: "$199 - $299",
@@ -62,6 +66,7 @@ const inStockDoors = [
     id: "pocket-slide",
     title: "5 Panel Raised Hollow Core",
     imageUrl: "/manus-storage/light-gray-jeld-wen-slab-doors-thdjw137400019-40_600.jpg_72f99564.avif",
+    imageUrl2: "/manus-storage/07662845.jpg_61295038.avif",
     brand: "Jeld-Wen",
     description: "Elegant 5-panel raised design with traditional charm. Adds character and sophistication to any room.",
     price: "$249 - $349",
@@ -74,6 +79,7 @@ const inStockDoors = [
 export default function InteriorDoorsInStock() {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<typeof inStockDoors[0] | null>(null);
+  const [showSecondImage, setShowSecondImage] = useState(false);
 
   useEffect(() => {
     injectSchema({
@@ -225,15 +231,40 @@ export default function InteriorDoorsInStock() {
         <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setSelectedProduct(null)}>
           <div className="relative max-w-2xl w-full bg-white rounded-lg" onClick={(e) => e.stopPropagation()}>
             <button
-              onClick={() => setSelectedProduct(null)}
+              onClick={() => {
+                setSelectedProduct(null);
+                setShowSecondImage(false);
+              }}
               className="absolute top-4 right-4 bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition-colors z-10"
             >
               <X className="w-6 h-6 text-black" />
             </button>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
               {/* Product Image */}
-              <div className="flex items-center justify-center">
-                <img src={selectedProduct.imageUrl} alt={selectedProduct.title} className="w-full h-auto rounded-lg" />
+              <div className="flex flex-col items-center justify-center gap-4">
+                <img src={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl} alt={selectedProduct.title} className="w-full h-auto rounded-lg" />
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setShowSecondImage(false)}
+                    className={`px-4 py-2 rounded font-semibold text-sm transition-colors ${
+                      !showSecondImage
+                        ? 'bg-[#a61c00] text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }`}
+                  >
+                    Image 1
+                  </button>
+                  <button
+                    onClick={() => setShowSecondImage(true)}
+                    className={`px-4 py-2 rounded font-semibold text-sm transition-colors ${
+                      showSecondImage
+                        ? 'bg-[#a61c00] text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }`}
+                  >
+                    Image 2
+                  </button>
+                </div>
               </div>
               {/* Product Details */}
               <div className="flex flex-col justify-between">
