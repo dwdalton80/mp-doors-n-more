@@ -147,7 +147,7 @@ export default function ProductTrim() {
                           return (
                             <div
                               key={brand}
-                              className="relative inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md transition-all duration-200 h-10 group cursor-default"
+                              className="relative inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md hover:scale-110 transition-all duration-200 h-10 group cursor-default"
                             >
                               {brandInfo?.logo ? (
                                 <>

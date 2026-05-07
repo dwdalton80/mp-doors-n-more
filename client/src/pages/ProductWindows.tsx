@@ -150,7 +150,7 @@ export default function ProductWindows() {
                               href={brandInfo?.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md transition-all duration-200 h-12"
+                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md hover:scale-110 transition-all duration-200 h-12"
                               title={`Visit ${brand} website`}
                             >
                               <img

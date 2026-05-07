@@ -158,7 +158,7 @@ export default function ProductDoors() {
                               href={brandInfo?.url || '#'}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-center h-12 px-3 bg-white rounded border border-gray-200 hover:border-[#a61c00] hover:shadow-md transition"
+                              className="flex items-center justify-center h-12 px-3 bg-white rounded border border-gray-200 hover:border-[#a61c00] hover:shadow-md hover:scale-110 transition-all duration-200"
                               title={`Visit ${brand} website`}
                             >
                               {brandInfo?.logo ? (
