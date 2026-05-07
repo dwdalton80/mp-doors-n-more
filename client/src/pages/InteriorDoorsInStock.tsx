@@ -144,7 +144,7 @@ export default function InteriorDoorsInStock() {
                   <div className="flex items-start justify-between mb-2">
                     <div>
                       <p className="text-[#a61c00] text-xs font-bold tracking-widest mb-1">{door.brand}</p>
-                      <h3 className="text-xl font-bold text-secondary mb-2">{door.title}</h3>
+                      <h3 className="text-xl font-bold text-[#a61c00] mb-2">{door.title}</h3>
                     </div>
                     <div className="flex gap-1">
                       {[...Array(door.rating)].map((_, i) => (
