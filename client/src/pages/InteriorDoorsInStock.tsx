@@ -203,7 +203,7 @@ export default function InteriorDoorsInStock() {
             </a>
             <Link
               href="/contact"
-              className="inline-block bg-white hover:bg-gray-100 text-secondary px-8 py-3 rounded font-bold transition-colors"
+              className="inline-block bg-white hover:bg-gray-100 text-[#1e3450] px-8 py-3 rounded font-bold transition-colors"
             >
               Contact Us
             </Link>
