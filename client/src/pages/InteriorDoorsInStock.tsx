@@ -242,7 +242,7 @@ export default function InteriorDoorsInStock() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
               {/* Product Image */}
               <div className="flex flex-col items-center justify-center gap-4">
-                <img src={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl} alt={selectedProduct.title} className="w-full h-auto rounded-lg" style={{maxHeight: '500px', objectFit: 'contain'}} />
+                <img key={showSecondImage ? 'image2' : 'image1'} src={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl} alt={selectedProduct.title} className="w-full h-auto rounded-lg transition-opacity duration-500 ease-in-out" style={{maxHeight: '500px', objectFit: 'contain'}} />
                 <div className="flex gap-2">
                   <button
                     onClick={() => setShowSecondImage(false)}
