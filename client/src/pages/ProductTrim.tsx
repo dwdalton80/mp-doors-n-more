@@ -140,8 +140,8 @@ export default function ProductTrim() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string; url: string }> = {
-                            'Novo': { logo: '/manus-storage/novo_logo.png', url: 'https://www.novotrim.com' },
-                            'Woodgrain': { logo: '/manus-storage/woodgrain_logo.png', url: 'https://woodgrain.com' },
+                            'Novo': { logo: '/manus-storage/novo_logo_ce6a589d.jpg', url: 'https://www.novotrim.com' },
+                            'Woodgrain': { logo: '/manus-storage/woodgrain_logo_ca65de93.jpg', url: 'https://woodgrain.com' },
                           };
                           const brandInfo = brandMap[brand];
                           return (
