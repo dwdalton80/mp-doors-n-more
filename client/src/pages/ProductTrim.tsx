@@ -147,9 +147,12 @@ export default function ProductTrim() {
                     </div>
 
                     {/* CTA */}
-                    <a href="tel:9034211305" className="block w-full text-center bg-[#a61c00] text-white py-2 rounded font-semibold hover:bg-[#8a1700] transition">
-                      Call for Pricing
-                    </a>
+                    <Link
+                      href="/contact"
+                      className="block w-full text-center bg-[#a61c00] text-white py-2 rounded font-semibold hover:bg-[#8a1700] transition"
+                    >
+                      Get Pricing
+                    </Link>
                   </div>
                 </div>
               </div>
