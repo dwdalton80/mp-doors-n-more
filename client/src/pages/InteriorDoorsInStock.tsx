@@ -127,7 +127,7 @@ export default function InteriorDoorsInStock() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {inStockDoors.map((door) => (
-              <div key={door.id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-200">
+              <div key={door.id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-200 flex flex-col">
                 {/* Image */}
                 <div className="relative h-48 bg-gray-100 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setEnlargedImage(door.imageUrl)}>
                   <ProductImagePlaceholder
@@ -140,7 +140,7 @@ export default function InteriorDoorsInStock() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-start justify-between mb-2">
                     <div>
                       <p className="text-[#a61c00] text-xs font-bold tracking-widest mb-1">{door.brand}</p>
