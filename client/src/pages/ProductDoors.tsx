@@ -147,7 +147,7 @@ export default function ProductDoors() {
                             'Frame Port': '/manus-storage/frameport_4e20b9d2.jpg',
                             'Thermatru': '/manus-storage/thermatru_7ccab93c.png',
                             'Glass Craft': '/manus-storage/glasscraft_619348f3.jpg',
-                            'Jeld-Wen': '/manus-storage/jeldwen_5ebf29c5.png',
+                            'Jeld-Wen': '/manus-storage/jeldwen-new_5d78f820.png',
                             'Anderson': '/manus-storage/anderson_fa14d188.png',
                             'Larson': '/manus-storage/larson_aaf43b2e.png',
                           };
