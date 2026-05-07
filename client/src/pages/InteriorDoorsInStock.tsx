@@ -164,12 +164,6 @@ export default function InteriorDoorsInStock() {
 
                   <p className="text-gray-600 text-sm mb-4">{door.description}</p>
 
-                  {/* Price & Quantity */}
-                  <div className="mb-4 pb-4 border-b border-gray-200">
-                    <p className="text-2xl font-bold text-secondary mb-1">{door.price}</p>
-                    <p className="text-green-600 font-semibold text-sm">{door.quantity}</p>
-                  </div>
-
                   {/* Features */}
                   <ul className="mb-6 space-y-2">
                     {door.features.map((feature, idx) => (
