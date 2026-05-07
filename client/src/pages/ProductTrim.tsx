@@ -161,50 +161,57 @@ export default function ProductTrim() {
       {/* ── REVIEWS SECTION ── */}
       <ReviewsSection
         productName="Trim & Molding"
-        averageRating={4.9}
-        reviewCount={62}
+        averageRating={5.0}
+        reviewCount={7}
         reviews={[
           {
             id: "1",
-            author: "William A.",
+            author: "Josh Cole",
             rating: 5,
-            date: "2 weeks ago",
-            text: "Beautiful trim and molding! Finished my home renovation perfectly. Great quality and prices.",
+            date: "9 months ago",
+            text: "I absolutely love this place! Amazing people and amazing products! Rafael is wonderful along with his whole crew! They always go above and beyond in helping me out. I would certainly recommend them to anyone",
           },
           {
             id: "2",
-            author: "Nancy G.",
+            author: "Howard Cochran",
             rating: 5,
-            date: "1 month ago",
-            text: "Excellent crown molding selection! My rooms look so much more elegant. Very satisfied!",
+            date: "9 months ago",
+            text: "Rafael took very good care of us. I live quite a ways away from Sherman and he saw to it that the two doors I was buying would be ready for me when I got there. Excellent customer service.",
           },
           {
             id: "3",
-            author: "Charles E.",
+            author: "Layth Fadhil",
             rating: 5,
-            date: "3 weeks ago",
-            text: "High-quality trim boards at competitive prices. Perfect for my wainscoting project.",
+            date: "8 months ago",
+            text: "Amazing door selections and great customer service. You are treated like family in this place and they are ready to answer all of your questions. Give them a call",
           },
           {
             id: "4",
-            author: "Margaret S.",
+            author: "Jenn Smith",
             rating: 5,
-            date: "6 weeks ago",
-            text: "Beautiful baseboards and trim! Transformed my home. Excellent service and quality.",
+            date: "4 months ago",
+            text: "Great place. Very friendly and helpful",
           },
           {
             id: "5",
-            author: "Donald J.",
+            author: "Monica Mackey",
             rating: 5,
-            date: "2 months ago",
-            text: "Great selection of trim and molding. Very professional and helpful staff.",
+            date: "a year ago",
+            text: "Beautiful doors and wonderful customer service! If you need any doors check this place out!",
           },
           {
             id: "6",
-            author: "Barbara L.",
-            rating: 4,
-            date: "1 month ago",
-            text: "Good quality trim options. Happy with my purchase and the customer service.",
+            author: "el oso",
+            rating: 5,
+            date: "a month ago",
+            text: "Excellent service from these guys! We have been there a handful of times and never disappointed. Thank you MP Doors and More!",
+          },
+          {
+            id: "7",
+            author: "Julie Cruz",
+            rating: 5,
+            date: "a month ago",
+            text: "Nice place great prices very courteous thanks a million.",
           },
         ]}
       />

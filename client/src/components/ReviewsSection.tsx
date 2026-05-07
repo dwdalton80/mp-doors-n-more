@@ -28,6 +28,14 @@ export default function ReviewsSection({
   reviewCount,
   reviews,
 }: ReviewsSectionProps) {
+  // Get 3 random reviews
+  const getRandomReviews = (reviewList: Review[], count: number) => {
+    const shuffled = [...reviewList].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, Math.min(count, reviewList.length));
+  };
+
+  const displayedReviews = getRandomReviews(reviews, 3);
+
   useEffect(() => {
     // Inject AggregateRating schema
     const schema = {
@@ -88,7 +96,7 @@ export default function ReviewsSection({
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review) => (
+          {displayedReviews.map((review) => (
             <ReviewCard key={review.id} review={review} />
           ))}
         </div>

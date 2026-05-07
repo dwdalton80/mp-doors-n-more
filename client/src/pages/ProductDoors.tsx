@@ -165,50 +165,57 @@ export default function ProductDoors() {
       {/* ── REVIEWS SECTION ── */}
       <ReviewsSection
         productName="Doors"
-        averageRating={4.95}
-        reviewCount={127}
+        averageRating={5.0}
+        reviewCount={7}
         reviews={[
           {
             id: "1",
-            author: "James M.",
+            author: "Josh Cole",
             rating: 5,
-            date: "2 weeks ago",
-            text: "Excellent quality entry doors at great prices. The staff was very helpful in choosing the right style for my home. Installation was smooth and the doors look fantastic!",
+            date: "9 months ago",
+            text: "I absolutely love this place! Amazing people and amazing products! Rafael is wonderful along with his whole crew! They always go above and beyond in helping me out. I would certainly recommend them to anyone",
           },
           {
             id: "2",
-            author: "Sarah T.",
+            author: "Howard Cochran",
             rating: 5,
-            date: "1 month ago",
-            text: "I purchased interior doors for my renovation project. The quality is outstanding and the prices are unbeatable. Highly recommend MP Doors & More!",
+            date: "9 months ago",
+            text: "Rafael took very good care of us. I live quite a ways away from Sherman and he saw to it that the two doors I was buying would be ready for me when I got there. Excellent customer service.",
           },
           {
             id: "3",
-            author: "David K.",
+            author: "Layth Fadhil",
             rating: 5,
-            date: "3 weeks ago",
-            text: "Great selection of patio doors. The team helped me find the perfect match for my home. Very professional and knowledgeable.",
+            date: "8 months ago",
+            text: "Amazing door selections and great customer service. You are treated like family in this place and they are ready to answer all of your questions. Give them a call",
           },
           {
             id: "4",
-            author: "Maria L.",
+            author: "Jenn Smith",
             rating: 5,
-            date: "1 month ago",
-            text: "Best prices I found for storm doors. Quality is excellent and the customer service is top-notch. Will definitely shop here again!",
+            date: "4 months ago",
+            text: "Great place. Very friendly and helpful",
           },
           {
             id: "5",
-            author: "Robert H.",
+            author: "Monica Mackey",
             rating: 5,
-            date: "2 months ago",
-            text: "Purchased multiple doors for my property. Impressed with the quality and attention to detail. Great local business!",
+            date: "a year ago",
+            text: "Beautiful doors and wonderful customer service! If you need any doors check this place out!",
           },
           {
             id: "6",
-            author: "Jennifer P.",
+            author: "el oso",
             rating: 5,
-            date: "6 weeks ago",
-            text: "Amazing selection and competitive pricing. The staff took time to understand my needs and recommend the best options. Very satisfied!",
+            date: "a month ago",
+            text: "Excellent service from these guys! We have been there a handful of times and never disappointed. Thank you MP Doors and More!",
+          },
+          {
+            id: "7",
+            author: "Julie Cruz",
+            rating: 5,
+            date: "a month ago",
+            text: "Nice place great prices very courteous thanks a million.",
           },
         ]}
       />

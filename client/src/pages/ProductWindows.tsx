@@ -164,50 +164,57 @@ export default function ProductWindows() {
       {/* ── REVIEWS SECTION ── */}
       <ReviewsSection
         productName="Windows"
-        averageRating={4.9}
-        reviewCount={98}
+        averageRating={5.0}
+        reviewCount={7}
         reviews={[
           {
             id: "1",
-            author: "Linda C.",
+            author: "Josh Cole",
             rating: 5,
-            date: "3 weeks ago",
-            text: "Beautiful energy-efficient windows! My energy bills have already decreased. Great quality and excellent customer service.",
+            date: "9 months ago",
+            text: "I absolutely love this place! Amazing people and amazing products! Rafael is wonderful along with his whole crew! They always go above and beyond in helping me out. I would certainly recommend them to anyone",
           },
           {
             id: "2",
-            author: "Michael R.",
+            author: "Howard Cochran",
             rating: 5,
-            date: "1 month ago",
-            text: "Replaced all windows in my home. The selection is fantastic and prices are very competitive. Highly satisfied!",
+            date: "9 months ago",
+            text: "Rafael took very good care of us. I live quite a ways away from Sherman and he saw to it that the two doors I was buying would be ready for me when I got there. Excellent customer service.",
           },
           {
             id: "3",
-            author: "Patricia W.",
+            author: "Layth Fadhil",
             rating: 5,
-            date: "2 weeks ago",
-            text: "Excellent windows with great craftsmanship. The team helped me choose the perfect style for my home.",
+            date: "8 months ago",
+            text: "Amazing door selections and great customer service. You are treated like family in this place and they are ready to answer all of your questions. Give them a call",
           },
           {
             id: "4",
-            author: "Thomas B.",
+            author: "Jenn Smith",
             rating: 5,
-            date: "6 weeks ago",
-            text: "Best window prices I found locally. Quality is outstanding and installation was professional.",
+            date: "4 months ago",
+            text: "Great place. Very friendly and helpful",
           },
           {
             id: "5",
-            author: "Angela M.",
+            author: "Monica Mackey",
             rating: 5,
-            date: "2 months ago",
-            text: "Very impressed with the window selection and knowledgeable staff. Will recommend to friends!",
+            date: "a year ago",
+            text: "Beautiful doors and wonderful customer service! If you need any doors check this place out!",
           },
           {
             id: "6",
-            author: "Christopher D.",
-            rating: 4,
-            date: "1 month ago",
-            text: "Great windows at good prices. Very happy with my purchase and the service received.",
+            author: "el oso",
+            rating: 5,
+            date: "a month ago",
+            text: "Excellent service from these guys! We have been there a handful of times and never disappointed. Thank you MP Doors and More!",
+          },
+          {
+            id: "7",
+            author: "Julie Cruz",
+            rating: 5,
+            date: "a month ago",
+            text: "Nice place great prices very courteous thanks a million.",
           },
         ]}
       />

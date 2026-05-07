@@ -156,50 +156,57 @@ export default function ProductFlooring() {
       {/* ── REVIEWS SECTION ── */}
       <ReviewsSection
         productName="Flooring"
-        averageRating={4.85}
-        reviewCount={84}
+        averageRating={5.0}
+        reviewCount={7}
         reviews={[
           {
             id: "1",
-            author: "Karen S.",
+            author: "Josh Cole",
             rating: 5,
-            date: "2 weeks ago",
-            text: "Amazing luxury vinyl flooring! Looks beautiful and is so easy to maintain. Great value for the price.",
+            date: "9 months ago",
+            text: "I absolutely love this place! Amazing people and amazing products! Rafael is wonderful along with his whole crew! They always go above and beyond in helping me out. I would certainly recommend them to anyone",
           },
           {
             id: "2",
-            author: "Kevin J.",
+            author: "Howard Cochran",
             rating: 5,
-            date: "1 month ago",
-            text: "Installed vinyl flooring throughout my home. Quality is excellent and the prices are unbeatable!",
+            date: "9 months ago",
+            text: "Rafael took very good care of us. I live quite a ways away from Sherman and he saw to it that the two doors I was buying would be ready for me when I got there. Excellent customer service.",
           },
           {
             id: "3",
-            author: "Nicole T.",
+            author: "Layth Fadhil",
             rating: 5,
-            date: "3 weeks ago",
-            text: "Beautiful flooring options! The staff helped me find the perfect style for my kitchen. Very satisfied!",
+            date: "8 months ago",
+            text: "Amazing door selections and great customer service. You are treated like family in this place and they are ready to answer all of your questions. Give them a call",
           },
           {
             id: "4",
-            author: "Brandon L.",
+            author: "Jenn Smith",
             rating: 5,
-            date: "6 weeks ago",
-            text: "Best flooring prices in town. Quality is top-notch and customer service is excellent.",
+            date: "4 months ago",
+            text: "Great place. Very friendly and helpful",
           },
           {
             id: "5",
-            author: "Emily H.",
-            rating: 4,
-            date: "2 months ago",
-            text: "Great selection of vinyl flooring. Very happy with my purchase and the professional service.",
+            author: "Monica Mackey",
+            rating: 5,
+            date: "a year ago",
+            text: "Beautiful doors and wonderful customer service! If you need any doors check this place out!",
           },
           {
             id: "6",
-            author: "Steven W.",
+            author: "el oso",
             rating: 5,
-            date: "1 month ago",
-            text: "Fantastic flooring selection and competitive pricing. Will definitely shop here again!",
+            date: "a month ago",
+            text: "Excellent service from these guys! We have been there a handful of times and never disappointed. Thank you MP Doors and More!",
+          },
+          {
+            id: "7",
+            author: "Julie Cruz",
+            rating: 5,
+            date: "a month ago",
+            text: "Nice place great prices very courteous thanks a million.",
           },
         ]}
       />

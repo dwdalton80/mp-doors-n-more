@@ -156,50 +156,57 @@ export default function ProductSiding() {
       {/* ── REVIEWS SECTION ── */}
       <ReviewsSection
         productName="Siding & Shingles"
-        averageRating={4.88}
-        reviewCount={76}
+        averageRating={5.0}
+        reviewCount={7}
         reviews={[
           {
             id: "1",
-            author: "Richard M.",
+            author: "Josh Cole",
             rating: 5,
-            date: "2 weeks ago",
-            text: "Excellent siding quality! My home looks brand new. Great prices and professional service.",
+            date: "9 months ago",
+            text: "I absolutely love this place! Amazing people and amazing products! Rafael is wonderful along with his whole crew! They always go above and beyond in helping me out. I would certainly recommend them to anyone",
           },
           {
             id: "2",
-            author: "Donna B.",
+            author: "Howard Cochran",
             rating: 5,
-            date: "1 month ago",
-            text: "Beautiful architectural shingles! Transformed the look of my roof. Very satisfied with the quality.",
+            date: "9 months ago",
+            text: "Rafael took very good care of us. I live quite a ways away from Sherman and he saw to it that the two doors I was buying would be ready for me when I got there. Excellent customer service.",
           },
           {
             id: "3",
-            author: "Gary P.",
+            author: "Layth Fadhil",
             rating: 5,
-            date: "3 weeks ago",
-            text: "Best siding and shingles selection in the area. Competitive pricing and great customer support.",
+            date: "8 months ago",
+            text: "Amazing door selections and great customer service. You are treated like family in this place and they are ready to answer all of your questions. Give them a call",
           },
           {
             id: "4",
-            author: "Diane C.",
+            author: "Jenn Smith",
             rating: 5,
-            date: "6 weeks ago",
-            text: "Fantastic products and excellent service. My home exterior looks amazing!",
+            date: "4 months ago",
+            text: "Great place. Very friendly and helpful",
           },
           {
             id: "5",
-            author: "Mark T.",
+            author: "Monica Mackey",
             rating: 5,
-            date: "2 months ago",
-            text: "High-quality siding at great prices. Very impressed with the entire experience.",
+            date: "a year ago",
+            text: "Beautiful doors and wonderful customer service! If you need any doors check this place out!",
           },
           {
             id: "6",
-            author: "Susan R.",
-            rating: 4,
-            date: "1 month ago",
-            text: "Great selection of shingles and siding. Happy with my purchase and the service.",
+            author: "el oso",
+            rating: 5,
+            date: "a month ago",
+            text: "Excellent service from these guys! We have been there a handful of times and never disappointed. Thank you MP Doors and More!",
+          },
+          {
+            id: "7",
+            author: "Julie Cruz",
+            rating: 5,
+            date: "a month ago",
+            text: "Nice place great prices very courteous thanks a million.",
           },
         ]}
       />
