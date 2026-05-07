@@ -132,14 +132,14 @@ export default function ProductSiding() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string; url: string }> = {
-                            'LP SmartSide': { logo: '/manus-storage/lp_smartside_logo.png', url: 'https://www.lpcorp.com' },
-                            'James Hardie': { logo: '/manus-storage/james_hardie_logo.png', url: 'https://www.jameshardie.com' },
-                            'Nichiha': { logo: '/manus-storage/nichiha_logo.png', url: 'https://www.nichiha.com' },
-                            'Certainteed': { logo: '/manus-storage/certainteed_logo.png', url: 'https://www.certainteed.com' },
-                            'GAF': { logo: '/manus-storage/gaf_logo.png', url: 'https://www.gaf.com' },
-                            'Owens Corning': { logo: '/manus-storage/owens_corning_logo.png', url: 'https://www.owenscorning.com' },
-                            'Malarkey': { logo: '/manus-storage/malarkey_logo.png', url: 'https://www.malarkeyroofing.com' },
-                            'GAF Timberline': { logo: '/manus-storage/gaf_logo.png', url: 'https://www.gaf.com' },
+                            'LP SmartSide': { logo: '/manus-storage/lp_smartside_logo_ccb283e1.png', url: 'https://www.lpcorp.com' },
+                            'James Hardie': { logo: '/manus-storage/james_hardie_logo_1322fa8e.png', url: 'https://www.jameshardie.com' },
+                            'Nichiha': { logo: '/manus-storage/nichiha_logo_6f73c5b7.webp', url: 'https://www.nichiha.com' },
+                            'Certainteed': { logo: '/manus-storage/certainteed_logo_5b6f3130.png', url: 'https://www.certainteed.com' },
+                            'GAF': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg', url: 'https://www.gaf.com' },
+                            'Owens Corning': { logo: '/manus-storage/owens_corning_logo_dfae2ce4.png', url: 'https://www.owenscorning.com' },
+                            'Malarkey': { logo: '/manus-storage/malarkey_logo_0d7e3d2e.png', url: 'https://www.malarkeyroofing.com' },
+                            'GAF Timberline': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg', url: 'https://www.gaf.com' },
                           };
                           const brandInfo = brandMap[brand];
                           return (
