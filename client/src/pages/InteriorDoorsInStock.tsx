@@ -69,17 +69,6 @@ const inStockDoors = [
     features: ["Pre hung", "Various finishes", "All sizes available"],
     rating: 5,
   },
-  {
-    id: "barn-style",
-    title: "Barn Style Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
-    brand: "Woodgrain",
-    description: "Trendy barn-style sliding doors with rustic charm. Great for farmhouse design.",
-    price: "$179 - $249",
-    quantity: "10 in stock",
-    features: ["Pre hung", "Various finishes", "All sizes available"],
-    rating: 5,
-  },
 ];
 
 export default function InteriorDoorsInStock() {
