@@ -288,10 +288,7 @@ export default function InteriorDoorsInStock() {
                       ))}
                     </ul>
                   </div>
-                  <div className="mb-6">
-                    <p className="text-lg font-bold text-[#a61c00] mb-2">{selectedProduct.price}</p>
-                    <p className="text-sm text-green-600 font-semibold">{selectedProduct.quantity}</p>
-                  </div>
+
                 </div>
                 <div className="flex gap-3">
                   <Link
