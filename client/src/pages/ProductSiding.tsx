@@ -131,36 +131,37 @@ export default function ProductSiding() {
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-2">Available Brands:</h4>
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
-                          const brandMap: Record<string, { logo: string; url: string }> = {
-                            'LP SmartSide': { logo: '/manus-storage/lp_smartside_logo_ccb283e1.png', url: 'https://www.lpcorp.com' },
-                            'James Hardie': { logo: '/manus-storage/james_hardie_logo_1322fa8e.png', url: 'https://www.jameshardie.com' },
-                            'Nichiha': { logo: '/manus-storage/nichiha_logo_6f73c5b7.webp', url: 'https://www.nichiha.com' },
-                            'Certainteed': { logo: '/manus-storage/certainteed_logo_5b6f3130.png', url: 'https://www.certainteed.com' },
-                            'GAF': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg', url: 'https://www.gaf.com' },
-                            'Owens Corning': { logo: '/manus-storage/owens_corning_logo_dfae2ce4.png', url: 'https://www.owenscorning.com' },
-                            'Malarkey': { logo: '/manus-storage/malarkey_logo_0d7e3d2e.png', url: 'https://www.malarkeyroofing.com' },
-                            'GAF Timberline': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg', url: 'https://www.gaf.com' },
+                          const brandMap: Record<string, { logo: string }> = {
+                            'LP SmartSide': { logo: '/manus-storage/lp_smartside_logo_ccb283e1.png' },
+                            'James Hardie': { logo: '/manus-storage/james_hardie_logo_1322fa8e.png' },
+                            'Nichiha': { logo: '/manus-storage/nichiha_logo_6f73c5b7.webp' },
+                            'Certainteed': { logo: '/manus-storage/certainteed_logo_5b6f3130.png' },
+                            'GAF': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg' },
+                            'Owens Corning': { logo: '/manus-storage/owens_corning_logo_dfae2ce4.png' },
+                            'Malarkey': { logo: '/manus-storage/malarkey_logo_0d7e3d2e.png' },
+                            'GAF Timberline': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg' },
                           };
                           const brandInfo = brandMap[brand];
                           return (
-                            <a
+                            <div
                               key={brand}
-                              href={brandInfo?.url || '#'}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md transition-all duration-200 h-12"
-                              title={`Visit ${brand} website`}
+                              className="relative inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md transition-all duration-200 h-12 group cursor-default"
                             >
                               {brandInfo?.logo ? (
-                                <img
-                                  src={brandInfo.logo}
-                                  alt={brand}
-                                  className="h-8 object-contain"
-                                />
+                                <>
+                                  <img
+                                    src={brandInfo.logo}
+                                    alt={brand}
+                                    className="h-8 object-contain"
+                                  />
+                                  <span className="absolute bottom-full mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                                    {brand}
+                                  </span>
+                                </>
                               ) : (
                                 <span className="text-xs font-label text-[#2D4A6B] text-center px-2">{brand}</span>
                               )}
-                            </a>
+                            </div>
                           );
                         })}
                       </div>
