@@ -27,46 +27,46 @@ const inStockDoors = [
   },
   {
     id: "solid-core-flush",
-    title: "Solid Core Flush Door",
+    title: "Santa Fe Hollow Core",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
     brand: "Masonite",
-    description: "Solid core flush doors for a modern, clean look. Excellent sound dampening.",
+    description: "Santa Fe hollow core door for a modern, clean look. Perfect for interior rooms.",
     price: "$149 - $199",
     quantity: "8 in stock",
-    features: ["Sound dampening", "Solid core construction", "Pre-finished", "Smooth surface"],
+    features: ["Pre-hung", "Adjustable frame", "Various finishes", "Smooth surface"],
     rating: 5,
   },
   {
     id: "bifold-closet",
-    title: "Bifold Closet Doors",
+    title: "Two-Panel Arch Top Hollow Core",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
     brand: "Trimlite",
-    description: "Space-saving bifold doors perfect for closets and small spaces.",
+    description: "Classic 2-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$79 - $119",
     quantity: "15 in stock",
-    features: ["Space-saving", "Easy installation", "Multiple widths", "Smooth operation"],
+    features: ["Pre-hung", "All sizes available", "Various finishes", "Smooth operation"],
     rating: 5,
   },
   {
     id: "french-glass",
-    title: "French Glass Doors",
+    title: "2-Panel Square Top Hollow Core",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
     brand: "Glass Craft",
-    description: "Elegant French-style doors with glass panels. Add light and elegance to any room.",
+    description: "Classic 2-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$199 - $299",
     quantity: "6 in stock",
-    features: ["Tempered glass", "Multiple pane options", "Premium finishes", "Elegant design"],
+    features: ["Pre-hung", "All sizes available", "Various finishes", "Elegant design"],
     rating: 5,
   },
   {
     id: "pocket-slide",
-    title: "Pocket Sliding Doors",
+    title: "5 Panel Raised Hollow Core",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
     brand: "Frame Port",
     description: "Modern pocket sliding doors that disappear into the wall. Perfect for open concept living.",
     price: "$249 - $349",
     quantity: "5 in stock",
-    features: ["Smooth sliding", "Wall-mounted", "Space-saving", "Contemporary style"],
+    features: ["Pre-hung", "All sizes available", "Various finishes", "Contemporary style"],
     rating: 5,
   },
   {
@@ -127,7 +127,7 @@ export default function InteriorDoorsInStock() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="text-[#a61c00] text-sm font-bold tracking-widest mb-2">READY TO SHIP</p>
+            <p className="text-[#a61c00] text-sm font-bold tracking-widest mb-2">READY TO PURCHASE</p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Popular In Stock Options</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               These interior doors are in stock and ready for immediate purchase and installation. Visit us in Sherman, TX or call for availability.
