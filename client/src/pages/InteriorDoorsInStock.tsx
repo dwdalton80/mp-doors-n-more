@@ -126,7 +126,7 @@ export default function InteriorDoorsInStock() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="text-[#a61c00] text-sm font-bold tracking-widest mb-2">READY TO PURCHASE</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Popular In Stock Options</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1e3450]">Popular In Stock Options</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               These interior doors are in stock and ready for immediate purchase and installation. Visit us in Sherman, TX or call for availability.
             </p>
