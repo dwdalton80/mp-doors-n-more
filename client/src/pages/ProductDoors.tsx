@@ -183,7 +183,7 @@ export default function ProductDoors() {
                       {product.id === 'interior-doors' && (
                         <Link
                           href="/interior-doors-in-stock"
-                          className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
+                          className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
                         >
                           Popular In Stock
                         </Link>
