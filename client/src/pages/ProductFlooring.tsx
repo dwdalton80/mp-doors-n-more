@@ -131,25 +131,21 @@ export default function ProductFlooring() {
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-2">Available Brands:</h4>
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
-                          const brandMap: Record<string, { logo: string; url: string }> = {
-                            'Lawson': { logo: '/manus-storage/lawson_ee7b2882.webp', url: 'https://www.lawsonlvp.com' },
+                          const brandMap: Record<string, { logo: string }> = {
+                            'Lawson': { logo: '/manus-storage/lawson_ee7b2882.webp' },
                           };
                           const brandInfo = brandMap[brand];
                           return (
-                            <a
+                            <div
                               key={brand}
-                              href={brandInfo?.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md hover:scale-110 transition-all duration-200 h-12"
-                              title={`Visit ${brand} website`}
+                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md hover:scale-110 transition-all duration-200 h-12 cursor-default"
                             >
                               <img
                                 src={brandInfo?.logo}
                                 alt={brand}
                                 className="h-8 object-contain"
                               />
-                            </a>
+                            </div>
                           );
                         })}
                       </div>
