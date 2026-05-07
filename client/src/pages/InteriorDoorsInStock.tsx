@@ -73,6 +73,7 @@ const inStockDoors = [
 
 export default function InteriorDoorsInStock() {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<typeof inStockDoors[0] | null>(null);
 
   useEffect(() => {
     injectSchema({
@@ -129,7 +130,7 @@ export default function InteriorDoorsInStock() {
             {inStockDoors.map((door) => (
               <div key={door.id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-200 flex flex-col">
                 {/* Image */}
-                <div className="relative h-48 bg-gray-100 overflow-hidden cursor-pointer group" onClick={() => setEnlargedImage(door.imageUrl)}>
+                <div className="relative h-48 bg-gray-100 overflow-hidden cursor-pointer group" onClick={() => setSelectedProduct(door)}>
                   <ProductImagePlaceholder
                     imageUrl={door.imageUrl}
                     title={door.title}
@@ -175,12 +176,12 @@ export default function InteriorDoorsInStock() {
 
                   {/* CTA */}
                   <div className="flex gap-3">
-                    <Link
-                      href="/contact"
+                    <button
+                      onClick={() => setSelectedProduct(door)}
                       className="flex-1 text-center bg-[#a61c00] hover:bg-[#8b1600] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
                     >
-                      Get Pricing
-                    </Link>
+                      Quick View
+                    </button>
                     <a
                       href="tel:9034211305"
                       className="flex-1 text-center border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
@@ -218,6 +219,68 @@ export default function InteriorDoorsInStock() {
           </div>
         </div>
       </section>
+
+      {/* ── QUICK VIEW MODAL ── */}
+      {selectedProduct && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setSelectedProduct(null)}>
+          <div className="relative max-w-2xl w-full bg-white rounded-lg" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-4 right-4 bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition-colors z-10"
+            >
+              <X className="w-6 h-6 text-black" />
+            </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+              {/* Product Image */}
+              <div className="flex items-center justify-center">
+                <img src={selectedProduct.imageUrl} alt={selectedProduct.title} className="w-full h-auto rounded-lg" />
+              </div>
+              {/* Product Details */}
+              <div className="flex flex-col justify-between">
+                <div>
+                  <p className="text-[#a61c00] text-xs font-bold tracking-widest mb-2">{selectedProduct.brand}</p>
+                  <h2 className="text-2xl font-bold text-[#a61c00] mb-4">{selectedProduct.title}</h2>
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(selectedProduct.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-[#a61c00] text-[#a61c00]" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mb-6">{selectedProduct.description}</p>
+                  <div className="mb-6">
+                    <h3 className="font-bold text-gray-900 mb-3">Features:</h3>
+                    <ul className="space-y-2">
+                      {selectedProduct.features.map((feature, idx) => (
+                        <li key={idx} className="text-gray-600 text-sm flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-[#a61c00] rounded-full"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mb-6">
+                    <p className="text-lg font-bold text-[#a61c00] mb-2">{selectedProduct.price}</p>
+                    <p className="text-sm text-green-600 font-semibold">{selectedProduct.quantity}</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Link
+                    href="/contact"
+                    className="flex-1 text-center bg-[#a61c00] hover:bg-[#8b1600] text-white px-4 py-3 rounded font-semibold transition-colors"
+                  >
+                    Get Pricing
+                  </Link>
+                  <a
+                    href="tel:9034211305"
+                    className="flex-1 text-center border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-3 rounded font-semibold transition-colors"
+                  >
+                    Call Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── IMAGE MODAL ── */}
       {enlargedImage && (
