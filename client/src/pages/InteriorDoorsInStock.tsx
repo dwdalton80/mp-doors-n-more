@@ -50,7 +50,7 @@ const inStockDoors = [
   {
     id: "french-glass",
     title: "2-Panel Square Top Hollow Core",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
+    imageUrl: "/manus-storage/09738639.jpg_a8a4f3c4.avif",
     brand: "Glass Craft",
     description: "Classic 2-panel hollow core interior doors. Perfect for bedrooms and living areas.",
     price: "$199 - $299",
