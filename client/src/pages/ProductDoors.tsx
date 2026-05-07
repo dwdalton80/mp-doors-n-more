@@ -20,7 +20,7 @@ const products = [
     title: "Entry Doors",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
     description: "Premium entry doors with security and style. Energy-efficient designs to keep your home comfortable year-round.",
-    brands: ["Masonite", "Woodgrain", "Trimlite", "Frame Port", "Jeld-Wen", "Glass Craft"],
+    brands: ["Masonite", "Woodgrain", "Trimlite", "Frame Port", "Thermatru", "Glass Craft"],
     features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes available", "Security glass options"],
     rating: 5,
   },
