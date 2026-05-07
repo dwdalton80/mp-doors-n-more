@@ -137,13 +137,31 @@ export default function ProductDoors() {
 
                     {/* Brands */}
                     <div className="mb-6">
-                      <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-2">Available Brands:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {product.brands.map((brand) => (
-                          <span key={brand} className="inline-block bg-[#2D4A6B]/10 text-[#2D4A6B] text-xs font-label px-3 py-1 rounded">
-                            {brand}
-                          </span>
-                        ))}
+                      <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-3">Available Brands:</h4>
+                      <div className="flex flex-wrap gap-3">
+                        {product.brands.map((brand) => {
+                          const logoMap: Record<string, string> = {
+                            'Masonite': '/manus-storage/masonite_f182a41d.png',
+                            'Woodgrain': '/manus-storage/woodgrain_407754e1.png',
+                            'Trimlite': '/manus-storage/trimlite_cf6ce7db.png',
+                            'Frame Port': '/manus-storage/frameport_4e20b9d2.jpg',
+                            'Thermatru': '/manus-storage/thermatru_7ccab93c.png',
+                            'Glass Craft': '/manus-storage/glasscraft_619348f3.jpg',
+                            'Jeld-Wen': '/manus-storage/jeldwen_5ebf29c5.png',
+                            'Anderson': '/manus-storage/anderson_fa14d188.png',
+                            'Larson': '/manus-storage/larson_aaf43b2e.png',
+                          };
+                          const logoUrl = logoMap[brand];
+                          return (
+                            <div key={brand} className="flex items-center justify-center h-12 px-3 bg-white rounded border border-gray-200 hover:border-[#a61c00] transition">
+                              {logoUrl ? (
+                                <img src={logoUrl} alt={brand} className="h-8 object-contain" />
+                              ) : (
+                                <span className="text-xs font-label text-gray-600">{brand}</span>
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 
