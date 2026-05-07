@@ -143,7 +143,7 @@ export default function ProductDoors() {
                           const brandMap: Record<string, { logo: string; url: string }> = {
                             'Masonite': { logo: '/manus-storage/masonite_f182a41d.png', url: 'https://www.masonitedoors.com' },
                             'Woodgrain': { logo: '/manus-storage/woodgrain_407754e1.png', url: 'https://woodgrain.com/products/doors/' },
-                            'Trimlite': { logo: '/manus-storage/trimlite_cf6ce7db.png', url: 'https://www.trimlitedoors.com' },
+                            'Trimlite': { logo: '/manus-storage/trimlite_cf6ce7db.png', url: 'https://trimlite.com/' },
                             'Frame Port': { logo: '/manus-storage/frameport_4e20b9d2.jpg', url: 'https://www.frameportamerica.com' },
                             'Thermatru': { logo: '/manus-storage/thermatru_7ccab93c.png', url: 'https://www.thermatru.com' },
                             'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg', url: 'https://www.glasscraftdoor.com' },
