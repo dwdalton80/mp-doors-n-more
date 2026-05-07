@@ -140,26 +140,33 @@ export default function ProductDoors() {
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-3">Available Brands:</h4>
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
-                          const logoMap: Record<string, string> = {
-                            'Masonite': '/manus-storage/masonite_f182a41d.png',
-                            'Woodgrain': '/manus-storage/woodgrain_407754e1.png',
-                            'Trimlite': '/manus-storage/trimlite_cf6ce7db.png',
-                            'Frame Port': '/manus-storage/frameport_4e20b9d2.jpg',
-                            'Thermatru': '/manus-storage/thermatru_7ccab93c.png',
-                            'Glass Craft': '/manus-storage/glasscraft_619348f3.jpg',
-                            'Jeld-Wen': '/manus-storage/jeldwen-new_5d78f820.png',
-                            'Anderson': '/manus-storage/anderson_fa14d188.png',
-                            'Larson': '/manus-storage/larson_aaf43b2e.png',
+                          const brandMap: Record<string, { logo: string; url: string }> = {
+                            'Masonite': { logo: '/manus-storage/masonite_f182a41d.png', url: 'https://www.masonitedoors.com' },
+                            'Woodgrain': { logo: '/manus-storage/woodgrain_407754e1.png', url: 'https://www.woodgraindoors.com' },
+                            'Trimlite': { logo: '/manus-storage/trimlite_cf6ce7db.png', url: 'https://www.trimlitedoors.com' },
+                            'Frame Port': { logo: '/manus-storage/frameport_4e20b9d2.jpg', url: 'https://www.frameportamerica.com' },
+                            'Thermatru': { logo: '/manus-storage/thermatru_7ccab93c.png', url: 'https://www.thermatru.com' },
+                            'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg', url: 'https://www.glasscraftdoor.com' },
+                            'Jeld-Wen': { logo: '/manus-storage/jeldwen-new_5d78f820.png', url: 'https://www.jeldwen.com' },
+                            'Anderson': { logo: '/manus-storage/anderson_fa14d188.png', url: 'https://www.andersenwindows.com' },
+                            'Larson': { logo: '/manus-storage/larson_aaf43b2e.png', url: 'https://www.larsonmfg.com' },
                           };
-                          const logoUrl = logoMap[brand];
+                          const brandInfo = brandMap[brand];
                           return (
-                            <div key={brand} className="flex items-center justify-center h-12 px-3 bg-white rounded border border-gray-200 hover:border-[#a61c00] transition">
-                              {logoUrl ? (
-                                <img src={logoUrl} alt={brand} className="h-8 object-contain" />
+                            <a
+                              key={brand}
+                              href={brandInfo?.url || '#'}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center h-12 px-3 bg-white rounded border border-gray-200 hover:border-[#a61c00] hover:shadow-md transition"
+                              title={`Visit ${brand} website`}
+                            >
+                              {brandInfo?.logo ? (
+                                <img src={brandInfo.logo} alt={brand} className="h-8 object-contain" />
                               ) : (
                                 <span className="text-xs font-label text-gray-600">{brand}</span>
                               )}
-                            </div>
+                            </a>
                           );
                         })}
                       </div>
