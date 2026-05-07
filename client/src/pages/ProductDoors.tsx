@@ -149,7 +149,7 @@ export default function ProductDoors() {
                             'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg', url: 'https://glasscraft.com/' },
                             'Jeld-Wen': { logo: '/manus-storage/jeldwen-new_5d78f820.png', url: 'https://www.jeldwen.com' },
                             'Anderson': { logo: '/manus-storage/anderson_fa14d188.png', url: 'https://www.andersenwindows.com' },
-                            'Larson': { logo: '/manus-storage/larson_aaf43b2e.png', url: 'https://www.larsonmfg.com' },
+                            'Larson': { logo: '/manus-storage/larson_aaf43b2e.png', url: 'https://www.larsondoors.com/' },
                           };
                           const brandInfo = brandMap[brand];
                           return (
