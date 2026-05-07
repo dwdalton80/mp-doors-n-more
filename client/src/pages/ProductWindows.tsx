@@ -137,12 +137,30 @@ export default function ProductWindows() {
                     {/* Brands */}
                     <div className="mb-6">
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-2">Available Brands:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {product.brands.map((brand) => (
-                          <span key={brand} className="inline-block bg-[#2D4A6B]/10 text-[#2D4A6B] text-xs font-label px-3 py-1 rounded">
-                            {brand}
-                          </span>
-                        ))}
+                      <div className="flex flex-wrap gap-3">
+                        {product.brands.map((brand) => {
+                          const brandMap: Record<string, { logo: string; url: string }> = {
+                            'Synergy': { logo: '/manus-storage/Synergy-Logo-1_e6633c2e.jpg', url: 'https://synergywindows.com' },
+                            'Westlake': { logo: '/manus-storage/westlake_ef851210.png', url: 'https://www.westlakeroyal.com' },
+                          };
+                          const brandInfo = brandMap[brand];
+                          return (
+                            <a
+                              key={brand}
+                              href={brandInfo?.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center bg-white border-2 border-[#2D4A6B]/20 rounded-lg p-2 hover:border-[#a61c00] hover:shadow-md transition-all duration-200 h-12"
+                              title={`Visit ${brand} website`}
+                            >
+                              <img
+                                src={brandInfo?.logo}
+                                alt={brand}
+                                className="h-8 object-contain"
+                              />
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
 
