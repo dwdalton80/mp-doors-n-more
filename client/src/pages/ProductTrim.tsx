@@ -92,58 +92,8 @@ export default function ProductTrim() {
           </p>
         </div>
       </section>
-      {/* ── REVIEWS SECTION ── */}
-      <ReviewsSection
-        productName="Trim & Molding"
-        averageRating={4.9}
-        reviewCount={62}
-        reviews={[
-          {
-            id: "1",
-            author: "William A.",
-            rating: 5,
-            date: "2 weeks ago",
-            text: "Beautiful trim and molding! Finished my home renovation perfectly. Great quality and prices.",
-          },
-          {
-            id: "2",
-            author: "Nancy G.",
-            rating: 5,
-            date: "1 month ago",
-            text: "Excellent crown molding selection! My rooms look so much more elegant. Very satisfied!",
-          },
-          {
-            id: "3",
-            author: "Charles E.",
-            rating: 5,
-            date: "3 weeks ago",
-            text: "High-quality trim boards at competitive prices. Perfect for my wainscoting project.",
-          },
-          {
-            id: "4",
-            author: "Margaret S.",
-            rating: 5,
-            date: "6 weeks ago",
-            text: "Beautiful baseboards and trim! Transformed my home. Excellent service and quality.",
-          },
-          {
-            id: "5",
-            author: "Donald J.",
-            rating: 5,
-            date: "2 months ago",
-            text: "Great selection of trim and molding. Very professional and helpful staff.",
-          },
-          {
-            id: "6",
-            author: "Barbara L.",
-            rating: 4,
-            date: "1 month ago",
-            text: "Good quality trim options. Happy with my purchase and the customer service.",
-          },
-        ]}
-      />
 
-      {/* ── BOTTOM CTA ── */}
+      {/* ── PRODUCT CARDS ── */}
       <section className="py-20 bg-[#1a2e45]">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -207,6 +157,57 @@ export default function ProductTrim() {
           </div>
         </div>
       </section>
+
+      {/* ── REVIEWS SECTION ── */}
+      <ReviewsSection
+        productName="Trim & Molding"
+        averageRating={4.9}
+        reviewCount={62}
+        reviews={[
+          {
+            id: "1",
+            author: "William A.",
+            rating: 5,
+            date: "2 weeks ago",
+            text: "Beautiful trim and molding! Finished my home renovation perfectly. Great quality and prices.",
+          },
+          {
+            id: "2",
+            author: "Nancy G.",
+            rating: 5,
+            date: "1 month ago",
+            text: "Excellent crown molding selection! My rooms look so much more elegant. Very satisfied!",
+          },
+          {
+            id: "3",
+            author: "Charles E.",
+            rating: 5,
+            date: "3 weeks ago",
+            text: "High-quality trim boards at competitive prices. Perfect for my wainscoting project.",
+          },
+          {
+            id: "4",
+            author: "Margaret S.",
+            rating: 5,
+            date: "6 weeks ago",
+            text: "Beautiful baseboards and trim! Transformed my home. Excellent service and quality.",
+          },
+          {
+            id: "5",
+            author: "Donald J.",
+            rating: 5,
+            date: "2 months ago",
+            text: "Great selection of trim and molding. Very professional and helpful staff.",
+          },
+          {
+            id: "6",
+            author: "Barbara L.",
+            rating: 4,
+            date: "1 month ago",
+            text: "Good quality trim options. Happy with my purchase and the customer service.",
+          },
+        ]}
+      />
 
       {/* ── CTA SECTION ── */}
       <section className="py-16 md:py-24 bg-[#2D4A6B]">
