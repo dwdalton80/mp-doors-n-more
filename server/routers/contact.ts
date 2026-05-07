@@ -62,7 +62,7 @@ export const contactRouter = router({
       `;
 
       const { error } = await resend.emails.send({
-        from: "MP Doors & More <onboarding@resend.dev>",
+        from: "MP Doors & More <noreply@mpdoorsnmore.com>",
         to: ["mpdoorsnmore23@gmail.com"],
         replyTo: email,
         subject: subjectLine,
