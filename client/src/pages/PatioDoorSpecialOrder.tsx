@@ -37,6 +37,12 @@ const specialOrderDoors = [
     title: "Bifold Patio Doors",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
     imageUrl2: "/manus-storage/patio-door-diagram.jpg",
+    images: [
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
+      "/manus-storage/IMG_3593_04eafb59.JPG",
+      "/manus-storage/IMG_3594_0ef4930b.WEBP",
+      "/manus-storage/IMG_3595_b193e8ba.JPG"
+    ],
     brand: "Anderson",
     description: "Space-saving bifold doors that fold to the side for maximum opening. Ideal for modern and contemporary homes.",
     features: ["Space-saving design", "Smooth operation", "Custom configurations", "Energy-efficient glass"],
