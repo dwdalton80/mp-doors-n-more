@@ -18,7 +18,15 @@ const specialOrderDoors = [
     id: "patio-french-doors",
     title: "French Patio Doors",
     imageUrl: "/manus-storage/IMG_3578_2d2e4a07.WEBP",
-    imageUrl2: "/manus-storage/IMG_3579_25fc7e3b.JPG",
+    images: [
+      "/manus-storage/IMG_3578_2d2e4a07.WEBP",
+      "/manus-storage/IMG_3579_25fc7e3b.JPG",
+      "/manus-storage/IMG_3580_3f4e5b8c.JPG",
+      "/manus-storage/IMG_3581_4a5f6c9d.PNG",
+      "/manus-storage/IMG_3582_5b6g7d0e.PNG",
+      "/manus-storage/IMG_3583_6c7h8e1f.PNG",
+      "/manus-storage/IMG_3584_7d8i9f2g.PNG"
+    ],
     brand: "Anderson",
     description: "Elegant French-style patio doors with multiple glass panes. Perfect for traditional and transitional home designs.",
     features: ["Multiple glass pane options", "Custom sizing available", "Weather-resistant seals", "Various frame colors"],
@@ -58,7 +66,7 @@ const specialOrderDoors = [
 
 export default function PatioDoorSpecialOrder() {
   const [selectedProduct, setSelectedProduct] = useState<typeof specialOrderDoors[0] | null>(null);
-  const [showSecondImage, setShowSecondImage] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [selectedProductForQuote, setSelectedProductForQuote] = useState<typeof specialOrderDoors[0] | null>(null);
   const [quoteFormData, setQuoteFormData] = useState({ name: "", email: "", phone: "", message: "" });
@@ -144,7 +152,7 @@ export default function PatioDoorSpecialOrder() {
                     <button
                       onClick={() => {
                         setSelectedProduct(door);
-                        setShowSecondImage(false);
+                        setCurrentImageIndex(0);
                       }}
                       className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
                     >
@@ -190,7 +198,10 @@ export default function PatioDoorSpecialOrder() {
                   {/* Action Buttons */}
                   <div className="flex gap-3 mt-auto">
                     <button
-                      onClick={() => setSelectedProduct(door)}
+                      onClick={() => {
+                        setSelectedProduct(door);
+                        setCurrentImageIndex(0);
+                      }}
                       className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
                     >
                       <Search size={16} />
@@ -242,38 +253,42 @@ export default function PatioDoorSpecialOrder() {
 
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Image Section */}
+                  {/* Image Section */}
                 <div className="flex flex-col gap-4">
                   <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center overflow-hidden">
-                    <img
-                      key={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl}
-                      src={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl}
-                      alt={selectedProduct.title}
-                      className="w-full h-full object-contain transition-opacity duration-500"
-                    />
+                    {selectedProduct.images ? (
+                      <img
+                        key={currentImageIndex}
+                        src={selectedProduct.images[currentImageIndex]}
+                        alt={`${selectedProduct.title} - Image ${currentImageIndex + 1}`}
+                        className="w-full h-full object-contain transition-opacity duration-500"
+                      />
+                    ) : (
+                      <img
+                        key={selectedProduct.imageUrl}
+                        src={selectedProduct.imageUrl}
+                        alt={selectedProduct.title}
+                        className="w-full h-full object-contain transition-opacity duration-500"
+                      />
+                    )}
                   </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => setShowSecondImage(false)}
-                      className={`flex-1 py-2 rounded font-semibold text-sm transition-colors ${
-                        !showSecondImage
-                          ? "bg-[#a61c00] text-white"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                    >
-                      Image 1
-                    </button>
-                    <button
-                      onClick={() => setShowSecondImage(true)}
-                      className={`flex-1 py-2 rounded font-semibold text-sm transition-colors ${
-                        showSecondImage
-                          ? "bg-[#a61c00] text-white"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                    >
-                      Image 2
-                    </button>
-                  </div>
+                  {selectedProduct.images && selectedProduct.images.length > 1 && (
+                    <div className="flex gap-2 overflow-x-auto">
+                      {selectedProduct.images.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentImageIndex(idx)}
+                          className={`flex-shrink-0 py-2 px-3 rounded font-semibold text-sm transition-colors ${
+                            currentImageIndex === idx
+                              ? "bg-[#a61c00] text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
+                        >
+                          {idx + 1}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Details Section */}
