@@ -184,6 +184,14 @@ export default function ProductDoors() {
                           Popular In Stock
                         </Link>
                       )}
+                      {product.id === 'entry-doors' && (
+                        <Link
+                          href="/exterior-doors-in-stock"
+                          className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
+                        >
+                          Popular In Stock
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>
