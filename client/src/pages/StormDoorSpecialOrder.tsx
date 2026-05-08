@@ -59,6 +59,24 @@ const specialOrderDoors = [
 export default function StormDoorSpecialOrder() {
   const [selectedProduct, setSelectedProduct] = useState<typeof specialOrderDoors[0] | null>(null);
   const [showSecondImage, setShowSecondImage] = useState(false);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [selectedProductForQuote, setSelectedProductForQuote] = useState<typeof specialOrderDoors[0] | null>(null);
+  const [quoteFormData, setQuoteFormData] = useState({ name: "", email: "", phone: "", message: "" });
+
+  const handleGetQuote = (doorId: string) => {
+    const door = specialOrderDoors.find(d => d.id === doorId);
+    if (door) {
+      setSelectedProductForQuote(door);
+      setShowQuoteModal(true);
+    }
+  };
+
+  const handleQuoteSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Quote request:", { ...quoteFormData, product: selectedProductForQuote?.title });
+    setShowQuoteModal(false);
+    setQuoteFormData({ name: "", email: "", phone: "", message: "" });
+  };
 
   useEffect(() => {
     injectSchema({
@@ -179,8 +197,8 @@ export default function StormDoorSpecialOrder() {
                       Quick View
                     </button>
                     <button
-                      onClick={() => window.location.href = "mailto:mpdoorsnmore23@gmail.com"}
-                      className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
+                      onClick={() => handleGetQuote(door.id)}
+                      className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer"
                     >
                       Get Quote
                     </button>
@@ -310,6 +328,70 @@ export default function StormDoorSpecialOrder() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── GET QUOTE MODAL ── */}
+      {showQuoteModal && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setShowQuoteModal(false)}>
+          <div className="bg-white rounded-lg max-w-md w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-[#1e3450] text-white p-6 flex justify-between items-center">
+              <h3 className="font-bold text-lg">Get Quote for {selectedProductForQuote?.title}</h3>
+              <button
+                onClick={() => setShowQuoteModal(false)}
+                className="p-1 hover:bg-[#152a3a] rounded transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            <form onSubmit={handleQuoteSubmit} className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-gray-700">Name</label>
+                <input
+                  type="text"
+                  required
+                  value={quoteFormData.name}
+                  onChange={(e) => setQuoteFormData({ ...quoteFormData, name: e.target.value })}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-gray-700">Email</label>
+                <input
+                  type="email"
+                  required
+                  value={quoteFormData.email}
+                  onChange={(e) => setQuoteFormData({ ...quoteFormData, email: e.target.value })}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-gray-700">Phone</label>
+                <input
+                  type="tel"
+                  required
+                  value={quoteFormData.phone}
+                  onChange={(e) => setQuoteFormData({ ...quoteFormData, phone: e.target.value })}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-gray-700">Message</label>
+                <textarea
+                  value={quoteFormData.message}
+                  onChange={(e) => setQuoteFormData({ ...quoteFormData, message: e.target.value })}
+                  rows={4}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-[#a61c00] hover:bg-[#8a1700] text-white font-bold py-2 rounded transition-colors"
+              >
+                Submit Quote Request
+              </button>
+            </form>
           </div>
         </div>
       )}
