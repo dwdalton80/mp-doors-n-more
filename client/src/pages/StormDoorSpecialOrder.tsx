@@ -49,8 +49,13 @@ const specialOrderDoors = [
   {
     id: "storm-door-wood",
     title: "Wood Storm Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/storm-doors-larson-MsKDojBrbzmE4jTVEd5Bgw.webp",
+    imageUrl: "/manus-storage/woodstormdoor2_b52dcb3b.jpeg",
     imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    images: [
+      "/manus-storage/woodstormdoor2_b52dcb3b.jpeg",
+      "/manus-storage/vinylstormdoor_b0598d4a.jpeg",
+      "/manus-storage/doodstormdoor2_bcb6e611.jpeg"
+    ],
     brand: "Larson",
     description: "Classic wood storm doors with timeless appeal. Customizable finishes to match your home's style.",
     features: ["Solid wood construction", "Customizable finishes", "Traditional design", "Premium hardware"],
