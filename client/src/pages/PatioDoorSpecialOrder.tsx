@@ -25,7 +25,6 @@ const specialOrderDoors = [
       "/manus-storage/IMG_3581_e82caeea.PNG",
       "/manus-storage/IMG_3582_14d1f7b8.PNG",
       "/manus-storage/IMG_3583_4acccc85.PNG",
-      "/manus-storage/IMG_3584_5e5464ba.PNG",
       "/manus-storage/IMG_3584_5e5464ba.PNG"
     ],
     brand: "Anderson",
