@@ -23,7 +23,7 @@ const inStockDoors = [
     description: "Classic 6-panel design with timeless appeal. Ideal for creating a traditional look in any room.",
     price: "$89 - $129",
     quantity: "12 in stock",
-    features: ["Pre hung", "Various finishes", "All sizes available"],
+    features: ["Pre hung", "Available now", "All sizes available"],
     rating: 5,
   },
   {
@@ -35,7 +35,7 @@ const inStockDoors = [
     description: "Modern Santa Fe style with clean lines and contemporary design. Perfect for contemporary interiors.",
     price: "$149 - $199",
     quantity: "8 in stock",
-    features: ["Pre hung", "Various finishes", "All sizes available"],
+    features: ["Pre hung", "Available now", "All sizes available"],
     rating: 5,
   },
   {
@@ -47,7 +47,7 @@ const inStockDoors = [
     description: "Elegant arch top design adds architectural interest. Perfect for creating a sophisticated, refined entrance.",
     price: "$79 - $119",
     quantity: "15 in stock",
-    features: ["Pre hung", "Various finishes", "All sizes available"],
+    features: ["Pre hung", "Available now", "All sizes available"],
     rating: 5,
   },
   {
@@ -59,7 +59,7 @@ const inStockDoors = [
     description: "Clean square top design with classic 2-panel styling. Versatile option for any interior space.",
     price: "$199 - $299",
     quantity: "6 in stock",
-    features: ["Pre hung", "Various finishes", "All sizes available"],
+    features: ["Pre hung", "Available now", "All sizes available"],
     rating: 5,
   },
   {
@@ -71,7 +71,7 @@ const inStockDoors = [
     description: "Elegant 5-panel raised design with traditional charm. Adds character and sophistication to any room.",
     price: "$249 - $349",
     quantity: "5 in stock",
-    features: ["Pre hung", "Various finishes", "All sizes available"],
+    features: ["Pre hung", "Available now", "All sizes available"],
     rating: 5,
   },
 ];
