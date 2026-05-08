@@ -64,7 +64,7 @@ const specialOrderDoors = [
   {
     id: "storm-door-retractable",
     title: "Retractable Storm Doors",
-    imageUrl: "/manus-storage/retractablescreendoor2_0754d5ba.jpeg",
+    imageUrl: "/manus-storage/retractablescreendoor3_303ad9fa.jpeg",
     imageUrl2: "/manus-storage/storm-door-diagram.jpg",
     images: [
       "/manus-storage/retractablescreendoor2_0754d5ba.jpeg",
