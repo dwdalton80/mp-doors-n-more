@@ -197,10 +197,11 @@ export default function ExteriorDoorsInStock() {
                   {/* Action Buttons */}
                   <div className="flex gap-3 mt-auto">
                     <button
-                      onClick={() => window.location.href = "tel:9034211305"}
-                      className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
+                      onClick={() => setSelectedProduct(door)}
+                      className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
                     >
-                      Call Now
+                      <Search size={16} />
+                      Quick View
                     </button>
                     <button
                       onClick={() => handleGetPricing(door.id)}
