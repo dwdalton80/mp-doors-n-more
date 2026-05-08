@@ -53,6 +53,12 @@ const specialOrderDoors = [
     title: "Sliding Glass Patio Doors",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
     imageUrl2: "/manus-storage/patio-door-diagram.jpg",
+    images: [
+      "/manus-storage/slidingglassdoor2_3c693638.jpeg",
+      "/manus-storage/slidingglassdoor_7d2e02cf.jpeg",
+      "/manus-storage/slidingpatiodoor4_cba34098.jpeg",
+      "/manus-storage/slidingpatiodoor3_aa8461e5.jpeg"
+    ],
     brand: "Anderson",
     description: "Classic sliding glass doors with smooth operation and excellent weather protection. Timeless design.",
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
