@@ -51,7 +51,7 @@ const specialOrderDoors = [
   {
     id: "patio-sliding-glass",
     title: "Sliding Glass Patio Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
+    imageUrl: "/manus-storage/slidingglassdoor_7d2e02cf.jpeg",
     imageUrl2: "/manus-storage/patio-door-diagram.jpg",
     images: [
       "/manus-storage/slidingglassdoor2_3c693638.jpeg",
