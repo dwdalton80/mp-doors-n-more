@@ -204,10 +204,10 @@ export default function ExteriorDoorsInStock() {
                       Quick View
                     </button>
                     <button
-                      onClick={() => handleGetPricing(door.id)}
+                      onClick={() => window.location.href = "tel:9034211305"}
                       className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer"
                     >
-                      Get Pricing
+                      Call Now
                     </button>
                   </div>
                 </div>
