@@ -4,9 +4,9 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { ChevronLeft, Star } from "lucide-react";
+import { ChevronLeft, Star, X } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -53,6 +53,32 @@ const products = [
 ];
 
 export default function ProductTrim() {
+  const [showPricingModal, setShowPricingModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleGetPricing = (productId: string) => {
+    setSelectedProduct(productId);
+    setShowPricingModal(true);
+  };
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData, 'Product:', selectedProduct);
+    setShowPricingModal(false);
+    setFormData({ name: '', email: '', phone: '', message: '' });
+  };
+
   useEffect(() => {
     document.title = "Quality Trim & Molding in Sherman, TX | MP Doors & More";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -165,12 +191,12 @@ export default function ProductTrim() {
                     </div>
 
                     {/* CTA */}
-                    <Link
-                      href="/contact"
-                      className="block w-full text-center bg-[#a61c00] text-white py-2 rounded font-semibold hover:bg-[#8a1700] transition"
+                    <button
+                      onClick={() => handleGetPricing(product.id)}
+                      className="inline-block btn-accent text-sm cursor-pointer"
                     >
                       Get Pricing
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -178,6 +204,84 @@ export default function ProductTrim() {
           </div>
         </div>
       </section>
+
+      {/* ── PRICING REQUEST MODAL ── */}
+      {showPricingModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <h2 className="text-2xl font-bold text-[#1e3450]">Get Pricing</h2>
+              <button
+                onClick={() => setShowPricingModal(false)}
+                className="text-gray-500 hover:text-gray-700 transition"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleFormChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="(903) 421-1305"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleFormChange}
+                  rows={3}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="Tell us about your project..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#a61c00] hover:bg-[#8b1600] text-white font-bold py-2 rounded-lg transition-colors"
+              >
+                Send Request
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* ── REVIEWS SECTION ── */}
       <ReviewsSection
