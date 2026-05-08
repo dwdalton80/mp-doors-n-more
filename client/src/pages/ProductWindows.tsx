@@ -139,9 +139,9 @@ export default function ProductWindows() {
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-2">Available Brands:</h4>
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
-                          const brandMap: Record<string, { logo: string; url: string }> = {
-                            'Synergy': { logo: '/manus-storage/Synergy-Logo-1_e6633c2e.jpg', url: 'https://synergywindows.com' },
-                            'Westlake': { logo: '/manus-storage/westlake_ef851210.png', url: 'https://www.westlakeroyal.com' },
+                          const brandMap: Record<string, { logo: string }> = {
+                            'Synergy': { logo: '/manus-storage/Synergy-Logo-1_e6633c2e.jpg' },
+                            'Westlake': { logo: '/manus-storage/westlake_ef851210.png' },
                           };
                           const brandInfo = brandMap[brand];
                           return (

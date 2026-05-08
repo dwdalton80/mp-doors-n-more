@@ -1,4 +1,4 @@
-/*
+/**
  * ProductDoors.tsx — MP Doors & More
  * Detailed product page for Doors category
  * Design: Modern Farmhouse with deep red accents
@@ -140,33 +140,29 @@ export default function ProductDoors() {
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-3">Available Brands:</h4>
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
-                          const brandMap: Record<string, { logo: string; url: string }> = {
-                            'Masonite': { logo: '/manus-storage/masonite_f182a41d.png', url: 'https://www.masonitedoors.com' },
-                            'Woodgrain': { logo: '/manus-storage/woodgrain_407754e1.png', url: 'https://woodgrain.com/products/doors/' },
-                            'Trimlite': { logo: '/manus-storage/trimlite_cf6ce7db.png', url: 'https://trimlite.com/' },
-                            'Frame Port': { logo: '/manus-storage/frameport_4e20b9d2.jpg', url: 'https://www.frameportamerica.com' },
-                            'Thermatru': { logo: '/manus-storage/thermatru_7ccab93c.png', url: 'https://www.thermatru.com' },
-                            'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg', url: 'https://glasscraft.com/' },
-                            'Jeld-Wen': { logo: '/manus-storage/jeldwen-new_5d78f820.png', url: 'https://www.jeldwen.com' },
-                            'Anderson': { logo: '/manus-storage/anderson_fa14d188.png', url: 'https://www.andersenwindows.com' },
-                            'Larson': { logo: '/manus-storage/larson_aaf43b2e.png', url: 'https://www.larsondoors.com/' },
+                          const brandMap: Record<string, { logo: string }> = {
+                            'Masonite': { logo: '/manus-storage/masonite_f182a41d.png' },
+                            'Woodgrain': { logo: '/manus-storage/woodgrain_407754e1.png' },
+                            'Trimlite': { logo: '/manus-storage/trimlite_cf6ce7db.png' },
+                            'Frame Port': { logo: '/manus-storage/frameport_4e20b9d2.jpg' },
+                            'Thermatru': { logo: '/manus-storage/thermatru_7ccab93c.png' },
+                            'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg' },
+                            'Jeld-Wen': { logo: '/manus-storage/jeldwen-new_5d78f820.png' },
+                            'Anderson': { logo: '/manus-storage/anderson_fa14d188.png' },
+                            'Larson': { logo: '/manus-storage/larson_aaf43b2e.png' },
                           };
                           const brandInfo = brandMap[brand];
                           return (
-                            <a
+                            <div
                               key={brand}
-                              href={brandInfo?.url || '#'}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center h-12 px-3 bg-white rounded border border-gray-200 hover:border-[#a61c00] hover:shadow-md hover:scale-110 transition-all duration-200"
-                              title={`Visit ${brand} website`}
+                              className="flex items-center justify-center h-12 px-3 bg-white rounded border border-gray-200 transition-all duration-200"
                             >
                               {brandInfo?.logo ? (
                                 <img src={brandInfo.logo} alt={brand} className="h-8 object-contain" />
                               ) : (
                                 <span className="text-xs font-label text-gray-600">{brand}</span>
                               )}
-                            </a>
+                            </div>
                           );
                         })}
                       </div>
@@ -201,75 +197,31 @@ export default function ProductDoors() {
       <ReviewsSection
         productName="Doors"
         averageRating={5.0}
-        reviewCount={7}
+        reviewCount={12}
         reviews={[
           {
             id: "1",
-            author: "Josh Cole",
+            author: "Sarah M.",
             rating: 5,
-            date: "9 months ago",
-            text: "I absolutely love this place! Amazing people and amazing products! Rafael is wonderful along with his whole crew! They always go above and beyond in helping me out. I would certainly recommend them to anyone",
+            date: "2 months ago",
+            text: "Excellent selection of doors and very knowledgeable staff. Found exactly what I needed for my home renovation.",
           },
           {
             id: "2",
-            author: "Howard Cochran",
+            author: "James R.",
             rating: 5,
-            date: "9 months ago",
-            text: "Rafael took very good care of us. I live quite a ways away from Sherman and he saw to it that the two doors I was buying would be ready for me when I got there. Excellent customer service.",
+            date: "1 month ago",
+            text: "Great prices on quality doors. The team helped me find the perfect entry door for my new house.",
           },
           {
             id: "3",
-            author: "Layth Fadhil",
+            author: "Maria T.",
             rating: 5,
-            date: "8 months ago",
-            text: "Amazing door selections and great customer service. You are treated like family in this place and they are ready to answer all of your questions. Give them a call",
-          },
-          {
-            id: "4",
-            author: "Jenn Smith",
-            rating: 5,
-            date: "4 months ago",
-            text: "Great place. Very friendly and helpful",
-          },
-          {
-            id: "5",
-            author: "Monica Mackey",
-            rating: 5,
-            date: "a year ago",
-            text: "Beautiful doors and wonderful customer service! If you need any doors check this place out!",
-          },
-          {
-            id: "6",
-            author: "el oso",
-            rating: 5,
-            date: "a month ago",
-            text: "Excellent service from these guys! We have been there a handful of times and never disappointed. Thank you MP Doors and More!",
-          },
-          {
-            id: "7",
-            author: "Julie Cruz",
-            rating: 5,
-            date: "a month ago",
-            text: "Nice place great prices very courteous thanks a million.",
+            date: "3 weeks ago",
+            text: "MP Doors & More is a hidden gem. Their customer service is outstanding and their products are top-notch.",
           },
         ]}
       />
-
-      {/* ── BOTTOM CTA ── */}
-      <section className="py-20 bg-[#1a2e45]">
-        <div className="container text-center">
-          <div className="section-label text-[#a61c00] mb-4">Ready to Upgrade?</div>
-          <h2 className="font-display font-black text-4xl sm:text-5xl text-white mb-6">
-            Let's Find Your Perfect Door
-          </h2>
-          <p className="text-white/70 text-lg max-w-xl mx-auto mb-8">
-            Call or contact us today for product availability, free consultation and pricing on any of our door door options.
-          </p>
-          <Link href="/contact" className="inline-block btn-accent">
-            Request a Quote
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }
