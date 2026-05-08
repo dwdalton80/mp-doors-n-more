@@ -41,9 +41,11 @@
 - [x] Responsive design across all pages
 
 ## Backend Integration
-- [ ] Connect Get Pricing forms to Resend email service
-- [ ] Connect Get Quote forms to Resend email service
-- [ ] Send quote requests to mpdoorsnmore23@gmail.com
+- [x] Connect Get Pricing forms to Resend email service (router created)
+- [x] Connect Get Quote forms to Resend email service (PatioDoorSpecialOrder & StormDoorSpecialOrder)
+- [x] Send quote requests to mpdoorsnmore23@gmail.com
+- [x] Create vitest tests for quotes router (6 tests passing)
+- [x] Multi-image gallery for French Patio Doors (7 images with carousel)
 
 ## Future Enhancements
 - [ ] Shopping cart system for multi-product quotes

@@ -6,10 +6,11 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { ChevronLeft, Star, X, Search } from "lucide-react";
+import { ChevronLeft, Star, X, Search, Loader2 } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { trpc } from "@/lib/trpc";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
 
@@ -62,20 +63,45 @@ export default function StormDoorSpecialOrder() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [selectedProductForQuote, setSelectedProductForQuote] = useState<typeof specialOrderDoors[0] | null>(null);
   const [quoteFormData, setQuoteFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [quoteError, setQuoteError] = useState("");
+  const [quoteSuccess, setQuoteSuccess] = useState(false);
+
+  const sendQuoteMutation = trpc.quotes.sendQuoteRequest.useMutation();
 
   const handleGetQuote = (doorId: string) => {
     const door = specialOrderDoors.find(d => d.id === doorId);
     if (door) {
       setSelectedProductForQuote(door);
       setShowQuoteModal(true);
+      setQuoteError("");
+      setQuoteSuccess(false);
     }
   };
 
-  const handleQuoteSubmit = (e: React.FormEvent) => {
+  const handleQuoteSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Quote request:", { ...quoteFormData, product: selectedProductForQuote?.title });
-    setShowQuoteModal(false);
-    setQuoteFormData({ name: "", email: "", phone: "", message: "" });
+    setQuoteError("");
+    setQuoteSuccess(false);
+
+    try {
+      await sendQuoteMutation.mutateAsync({
+        name: quoteFormData.name,
+        email: quoteFormData.email,
+        phone: quoteFormData.phone || undefined,
+        message: quoteFormData.message || undefined,
+        product: selectedProductForQuote?.title,
+      });
+
+      setQuoteSuccess(true);
+      setQuoteFormData({ name: "", email: "", phone: "", message: "" });
+      setTimeout(() => {
+        setShowQuoteModal(false);
+        setQuoteSuccess(false);
+      }, 2000);
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Failed to send quote request";
+      setQuoteError(errorMessage);
+    }
   };
 
   useEffect(() => {
@@ -319,7 +345,10 @@ export default function StormDoorSpecialOrder() {
                       Call Now
                     </button>
                     <button
-                      onClick={() => window.location.href = "mailto:mpdoorsnmore23@gmail.com"}
+                      onClick={() => {
+                        handleGetQuote(selectedProduct.id);
+                        setSelectedProduct(null);
+                      }}
                       className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-3 rounded font-semibold transition-colors"
                     >
                       Get Quote
@@ -346,6 +375,16 @@ export default function StormDoorSpecialOrder() {
               </button>
             </div>
             <form onSubmit={handleQuoteSubmit} className="p-6 space-y-4">
+              {quoteSuccess && (
+                <div className="p-3 bg-green-100 text-green-800 rounded text-sm">
+                  Quote request sent successfully! We'll be in touch soon.
+                </div>
+              )}
+              {quoteError && (
+                <div className="p-3 bg-red-100 text-red-800 rounded text-sm">
+                  {quoteError}
+                </div>
+              )}
               <div>
                 <label className="block text-sm font-semibold mb-2 text-gray-700">Name</label>
                 <input
@@ -353,7 +392,8 @@ export default function StormDoorSpecialOrder() {
                   required
                   value={quoteFormData.name}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, name: e.target.value })}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  disabled={sendQuoteMutation.isPending}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
               <div>
@@ -363,17 +403,18 @@ export default function StormDoorSpecialOrder() {
                   required
                   value={quoteFormData.email}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, email: e.target.value })}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  disabled={sendQuoteMutation.isPending}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-2 text-gray-700">Phone</label>
                 <input
                   type="tel"
-                  required
                   value={quoteFormData.phone}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, phone: e.target.value })}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  disabled={sendQuoteMutation.isPending}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
               <div>
@@ -382,14 +423,17 @@ export default function StormDoorSpecialOrder() {
                   value={quoteFormData.message}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, message: e.target.value })}
                   rows={4}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  disabled={sendQuoteMutation.isPending}
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#a61c00] hover:bg-[#8a1700] text-white font-bold py-2 rounded transition-colors"
+                disabled={sendQuoteMutation.isPending}
+                className="w-full bg-[#a61c00] hover:bg-[#8a1700] disabled:bg-gray-400 text-white font-bold py-2 rounded transition-colors flex items-center justify-center gap-2"
               >
-                Submit Quote Request
+                {sendQuoteMutation.isPending && <Loader2 size={16} className="animate-spin" />}
+                {sendQuoteMutation.isPending ? "Sending..." : "Submit Quote Request"}
               </button>
             </form>
           </div>
