@@ -4,7 +4,7 @@
  * Design: Modern Farmhouse with deep red accents
  */
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { ChevronLeft, Star, X, Search, Loader2 } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
@@ -21,12 +21,12 @@ const specialOrderDoors = [
     imageUrl: "/manus-storage/IMG_3578_2d2e4a07.WEBP",
     images: [
       "/manus-storage/IMG_3578_2d2e4a07.WEBP",
-      "/manus-storage/IMG_3579_25fc7e3b.JPG",
-      "/manus-storage/IMG_3580_3f4e5b8c.JPG",
-      "/manus-storage/IMG_3581_4a5f6c9d.PNG",
-      "/manus-storage/IMG_3582_5b6g7d0e.PNG",
-      "/manus-storage/IMG_3583_6c7h8e1f.PNG",
-      "/manus-storage/IMG_3584_7d8i9f2g.PNG"
+      "/manus-storage/IMG_3580_63de9df7.JPG",
+      "/manus-storage/IMG_3581_e82caeea.PNG",
+      "/manus-storage/IMG_3582_14d1f7b8.PNG",
+      "/manus-storage/IMG_3583_4acccc85.PNG",
+      "/manus-storage/IMG_3584_5e5464ba.PNG",
+      "/manus-storage/IMG_3584_5e5464ba.PNG"
     ],
     brand: "Anderson",
     description: "Elegant French-style patio doors with multiple glass panes. Perfect for traditional and transitional home designs.",

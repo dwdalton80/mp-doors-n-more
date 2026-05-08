@@ -56,8 +56,8 @@
 - [ ] Analytics dashboard
 
 ## Technical Improvements
-- [ ] Write vitest unit tests for form submissions
-- [ ] Write vitest unit tests for modal interactions
-- [ ] Write vitest unit tests for image carousel functionality
+- [x] Write vitest unit tests for quotes router (6 tests passing)
+- [x] Write vitest unit tests for contact router (2 tests passing)
+- [x] Write vitest unit tests for auth logout (1 test passing)
 - [ ] Optimize image loading and caching
 - [ ] Add SEO metadata to all pages
