@@ -17,8 +17,8 @@ const specialOrderDoors = [
   {
     id: "patio-french-doors",
     title: "French Patio Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
-    imageUrl2: "/manus-storage/patio-door-diagram.jpg",
+    imageUrl: "/manus-storage/IMG_3578_2d2e4a07.WEBP",
+    imageUrl2: "/manus-storage/IMG_3579_25fc7e3b.JPG",
     brand: "Anderson",
     description: "Elegant French-style patio doors with multiple glass panes. Perfect for traditional and transitional home designs.",
     features: ["Multiple glass pane options", "Custom sizing available", "Weather-resistant seals", "Various frame colors"],
