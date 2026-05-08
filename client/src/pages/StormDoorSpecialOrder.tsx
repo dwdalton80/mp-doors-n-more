@@ -18,8 +18,14 @@ const specialOrderDoors = [
   {
     id: "storm-door-aluminum",
     title: "Aluminum Storm Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/storm-doors-larson-MsKDojBrbzmE4jTVEd5Bgw.webp",
+    imageUrl: "/manus-storage/aluminumstormdoor_d5e569ab.jpeg",
     imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    images: [
+      "/manus-storage/aluminumstormdoor_d5e569ab.jpeg",
+      "/manus-storage/aluminumstormdoor2_6dfc9b77.jpeg",
+      "/manus-storage/aluminumstormdoor3_376ed931.jpeg",
+      "/manus-storage/aluminumstormdoor5_f8fa2706.jpeg"
+    ],
     brand: "Larson",
     description: "Durable aluminum storm doors with interchangeable glass and screen. Perfect for year-round protection.",
     features: ["Aluminum frames", "Interchangeable glass/screen", "Multiple colors", "Weather-tight seals"],
@@ -59,7 +65,7 @@ const specialOrderDoors = [
 
 export default function StormDoorSpecialOrder() {
   const [selectedProduct, setSelectedProduct] = useState<typeof specialOrderDoors[0] | null>(null);
-  const [showSecondImage, setShowSecondImage] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [selectedProductForQuote, setSelectedProductForQuote] = useState<typeof specialOrderDoors[0] | null>(null);
   const [quoteFormData, setQuoteFormData] = useState({ name: "", email: "", phone: "", message: "" });
@@ -170,7 +176,7 @@ export default function StormDoorSpecialOrder() {
                     <button
                       onClick={() => {
                         setSelectedProduct(door);
-                        setShowSecondImage(false);
+                        setCurrentImageIndex(0);
                       }}
                       className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
                     >
@@ -272,33 +278,26 @@ export default function StormDoorSpecialOrder() {
                 <div className="flex flex-col gap-4">
                   <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center overflow-hidden">
                     <img
-                      key={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl}
-                      src={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl}
+                      key={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
+                      src={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
                       alt={selectedProduct.title}
                       className="w-full h-full object-contain transition-opacity duration-500"
                     />
                   </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => setShowSecondImage(false)}
-                      className={`flex-1 py-2 rounded font-semibold text-sm transition-colors ${
-                        !showSecondImage
-                          ? "bg-[#a61c00] text-white"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                    >
-                      Image 1
-                    </button>
-                    <button
-                      onClick={() => setShowSecondImage(true)}
-                      className={`flex-1 py-2 rounded font-semibold text-sm transition-colors ${
-                        showSecondImage
-                          ? "bg-[#a61c00] text-white"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                    >
-                      Image 2
-                    </button>
+                  <div className="flex gap-2 overflow-x-auto pb-2">
+                    {(selectedProduct.images || [selectedProduct.imageUrl, selectedProduct.imageUrl2]).map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        className={`flex-shrink-0 px-3 py-2 rounded font-semibold text-sm transition-colors ${
+                          currentImageIndex === idx
+                            ? "bg-[#a61c00] text-white"
+                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                        }`}
+                      >
+                        {idx + 1}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
