@@ -22,6 +22,8 @@ import ProductSiding from "./pages/ProductSiding";
 import ProductTrim from "./pages/ProductTrim";
 import InteriorDoorsInStock from "./pages/InteriorDoorsInStock";
 import ExteriorDoorsInStock from "./pages/ExteriorDoorsInStock";
+import PatioDoorSpecialOrder from "./pages/PatioDoorSpecialOrder";
+import StormDoorSpecialOrder from "./pages/StormDoorSpecialOrder";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/AdminDashboard";
 
@@ -49,6 +51,8 @@ function Router() {
         <Route path="/products/trim" component={ProductTrim} />
         <Route path="/interior-doors-in-stock" component={InteriorDoorsInStock} />
         <Route path="/exterior-doors-in-stock" component={ExteriorDoorsInStock} />
+        <Route path="/patio-doors-special-order" component={PatioDoorSpecialOrder} />
+        <Route path="/storm-doors-special-order" component={StormDoorSpecialOrder} />
         <Route path="/contact" component={Contact} />
         <Route path="/admin" component={AdminDashboard} />
         <Route path="/404" component={NotFound} />

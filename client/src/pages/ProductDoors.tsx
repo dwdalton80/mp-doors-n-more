@@ -192,6 +192,22 @@ export default function ProductDoors() {
                           Popular In Stock
                         </Link>
                       )}
+                      {product.id === 'patio-doors' && (
+                        <Link
+                          href="/patio-doors-special-order"
+                          className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
+                        >
+                          Special Order
+                        </Link>
+                      )}
+                      {product.id === 'storm-doors' && (
+                        <Link
+                          href="/storm-doors-special-order"
+                          className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
+                        >
+                          Special Order
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>
