@@ -49,16 +49,6 @@ const specialOrderDoors = [
     rating: 5,
   },
   {
-    id: "patio-pocket-doors",
-    title: "Pocket Patio Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
-    imageUrl2: "/manus-storage/patio-door-diagram.jpg",
-    brand: "Anderson",
-    description: "Pocket doors slide into the wall for a seamless indoor-outdoor connection. Perfect for open floor plans.",
-    features: ["Slides into wall", "Maximizes space", "Custom sizes", "Premium hardware"],
-    rating: 5,
-  },
-  {
     id: "patio-sliding-glass",
     title: "Sliding Glass Patio Doors",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
