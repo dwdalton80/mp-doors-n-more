@@ -38,7 +38,7 @@ const products = [
     title: "Patio & Sliding Doors",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
     description: "Beautiful patio doors to bring natural light and access to your outdoor spaces.",
-    brands: ["Anderson"],
+    brands: ["Andersen"],
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
     rating: 5,
   },
@@ -175,7 +175,7 @@ export default function ProductDoors() {
                             'Thermatru': { logo: '/manus-storage/thermatru_7ccab93c.png' },
                             'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg' },
                             'Jeld-Wen': { logo: '/manus-storage/jeldwen-new_5d78f820.png' },
-                            'Anderson': { logo: '/manus-storage/anderson_fa14d188.png' },
+                            'Andersen': { logo: '/manus-storage/anderson_fa14d188.png' },
                             'Larson': { logo: '/manus-storage/larson_aaf43b2e.png' },
                           };
                           const brandInfo = brandMap[brand];
