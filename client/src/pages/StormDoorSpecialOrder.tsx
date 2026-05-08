@@ -34,8 +34,13 @@ const specialOrderDoors = [
   {
     id: "storm-door-vinyl",
     title: "Vinyl Storm Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/storm-doors-larson-MsKDojBrbzmE4jTVEd5Bgw.webp",
+    imageUrl: "/manus-storage/ScreenShot2026-05-08at11.45.34AM_a0736ed5.jpeg",
     imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    images: [
+      "/manus-storage/ScreenShot2026-05-08at11.45.34AM_a0736ed5.jpeg",
+      "/manus-storage/vinylstormdoor_b0598d4a.jpeg",
+      "/manus-storage/ScreenShot2026-05-08at11.46.02AM_019e49df.jpeg"
+    ],
     brand: "Larson",
     description: "Maintenance-free vinyl storm doors with superior insulation. Ideal for energy-conscious homeowners.",
     features: ["Vinyl frames", "Superior insulation", "Low maintenance", "Smooth operation"],
