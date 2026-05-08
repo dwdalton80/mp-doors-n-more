@@ -64,8 +64,13 @@ const specialOrderDoors = [
   {
     id: "storm-door-retractable",
     title: "Retractable Storm Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/storm-doors-larson-MsKDojBrbzmE4jTVEd5Bgw.webp",
+    imageUrl: "/manus-storage/retractablescreendoor2_0754d5ba.jpeg",
     imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    images: [
+      "/manus-storage/retractablescreendoor2_0754d5ba.jpeg",
+      "/manus-storage/retractablescreendoors_e878e999.jpeg",
+      "/manus-storage/retractablescreendoor3_303ad9fa.jpeg"
+    ],
     brand: "Larson",
     description: "Innovative retractable storm doors that hide away when not needed. Modern solution for contemporary homes.",
     features: ["Retractable design", "Space-saving", "Modern aesthetic", "Easy operation"],
