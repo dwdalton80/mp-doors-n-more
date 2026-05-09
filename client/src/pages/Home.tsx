@@ -222,6 +222,7 @@ export default function Home() {
               <Link
                 key={p.title}
                 href={p.href}
+                onClick={() => window.scrollTo(0, 0)}
                 className="group block rounded-lg overflow-hidden shadow-sm border border-[#e8e0d8] hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative h-52 overflow-hidden">

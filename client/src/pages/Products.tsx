@@ -134,7 +134,7 @@ export default function Products() {
             <div className="container">
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}>
                 {/* Clickable Image */}
-                <Link href={`/products/${cat.id}`} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                <Link href={`/products/${cat.id}`} onClick={() => window.scrollTo(0, 0)} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="relative overflow-hidden h-80 sm:h-96">
                     <img
                       src={cat.image}
@@ -168,7 +168,7 @@ export default function Products() {
                   </ul>
 
                   <div className="flex flex-wrap gap-3">
-                    <Link href={`/products/${cat.id}`} className="btn-accent">
+                    <Link href={`/products/${cat.id}`} onClick={() => window.scrollTo(0, 0)} className="btn-accent">
                       View Details
                     </Link>
                     <a href="tel:9034211305" className="flex items-center gap-2 text-[#2D4A6B] font-display font-semibold hover:text-[#a61c00] transition-colors text-sm">
