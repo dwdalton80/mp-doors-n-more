@@ -7,9 +7,11 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { logPageView } from "./lib/analytics";
 import Navbar from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -39,6 +41,13 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 function Router() {
   // make sure to consider if you need authentication for certain routes
+  const [location] = useLocation();
+
+  // Track page views on route changes
+  useEffect(() => {
+    logPageView(window.location.pathname);
+  }, [location]);
+
   return (
     <Layout>
       <Switch>

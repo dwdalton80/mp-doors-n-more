@@ -8,6 +8,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
+import { logPhoneCallClick } from "@/lib/analytics";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -41,7 +42,11 @@ export default function Navbar() {
       <div className={`border-b transition-all duration-300 ${scrolled || !isHome ? "border-white/10" : "border-white/20"}`}>
         <div className="container flex items-center justify-between py-2">
           <div className="flex items-center gap-4 text-white/80 text-sm">
-            <a href="tel:9034211305" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <a
+              href="tel:9034211305"
+              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              onClick={() => logPhoneCallClick("9034211305")}
+            >
               <Phone size={13} />
               <span className="font-label">(903) 421-1305</span>
             </a>

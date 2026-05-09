@@ -8,6 +8,7 @@ import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin, Clock, Facebook, CheckCircle2 } from "lucide-react";
+import { logPhoneCallClick } from "@/lib/analytics";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -77,7 +78,11 @@ export default function Contact() {
 
               <ul className="space-y-6 mb-8">
                 <li>
-                  <a href="tel:9034211305" className="flex items-start gap-4 group">
+                  <a
+                    href="tel:9034211305"
+                    className="flex items-start gap-4 group"
+                    onClick={() => logPhoneCallClick("9034211305")}
+                  >
                     <div className="w-10 h-10 rounded-md bg-[#2D4A6B] flex items-center justify-center shrink-0">
                       <Phone size={18} className="text-white" />
                     </div>

@@ -2,7 +2,7 @@ import { adminProcedure, router } from "../_core/trpc";
 import { z } from "zod";
 import { getDb } from "../db";
 import { analyticsEvents, analyticsMetrics } from "../../drizzle/schema";
-import { gte, lte, eq, desc } from "drizzle-orm";
+import { gte, lte, eq, desc, and } from "drizzle-orm";
 
 export const analyticsMetricsRouter = router({
   // Aggregate events into daily metrics
@@ -27,9 +27,12 @@ export const analyticsMetricsRouter = router({
           .select()
           .from(analyticsEvents)
           .where(
-            gte(analyticsEvents.createdAt, startOfDay) &&
-            lte(analyticsEvents.createdAt, endOfDay)
+            and(
+              gte(analyticsEvents.createdAt, startOfDay),
+              lte(analyticsEvents.createdAt, endOfDay)
+            )
           );
+
 
         // Count event types
         const quoteRequests = events.filter(e => e.eventType === "quote_request").length;
@@ -163,8 +166,10 @@ export const analyticsMetricsRouter = router({
           .select()
           .from(analyticsMetrics)
           .where(
-            gte(analyticsMetrics.date, input.startDate) &&
-            lte(analyticsMetrics.date, input.endDate)
+            and(
+              gte(analyticsMetrics.date, input.startDate),
+              lte(analyticsMetrics.date, input.endDate)
+            )
           )
           .orderBy(desc(analyticsMetrics.date));
 
