@@ -6,7 +6,7 @@
 
 import { useEffect } from "react";
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, BarChart3 } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -74,15 +74,24 @@ export default function Footer() {
           <p className="text-white/65 text-sm leading-relaxed mb-5">
             Your trusted local supplier of doors, windows, vinyl flooring, siding, and shingles. A grade material at B grade prices.
           </p>
-          <a
-            href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#166FE5] text-white text-sm font-semibold py-2 px-4 rounded transition-colors"
-          >
-            <Facebook size={16} />
-            Follow on Facebook
-          </a>
+          <div className="space-y-2">
+            <a
+              href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#166FE5] text-white text-sm font-semibold py-2 px-4 rounded transition-colors w-full justify-center"
+            >
+              <Facebook size={16} />
+              Follow on Facebook
+            </a>
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-2 bg-[#a61c00] hover:bg-[#8b1600] text-white text-sm font-semibold py-2 px-4 rounded transition-colors w-full justify-center"
+            >
+              <BarChart3 size={16} />
+              Dashboard
+            </Link>
+          </div>
         </div>
 
         {/* Quick Links */}

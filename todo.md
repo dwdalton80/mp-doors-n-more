@@ -114,3 +114,5 @@
 
 ## Dashboard Features
 - [x] Add date range picker to dashboard for filtering analytics data
+
+- [x] Add dashboard login button in footer under Facebook button
