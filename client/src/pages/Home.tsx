@@ -113,6 +113,15 @@ export default function Home() {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Shop premium doors, windows, vinyl flooring, siding, trim & molding in Sherman, TX. A-grade materials at B-grade prices. Local supplier serving Texoma.');
     }
+    // Add keywords meta tag
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    const keywords = 'doors Sherman TX, windows Sherman TX, vinyl flooring Sherman TX, siding Sherman TX, shingles Sherman TX, trim molding Sherman TX, home improvement materials, building supplies Sherman, construction materials, entry doors, interior doors, patio doors, storm doors, energy efficient windows, luxury vinyl plank, architectural shingles, vinyl siding, home renovation, local building supplies, affordable doors, quality materials, Texoma home improvement';
+    metaKeywords.setAttribute('content', keywords);
     // Inject LocalBusiness schema
     injectSchema(generateLocalBusinessSchema());
   }, []);
