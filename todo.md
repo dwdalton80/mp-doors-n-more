@@ -47,17 +47,53 @@
 - [x] Create vitest tests for quotes router (6 tests passing)
 - [x] Multi-image gallery for French Patio Doors (7 images with carousel)
 
+## Analytics & Reporting
+- [x] Password-protected analytics dashboard at /dashboard
+- [x] Key metrics display (visitors, page views, bounce rate, session duration)
+- [x] Daily visitor trends visualization
+- [x] Device breakdown and traffic sources analytics
+- [x] Conversion tracking (quote requests, contact forms, phone calls)
+- [x] Customizable reporting feature with PDF export
+- [x] 4 preset report templates (Executive, Detailed, Conversion, Custom)
+- [x] Custom metric selection for reports
+
 ## Future Enhancements
 - [ ] Shopping cart system for multi-product quotes
 - [ ] Product search and filtering
 - [ ] Customer testimonials section
 - [ ] Blog or resources section
 - [ ] Live chat support integration
-- [ ] Analytics dashboard
 
 ## Technical Improvements
 - [x] Write vitest unit tests for quotes router (6 tests passing)
 - [x] Write vitest unit tests for contact router (2 tests passing)
 - [x] Write vitest unit tests for auth logout (1 test passing)
+- [x] Write vitest unit tests for dashboard router (9 tests passing)
+- [x] Write vitest unit tests for reports router (9 tests passing)
+- [x] Add SEO keywords to home page
 - [ ] Optimize image loading and caching
-- [ ] Add SEO metadata to all pages
+
+## Production Analytics Implementation
+- [x] Protect dashboard and reports with owner authentication (adminProcedure)
+- [x] Create event tracking system for conversions (quotes, contacts, calls)
+- [x] Implement custom analytics system (Option 2: no external dependencies)
+- [x] Update dashboard to fetch real analytics data from database
+- [x] Update reports to use real analytics data from database
+- [x] Add conversion event logging to quote/contact form submissions
+- [x] Write tests for protected dashboard access (admin-only)
+- [x] Write tests for event tracking and analytics integration (72 tests passing)
+- [x] Client-side page view tracking with Navigator.sendBeacon API
+- [x] Server-side analytics router for event collection
+- [x] Daily metrics aggregation system
+- [x] Comprehensive test suite for analytics system
+
+
+## Analytics Implementation - Remaining Tasks
+- [ ] Wire client-side page view tracking to all routes (use trpc.analytics.track instead of sendBeacon)
+- [ ] Add phone-call click tracking to all tel: links in Header and Contact page
+- [ ] Fix Drizzle query filters in analyticsMetrics router (use `and()` combinator for proper date range)
+- [ ] Replace hardcoded analytics values with real DB-derived data (top pages, traffic sources, device breakdown)
+- [ ] Add integration tests for browser-to-server event tracking flow
+- [ ] Test daily metrics aggregation with actual date ranges
+- [ ] Implement page view tracking on route changes in App.tsx
+- [ ] Add analytics event logging to ReportGenerator component

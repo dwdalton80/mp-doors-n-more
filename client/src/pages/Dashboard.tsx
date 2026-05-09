@@ -1,85 +1,61 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { getLoginUrl } from "@/const";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut, Lock } from "lucide-react";
+import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut } from "lucide-react";
 import ReportGenerator from "@/components/ReportGenerator";
 
 const COLORS = ["#a61c00", "#1e3450", "#f59e0b", "#10b981"];
 
 export default function Dashboard() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const verifyPasswordMutation = trpc.dashboard.verifyPassword.useMutation();
-  const { data: analytics } = trpc.dashboard.getAnalytics.useQuery(undefined, {
-    enabled: isAuthenticated,
+  const { user, loading, isAuthenticated, logout } = useAuth();
+  const { data: analytics, isLoading: analyticsLoading } = trpc.dashboard.getAnalytics.useQuery(undefined, {
+    enabled: isAuthenticated && user?.role === "admin",
   });
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+  // Redirect to login if not authenticated
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <Card className="p-8">
+          <p className="text-gray-600">Loading...</p>
+        </Card>
+      </div>
+    );
+  }
 
-    try {
-      const result = await verifyPasswordMutation.mutateAsync({ password });
-      if (result.isValid) {
-        setIsAuthenticated(true);
-        setPassword("");
-      } else {
-        setError("Invalid password. Please try again.");
-      }
-    } catch (err) {
-      setError("An error occurred. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    setPassword("");
-  };
-
-  if (!isAuthenticated) {
+  if (!isAuthenticated || user?.role !== "admin") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1e3450] to-[#a61c00] p-4">
         <Card className="w-full max-w-md p-8 shadow-2xl">
-          <div className="flex justify-center mb-6">
-            <div className="bg-[#a61c00] text-white p-4 rounded-full">
-              <Lock className="w-8 h-8" />
-            </div>
+          <div className="text-center mb-6">
+            <h1 className="text-3xl font-bold mb-2 text-[#1e3450]">Analytics Dashboard</h1>
+            <p className="text-gray-600">Admin access required</p>
           </div>
-          <h1 className="text-3xl font-bold text-center mb-2 text-[#1e3450]">Analytics Dashboard</h1>
-          <p className="text-center text-gray-600 mb-6">Enter your password to access analytics</p>
 
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
-              <Input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter dashboard password"
-                disabled={loading}
-                className="w-full"
-              />
-            </div>
+          <p className="text-center text-gray-600 mb-6">
+            You need to be logged in as an administrator to access the analytics dashboard.
+          </p>
 
-            {error && <div className="p-3 bg-red-100 text-red-700 rounded text-sm">{error}</div>}
+          <Button
+            onClick={() => window.location.href = getLoginUrl()}
+            className="w-full bg-[#a61c00] hover:bg-[#8b1600] text-white"
+          >
+            Login as Admin
+          </Button>
+        </Card>
+      </div>
+    );
+  }
 
-            <Button
-              type="submit"
-              disabled={loading || !password}
-              className="w-full bg-[#a61c00] hover:bg-[#8b1600] text-white"
-            >
-              {loading ? "Verifying..." : "Access Dashboard"}
-            </Button>
-          </form>
+  if (analyticsLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <Card className="p-8">
+          <p className="text-gray-600">Loading analytics...</p>
         </Card>
       </div>
     );
@@ -94,7 +70,7 @@ export default function Dashboard() {
           <div className="flex items-center gap-3">
             <ReportGenerator />
             <Button
-              onClick={handleLogout}
+              onClick={logout}
               variant="outline"
               className="flex items-center gap-2"
             >
@@ -143,7 +119,7 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm font-medium">Avg Session</p>
-                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.avgSessionDuration}</p>
+                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.avgSessionDuration}s</p>
               </div>
               <TrendingUp className="w-12 h-12 text-[#a61c00] opacity-20" />
             </div>

@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, productImages, InsertProductImage, ProductImage } from "../drizzle/schema";
+import { InsertUser, users, productImages, InsertProductImage, ProductImage, analyticsEvents } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -170,4 +170,107 @@ export async function deleteProductImage(id: number): Promise<boolean> {
     console.error("[Database] Failed to delete product image:", error);
     throw error;
   }
+}
+
+// Analytics event tracking functions
+export async function logAnalyticsEvent(event: {
+  eventType: "quote_request" | "contact_form" | "phone_call" | "page_view";
+  eventName: string;
+  productName?: string | null;
+  userEmail?: string | null;
+  userPhone?: string | null;
+  pageUrl?: string | null;
+  referrer?: string | null;
+  userAgent?: string | null;
+  ipAddress?: string | null;
+  metadata?: string | null;
+}): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot log analytics event: database not available");
+    return;
+  }
+
+  try {
+    // Generate a simple UUID-like ID
+    const id = `evt_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+    await db.insert(analyticsEvents).values({
+      id,
+      eventType: event.eventType,
+      eventName: event.eventName,
+      productName: event.productName,
+      userEmail: event.userEmail,
+      userPhone: event.userPhone,
+      pageUrl: event.pageUrl,
+      referrer: event.referrer,
+      userAgent: event.userAgent,
+      ipAddress: event.ipAddress,
+      metadata: event.metadata,
+      createdAt: new Date(),
+    });
+  } catch (error) {
+    console.error("[Database] Failed to log analytics event:", error);
+    // Don't throw - analytics failures shouldn't break the app
+  }
+}
+
+export async function logQuoteRequest(data: {
+  userEmail?: string;
+  userPhone?: string;
+  productName?: string;
+  pageUrl?: string;
+  referrer?: string;
+  userAgent?: string;
+  ipAddress?: string;
+}): Promise<void> {
+  return logAnalyticsEvent({
+    eventType: "quote_request",
+    eventName: "Quote Request Submitted",
+    productName: data.productName,
+    userEmail: data.userEmail,
+    userPhone: data.userPhone,
+    pageUrl: data.pageUrl,
+    referrer: data.referrer,
+    userAgent: data.userAgent,
+    ipAddress: data.ipAddress,
+  });
+}
+
+export async function logContactForm(data: {
+  userEmail?: string;
+  userPhone?: string;
+  pageUrl?: string;
+  referrer?: string;
+  userAgent?: string;
+  ipAddress?: string;
+}): Promise<void> {
+  return logAnalyticsEvent({
+    eventType: "contact_form",
+    eventName: "Contact Form Submitted",
+    userEmail: data.userEmail,
+    userPhone: data.userPhone,
+    pageUrl: data.pageUrl,
+    referrer: data.referrer,
+    userAgent: data.userAgent,
+    ipAddress: data.ipAddress,
+  });
+}
+
+export async function logPhoneCall(data: {
+  userPhone?: string;
+  pageUrl?: string;
+  referrer?: string;
+  userAgent?: string;
+  ipAddress?: string;
+}): Promise<void> {
+  return logAnalyticsEvent({
+    eventType: "phone_call",
+    eventName: "Phone Call Tracked",
+    userPhone: data.userPhone,
+    pageUrl: data.pageUrl,
+    referrer: data.referrer,
+    userAgent: data.userAgent,
+    ipAddress: data.ipAddress,
+  });
 }

@@ -53,3 +53,48 @@ export const productImages = mysqlTable("productImages", {
 
 export type ProductImage = typeof productImages.$inferSelect;
 export type InsertProductImage = typeof productImages.$inferInsert;
+
+/**
+ * Analytics events table for tracking user interactions and conversions
+ * Stores all events: page views, quote requests, contact submissions, phone calls
+ */
+export const analyticsEvents = mysqlTable("analyticsEvents", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  eventType: mysqlEnum("eventType", ["quote_request", "contact_form", "phone_call", "page_view"]).notNull(),
+  eventName: varchar("eventName", { length: 255 }).notNull(),
+  productName: varchar("productName", { length: 255 }),
+  userEmail: varchar("userEmail", { length: 320 }),
+  userPhone: varchar("userPhone", { length: 20 }),
+  pageUrl: text("pageUrl"),
+  referrer: text("referrer"),
+  userAgent: text("userAgent"),
+  ipAddress: varchar("ipAddress", { length: 45 }),
+  metadata: text("metadata"), // JSON string for additional data
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type AnalyticsEvent = typeof analyticsEvents.$inferSelect;
+export type InsertAnalyticsEvent = typeof analyticsEvents.$inferInsert;
+
+/**
+ * Analytics metrics table for storing aggregated daily metrics
+ * Stores pre-calculated metrics for dashboard performance
+ */
+export const analyticsMetrics = mysqlTable("analyticsMetrics", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  date: varchar("date", { length: 10 }).notNull(), // YYYY-MM-DD format
+  totalVisitors: int("totalVisitors").default(0),
+  pageViews: int("pageViews").default(0),
+  bounceRate: int("bounceRate").default(0), // Stored as percentage (0-100)
+  avgSessionDuration: int("avgSessionDuration").default(0), // in seconds
+  quoteRequests: int("quoteRequests").default(0),
+  contactFormSubmissions: int("contactFormSubmissions").default(0),
+  phoneCallsTracked: int("phoneCallsTracked").default(0),
+  topPage: varchar("topPage", { length: 512 }),
+  topTrafficSource: varchar("topTrafficSource", { length: 255 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type AnalyticsMetric = typeof analyticsMetrics.$inferSelect;
+export type InsertAnalyticsMetric = typeof analyticsMetrics.$inferInsert;

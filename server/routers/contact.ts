@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { ENV } from "../_core/env";
 import { publicProcedure, router } from "../_core/trpc";
+import { logContactForm } from "../db";
 
 const resend = new Resend(ENV.resendApiKey);
 
@@ -73,6 +74,12 @@ export const contactRouter = router({
         console.error("[Contact] Resend error:", error);
         throw new Error("Failed to send message. Please try again or call us directly.");
       }
+
+      // Log analytics event for contact form submission
+      await logContactForm({
+        userEmail: email,
+        userPhone: phone,
+      });
 
       return { success: true };
     }),

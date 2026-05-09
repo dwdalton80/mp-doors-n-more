@@ -15,6 +15,13 @@
       "when": 1776627216399,
       "tag": "0001_rainy_kid_colt",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1778353460691,
+      "tag": "0002_peaceful_dark_beast",
+      "breakpoints": true
     }
   ]
 }

@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { ENV } from "../_core/env";
 import { publicProcedure, router } from "../_core/trpc";
+import { logQuoteRequest } from "../db";
 
 const resend = new Resend(ENV.resendApiKey);
 
@@ -73,6 +74,13 @@ export const quotesRouter = router({
         throw new Error("Failed to send pricing request. Please try again or call us directly.");
       }
 
+      // Log analytics event for pricing request
+      await logQuoteRequest({
+        userEmail: email,
+        userPhone: phone,
+        productName: category,
+      });
+
       return { success: true };
     }),
 
@@ -142,6 +150,13 @@ export const quotesRouter = router({
         console.error("[Quotes] Resend error:", error);
         throw new Error("Failed to send quote request. Please try again or call us directly.");
       }
+
+      // Log analytics event for quote request
+      await logQuoteRequest({
+        userEmail: email,
+        userPhone: phone,
+        productName: product,
+      });
 
       return { success: true };
     }),
