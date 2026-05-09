@@ -21,7 +21,7 @@ export function registerAnalyticsEndpoint(app: Express) {
         referrer,
         userAgent,
         ipAddress,
-        metadata,
+        metadata: metadata ? JSON.stringify(metadata) : null,
       });
 
       // Return success response
