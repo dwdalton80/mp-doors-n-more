@@ -26,6 +26,7 @@ import PatioDoorSpecialOrder from "./pages/PatioDoorSpecialOrder";
 import StormDoorSpecialOrder from "./pages/StormDoorSpecialOrder";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/AdminDashboard";
+import Dashboard from "./pages/Dashboard";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -55,6 +56,7 @@ function Router() {
         <Route path="/storm-doors-special-order" component={StormDoorSpecialOrder} />
         <Route path="/contact" component={Contact} />
         <Route path="/admin" component={AdminDashboard} />
+        <Route path="/dashboard" component={Dashboard} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
