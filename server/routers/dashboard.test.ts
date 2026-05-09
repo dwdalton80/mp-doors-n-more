@@ -175,7 +175,7 @@ describe("Dashboard Router", () => {
   });
 
   describe("Authorization", () => {
-    it("should require admin role for getAnalytics", async () => {
+    it("should allow public access to getAnalytics (for password-verified clients)", async () => {
       // Mock non-admin context
       const mockContext = {
         user: { id: "user", role: "user" },
@@ -183,12 +183,10 @@ describe("Dashboard Router", () => {
 
       const caller = dashboardRouter.createCaller(mockContext);
 
-      try {
-        await caller.getAnalytics();
-        expect.fail("Should have thrown an error");
-      } catch (error: any) {
-        expect(error.code).toBe("FORBIDDEN");
-      }
+      // Should not throw - getAnalytics is public
+      const result = await caller.getAnalytics();
+      expect(result).toBeDefined();
+      expect(result.totalVisitors).toBeGreaterThanOrEqual(0);
     });
 
     it("should require admin role for getConversions", async () => {

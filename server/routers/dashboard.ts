@@ -16,6 +16,30 @@ const analyticsResponseSchema = {
   dailyVisitors: [] as any[],
 };
 
+/**
+ * Extract page path from full URL
+ */
+function getPagePath(url: string): string {
+  try {
+    const urlObj = new URL(url);
+    return urlObj.pathname;
+  } catch {
+    return url;
+  }
+}
+
+/**
+ * Parse metadata JSON safely
+ */
+function parseMetadata(metadata: string | null): Record<string, any> {
+  if (!metadata) return {};
+  try {
+    return JSON.parse(metadata);
+  } catch {
+    return {};
+  }
+}
+
 async function getAnalyticsData(input?: { startDate?: string; endDate?: string }) {
   const db = await getDb();
   if (!db) {
@@ -66,47 +90,116 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
           .map(e => e.ipAddress)
       );
       
-      const pageViews = events.filter(e => e.eventType === "page_view").length;
+      const pageViewEvents = events.filter(e => e.eventType === "page_view");
+      const pageViews = pageViewEvents.length;
       const quoteRequests = events.filter(e => e.eventType === "quote_request").length;
       const contactForms = events.filter(e => e.eventType === "contact_form").length;
       const phoneCalls = events.filter(e => e.eventType === "phone_call").length;
 
+      // Calculate real top pages
+      const pagePathMap = new Map<string, { views: number; visitors: Set<string> }>();
+      pageViewEvents.forEach(event => {
+        const metadata = parseMetadata(event.metadata);
+        const pagePath = metadata.pagePath || getPagePath(event.pageUrl || "");
+        const ip = event.ipAddress || "unknown";
+        
+        if (!pagePathMap.has(pagePath)) {
+          pagePathMap.set(pagePath, { views: 0, visitors: new Set() });
+        }
+        const page = pagePathMap.get(pagePath)!;
+        page.views++;
+        page.visitors.add(ip);
+      });
+
+      const topPages = Array.from(pagePathMap.entries())
+        .map(([path, data]) => ({
+          path: path || "/",
+          views: data.views,
+          visitors: data.visitors.size,
+        }))
+        .sort((a, b) => b.views - a.views)
+        .slice(0, 5);
+
+      // Calculate real traffic sources
+      const trafficSourceMap = new Map<string, { visitors: Set<string> }>();
+      pageViewEvents.forEach(event => {
+        const metadata = parseMetadata(event.metadata);
+        const source = metadata.trafficSource || "direct";
+        const ip = event.ipAddress || "unknown";
+        
+        if (!trafficSourceMap.has(source)) {
+          trafficSourceMap.set(source, { visitors: new Set() });
+        }
+        trafficSourceMap.get(source)!.visitors.add(ip);
+      });
+
+      const totalUniqueVisitors = uniqueIPs.size || pageViews;
+      const trafficSources = Array.from(trafficSourceMap.entries())
+        .map(([source, data]) => {
+          const visitors = data.visitors.size;
+          let percentage = Math.round((visitors / totalUniqueVisitors) * 100);
+          percentage = Math.min(percentage, 100);
+          return {
+            source: source.charAt(0).toUpperCase() + source.slice(1).replace(/_/g, " "),
+            visitors,
+            percentage,
+          };
+        })
+        .sort((a, b) => b.visitors - a.visitors);
+
+      // Calculate real device breakdown
+      const deviceMap = new Map<string, { visitors: Set<string> }>();
+      pageViewEvents.forEach(event => {
+        const metadata = parseMetadata(event.metadata);
+        const device = metadata.deviceType || "desktop";
+        const ip = event.ipAddress || "unknown";
+        
+        if (!deviceMap.has(device)) {
+          deviceMap.set(device, { visitors: new Set() });
+        }
+        deviceMap.get(device)!.visitors.add(ip);
+      });
+
+      const deviceBreakdown = Array.from(deviceMap.entries())
+        .map(([device, data]) => {
+          const visitors = data.visitors.size;
+          let percentage = Math.round((visitors / totalUniqueVisitors) * 100);
+          percentage = Math.min(percentage, 100);
+          return {
+            device: device.charAt(0).toUpperCase() + device.slice(1),
+            visitors,
+            percentage,
+          };
+        })
+        .sort((a, b) => b.visitors - a.visitors);
+
       return {
-        totalVisitors: uniqueIPs.size || pageViews,
+        totalVisitors: totalUniqueVisitors,
         pageViews,
-        bounceRate: 32, // Default estimate
-        avgSessionDuration: 240, // 4 minutes
-        topPages: [
-          { path: "/", views: Math.floor(pageViews * 0.3), visitors: Math.floor((uniqueIPs.size || pageViews) * 0.3) },
-          { path: "/products", views: Math.floor(pageViews * 0.25), visitors: Math.floor((uniqueIPs.size || pageViews) * 0.25) },
-          { path: "/contact", views: Math.floor(pageViews * 0.2), visitors: Math.floor((uniqueIPs.size || pageViews) * 0.2) },
-          { path: "/patio-doors-special-order", views: Math.floor(pageViews * 0.15), visitors: Math.floor((uniqueIPs.size || pageViews) * 0.15) },
-          { path: "/interior-doors-in-stock", views: Math.floor(pageViews * 0.1), visitors: Math.floor((uniqueIPs.size || pageViews) * 0.1) },
+        bounceRate: 32, // Default estimate - would need session tracking to calculate real value
+        avgSessionDuration: 240, // Default estimate - would need session tracking to calculate real value
+        topPages: topPages.length > 0 ? topPages : [
+          { path: "/", views: pageViews, visitors: totalUniqueVisitors },
         ],
-        trafficSources: [
-          { source: "Direct", visitors: Math.floor((uniqueIPs.size || pageViews) * 0.4), percentage: 40 },
-          { source: "Organic Search", visitors: Math.floor((uniqueIPs.size || pageViews) * 0.35), percentage: 35 },
-          { source: "Referral", visitors: Math.floor((uniqueIPs.size || pageViews) * 0.15), percentage: 15 },
-          { source: "Social Media", visitors: Math.floor((uniqueIPs.size || pageViews) * 0.1), percentage: 10 },
+        trafficSources: trafficSources.length > 0 ? trafficSources : [
+          { source: "Direct", visitors: totalUniqueVisitors, percentage: 100 },
         ],
         conversions: {
           quoteRequests,
           contactFormSubmissions: contactForms,
           phoneCallsTracked: phoneCalls,
         },
-        deviceBreakdown: [
-          { device: "Mobile", percentage: 58, visitors: Math.floor((uniqueIPs.size || pageViews) * 0.58) },
-          { device: "Desktop", percentage: 35, visitors: Math.floor((uniqueIPs.size || pageViews) * 0.35) },
-          { device: "Tablet", percentage: 7, visitors: Math.floor((uniqueIPs.size || pageViews) * 0.07) },
+        deviceBreakdown: deviceBreakdown.length > 0 ? deviceBreakdown : [
+          { device: "Desktop", percentage: 100, visitors: totalUniqueVisitors },
         ],
         dailyVisitors: [
-          { date: "Mon", visitors: Math.floor((uniqueIPs.size || pageViews) / 7) },
-          { date: "Tue", visitors: Math.floor((uniqueIPs.size || pageViews) / 7) },
-          { date: "Wed", visitors: Math.floor((uniqueIPs.size || pageViews) / 7) },
-          { date: "Thu", visitors: Math.floor((uniqueIPs.size || pageViews) / 7) },
-          { date: "Fri", visitors: Math.floor((uniqueIPs.size || pageViews) / 7) },
-          { date: "Sat", visitors: Math.floor((uniqueIPs.size || pageViews) / 7) },
-          { date: "Sun", visitors: Math.floor((uniqueIPs.size || pageViews) / 7) },
+          { date: "Mon", visitors: Math.floor(totalUniqueVisitors / 7) },
+          { date: "Tue", visitors: Math.floor(totalUniqueVisitors / 7) },
+          { date: "Wed", visitors: Math.floor(totalUniqueVisitors / 7) },
+          { date: "Thu", visitors: Math.floor(totalUniqueVisitors / 7) },
+          { date: "Fri", visitors: Math.floor(totalUniqueVisitors / 7) },
+          { date: "Sat", visitors: Math.floor(totalUniqueVisitors / 7) },
+          { date: "Sun", visitors: Math.floor(totalUniqueVisitors / 7) },
         ],
       };
     }
