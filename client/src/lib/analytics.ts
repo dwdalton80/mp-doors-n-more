@@ -132,9 +132,24 @@ export function logEvent(event: AnalyticsEvent) {
 }
 
 /**
- * Track phone call click
+ * Track phone call click with debouncing to prevent duplicate clicks
+ * Only tracks the first click within 5 seconds from the same phone number
  */
+const phoneCallDebounceMap = new Map<string, number>();
+const PHONE_CALL_DEBOUNCE_MS = 5000; // 5 seconds
+
 export function logPhoneCallClick(phoneNumber: string) {
+  const now = Date.now();
+  const lastClickTime = phoneCallDebounceMap.get(phoneNumber) || 0;
+  
+  // Only track if more than 5 seconds have passed since last click
+  if (now - lastClickTime < PHONE_CALL_DEBOUNCE_MS) {
+    return; // Ignore duplicate clicks
+  }
+  
+  // Update the last click time
+  phoneCallDebounceMap.set(phoneNumber, now);
+  
   logEvent({
     eventType: "phone_call",
     eventName: `Phone Call: ${phoneNumber}`,
