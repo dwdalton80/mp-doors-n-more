@@ -3,6 +3,7 @@ import { z } from "zod";
 import { ENV } from "../_core/env";
 import { publicProcedure, router } from "../_core/trpc";
 import { logContactForm } from "../db";
+import { checkRateLimit, validateHoneypot } from "../_core/spamPrevention";
 
 const resend = new Resend(ENV.resendApiKey);
 
@@ -15,10 +16,22 @@ export const contactRouter = router({
         phone: z.string().optional(),
         subject: z.string().optional(),
         message: z.string().min(1, "Message is required"),
+        honeypot: z.string().optional(), // Hidden field for spam detection
       })
     )
-    .mutation(async ({ input }) => {
-      const { name, email, phone, subject, message } = input;
+    .mutation(async ({ input, ctx }) => {
+      const { name, email, phone, subject, message, honeypot } = input;
+
+      // Validate honeypot field
+      if (!validateHoneypot(honeypot)) {
+        throw new Error("Invalid submission. Please try again.");
+      }
+
+      // Check rate limit
+      const ipAddress = ctx.req?.headers["x-forwarded-for"] as string | undefined;
+      if (!checkRateLimit(ipAddress)) {
+        throw new Error("Too many submissions. Please try again in 1 hour.");
+      }
 
       const subjectLine = subject
         ? `New Inquiry: ${subject.charAt(0).toUpperCase() + subject.slice(1)} — ${name}`

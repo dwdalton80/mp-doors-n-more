@@ -3,6 +3,7 @@ import { z } from "zod";
 import { ENV } from "../_core/env";
 import { publicProcedure, router } from "../_core/trpc";
 import { logQuoteRequest } from "../db";
+import { checkRateLimit, validateHoneypot } from "../_core/spamPrevention";
 
 const resend = new Resend(ENV.resendApiKey);
 
@@ -15,10 +16,22 @@ export const quotesRouter = router({
         phone: z.string().optional(),
         message: z.string().optional(),
         category: z.string().optional(),
+        honeypot: z.string().optional(), // Hidden field for spam detection
       })
     )
-    .mutation(async ({ input }) => {
-      const { name, email, phone, message, category } = input;
+    .mutation(async ({ input, ctx }) => {
+      const { name, email, phone, message, category, honeypot } = input;
+
+      // Validate honeypot field
+      if (!validateHoneypot(honeypot)) {
+        throw new Error("Invalid submission. Please try again.");
+      }
+
+      // Check rate limit
+      const ipAddress = ctx.req?.headers["x-forwarded-for"] as string | undefined;
+      if (!checkRateLimit(ipAddress)) {
+        throw new Error("Too many submissions. Please try again in 1 hour.");
+      }
 
       const subjectLine = `Pricing Request from ${name}${category ? ` - ${category}` : ""}`;
 
@@ -92,10 +105,22 @@ export const quotesRouter = router({
         phone: z.string().optional(),
         message: z.string().optional(),
         product: z.string().optional(),
+        honeypot: z.string().optional(), // Hidden field for spam detection
       })
     )
-    .mutation(async ({ input }) => {
-      const { name, email, phone, message, product } = input;
+    .mutation(async ({ input, ctx }) => {
+      const { name, email, phone, message, product, honeypot } = input;
+
+      // Validate honeypot field
+      if (!validateHoneypot(honeypot)) {
+        throw new Error("Invalid submission. Please try again.");
+      }
+
+      // Check rate limit
+      const ipAddress = ctx.req?.headers["x-forwarded-for"] as string | undefined;
+      if (!checkRateLimit(ipAddress)) {
+        throw new Error("Too many submissions. Please try again in 1 hour.");
+      }
 
       const subjectLine = `Quote Request from ${name}${product ? ` - ${product}` : ""}`;
 
