@@ -5,18 +5,36 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut } from "lucide-react";
+import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut, Lock } from "lucide-react";
 import ReportGenerator from "@/components/ReportGenerator";
+import { toast } from "sonner";
 
 const COLORS = ["#a61c00", "#1e3450", "#f59e0b", "#10b981"];
 
 export default function Dashboard() {
   const { user, loading, isAuthenticated, logout } = useAuth();
+  const [passwordInput, setPasswordInput] = useState("");
+  const [isPasswordVerified, setIsPasswordVerified] = useState(false);
+
   const { data: analytics, isLoading: analyticsLoading } = trpc.dashboard.getAnalytics.useQuery(undefined, {
-    enabled: isAuthenticated && user?.role === "admin",
+    enabled: isPasswordVerified || (isAuthenticated && user?.role === "admin"),
   });
 
-  // Redirect to login if not authenticated
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const dashboardPassword = process.env.REACT_APP_DASHBOARD_PASSWORD || "Maldonado";
+
+    if (passwordInput === dashboardPassword) {
+      setIsPasswordVerified(true);
+      setPasswordInput("");
+      toast.success("Password verified!");
+    } else {
+      toast.error("Incorrect password");
+      setPasswordInput("");
+    }
+  };
+
+  // Loading state
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -27,25 +45,55 @@ export default function Dashboard() {
     );
   }
 
-  if (!isAuthenticated || user?.role !== "admin") {
+  // Password verification for non-admin users
+  if (!isPasswordVerified && (!isAuthenticated || user?.role !== "admin")) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1e3450] to-[#a61c00] p-4">
         <Card className="w-full max-w-md p-8 shadow-2xl">
           <div className="text-center mb-6">
+            <div className="flex justify-center mb-4">
+              <Lock className="w-12 h-12 text-[#a61c00]" />
+            </div>
             <h1 className="text-3xl font-bold mb-2 text-[#1e3450]">Analytics Dashboard</h1>
-            <p className="text-gray-600">Admin access required</p>
+            <p className="text-gray-600">Enter password to access</p>
           </div>
 
-          <p className="text-center text-gray-600 mb-6">
-            You need to be logged in as an administrator to access the analytics dashboard.
-          </p>
+          <form onSubmit={handlePasswordSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
+                placeholder="Enter dashboard password"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a61c00] focus:border-transparent outline-none"
+              />
+            </div>
 
-          <Button
-            onClick={() => window.location.href = getLoginUrl()}
-            className="w-full bg-[#a61c00] hover:bg-[#8b1600] text-white"
-          >
-            Login as Admin
-          </Button>
+            <Button
+              type="submit"
+              disabled={!passwordInput}
+              className="w-full bg-[#a61c00] hover:bg-[#8b1600] text-white"
+            >
+              Verify Password
+            </Button>
+          </form>
+
+          {isAuthenticated && user?.role === "admin" && (
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <p className="text-sm text-gray-600 mb-3">Or login as admin:</p>
+              <Button
+                onClick={logout}
+                variant="outline"
+                className="w-full"
+              >
+                Logout
+              </Button>
+            </div>
+          )}
         </Card>
       </div>
     );
@@ -68,14 +116,21 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <h1 className="text-3xl font-bold text-[#1e3450]">Analytics Dashboard</h1>
           <div className="flex items-center gap-3">
-            <ReportGenerator />
+            {isAuthenticated && user?.role === "admin" && <ReportGenerator />}
             <Button
-              onClick={logout}
+              onClick={() => {
+                if (isAuthenticated) {
+                  logout();
+                } else {
+                  setIsPasswordVerified(false);
+                  setPasswordInput("");
+                }
+              }}
               variant="outline"
               className="flex items-center gap-2"
             >
               <LogOut className="w-4 h-4" />
-              Logout
+              {isAuthenticated ? "Logout" : "Exit"}
             </Button>
           </div>
         </div>
@@ -119,46 +174,79 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm font-medium">Avg Session</p>
-                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.avgSessionDuration}s</p>
+                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.avgSessionDuration}</p>
               </div>
               <TrendingUp className="w-12 h-12 text-[#a61c00] opacity-20" />
             </div>
           </Card>
         </div>
 
-        {/* Charts Row 1 */}
+        {/* Conversions */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <Card className="p-6 bg-white shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Quote Requests</p>
+                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.conversions.quoteRequests}</p>
+              </div>
+              <MessageSquare className="w-12 h-12 text-[#a61c00] opacity-20" />
+            </div>
+          </Card>
+
+          <Card className="p-6 bg-white shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Contact Forms</p>
+                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.conversions.contactFormSubmissions}</p>
+              </div>
+              <MessageSquare className="w-12 h-12 text-[#a61c00] opacity-20" />
+            </div>
+          </Card>
+
+          <Card className="p-6 bg-white shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Phone Calls</p>
+                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.conversions.phoneCallsTracked}</p>
+              </div>
+              <Phone className="w-12 h-12 text-[#a61c00] opacity-20" />
+            </div>
+          </Card>
+        </div>
+
+        {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* Daily Visitors Chart */}
           <Card className="p-6 bg-white shadow-sm">
-            <h2 className="text-xl font-bold text-[#1e3450] mb-4">Daily Visitors</h2>
+            <h2 className="text-lg font-bold text-[#1e3450] mb-4">Daily Visitors</h2>
             <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={analytics?.dailyVisitors}>
+              <LineChart data={analytics?.dailyVisitors || []}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="date" />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="visitors" stroke="#a61c00" strokeWidth={2} dot={{ fill: "#a61c00" }} />
+                <Line type="monotone" dataKey="visitors" stroke="#a61c00" />
               </LineChart>
             </ResponsiveContainer>
           </Card>
 
-          {/* Device Breakdown */}
+          {/* Traffic Sources Pie Chart */}
           <Card className="p-6 bg-white shadow-sm">
-            <h2 className="text-xl font-bold text-[#1e3450] mb-4">Device Breakdown</h2>
+            <h2 className="text-lg font-bold text-[#1e3450] mb-4">Traffic Sources</h2>
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie
-                  data={analytics?.deviceBreakdown}
+                  data={analytics?.trafficSources || []}
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ device, percentage }) => `${device} ${percentage}%`}
+                  label={({ source, percentage }) => `${source} ${percentage}%`}
                   outerRadius={80}
                   fill="#8884d8"
-                  dataKey="percentage"
+                  dataKey="visitors"
                 >
-                  {analytics?.deviceBreakdown.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  {COLORS.map((color, index) => (
+                    <Cell key={`cell-${index}`} fill={color} />
                   ))}
                 </Pie>
                 <Tooltip />
@@ -167,75 +255,33 @@ export default function Dashboard() {
           </Card>
         </div>
 
-        {/* Charts Row 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          {/* Traffic Sources */}
-          <Card className="p-6 bg-white shadow-sm">
-            <h2 className="text-xl font-bold text-[#1e3450] mb-4">Traffic Sources</h2>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={analytics?.trafficSources}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="source" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="visitors" fill="#a61c00" />
-              </BarChart>
-            </ResponsiveContainer>
-          </Card>
+        {/* Device Breakdown */}
+        <Card className="p-6 bg-white shadow-sm mb-8">
+          <h2 className="text-lg font-bold text-[#1e3450] mb-4">Device Breakdown</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={analytics?.deviceBreakdown || []}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="device" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="visitors" fill="#a61c00" />
+            </BarChart>
+          </ResponsiveContainer>
+        </Card>
 
-          {/* Top Pages */}
-          <Card className="p-6 bg-white shadow-sm">
-            <h2 className="text-xl font-bold text-[#1e3450] mb-4">Top Pages</h2>
-            <div className="space-y-3">
-              {analytics?.topPages.map((page, idx) => (
-                <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded">
-                  <div className="flex-1">
-                    <p className="font-medium text-gray-900">{page.path}</p>
-                    <p className="text-sm text-gray-600">{page.visitors} visitors</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-[#a61c00]">{page.views}</p>
-                    <p className="text-xs text-gray-600">views</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Card>
-        </div>
-
-        {/* Conversions */}
+        {/* Top Pages */}
         <Card className="p-6 bg-white shadow-sm">
-          <h2 className="text-xl font-bold text-[#1e3450] mb-6">Conversions & Actions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
-              <div className="flex items-center gap-3">
-                <MessageSquare className="w-8 h-8 text-blue-600" />
-                <div>
-                  <p className="text-sm text-blue-600 font-medium">Quote Requests</p>
-                  <p className="text-2xl font-bold text-blue-900">{analytics?.conversions.quoteRequests}</p>
+          <h2 className="text-lg font-bold text-[#1e3450] mb-4">Top Pages</h2>
+          <div className="space-y-3">
+            {analytics?.topPages.map((page, idx) => (
+              <div key={idx} className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                <span className="text-gray-700">{page.path}</span>
+                <div className="flex gap-4">
+                  <span className="text-sm text-gray-600">{page.views} views</span>
+                  <span className="text-sm text-gray-600">{page.visitors} visitors</span>
                 </div>
               </div>
-            </div>
-
-            <div className="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border border-green-200">
-              <div className="flex items-center gap-3">
-                <MessageSquare className="w-8 h-8 text-green-600" />
-                <div>
-                  <p className="text-sm text-green-600 font-medium">Contact Forms</p>
-                  <p className="text-2xl font-bold text-green-900">{analytics?.conversions.contactFormSubmissions}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border border-purple-200">
-              <div className="flex items-center gap-3">
-                <Phone className="w-8 h-8 text-purple-600" />
-                <div>
-                  <p className="text-sm text-purple-600 font-medium">Phone Calls</p>
-                  <p className="text-2xl font-bold text-purple-900">{analytics?.conversions.phoneCallsTracked}</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </Card>
       </div>
