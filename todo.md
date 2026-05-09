@@ -106,3 +106,7 @@
 - [x] Create separate dashboard view for password-protected access
 - [x] Implement password verification endpoint for dashboard
 - [x] Add password verification to dashboard router
+
+
+## Bug Fixes
+- [x] Fix text overlapping issue on traffic sources pie chart in dashboard (replaced pie chart with legend and progress bars)

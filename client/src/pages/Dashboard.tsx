@@ -230,28 +230,34 @@ export default function Dashboard() {
             </ResponsiveContainer>
           </Card>
 
-          {/* Traffic Sources Pie Chart */}
+          {/* Traffic Sources */}
           <Card className="p-6 bg-white shadow-sm">
             <h2 className="text-lg font-bold text-[#1e3450] mb-4">Traffic Sources</h2>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie
-                  data={analytics?.trafficSources || []}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={({ source, percentage }) => `${source} ${percentage}%`}
-                  outerRadius={80}
-                  fill="#8884d8"
-                  dataKey="visitors"
-                >
-                  {COLORS.map((color, index) => (
-                    <Cell key={`cell-${index}`} fill={color} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
+            <div className="space-y-3">
+              {analytics?.trafficSources.map((source, idx) => (
+                <div key={idx} className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-4 h-4 rounded"
+                      style={{ backgroundColor: COLORS[idx % COLORS.length] }}
+                    />
+                    <span className="text-gray-700 font-medium">{source.source}</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-32 bg-gray-200 rounded-full h-2">
+                      <div
+                        className="h-2 rounded-full transition-all"
+                        style={{
+                          width: `${source.percentage}%`,
+                          backgroundColor: COLORS[idx % COLORS.length],
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 w-12 text-right">{source.percentage}%</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </Card>
         </div>
 
