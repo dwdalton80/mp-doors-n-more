@@ -206,6 +206,7 @@ export default function ProductDoors() {
                       {product.id === 'interior-doors' && (
                         <Link
                           href="/interior-doors-in-stock"
+                          onClick={() => window.scrollTo(0, 0)}
                           className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
                         >
                           Popular In Stock
@@ -214,6 +215,7 @@ export default function ProductDoors() {
                       {product.id === 'entry-doors' && (
                         <Link
                           href="/exterior-doors-in-stock"
+                          onClick={() => window.scrollTo(0, 0)}
                           className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
                         >
                           Popular In Stock
@@ -222,6 +224,7 @@ export default function ProductDoors() {
                       {product.id === 'patio-doors' && (
                         <Link
                           href="/patio-doors-special-order"
+                          onClick={() => window.scrollTo(0, 0)}
                           className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
                         >
                           Special Order
@@ -230,6 +233,7 @@ export default function ProductDoors() {
                       {product.id === 'storm-doors' && (
                         <Link
                           href="/storm-doors-special-order"
+                          onClick={() => window.scrollTo(0, 0)}
                           className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
                         >
                           Special Order
