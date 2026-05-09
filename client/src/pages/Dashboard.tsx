@@ -4,8 +4,8 @@ import { getLoginUrl } from "@/const";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut, Lock } from "lucide-react";
+import { BarChart, Bar, LineChart, Line, BarChart as BarChartComponent, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut, Lock, Calendar } from "lucide-react";
 import ReportGenerator from "@/components/ReportGenerator";
 import { toast } from "sonner";
 
@@ -15,10 +15,32 @@ export default function Dashboard() {
   const { user, loading, isAuthenticated, logout } = useAuth();
   const [passwordInput, setPasswordInput] = useState("");
   const [isPasswordVerified, setIsPasswordVerified] = useState(false);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
-  const { data: analytics, isLoading: analyticsLoading } = trpc.dashboard.getAnalytics.useQuery(undefined, {
-    enabled: isPasswordVerified || (isAuthenticated && user?.role === "admin"),
-  });
+  // Calculate default date range (last 7 days)
+  const getDefaultDates = () => {
+    const today = new Date();
+    const sevenDaysAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+    return {
+      start: sevenDaysAgo.toISOString().split("T")[0],
+      end: today.toISOString().split("T")[0],
+    };
+  };
+
+  const defaults = getDefaultDates();
+  const queryStartDate = startDate || defaults.start;
+  const queryEndDate = endDate || defaults.end;
+
+  const { data: analytics, isLoading: analyticsLoading } = trpc.dashboard.getAnalytics.useQuery(
+    {
+      startDate: queryStartDate,
+      endDate: queryEndDate,
+    },
+    {
+      enabled: isPasswordVerified || (isAuthenticated && user?.role === "admin"),
+    }
+  );
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,6 +54,11 @@ export default function Dashboard() {
       toast.error("Incorrect password");
       setPasswordInput("");
     }
+  };
+
+  const handleResetDates = () => {
+    setStartDate("");
+    setEndDate("");
   };
 
   // Loading state
@@ -138,6 +165,54 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-16">
+        {/* Date Range Filter */}
+        <Card className="p-6 bg-white shadow-sm mb-8">
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-[#a61c00]" />
+              <span className="font-medium text-gray-700">Date Range:</span>
+            </div>
+            <div className="flex items-center gap-3 flex-wrap">
+              <div>
+                <label htmlFor="start-date" className="block text-sm text-gray-600 mb-1">
+                  Start Date
+                </label>
+                <input
+                  id="start-date"
+                  type="date"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a61c00] focus:border-transparent outline-none"
+                />
+              </div>
+              <div>
+                <label htmlFor="end-date" className="block text-sm text-gray-600 mb-1">
+                  End Date
+                </label>
+                <input
+                  id="end-date"
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a61c00] focus:border-transparent outline-none"
+                />
+              </div>
+              <div className="pt-6">
+                <Button
+                  onClick={handleResetDates}
+                  variant="outline"
+                  className="text-sm"
+                >
+                  Reset to Last 7 Days
+                </Button>
+              </div>
+            </div>
+            <div className="text-sm text-gray-500 ml-auto">
+              Showing data from {queryStartDate} to {queryEndDate}
+            </div>
+          </div>
+        </Card>
+
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <Card className="p-6 bg-white shadow-sm hover:shadow-md transition">
@@ -265,13 +340,13 @@ export default function Dashboard() {
         <Card className="p-6 bg-white shadow-sm mb-8">
           <h2 className="text-lg font-bold text-[#1e3450] mb-4">Device Breakdown</h2>
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={analytics?.deviceBreakdown || []}>
+            <BarChartComponent data={analytics?.deviceBreakdown || []}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="device" />
               <YAxis />
               <Tooltip />
               <Bar dataKey="visitors" fill="#a61c00" />
-            </BarChart>
+            </BarChartComponent>
           </ResponsiveContainer>
         </Card>
 

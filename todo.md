@@ -110,3 +110,7 @@
 
 ## Bug Fixes
 - [x] Fix text overlapping issue on traffic sources pie chart in dashboard (replaced pie chart with legend and progress bars)
+
+
+## Dashboard Features
+- [x] Add date range picker to dashboard for filtering analytics data

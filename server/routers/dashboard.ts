@@ -2,7 +2,7 @@ import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 import { z } from "zod";
 import { getDb } from "../db";
 import { analyticsEvents, analyticsMetrics } from "../../drizzle/schema";
-import { gte, desc } from "drizzle-orm";
+import { gte, lte, desc, and } from "drizzle-orm";
 
 const analyticsResponseSchema = {
   totalVisitors: 0,
@@ -34,16 +34,29 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
     const metrics = await db
       .select()
       .from(analyticsMetrics)
-      .where(gte(analyticsMetrics.date, startDate))
+      .where(
+        and(
+          gte(analyticsMetrics.date, startDate),
+          lte(analyticsMetrics.date, endDate)
+        )
+      )
       .orderBy(desc(analyticsMetrics.date))
       .limit(30);
 
     // If no metrics exist, aggregate from events
     if (metrics.length === 0) {
+      const startDateTime = new Date(startDate + "T00:00:00Z");
+      const endDateTime = new Date(endDate + "T23:59:59Z");
+      
       const events = await db
         .select()
         .from(analyticsEvents)
-        .where(gte(analyticsEvents.createdAt, new Date(startDate)))
+        .where(
+          and(
+            gte(analyticsEvents.createdAt, startDateTime),
+            lte(analyticsEvents.createdAt, endDateTime)
+          )
+        )
         .orderBy(desc(analyticsEvents.createdAt));
 
       // Calculate aggregated stats from events
@@ -194,13 +207,13 @@ export const dashboardRouter = router({
         }
 
         if (input?.startDate) {
-          const startDate = new Date(input.startDate);
-          filtered = filtered.filter(e => new Date(e.createdAt) >= startDate);
+          const startDateTime = new Date(input.startDate + "T00:00:00Z");
+          filtered = filtered.filter(e => new Date(e.createdAt) >= startDateTime);
         }
 
         if (input?.endDate) {
-          const endDate = new Date(input.endDate);
-          filtered = filtered.filter(e => new Date(e.createdAt) <= endDate);
+          const endDateTime = new Date(input.endDate + "T23:59:59Z");
+          filtered = filtered.filter(e => new Date(e.createdAt) <= endDateTime);
         }
 
         return {
