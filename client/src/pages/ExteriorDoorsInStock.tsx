@@ -27,7 +27,7 @@ const inStockDoors = [
   {
     id: "entry-door-jeldwen",
     title: "Jeld-Wen Entry Door",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/jeldwen-entry-door-MopepvCWi9e7dqDhB2chc6.webp",
     imageUrl2: "/manus-storage/entry-door-diagram.jpg",
     brand: "Jeld-Wen",
     description: "Quality entry door with modern styling and durable construction. Perfect for any home exterior.",

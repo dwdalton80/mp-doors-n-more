@@ -162,3 +162,7 @@
 - [x] Product images not displaying correctly on ProductDoors page
 - [x] Check image URLs for Jeld-Wen Entry Doors and other products (403 Forbidden from CloudFront)
 - [x] Fix broken image links or replace with working images (Entry Doors image replaced)
+
+
+## Exterior Doors In Stock Image Fixes
+- [x] Fix broken Jeld-Wen Entry Door image (replaced with new product image)
