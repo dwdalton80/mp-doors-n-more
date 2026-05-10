@@ -156,3 +156,9 @@
 - [x] Dashboard device breakdown not showing accurate data (FIXED)
 - [x] Investigate device type detection in analytics (metadata was NULL)
 - [x] Fix device type tracking in client-side analytics (sendBeacon parsing issue fixed)
+
+
+## Product Image Issues
+- [x] Product images not displaying correctly on ProductDoors page
+- [x] Check image URLs for Jeld-Wen Entry Doors and other products (403 Forbidden from CloudFront)
+- [x] Fix broken image links or replace with working images (Entry Doors image replaced)

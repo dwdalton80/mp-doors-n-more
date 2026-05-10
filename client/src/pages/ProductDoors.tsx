@@ -18,8 +18,8 @@ const products = [
   {
     id: "entry-doors",
     title: "Entry Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
-    description: "Premium entry doors with security and style. Energy-efficient designs to keep your home comfortable year-round.",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-product-QKWgV7Duu9whAYXBXvyKxu.webp",
+    description: "Premium entry doors with security and style. Modern farmhouse designs with glass sidelights and solid wood construction. Energy-efficient and beautiful.",
     brands: ["Masonite", "Woodgrain", "Trimlite", "Frame Port", "Thermatru", "Glass Craft"],
     features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes available", "Security glass options"],
     rating: 5,
