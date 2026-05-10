@@ -166,3 +166,7 @@
 
 ## Exterior Doors In Stock Image Fixes
 - [x] Fix broken Jeld-Wen Entry Door image (replaced with new product image)
+
+
+## Mobile UI Fixes
+- [x] Fix "x" button visibility on interior doors quick view cards on mobile (changed to fixed positioning on mobile)

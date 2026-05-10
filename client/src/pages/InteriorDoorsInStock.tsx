@@ -235,7 +235,7 @@ export default function InteriorDoorsInStock() {
                 setSelectedProduct(null);
                 setShowSecondImage(false);
               }}
-              className="absolute top-4 right-4 bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition-colors z-10"
+              className="fixed top-4 right-4 md:absolute bg-gray-100 rounded-full p-3 hover:bg-gray-200 transition-colors z-50 md:z-10"
             >
               <X className="w-6 h-6 text-black" />
             </button>
