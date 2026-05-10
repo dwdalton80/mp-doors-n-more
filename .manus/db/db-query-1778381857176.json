@@ -1,0 +1,25 @@
+{
+  "query": "SELECT id, eventType, metadata FROM analyticsEvents WHERE eventType='page_view' LIMIT 3;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Ds9EUWzX7Fg7bK.ab22ca53e843 --database ewrgsBYn5kz4enQN79TrkM --execute SELECT id, eventType, metadata FROM analyticsEvents WHERE eventType='page_view' LIMIT 3;",
+  "rows": [
+    {
+      "id": "evt_1778354023793_ync4xnx74",
+      "eventType": "page_view",
+      "metadata": "NULL"
+    },
+    {
+      "id": "evt_1778354023914_m1nvvdksm",
+      "eventType": "page_view",
+      "metadata": "NULL"
+    },
+    {
+      "id": "evt_1778354023922_57c2t18qt",
+      "eventType": "page_view",
+      "metadata": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\teventType\tmetadata\nevt_1778354023793_ync4xnx74\tpage_view\tNULL\nevt_1778354023914_m1nvvdksm\tpage_view\tNULL\nevt_1778354023922_57c2t18qt\tpage_view\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 311
+}

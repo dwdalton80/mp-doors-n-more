@@ -5,13 +5,26 @@ export function registerAnalyticsEndpoint(app: Express) {
   // REST endpoint for analytics tracking (used by client-side sendBeacon)
   app.post("/api/analytics/track", async (req: Request, res: Response) => {
     try {
-      const { eventType, eventName, pageUrl, referrer, userAgent, metadata } = req.body;
+      let body = req.body;
+      
+      // If body is a string (from sendBeacon), parse it
+      if (typeof req.body === "string") {
+        body = JSON.parse(req.body);
+      }
+      
+      const { eventType, eventName, pageUrl, referrer, userAgent, metadata } = body;
 
       // Extract IP address from request
       const ipAddress =
         (req.headers["x-forwarded-for"] as string)?.split(",")[0] ||
         req.socket.remoteAddress ||
         undefined;
+
+      // Ensure metadata is properly stringified
+      let metadataStr = null;
+      if (metadata) {
+        metadataStr = typeof metadata === "string" ? metadata : JSON.stringify(metadata);
+      }
 
       // Log the analytics event
       await logAnalyticsEvent({
@@ -21,7 +34,7 @@ export function registerAnalyticsEndpoint(app: Express) {
         referrer,
         userAgent,
         ipAddress,
-        metadata: metadata ? JSON.stringify(metadata) : null,
+        metadata: metadataStr,
       });
 
       // Return success response

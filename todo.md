@@ -150,3 +150,9 @@
 - [x] Set up Google Tag Manager (GTM) script with ID G-QKJMTB678R
 - [x] Add GTM script to HTML head (client/index.html)
 - [x] Google Analytics tracking active and sending data
+
+
+## Critical Bugs - Device Type Tracking
+- [x] Dashboard device breakdown not showing accurate data (FIXED)
+- [x] Investigate device type detection in analytics (metadata was NULL)
+- [x] Fix device type tracking in client-side analytics (sendBeacon parsing issue fixed)
