@@ -168,5 +168,13 @@
 - [x] Fix broken Jeld-Wen Entry Door image (replaced with new product image)
 
 
-## Mobile UI Fixes
+### Mobile UI Fixes
 - [x] Fix "x" button visibility on interior doors quick view cards on mobile (changed to fixed positioning on mobile)
+- [x] Fix close button on ExteriorDoorsInStock modal (increased padding for mobile)
+- [x] Fix close button on PatioDoorSpecialOrder modal (increased padding for mobile)
+- [x] Fix close button on StormDoorSpecialOrder modal (increased padding for mobile)
+- [x] Fix close button on ProductDoors modal (increased padding for mobile)
+- [x] Fix close button on ProductFlooring modal (increased padding for mobile)
+- [x] Fix close button on ProductSiding modal (increased padding for mobile)
+- [x] Fix close button on ProductWindows modal (increased padding for mobile)
+- [x] Fix close button on ProductTrim modal (increased padding for mobile)

@@ -272,7 +272,7 @@ export default function PatioDoorSpecialOrder() {
               <h3 className="font-display font-bold text-xl text-[#1a2e45]">{selectedProduct.title}</h3>
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="p-1 hover:bg-gray-100 rounded transition-colors"
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors md:p-1"
               >
                 <X size={24} className="text-gray-600" />
               </button>
