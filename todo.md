@@ -178,3 +178,7 @@
 - [x] Fix close button on ProductSiding modal (increased padding for mobile)
 - [x] Fix close button on ProductWindows modal (increased padding for mobile)
 - [x] Fix close button on ProductTrim modal (increased padding for mobile)
+
+
+## New Product Additions
+- [x] Add Knotty Pine 2 Panel Arch Top with V-Grooves to interior doors in stock page

@@ -74,6 +74,18 @@ const inStockDoors = [
     features: ["Pre hung", "Available now", "All sizes available"],
     rating: 5,
   },
+  {
+    id: "knotty-pine-arch",
+    title: "Knotty Pine 2 Panel Arch Top with V-Grooves",
+    imageUrl: "/manus-storage/IMG_3653_d48ca6ac.AVIF",
+    imageUrl2: "/manus-storage/IMG_3654_5b4ce6ed.HEIC",
+    brand: "Woodgrain",
+    description: "Beautiful knotty pine construction with elegant arch top design and V-groove detailing. Adds warmth and character to any interior space.",
+    price: "$179 - $249",
+    quantity: "7 in stock",
+    features: ["Pre hung", "Available now", "All sizes available"],
+    rating: 5,
+  },
 ];
 
 export default function InteriorDoorsInStock() {
