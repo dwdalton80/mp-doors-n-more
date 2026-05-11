@@ -11,7 +11,7 @@ const analyticsResponseSchema = {
   avgSessionDuration: 0,
   topPages: [] as any[],
   trafficSources: [] as any[],
-  conversions: { quoteRequests: 0, contactFormSubmissions: 0, phoneCallsTracked: 0 },
+  conversions: { quoteRequests: 0, contactFormSubmissions: 0, phoneCallsTracked: 0, facebookClicks: 0 },
   deviceBreakdown: [] as any[],
   dailyVisitors: [] as any[],
 };
@@ -188,6 +188,7 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
           quoteRequests,
           contactFormSubmissions: contactForms,
           phoneCallsTracked: phoneCalls,
+          facebookClicks: events.filter(e => e.eventType === 'facebook_click').length,
         },
         deviceBreakdown: deviceBreakdown.length > 0 ? deviceBreakdown : [
           { device: "Desktop", percentage: 100, visitors: totalUniqueVisitors },

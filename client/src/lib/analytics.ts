@@ -4,7 +4,7 @@
  */
 
 export interface AnalyticsEvent {
-  eventType: "page_view" | "quote_request" | "contact_form" | "phone_call";
+  eventType: "page_view" | "quote_request" | "contact_form" | "phone_call" | "facebook_click";
   eventName: string;
   productName?: string;
   pageUrl?: string;

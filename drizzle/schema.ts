@@ -60,7 +60,7 @@ export type InsertProductImage = typeof productImages.$inferInsert;
  */
 export const analyticsEvents = mysqlTable("analyticsEvents", {
   id: varchar("id", { length: 64 }).primaryKey(),
-  eventType: mysqlEnum("eventType", ["quote_request", "contact_form", "phone_call", "page_view"]).notNull(),
+  eventType: mysqlEnum("eventType", ["quote_request", "contact_form", "phone_call", "page_view", "facebook_click"]).notNull(),
   eventName: varchar("eventName", { length: 255 }).notNull(),
   productName: varchar("productName", { length: 255 }),
   userEmail: varchar("userEmail", { length: 320 }),
@@ -90,6 +90,7 @@ export const analyticsMetrics = mysqlTable("analyticsMetrics", {
   quoteRequests: int("quoteRequests").default(0),
   contactFormSubmissions: int("contactFormSubmissions").default(0),
   phoneCallsTracked: int("phoneCallsTracked").default(0),
+  facebookClicks: int("facebookClicks").default(0),
   topPage: varchar("topPage", { length: 512 }),
   topTrafficSource: varchar("topTrafficSource", { length: 255 }),
   createdAt: timestamp("createdAt").defaultNow().notNull(),

@@ -182,3 +182,7 @@
 
 ## New Product Additions
 - [x] Add Knotty Pine 2 Panel Arch Top with V-Grooves to interior doors in stock page
+
+
+## Analytics Enhancements
+- [x] Add Facebook button click tracking to analytics dashboard

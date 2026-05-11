@@ -38,6 +38,7 @@ export const analyticsMetricsRouter = router({
         const quoteRequests = events.filter(e => e.eventType === "quote_request").length;
         const contactForms = events.filter(e => e.eventType === "contact_form").length;
         const phoneCalls = events.filter(e => e.eventType === "phone_call").length;
+        const facebookClicks = events.filter(e => e.eventType === "facebook_click").length;
         const pageViews = events.filter(e => e.eventType === "page_view").length;
 
         // Calculate unique visitors (by IP address)
@@ -102,6 +103,7 @@ export const analyticsMetricsRouter = router({
               quoteRequests,
               contactFormSubmissions: contactForms,
               phoneCallsTracked: phoneCalls,
+              facebookClicks,
               topPage,
               topTrafficSource,
               updatedAt: new Date(),
@@ -119,6 +121,7 @@ export const analyticsMetricsRouter = router({
             quoteRequests,
             contactFormSubmissions: contactForms,
             phoneCallsTracked: phoneCalls,
+            facebookClicks,
             topPage,
             topTrafficSource,
             createdAt: new Date(),
@@ -137,6 +140,7 @@ export const analyticsMetricsRouter = router({
             quoteRequests,
             contactFormSubmissions: contactForms,
             phoneCallsTracked: phoneCalls,
+            facebookClicks,
             topPage,
             topTrafficSource,
           },

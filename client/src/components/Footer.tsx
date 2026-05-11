@@ -7,6 +7,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Facebook, BarChart3 } from "lucide-react";
+import { logEvent } from "@/lib/analytics";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -79,6 +80,7 @@ export default function Footer() {
               href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => logEvent({ eventType: 'facebook_click', eventName: 'facebook_click', metadata: { source: 'footer' } })}
               className="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#166FE5] text-white text-sm font-semibold py-2 px-4 rounded transition-colors w-full justify-center"
             >
               <Facebook size={16} />

@@ -287,6 +287,16 @@ export default function Dashboard() {
               <Phone className="w-12 h-12 text-[#a61c00] opacity-20" />
             </div>
           </Card>
+
+          <Card className="p-6 bg-white shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Facebook Clicks</p>
+                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.conversions.facebookClicks}</p>
+              </div>
+              <MessageSquare className="w-12 h-12 text-[#a61c00] opacity-20" />
+            </div>
+          </Card>
         </div>
 
         {/* Charts */}

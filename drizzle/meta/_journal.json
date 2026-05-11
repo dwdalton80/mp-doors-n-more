@@ -22,6 +22,20 @@
       "when": 1778353460691,
       "tag": "0002_peaceful_dark_beast",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1778538918558,
+      "tag": "0003_ordinary_shadowcat",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1778538993534,
+      "tag": "0004_flimsy_strong_guy",
+      "breakpoints": true
     }
   ]
 }
