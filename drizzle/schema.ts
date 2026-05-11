@@ -93,6 +93,9 @@ export const analyticsMetrics = mysqlTable("analyticsMetrics", {
   facebookClicks: int("facebookClicks").default(0),
   topPage: varchar("topPage", { length: 512 }),
   topTrafficSource: varchar("topTrafficSource", { length: 255 }),
+  mobileVisitors: int("mobileVisitors").default(0),
+  tabletVisitors: int("tabletVisitors").default(0),
+  desktopVisitors: int("desktopVisitors").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

@@ -195,3 +195,15 @@
 - [x] Add Facebook button click tracking to analytics dashboard
 
 
+
+
+## Device Breakdown Real Data Tracking
+- [x] Add device breakdown columns to analyticsMetrics table (mobileVisitors, tabletVisitors, desktopVisitors)
+- [x] Update daily aggregation to calculate real device percentages from events
+- [x] Update dashboard to return real device data from metrics
+- [x] Test device breakdown with real tracking data
+
+
+## Device Breakdown Implementation Gaps
+- [ ] Add/update Vitest coverage for device breakdown aggregation and dashboard metrics using tracked event metadata
+- [ ] Re-aggregate existing analyticsMetrics rows so dashboard device breakdown reflects real historical data

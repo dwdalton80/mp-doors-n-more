@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE `analyticsMetrics` ADD `mobileVisitors` int DEFAULT 0; ALTER TABLE `analyticsMetrics` ADD `tabletVisitors` int DEFAULT 0; ALTER TABLE `analyticsMetrics` ADD `desktopVisitors` int DEFAULT 0;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Ds9EUWzX7Fg7bK.ab22ca53e843 --database ewrgsBYn5kz4enQN79TrkM --execute ALTER TABLE `analyticsMetrics` ADD `mobileVisitors` int DEFAULT 0; ALTER TABLE `analyticsMetrics` ADD `tabletVisitors` int DEFAULT 0; ALTER TABLE `analyticsMetrics` ADD `desktopVisitors` int DEFAULT 0;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 758
+}

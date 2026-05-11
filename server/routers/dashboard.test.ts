@@ -61,6 +61,7 @@ describe("Dashboard Router", () => {
       expect(result.conversions).toHaveProperty("quoteRequests");
       expect(result.conversions).toHaveProperty("contactFormSubmissions");
       expect(result.conversions).toHaveProperty("phoneCallsTracked");
+      expect(result.conversions).toHaveProperty("facebookClicks");
     });
 
     it("should return device breakdown", async () => {

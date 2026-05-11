@@ -4,6 +4,18 @@ import { getDb } from "../db";
 import { analyticsEvents, analyticsMetrics } from "../../drizzle/schema";
 import { gte, lte, eq, desc, and } from "drizzle-orm";
 
+/**
+ * Parse metadata JSON safely
+ */
+function parseMetadata(metadata: string | null): Record<string, any> {
+  if (!metadata) return {};
+  try {
+    return JSON.parse(metadata);
+  } catch {
+    return {};
+  }
+}
+
 export const analyticsMetricsRouter = router({
   // Aggregate events into daily metrics
   aggregateDaily: adminProcedure
@@ -82,6 +94,24 @@ export const analyticsMetricsRouter = router({
         const topTrafficSource =
           Array.from(referrerCounts.entries()).sort((a, b) => b[1] - a[1])[0]?.[0] || "Direct";
 
+        // Calculate device breakdown from page view events
+        const pageViewEvents = events.filter(e => e.eventType === "page_view");
+        const deviceMap = new Map<string, Set<string>>();
+        pageViewEvents.forEach(event => {
+          const metadata = parseMetadata(event.metadata);
+          const device = (metadata.deviceType || "desktop").toLowerCase();
+          const ip = event.ipAddress || "unknown";
+          
+          if (!deviceMap.has(device)) {
+            deviceMap.set(device, new Set());
+          }
+          deviceMap.get(device)!.add(ip);
+        });
+
+        const mobileVisitors = deviceMap.get("mobile")?.size || 0;
+        const tabletVisitors = deviceMap.get("tablet")?.size || 0;
+        const desktopVisitors = deviceMap.get("desktop")?.size || 0;
+
         // Check if metric already exists for this date
         const existingMetric = await db
           .select()
@@ -106,6 +136,9 @@ export const analyticsMetricsRouter = router({
               facebookClicks,
               topPage,
               topTrafficSource,
+              mobileVisitors,
+              tabletVisitors,
+              desktopVisitors,
               updatedAt: new Date(),
             })
             .where(eq(analyticsMetrics.date, input.date));
@@ -124,6 +157,9 @@ export const analyticsMetricsRouter = router({
             facebookClicks,
             topPage,
             topTrafficSource,
+            mobileVisitors,
+            tabletVisitors,
+            desktopVisitors,
             createdAt: new Date(),
             updatedAt: new Date(),
           });
@@ -143,6 +179,9 @@ export const analyticsMetricsRouter = router({
             facebookClicks,
             topPage,
             topTrafficSource,
+            mobileVisitors,
+            tabletVisitors,
+            desktopVisitors,
           },
         };
       } catch (error) {

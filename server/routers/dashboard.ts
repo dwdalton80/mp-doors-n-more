@@ -217,6 +217,30 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
     const totalQuoteRequests = metrics.reduce((sum, m) => sum + (m.quoteRequests || 0), 0);
     const totalContactForms = metrics.reduce((sum, m) => sum + (m.contactFormSubmissions || 0), 0);
     const totalPhoneCalls = metrics.reduce((sum, m) => sum + (m.phoneCallsTracked || 0), 0);
+    const totalFacebookClicks = metrics.reduce((sum, m) => sum + (m.facebookClicks || 0), 0);
+
+    // Calculate real device breakdown from metrics
+    const totalMobileVisitors = metrics.reduce((sum, m) => sum + (m.mobileVisitors || 0), 0);
+    const totalTabletVisitors = metrics.reduce((sum, m) => sum + (m.tabletVisitors || 0), 0);
+    const totalDesktopVisitors = metrics.reduce((sum, m) => sum + (m.desktopVisitors || 0), 0);
+
+    const deviceBreakdown = [
+      {
+        device: "Mobile",
+        visitors: totalMobileVisitors,
+        percentage: totalVisitors > 0 ? Math.round((totalMobileVisitors / totalVisitors) * 100) : 0,
+      },
+      {
+        device: "Desktop",
+        visitors: totalDesktopVisitors,
+        percentage: totalVisitors > 0 ? Math.round((totalDesktopVisitors / totalVisitors) * 100) : 0,
+      },
+      {
+        device: "Tablet",
+        visitors: totalTabletVisitors,
+        percentage: totalVisitors > 0 ? Math.round((totalTabletVisitors / totalVisitors) * 100) : 0,
+      },
+    ].sort((a, b) => b.visitors - a.visitors);
 
     return {
       totalVisitors,
@@ -240,12 +264,9 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
         quoteRequests: totalQuoteRequests,
         contactFormSubmissions: totalContactForms,
         phoneCallsTracked: totalPhoneCalls,
+        facebookClicks: totalFacebookClicks,
       },
-      deviceBreakdown: [
-        { device: "Mobile", percentage: 58, visitors: Math.floor(totalVisitors * 0.58) },
-        { device: "Desktop", percentage: 35, visitors: Math.floor(totalVisitors * 0.35) },
-        { device: "Tablet", percentage: 7, visitors: Math.floor(totalVisitors * 0.07) },
-      ],
+      deviceBreakdown,
       dailyVisitors: metrics.map((m) => ({
         date: m.date,
         visitors: m.totalVisitors || 0,
