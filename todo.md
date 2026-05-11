@@ -205,5 +205,12 @@
 
 
 ## Device Breakdown Implementation Gaps
-- [ ] Add/update Vitest coverage for device breakdown aggregation and dashboard metrics using tracked event metadata
-- [ ] Re-aggregate existing analyticsMetrics rows so dashboard device breakdown reflects real historical data
+- [x] Add/update Vitest coverage for device breakdown aggregation and dashboard metrics using tracked event metadata
+- [x] Re-aggregate existing analyticsMetrics rows so dashboard device breakdown reflects real historical data
+
+
+## Device Breakdown Test Coverage - REQUIRED
+- [x] Write Vitest test that seeds analytics events with deviceType metadata (mobile/tablet/desktop)
+- [x] Test aggregation calculates correct device visitor counts from events
+- [x] Test dashboard returns real device breakdown percentages from metrics
+- [x] Verify device breakdown data flows end-to-end from event to dashboard display
