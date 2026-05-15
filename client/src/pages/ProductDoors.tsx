@@ -25,6 +25,15 @@ const products = [
     rating: 5,
   },
   {
+    id: "exterior-doors",
+    title: "Exterior Doors",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-product-QKWgV7Duu9whAYXBXvyKxu.webp",
+    description: "Durable exterior doors designed to withstand the Texas climate. Premium materials with weather-resistant construction and beautiful finishes for any home style.",
+    brands: ["Masonite", "Woodgrain", "Trimlite", "Frame Port", "Thermatru", "Glass Craft"],
+    features: ["Weather-resistant construction", "Energy-efficient seals", "Multiple style options", "Durable hardware"],
+    rating: 5,
+  },
+  {
     id: "interior-doors",
     title: "Interior Doors",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
@@ -213,6 +222,15 @@ export default function ProductDoors() {
                         </Link>
                       )}
                       {product.id === 'entry-doors' && (
+                        <Link
+                          href="/exterior-doors-in-stock"
+                          onClick={() => window.scrollTo(0, 0)}
+                          className="inline-block bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors"
+                        >
+                          Popular In Stock
+                        </Link>
+                      )}
+                      {product.id === 'exterior-doors' && (
                         <Link
                           href="/exterior-doors-in-stock"
                           onClick={() => window.scrollTo(0, 0)}

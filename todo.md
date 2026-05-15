@@ -65,6 +65,11 @@
 - [ ] Add integration tests for browser-to-server event tracking flow
 - [ ] Test daily metrics aggregation with actual date ranges
 
+## Optional Security Enhancements (Deferred)
+- [ ] Add CAPTCHA verification to forms
+- [ ] Implement email validation and verification
+- [ ] Track and block suspicious IP addresses
+
 ## Technical Improvements
 - [x] Write vitest unit tests for quotes router (6 tests passing)
 - [x] Write vitest unit tests for contact router (2 tests passing)
@@ -130,12 +135,9 @@
 - [x] Add tests for real analytics aggregation (all 72 tests passing)
 
 
-## Spam Prevention
+## Spam Prevention - Implemented
 - [x] Implement rate limiting on quote request and contact form submissions (1 per IP per hour)
 - [x] Add honeypot field to catch bot submissions (hidden field)
-- [ ] Add CAPTCHA verification to forms (optional enhancement)
-- [ ] Implement email validation and verification (optional enhancement)
-- [ ] Track and block suspicious IP addresses (optional enhancement)
 
 ## MVP Complete - Production Ready
 - [x] All core website features implemented
@@ -225,3 +227,9 @@
 - [x] Aggregation calculates device visitor counts from events
 - [x] Dashboard returns real device breakdown percentages from metrics
 - [x] Device breakdown data flows end-to-end from event to dashboard display
+
+
+## New Feature Requests
+- [ ] Add "Exterior Doors" product card to products page (location TBD - waiting for user clarification)
+
+- [x] Add "Exterior Doors" product card to ProductDoors page (after Entry Doors card)
