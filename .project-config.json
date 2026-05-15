@@ -1,0 +1,45 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://2Ds9EUWzX7Fg7bK.ab22ca53e843:t0g6E5loFDHGD75KUIJ9@gateway06.us-east-1.prod.aws.tidbcloud.com:4000/ewrgsBYn5kz4enQN79TrkM?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663585381002/ewrgsBYn5kz4enQN79TrkM",
+    "access_key_id": "ASIAZV3A2ECZHLYPJAR5",
+    "secret_access_key": "RCZnQHTKruyegDce4vbPozEwTrdIrxB5c1Oy677D",
+    "session_token": "IQoJb3JpZ2luX2VjELb//////////wEaCXVzLWVhc3QtMSJHMEUCIA76x2tf2237jFNQlp+DFeXbffCAxEFqAtLQZF5tHvqIAiEAoGZfBmLBxCBNXrKu3v6HO98+ouFvlcGGun6Vgb4a0fEq9gMIfhAEGgw2NjUzODYwOTg4NjYiDCXiMreS0Wdh+h2h5yrTA97mX0XrWzrZzWeeTx9XL8wRctdjK7CXE7PEVA0fuK3ESN3YGhsoQFcD4mrI+IHzdgbWao4bJXL2ogyYTdd/YDRgl4dVyThjhdl+uyg13GO9hUNbIQRkR9O/qWMiv0MxbvF/iG0pFn5EhT1pPsRIDWjOEXElVurLYMa5LlEW5qbhSxy6XE+bQiOQtD0qBbUI+tk4Eb6GozHs4tzr47ItWy9reoT5ac/JIJJ1GswvhcJQzG+uNCaoEZsBtclj828LYZZIeCb3Vd06/OC+ZrwSFCkVf7lgH1LxlTLSDuRCnu25axydXdXdq5rr9OEjYSPJuBbBjFTd5NtFaF89iimILRr8S9OG2c3t7QlWzLv1uU+gcVdojI92ob06YhfM3+EkTjo6jT9BK+Fzzjv6zA9Xvg9Zc5iyXpgMbQrmwg+nxwJVFm+Rarvng3YUIJ+dA6Nej5NskAM5URNl4flUl526EyAxogAt7rmm5hy9qdumozFTEdd9884F+aHVC10Xb6EytqBq5Pr2A3eJZBna0mIl9ScQ72p7o1mZAu0N7ZvJlyZ4afxNnfrmxkFG6yyY9UJmz05lW3o4cgGRXmo+6+5GQJu4YO8cKETEcO5EYjErvyG4fmE9MKmbntAGOp0BewcwKJcZRwV+cW1wpdb0ddhU80Uk8u6xXVTjC8jmywX1htOuCljnfP83F5LhIqlM+uM8ZLk7WfLZxDHm+q2XQDPIpj7AV8JvaTFTJJZ4qlQMFgA41UU365zey5cvEUJfElbkNEntkTvQZdpvcWj0R2bBgEhDK+bJSNtPy8bIGxNRspH0fV8BUtI5d7nrTwtl98JR53CtAXNUMjYljw==",
+    "expiration": "2026-05-16T09:18:33.000Z"
+  },
+  "name": "mp-doors-more-recreation",
+  "path": "/home/ubuntu/mp-doors-more-recreation",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "UB36QZ5TNF7hnX85FL9HTY",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "DASHBOARD_PASSWORD": "Maldonado",
+    "JWT_SECRET": "ZYZ3VsBn24q2BG3TNJV6vX",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Derek Dalton",
+    "OWNER_OPEN_ID": "o4FBaEPcaaPcEegPAbjsda",
+    "RESEND_API_KEY": "re_F36q6BfF_5tMdpEc1boUM68kzix4vyE27",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "9a81e67a-2a12-452c-9fcc-74383e6fbb9c",
+    "VITE_APP_ID": "ewrgsBYn5kz4enQN79TrkM",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663585381002/MDqCMaKnmVTJfIiX.png",
+    "VITE_APP_TITLE": "MP Doors \u0026 More",
+    "VITE_FRONTEND_FORGE_API_KEY": "HMNS2fSppC2rScZXRXxKgk",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
