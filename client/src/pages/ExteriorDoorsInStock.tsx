@@ -17,11 +17,16 @@ const inStockDoors = [
   {
     id: "entry-door-masonite",
     title: "Full Lite Mini Blind",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
-    imageUrl2: "/manus-storage/entry-door-diagram.jpg",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
+    imageUrl2: "/manus-storage/fullminiblind2_69778246.webp",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
+      "/manus-storage/fullminiblind2_69778246.webp",
+      "/manus-storage/Screenshot2026-05-15at4.46.11PM_cca253d7.png"
+    ],
     brand: "Masonite",
-    description: "Premium solid core entry door with weather-resistant seals. Energy-efficient design keeps your home comfortable.",
-    features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes", "Security glass options"],
+    description: "Premium full lite mini blind entry door with integrated blinds. Weather-resistant seals and energy-efficient construction keep your home comfortable year-round.",
+    features: ["Full lite glass panel", "Mini blind integrated", "Weather-resistant seals", "Energy-efficient"],
     rating: 5,
   },
   {
@@ -98,7 +103,7 @@ const inStockDoors = [
 
 export default function ExteriorDoorsInStock() {
   const [selectedProduct, setSelectedProduct] = useState<typeof inStockDoors[0] | null>(null);
-  const [showSecondImage, setShowSecondImage] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showPricingModal, setShowPricingModal] = useState(false);
   const [selectedPricingProduct, setSelectedPricingProduct] = useState<string | null>(null);
   const [formData, setFormData] = useState({
@@ -191,7 +196,7 @@ export default function ExteriorDoorsInStock() {
                     <button
                       onClick={() => {
                         setSelectedProduct(door);
-                        setShowSecondImage(false);
+                        setCurrentImageIndex(0);
                       }}
                       className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
                     >
@@ -371,33 +376,26 @@ export default function ExteriorDoorsInStock() {
                 <div className="flex flex-col gap-4">
                   <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center overflow-hidden">
                     <img
-                      key={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl}
-                      src={showSecondImage ? selectedProduct.imageUrl2 : selectedProduct.imageUrl}
+                      key={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
+                      src={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
                       alt={selectedProduct.title}
                       className="w-full h-full object-contain transition-opacity duration-500"
                     />
                   </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => setShowSecondImage(false)}
-                      className={`flex-1 py-2 rounded font-semibold text-sm transition-colors ${
-                        !showSecondImage
-                          ? "bg-[#a61c00] text-white"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                    >
-                      Image 1
-                    </button>
-                    <button
-                      onClick={() => setShowSecondImage(true)}
-                      className={`flex-1 py-2 rounded font-semibold text-sm transition-colors ${
-                        showSecondImage
-                          ? "bg-[#a61c00] text-white"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                    >
-                      Image 2
-                    </button>
+                  <div className="flex gap-2 overflow-x-auto pb-2">
+                    {(selectedProduct.images || [selectedProduct.imageUrl, selectedProduct.imageUrl2]).map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        className={`flex-shrink-0 px-3 py-2 rounded font-semibold text-sm transition-colors ${
+                          currentImageIndex === idx
+                            ? "bg-[#a61c00] text-white"
+                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                        }`}
+                      >
+                        {idx + 1}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
