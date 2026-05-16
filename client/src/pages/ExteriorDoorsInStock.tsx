@@ -16,7 +16,7 @@ const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5Tb
 const inStockDoors = [
   {
     id: "entry-door-masonite",
-    title: "Masonite Entry Door",
+    title: "Full Lite Mini Blind",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
     imageUrl2: "/manus-storage/entry-door-diagram.jpg",
     brand: "Masonite",
@@ -26,7 +26,7 @@ const inStockDoors = [
   },
   {
     id: "entry-door-jeldwen",
-    title: "Jeld-Wen Entry Door",
+    title: "Half Lite Mini Blind",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/jeldwen-entry-door-MopepvCWi9e7dqDhB2chc6.webp",
     imageUrl2: "/manus-storage/entry-door-diagram.jpg",
     brand: "Jeld-Wen",
@@ -36,7 +36,7 @@ const inStockDoors = [
   },
   {
     id: "patio-door-anderson",
-    title: "Anderson Patio Door",
+    title: "9 Lite Exterior Door",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
     imageUrl2: "/manus-storage/patio-door-diagram.jpg",
     brand: "Anderson",
@@ -46,7 +46,7 @@ const inStockDoors = [
   },
   {
     id: "storm-door-larson",
-    title: "Larson Storm Door",
+    title: "3/4 Lite Vista Grand Exterior Door",
     imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/storm-doors-larson-MsKDojBrbzmE4jTVEd5Bgw.webp",
     imageUrl2: "/manus-storage/storm-door-diagram.jpg",
     brand: "Larson",
