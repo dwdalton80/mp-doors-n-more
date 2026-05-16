@@ -32,11 +32,19 @@ const inStockDoors = [
   {
     id: "entry-door-jeldwen",
     title: "Half Lite Mini Blind",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/jeldwen-entry-door-MopepvCWi9e7dqDhB2chc6.webp",
-    imageUrl2: "/manus-storage/entry-door-diagram.jpg",
+    imageUrl: "/manus-storage/halfminiblind1_81f57c2f.avif",
+    imageUrl2: "/manus-storage/halfminiblind2_de02fcac.jpg",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
+    images: [
+      "/manus-storage/halfminiblind1_81f57c2f.avif",
+      "/manus-storage/halfminiblind2_de02fcac.jpg",
+      "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+      "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png"
+    ],
     brand: "Jeld-Wen",
-    description: "Quality entry door with modern styling and durable construction. Perfect for any home exterior.",
-    features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes", "Security glass options"],
+    description: "Premium half lite mini blind entry door with integrated blinds. Weather-resistant seals and energy-efficient construction keep your home comfortable year-round.",
+    features: ["Half lite glass panel", "Mini blind integrated", "Weather-resistant seals", "Energy-efficient"],
     rating: 5,
   },
   {
