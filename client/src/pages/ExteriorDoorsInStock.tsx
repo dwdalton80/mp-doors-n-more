@@ -135,8 +135,12 @@ const inStockDoors = [
   {
     id: "2-panel-square-top-masonite",
     title: "2 Panel Square Top Exterior Door",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
-    imageUrl2: "/manus-storage/entry-door-diagram.jpg",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
+      "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png"
+    ],
     brand: "Masonite",
     description: "Elegant 2-panel square top design with clean lines. Perfect for modern farmhouse and contemporary home styles.",
     features: ["2-panel design", "Square top profile", "Energy-efficient", "Multiple finishes"],
