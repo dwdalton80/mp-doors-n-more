@@ -17,16 +17,15 @@ const inStockDoors = [
   {
     id: "entry-door-masonite",
     title: "6 Lite Mahogany with Flemish Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
-    imageUrl2: "/manus-storage/fullminiblind2_69778246.webp",
+    imageUrl: "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
+    imageUrl2: "/manus-storage/4526628-1_57f1d97a.jpg",
     images: [
-      "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
-      "/manus-storage/fullminiblind2_69778246.webp",
-      "/manus-storage/Screenshot2026-05-15at4.46.11PM_cca253d7.png"
+      "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
+      "/manus-storage/4526628-1_57f1d97a.jpg"
     ],
     brand: "Jeld-Wen",
-    description: "Premium full lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
-    features: ["Full lite glass panel", "Mini blind integrated", "Fiberglass construction", "Energy-efficient"],
+    description: "Elegant 6 lite mahogany entry door with beautiful flemish glass pattern. Premium wood construction with authentic mahogany finish provides timeless elegance and durability for your home entrance.",
+    features: ["6 lite glass panel", "Flemish glass pattern", "Mahogany wood construction", "Classic design"],
     rating: 5,
   },
   {
