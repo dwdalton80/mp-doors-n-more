@@ -16,7 +16,7 @@ const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5Tb
 const inStockDoors = [
   {
     id: "entry-door-masonite",
-    title: "Full Lite Mini Blind",
+    title: "6 Lite Mahogany with Flemish Glass",
     imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
     imageUrl2: "/manus-storage/fullminiblind2_69778246.webp",
     images: [
@@ -31,7 +31,7 @@ const inStockDoors = [
   },
   {
     id: "entry-door-jeldwen",
-    title: "Half Lite Mini Blind",
+    title: "4 Lite Contemporary Mahogany With Frosted Glass",
     imageUrl: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
     imageUrl2: "/manus-storage/halfminiblind1_81f57c2f.avif",
     imageUrl3: "/manus-storage/halfminiblind2_de02fcac.jpg",
@@ -49,7 +49,7 @@ const inStockDoors = [
   },
   {
     id: "patio-door-anderson",
-    title: "9 Lite Exterior Door",
+    title: "4 Lite Mahogany Door with Flemish Glass",
     imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
     imageUrl2: "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
     imageUrl3: "/manus-storage/9panellite1_0ff4a8a2.jpg",
@@ -67,7 +67,7 @@ const inStockDoors = [
   },
   {
     id: "storm-door-larson",
-    title: "3/4 Lite Vista Grand Exterior Door",
+    title: "6 Lite Mahogany Door with Clear Glass",
     imageUrl: "/manus-storage/34litevista3_fba39b1f.webp",
     imageUrl2: "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
     imageUrl3: "/manus-storage/34litevista2_3406cc87.webp",
@@ -86,7 +86,7 @@ const inStockDoors = [
   },
   {
     id: "full-lite-vista-grand-larson",
-    title: "Full Lite Vista Grand",
+    title: "8 Lite Craftsman Mahogany Door",
     imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
     imageUrl2: "/manus-storage/fulllitevista4_00111b6c.webp",
     imageUrl3: "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png",
@@ -102,7 +102,7 @@ const inStockDoors = [
   },
   {
     id: "flush-fiberglass-masonite",
-    title: "Flush Fiberglass Exterior Door",
+    title: "Full Glass TX Star Fiberglass Door",
     imageUrl: "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
     imageUrl2: "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
     imageUrl3: "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png",
@@ -118,7 +118,7 @@ const inStockDoors = [
   },
   {
     id: "6-panel-fiberglass-masonite",
-    title: "6 Panel Fiberglass Exterior Door",
+    title: "3/4 Glass TX Star Fiberglass Door",
     imageUrl: "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
     imageUrl2: "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
     imageUrl3: "/manus-storage/6panelfiberglass2_d5650977.webp",
@@ -134,7 +134,7 @@ const inStockDoors = [
   },
   {
     id: "2-panel-square-top-masonite",
-    title: "2 Panel Square Top Exterior Door",
+    title: "Half Glass TX Star Fiberglass Door",
     imageUrl: "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
     imageUrl2: "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png",
     images: [
@@ -148,7 +148,7 @@ const inStockDoors = [
   },
   {
     id: "2-panel-santa-fe-masonite",
-    title: "2 Panel Santa Fe Exterior Door",
+    title: "Pre Finished Half Oval TX Star Fiberglass Door",
     imageUrl: "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
     imageUrl2: "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
     imageUrl3: "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png",
