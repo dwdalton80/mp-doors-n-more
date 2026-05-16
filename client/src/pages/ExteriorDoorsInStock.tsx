@@ -24,9 +24,9 @@ const inStockDoors = [
       "/manus-storage/fullminiblind2_69778246.webp",
       "/manus-storage/Screenshot2026-05-15at4.46.11PM_cca253d7.png"
     ],
-    brand: "Masonite",
-    description: "Premium full lite mini blind entry door with integrated blinds. Weather-resistant seals and energy-efficient construction keep your home comfortable year-round.",
-    features: ["Full lite glass panel", "Mini blind integrated", "Weather-resistant seals", "Energy-efficient"],
+    brand: "Jeld-Wen",
+    description: "Premium full lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
+    features: ["Full lite glass panel", "Mini blind integrated", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
@@ -42,9 +42,9 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
       "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png"
     ],
-    brand: "Jeld-Wen",
-    description: "Premium half lite mini blind entry door with integrated blinds. Weather-resistant seals and energy-efficient construction keep your home comfortable year-round.",
-    features: ["Half lite glass panel", "Mini blind integrated", "Weather-resistant seals", "Energy-efficient"],
+    brand: "Masonite",
+    description: "Premium half lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
+    features: ["Half lite glass panel", "Mini blind integrated", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
@@ -60,9 +60,9 @@ const inStockDoors = [
       "/manus-storage/9panellite1_0ff4a8a2.jpg",
       "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png"
     ],
-    brand: "Andersen",
-    description: "Beautiful 9 lite exterior door with smooth operation. Low-E glass provides energy efficiency and stunning natural light.",
-    features: ["9 lite glass panel", "Low-E glass", "Durable frames", "Easy maintenance"],
+    brand: "Masonite",
+    description: "Beautiful 9 lite fiberglass exterior door with smooth operation. Low-E glass provides energy efficiency and stunning natural light while durable fiberglass resists warping.",
+    features: ["9 lite glass panel", "Low-E glass", "Fiberglass construction", "Warp-resistant"],
     rating: 5,
   },
   {
@@ -79,9 +79,9 @@ const inStockDoors = [
       "/manus-storage/34litevista_eec35dce.webp",
       "/manus-storage/Screenshot2026-05-15at4.54.13PM_858f3699.png"
     ],
-    brand: "Larson",
-    description: "Premium 3/4 lite vista grand exterior door with stunning glass design. Weather-resistant construction and energy-efficient seals for year-round comfort.",
-    features: ["3/4 lite glass panel", "Vista grand design", "Weather-resistant seals", "Energy-efficient"],
+    brand: "Jeld-Wen",
+    description: "Premium 3/4 lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
+    features: ["3/4 lite glass panel", "Vista grand design", "Fiberglass construction", "Energy-efficient"],
     rating: 4.8,
   },
   {
@@ -95,9 +95,9 @@ const inStockDoors = [
       "/manus-storage/fulllitevista4_00111b6c.webp",
       "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png"
     ],
-    brand: "Larson",
-    description: "Premium full lite vista grand exterior door with stunning glass design. Weather-resistant construction and energy-efficient seals for year-round comfort.",
-    features: ["Full lite glass panel", "Vista grand design", "Weather-resistant seals", "Energy-efficient"],
+    brand: "Masonite",
+    description: "Premium full lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
+    features: ["Full lite glass panel", "Vista grand design", "Fiberglass construction", "Energy-efficient"],
     rating: 4.8,
   },
   {
@@ -111,8 +111,8 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
       "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png"
     ],
-    brand: "Masonite",
-    description: "Sleek flush fiberglass exterior door with modern minimalist design. Durable fiberglass construction resists warping and weather damage.",
+    brand: "Jeld-Wen",
+    description: "Sleek flush fiberglass exterior door with modern minimalist design. Durable fiberglass construction resists warping and weather damage for lasting beauty and performance.",
     features: ["Fiberglass construction", "Warp-resistant", "Contemporary design", "Low maintenance"],
     rating: 5,
   },
@@ -127,9 +127,9 @@ const inStockDoors = [
       "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
       "/manus-storage/6panelfiberglass2_d5650977.webp"
     ],
-    brand: "Masonite",
-    description: "Classic 6-panel fiberglass door with traditional styling. Provides excellent insulation and durability for any home exterior.",
-    features: ["6-panel design", "Superior insulation", "Traditional style", "Durable fiberglass"],
+    brand: "Jeld-Wen",
+    description: "Classic 6-panel fiberglass door with traditional styling. Provides excellent insulation and durability for any home exterior with low-maintenance fiberglass construction.",
+    features: ["6-panel design", "Superior insulation", "Fiberglass construction", "Low maintenance"],
     rating: 5,
   },
   {
@@ -142,8 +142,8 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png"
     ],
     brand: "Masonite",
-    description: "Elegant 2-panel square top design with clean lines. Perfect for modern farmhouse and contemporary home styles.",
-    features: ["2-panel design", "Square top profile", "Energy-efficient", "Multiple finishes"],
+    description: "Elegant 2-panel square top fiberglass door with clean lines. Perfect for modern farmhouse and contemporary home styles with durable fiberglass construction.",
+    features: ["2-panel design", "Square top profile", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
@@ -157,9 +157,9 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
       "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png"
     ],
-    brand: "Masonite",
-    description: "Rustic 2-panel Santa Fe style door with authentic southwestern character. Adds warmth and charm to any home exterior.",
-    features: ["Santa Fe style", "Rustic character", "Weather-resistant", "Authentic design"],
+    brand: "Jeld-Wen",
+    description: "Rustic 2-panel Santa Fe style fiberglass door with authentic southwestern character. Adds warmth and charm to any home exterior with durable fiberglass construction.",
+    features: ["Santa Fe style", "Rustic character", "Fiberglass construction", "Weather-resistant"],
     rating: 5,
   },
 ];
