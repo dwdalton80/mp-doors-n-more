@@ -119,8 +119,14 @@ const inStockDoors = [
   {
     id: "6-panel-fiberglass-masonite",
     title: "6 Panel Fiberglass Exterior Door",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
-    imageUrl2: "/manus-storage/entry-door-diagram.jpg",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
+    imageUrl2: "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
+    imageUrl3: "/manus-storage/6panelfiberglass2_d5650977.webp",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
+      "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
+      "/manus-storage/6panelfiberglass2_d5650977.webp"
+    ],
     brand: "Masonite",
     description: "Classic 6-panel fiberglass door with traditional styling. Provides excellent insulation and durability for any home exterior.",
     features: ["6-panel design", "Superior insulation", "Traditional style", "Durable fiberglass"],
