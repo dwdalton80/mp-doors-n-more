@@ -32,14 +32,14 @@ const inStockDoors = [
   {
     id: "entry-door-jeldwen",
     title: "Half Lite Mini Blind",
-    imageUrl: "/manus-storage/halfminiblind1_81f57c2f.avif",
-    imageUrl2: "/manus-storage/halfminiblind2_de02fcac.jpg",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+    imageUrl2: "/manus-storage/halfminiblind1_81f57c2f.avif",
+    imageUrl3: "/manus-storage/halfminiblind2_de02fcac.jpg",
     imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
     images: [
+      "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
       "/manus-storage/halfminiblind1_81f57c2f.avif",
       "/manus-storage/halfminiblind2_de02fcac.jpg",
-      "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
       "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png"
     ],
     brand: "Masonite",
