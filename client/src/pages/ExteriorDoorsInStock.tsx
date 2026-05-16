@@ -17,11 +17,11 @@ const inStockDoors = [
   {
     id: "entry-door-masonite",
     title: "Full Lite Mini Blind",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
-    imageUrl2: "/manus-storage/entry-door-diagram.jpg",
+    imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_1d84ec77.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-16at4.46.04PM_b6a3cd9b.png",
     brand: "Masonite",
-    description: "Premium solid core entry door with weather-resistant seals. Energy-efficient design keeps your home comfortable.",
-    features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes", "Security glass options"],
+    description: "Premium solid core entry door with full lite mini blind design. Weather-resistant seals and energy-efficient construction keep your home comfortable year-round.",
+    features: ["Full lite glass panel", "Mini blind integrated", "Weather-resistant seals", "Energy-efficient"],
     rating: 5,
   },
   {
