@@ -31,19 +31,19 @@ const inStockDoors = [
   {
     id: "entry-door-jeldwen",
     title: "4 Lite Contemporary Mahogany With Frosted Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
-    imageUrl2: "/manus-storage/halfminiblind1_81f57c2f.avif",
-    imageUrl3: "/manus-storage/halfminiblind2_de02fcac.jpg",
-    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png",
+    imageUrl4: "/manus-storage/Screenshot2026-05-15at11.01.36PM_5be621e6.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
-      "/manus-storage/halfminiblind1_81f57c2f.avif",
-      "/manus-storage/halfminiblind2_de02fcac.jpg",
-      "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png"
+      "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+      "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
+      "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png",
+      "/manus-storage/Screenshot2026-05-15at11.01.36PM_5be621e6.png"
     ],
     brand: "Masonite",
-    description: "Premium half lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
-    features: ["Half lite glass panel", "Mini blind integrated", "Fiberglass construction", "Energy-efficient"],
+    description: "Contemporary 4 lite mahogany entry door with beautiful frosted glass panels. Modern design with frosted glass provides privacy while allowing natural light. Premium mahogany construction with elegant contemporary styling.",
+    features: ["4 lite frosted glass panel", "Contemporary design", "Mahogany wood construction", "Privacy glass"],
     rating: 5,
   },
   {
