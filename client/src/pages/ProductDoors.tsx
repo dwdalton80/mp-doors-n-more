@@ -27,7 +27,7 @@ const products = [
   {
     id: "exterior-doors",
     title: "Exterior Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-product-QKWgV7Duu9whAYXBXvyKxu.webp",
+    imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_405760d2.png",
     description: "Durable exterior doors designed to withstand the Texas climate. Premium materials with weather-resistant construction and beautiful finishes for any home style.",
     brands: ["Masonite", "Woodgrain", "Thermatru", "Glass Craft"],
     features: ["Weather-resistant construction", "Energy-efficient seals", "Multiple style options", "Durable hardware"],
