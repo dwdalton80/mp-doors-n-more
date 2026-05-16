@@ -103,8 +103,14 @@ const inStockDoors = [
   {
     id: "flush-fiberglass-masonite",
     title: "Flush Fiberglass Exterior Door",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
-    imageUrl2: "/manus-storage/entry-door-diagram.jpg",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
+      "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
+      "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png"
+    ],
     brand: "Masonite",
     description: "Sleek flush fiberglass exterior door with modern minimalist design. Durable fiberglass construction resists warping and weather damage.",
     features: ["Fiberglass construction", "Warp-resistant", "Contemporary design", "Low maintenance"],
