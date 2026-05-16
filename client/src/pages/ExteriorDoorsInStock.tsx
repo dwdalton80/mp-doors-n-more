@@ -50,11 +50,19 @@ const inStockDoors = [
   {
     id: "patio-door-anderson",
     title: "9 Lite Exterior Door",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
-    imageUrl2: "/manus-storage/patio-door-diagram.jpg",
-    brand: "Anderson",
-    description: "Beautiful sliding patio door with smooth operation. Low-E glass provides energy efficiency.",
-    features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
+    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
+    imageUrl3: "/manus-storage/9panellite1_0ff4a8a2.jpg",
+    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
+      "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
+      "/manus-storage/9panellite1_0ff4a8a2.jpg",
+      "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png"
+    ],
+    brand: "Andersen",
+    description: "Beautiful 9 lite exterior door with smooth operation. Low-E glass provides energy efficiency and stunning natural light.",
+    features: ["9 lite glass panel", "Low-E glass", "Durable frames", "Easy maintenance"],
     rating: 5,
   },
   {
