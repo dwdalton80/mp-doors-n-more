@@ -71,16 +71,13 @@ const inStockDoors = [
   {
     id: "full-lite-vista-grand-larson",
     title: "Full Lite Vista Grand",
-    imageUrl: "/manus-storage/34litevista3_fba39b1f.webp",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
-    imageUrl3: "/manus-storage/34litevista2_3406cc87.webp",
-    imageUrl4: "/manus-storage/34litevista_eec35dce.webp",
+    imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
+    imageUrl2: "/manus-storage/fulllitevista4_00111b6c.webp",
+    imageUrl3: "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png",
     images: [
-      "/manus-storage/34litevista3_fba39b1f.webp",
-      "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
-      "/manus-storage/34litevista2_3406cc87.webp",
-      "/manus-storage/34litevista_eec35dce.webp",
-      "/manus-storage/Screenshot2026-05-15at4.54.13PM_858f3699.png"
+      "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
+      "/manus-storage/fulllitevista4_00111b6c.webp",
+      "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png"
     ],
     brand: "Larson",
     description: "Premium full lite vista grand exterior door with stunning glass design. Weather-resistant construction and energy-efficient seals for year-round comfort.",
