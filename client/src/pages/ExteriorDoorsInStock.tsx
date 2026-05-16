@@ -149,8 +149,14 @@ const inStockDoors = [
   {
     id: "2-panel-santa-fe-masonite",
     title: "2 Panel Santa Fe Exterior Door",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-masonite-VxbaL2sC2qY3CcaeJb68NA.webp",
-    imageUrl2: "/manus-storage/entry-door-diagram.jpg",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
+      "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
+      "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png"
+    ],
     brand: "Masonite",
     description: "Rustic 2-panel Santa Fe style door with authentic southwestern character. Adds warmth and charm to any home exterior.",
     features: ["Santa Fe style", "Rustic character", "Weather-resistant", "Authentic design"],
