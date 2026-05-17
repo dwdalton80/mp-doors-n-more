@@ -246,3 +246,4 @@
 
 ## Contact Page Integration
 - [x] Update EntryDoorsInStock quick view modal "Get Pricing" button to link to contact page with product name pre-filled
+- [x] Update ExteriorDoorsInStock quick view modal "Get Pricing" button to link to contact page with product name pre-filled
