@@ -233,3 +233,9 @@
 - [ ] Add "Exterior Doors" product card to products page (location TBD - waiting for user clarification)
 
 - [x] Add "Exterior Doors" product card to ProductDoors page (after Entry Doors card)
+
+## Entry Doors In Stock Page Separation
+- [x] Create separate EntryDoorsInStock.tsx page for mahogany entry doors
+- [x] Update ProductDoors.tsx to link to /entry-doors-in-stock instead of /exterior-doors-in-stock
+- [x] Add EntryDoorsInStock route to App.tsx
+- [x] Add 10 mahogany door products to EntryDoorsInStock page (matching Exterior Doors structure)
