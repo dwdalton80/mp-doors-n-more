@@ -90,6 +90,76 @@ const inStockDoors = [
     features: ["8 lite glass panel", "Craftsman design", "Mahogany wood construction", "Classic style"],
     rating: 4.8,
   },
+  {
+    id: "entry-door-6",
+    title: "Full Lite Mahogany Door",
+    imageUrl: "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
+    imageUrl2: "/manus-storage/4526628-1_57f1d97a.jpg",
+    images: [
+      "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
+      "/manus-storage/4526628-1_57f1d97a.jpg"
+    ],
+    brand: "Masonite",
+    description: "Stunning full lite mahogany entry door with premium glass panels. Premium wood construction with authentic mahogany finish and clear glass provides maximum natural light and timeless elegance for your home entrance.",
+    features: ["Full lite glass panel", "Clear glass", "Mahogany wood construction", "Classic design"],
+    rating: 5,
+  },
+  {
+    id: "entry-door-7",
+    title: "Half Lite Mahogany Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+      "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png"
+    ],
+    brand: "Jeld-Wen",
+    description: "Beautiful half lite mahogany entry door with elegant glass panel. Premium wood construction with authentic mahogany finish provides privacy while allowing natural light for your home entrance.",
+    features: ["Half lite glass panel", "Clear glass", "Mahogany wood construction", "Classic design"],
+    rating: 5,
+  },
+  {
+    id: "entry-door-8",
+    title: "9 Lite Mahogany Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
+      "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png"
+    ],
+    brand: "Masonite",
+    description: "Beautiful 9 lite mahogany entry door with elegant grid pattern. Premium wood construction with authentic mahogany finish and beautiful glass detailing provides timeless elegance and natural light for your home entrance.",
+    features: ["9 lite glass panel", "Grid pattern", "Mahogany wood construction", "Classic design"],
+    rating: 4.8,
+  },
+  {
+    id: "entry-door-9",
+    title: "3 Panel Mahogany Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
+      "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png"
+    ],
+    brand: "Jeld-Wen",
+    description: "Classic 3-panel mahogany entry door with traditional styling. Premium wood construction with authentic mahogany finish provides timeless elegance and durability for your home entrance.",
+    features: ["3-panel design", "Traditional style", "Mahogany wood construction", "Classic design"],
+    rating: 5,
+  },
+  {
+    id: "entry-door-10",
+    title: "Arched Top Mahogany Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+      "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png"
+    ],
+    brand: "Masonite",
+    description: "Elegant arched top mahogany entry door with beautiful glass panel. Premium wood construction with authentic mahogany finish and arched design provides distinctive character and timeless elegance for your home entrance.",
+    features: ["Arched top design", "Glass panel", "Mahogany wood construction", "Classic design"],
+    rating: 4.8,
+  },
 ];
 
 export default function EntryDoorsInStock() {
