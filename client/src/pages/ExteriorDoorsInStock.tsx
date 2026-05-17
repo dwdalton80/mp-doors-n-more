@@ -129,15 +129,15 @@ const inStockDoors = [
   {
     id: "2-panel-square-top-masonite",
     title: "Half Glass TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png",
+    imageUrl: "/manus-storage/fiberglass-star-door-fg40-home_644f7fb7.webp",
+    imageUrl2: "/manus-storage/fiberglass-half-lite-door-star-glass_0785030f.webp",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
-      "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png"
+      "/manus-storage/fiberglass-star-door-fg40-home_644f7fb7.webp",
+      "/manus-storage/fiberglass-half-lite-door-star-glass_0785030f.webp"
     ],
-    brand: "Masonite",
-    description: "Elegant 2-panel square top fiberglass door with clean lines. Perfect for modern farmhouse and contemporary home styles with durable fiberglass construction.",
-    features: ["2-panel design", "Square top profile", "Fiberglass construction", "Energy-efficient"],
+    brand: "Jeld-Wen",
+    description: "Beautiful half glass TX Star fiberglass entry door with elegant star glass design. Premium fiberglass construction with half lite glass panel provides natural light and durability. Perfect for modern farmhouse and contemporary home styles.",
+    features: ["Half lite glass panel", "TX Star glass design", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
