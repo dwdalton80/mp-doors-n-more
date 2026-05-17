@@ -97,17 +97,14 @@ const inStockDoors = [
   {
     id: "flush-fiberglass-masonite",
     title: "Full Glass TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png",
+    imageUrl: "/manus-storage/Untitleddesign2a_a65eb064.png",
+    imageUrl2: "/manus-storage/Untitleddesign2a_a65eb064.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
-      "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
-      "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png"
+      "/manus-storage/Untitleddesign2a_a65eb064.png"
     ],
-    brand: "Jeld-Wen",
-    description: "Sleek flush fiberglass exterior door with modern minimalist design. Durable fiberglass construction resists warping and weather damage for lasting beauty and performance.",
-    features: ["Fiberglass construction", "Warp-resistant", "Contemporary design", "Low maintenance"],
+    brand: "Masonite",
+    description: "Elegant full glass TX Star fiberglass entry door with distinctive star glass design. Premium fiberglass construction with full lite glass panel maximizes natural light and creates a welcoming entryway. Perfect for contemporary and traditional home styles.",
+    features: ["Full glass panel", "TX Star glass design", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
