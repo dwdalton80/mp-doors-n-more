@@ -22,6 +22,7 @@ import ProductWindows from "./pages/ProductWindows";
 import ProductFlooring from "./pages/ProductFlooring";
 import ProductSiding from "./pages/ProductSiding";
 import ProductTrim from "./pages/ProductTrim";
+import EntryDoorsInStock from "./pages/EntryDoorsInStock";
 import InteriorDoorsInStock from "./pages/InteriorDoorsInStock";
 import ExteriorDoorsInStock from "./pages/ExteriorDoorsInStock";
 import PatioDoorSpecialOrder from "./pages/PatioDoorSpecialOrder";
@@ -59,6 +60,7 @@ function Router() {
         <Route path="/products/flooring" component={ProductFlooring} />
         <Route path="/products/siding" component={ProductSiding} />
         <Route path="/products/trim" component={ProductTrim} />
+        <Route path="/entry-doors-in-stock" component={EntryDoorsInStock} />
         <Route path="/interior-doors-in-stock" component={InteriorDoorsInStock} />
         <Route path="/exterior-doors-in-stock" component={ExteriorDoorsInStock} />
         <Route path="/patio-doors-special-order" component={PatioDoorSpecialOrder} />
