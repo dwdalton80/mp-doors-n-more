@@ -1,6 +1,6 @@
 /**
- * EntryDoorsInStock.tsx — MP Doors & More
- * Page showcasing currently available entry doors in stock
+ * ExteriorDoorsInStock.tsx — MP Doors & More
+ * Page showcasing currently available exterior doors in stock
  * Design: Modern Farmhouse with deep red accents
  */
 
@@ -16,199 +16,207 @@ const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5Tb
 const inStockDoors = [
   {
     id: "entry-door-masonite",
-    title: "6 Lite Mahogany with Flemish Glass",
-    imageUrl: "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
-    imageUrl2: "/manus-storage/4526628-1_57f1d97a.jpg",
+    title: "Full Lite Mini Blind",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
+    imageUrl2: "/manus-storage/fullminiblind2_69778246.webp",
     images: [
-      "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
-      "/manus-storage/4526628-1_57f1d97a.jpg"
+      "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
+      "/manus-storage/fullminiblind2_69778246.webp",
+      "/manus-storage/Screenshot2026-05-15at4.46.11PM_cca253d7.png"
     ],
     brand: "Jeld-Wen",
-    description: "Elegant 6 lite mahogany entry door with beautiful flemish glass pattern. Premium wood construction with authentic mahogany finish provides timeless elegance and durability for your home entrance.",
-    features: ["6 lite glass panel", "Flemish glass pattern", "Mahogany wood construction", "Classic design"],
+    description: "Premium full lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
+    features: ["Full lite glass panel", "Mini blind integrated", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
     id: "entry-door-jeldwen",
-    title: "4 Lite Contemporary Mahogany With Frosted Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png",
+    title: "Half Lite Mini Blind",
+    imageUrl: "/manus-storage/halfminiblind1_81f57c2f.avif",
+    imageUrl2: "/manus-storage/halfminiblind2_de02fcac.jpg",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-      "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
-      "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png"
+      "/manus-storage/halfminiblind1_81f57c2f.avif",
+      "/manus-storage/halfminiblind2_de02fcac.jpg",
+      "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+      "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png"
     ],
     brand: "Masonite",
-    description: "Contemporary 4 lite mahogany entry door with beautiful frosted glass panels. Modern design with frosted glass provides privacy while allowing natural light. Premium mahogany construction with elegant contemporary styling.",
-    features: ["4 lite frosted glass panel", "Contemporary design", "Mahogany wood construction", "Privacy glass"],
+    description: "Premium half lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
+    features: ["Half lite glass panel", "Mini blind integrated", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
     id: "patio-door-anderson",
-    title: "4 Lite Mahogany Door with Flemish Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    title: "9 Lite Exterior Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
+    imageUrl3: "/manus-storage/9panellite1_0ff4a8a2.jpg",
+    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
-      "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png"
+      "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
+      "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
+      "/manus-storage/9panellite1_0ff4a8a2.jpg",
+      "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png"
     ],
-    brand: "Jeld-Wen",
-    description: "Beautiful 4 lite mahogany entry door with elegant flemish glass pattern. Premium wood construction with authentic mahogany finish and beautiful glass detailing provides timeless elegance and durability for your home entrance.",
-    features: ["4 lite glass panel", "Flemish glass pattern", "Mahogany wood construction", "Classic design"],
+    brand: "Masonite",
+    description: "Beautiful 9 lite fiberglass exterior door with smooth operation. Low-E glass provides energy efficiency and stunning natural light while durable fiberglass resists warping.",
+    features: ["9 lite glass panel", "Low-E glass", "Fiberglass construction", "Warp-resistant"],
     rating: 5,
   },
   {
     id: "storm-door-larson",
-    title: "6 Lite Mahogany Door with Clear Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
-    imageUrl4: "/manus-storage/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg",
+    title: "3/4 Lite Vista Grand Exterior Door",
+    imageUrl: "/manus-storage/34litevista3_fba39b1f.webp",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
+    imageUrl3: "/manus-storage/34litevista2_3406cc87.webp",
+    imageUrl4: "/manus-storage/34litevista_eec35dce.webp",
     images: [
-      "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
-      "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
-      "/manus-storage/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
-      "/manus-storage/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg"
+      "/manus-storage/34litevista3_fba39b1f.webp",
+      "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
+      "/manus-storage/34litevista2_3406cc87.webp",
+      "/manus-storage/34litevista_eec35dce.webp",
+      "/manus-storage/Screenshot2026-05-15at4.54.13PM_858f3699.png"
     ],
-    brand: "Masonite",
-    description: "Beautiful 6 lite mahogany entry door with clear glass panels. Premium wood construction with authentic mahogany finish and clear glass detailing provides timeless elegance and maximum natural light for your home entrance.",
-    features: ["6 lite glass panel", "Clear glass", "Mahogany wood construction", "Classic design"],
+    brand: "Jeld-Wen",
+    description: "Premium 3/4 lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
+    features: ["3/4 lite glass panel", "Vista grand design", "Fiberglass construction", "Energy-efficient"],
     rating: 4.8,
   },
   {
     id: "full-lite-vista-grand-larson",
-    title: "8 Lite Craftsman Mahogany Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png",
+    title: "Full Lite Vista Grand",
+    imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
+    imageUrl2: "/manus-storage/fulllitevista4_00111b6c.webp",
+    imageUrl3: "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
-      "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png"
+      "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
+      "/manus-storage/fulllitevista4_00111b6c.webp",
+      "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png"
     ],
-    brand: "Jeld-Wen",
-    description: "Beautiful 8 lite craftsman mahogany entry door with classic grid pattern. Premium wood construction with authentic mahogany finish and elegant glass detailing provides timeless craftsman style and durability for your home entrance.",
-    features: ["8 lite glass panel", "Craftsman design", "Mahogany wood construction", "Classic style"],
+    brand: "Masonite",
+    description: "Premium full lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
+    features: ["Full lite glass panel", "Vista grand design", "Fiberglass construction", "Energy-efficient"],
     rating: 4.8,
   },
   {
-    id: "entry-door-6",
-    title: "Full Lite Mahogany Door",
-    imageUrl: "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
-    imageUrl2: "/manus-storage/4526628-1_57f1d97a.jpg",
+    id: "flush-fiberglass-masonite",
+    title: "Flush Fiberglass Exterior Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png",
     images: [
-      "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
-      "/manus-storage/4526628-1_57f1d97a.jpg"
-    ],
-    brand: "Masonite",
-    description: "Stunning full lite mahogany entry door with premium glass panels. Premium wood construction with authentic mahogany finish and clear glass provides maximum natural light and timeless elegance for your home entrance.",
-    features: ["Full lite glass panel", "Clear glass", "Mahogany wood construction", "Classic design"],
-    rating: 5,
-  },
-  {
-    id: "entry-door-7",
-    title: "Half Lite Mahogany Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
-    images: [
-      "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-      "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png"
+      "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
+      "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
+      "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png"
     ],
     brand: "Jeld-Wen",
-    description: "Beautiful half lite mahogany entry door with elegant glass panel. Premium wood construction with authentic mahogany finish provides privacy while allowing natural light for your home entrance.",
-    features: ["Half lite glass panel", "Clear glass", "Mahogany wood construction", "Classic design"],
+    description: "Sleek flush fiberglass exterior door with modern minimalist design. Durable fiberglass construction resists warping and weather damage for lasting beauty and performance.",
+    features: ["Fiberglass construction", "Warp-resistant", "Contemporary design", "Low maintenance"],
     rating: 5,
   },
   {
-    id: "entry-door-8",
-    title: "9 Lite Mahogany Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    id: "6-panel-fiberglass-masonite",
+    title: "6 Panel Fiberglass Exterior Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
+    imageUrl2: "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
+    imageUrl3: "/manus-storage/6panelfiberglass2_d5650977.webp",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
-      "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png"
-    ],
-    brand: "Masonite",
-    description: "Beautiful 9 lite mahogany entry door with elegant grid pattern. Premium wood construction with authentic mahogany finish and beautiful glass detailing provides timeless elegance and natural light for your home entrance.",
-    features: ["9 lite glass panel", "Grid pattern", "Mahogany wood construction", "Classic design"],
-    rating: 4.8,
-  },
-  {
-    id: "entry-door-9",
-    title: "3 Panel Mahogany Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
-    images: [
-      "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
-      "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png"
+      "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
+      "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
+      "/manus-storage/6panelfiberglass2_d5650977.webp"
     ],
     brand: "Jeld-Wen",
-    description: "Classic 3-panel mahogany entry door with traditional styling. Premium wood construction with authentic mahogany finish provides timeless elegance and durability for your home entrance.",
-    features: ["3-panel design", "Traditional style", "Mahogany wood construction", "Classic design"],
+    description: "Classic 6-panel fiberglass door with traditional styling. Provides excellent insulation and durability for any home exterior with low-maintenance fiberglass construction.",
+    features: ["6-panel design", "Superior insulation", "Fiberglass construction", "Low maintenance"],
     rating: 5,
   },
   {
-    id: "entry-door-10",
-    title: "Arched Top Mahogany Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
+    id: "2-panel-square-top-masonite",
+    title: "2 Panel Square Top Exterior Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-      "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png"
+      "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
+      "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png"
     ],
     brand: "Masonite",
-    description: "Elegant arched top mahogany entry door with beautiful glass panel. Premium wood construction with authentic mahogany finish and arched design provides distinctive character and timeless elegance for your home entrance.",
-    features: ["Arched top design", "Glass panel", "Mahogany wood construction", "Classic design"],
-    rating: 4.8,
+    description: "Elegant 2-panel square top fiberglass door with clean lines. Perfect for modern farmhouse and contemporary home styles with durable fiberglass construction.",
+    features: ["2-panel design", "Square top profile", "Fiberglass construction", "Energy-efficient"],
+    rating: 5,
+  },
+  {
+    id: "2-panel-santa-fe-masonite",
+    title: "2 Panel Santa Fe Exterior Door",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png",
+    images: [
+      "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
+      "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
+      "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png"
+    ],
+    brand: "Jeld-Wen",
+    description: "Rustic 2-panel Santa Fe style fiberglass door with authentic southwestern character. Adds warmth and charm to any home exterior with durable fiberglass construction.",
+    features: ["Santa Fe style", "Rustic character", "Fiberglass construction", "Weather-resistant"],
+    rating: 5,
   },
 ];
 
 export default function EntryDoorsInStock() {
-  const [showQuickView, setShowQuickView] = useState(false);
-  const [selectedDoor, setSelectedDoor] = useState<(typeof inStockDoors)[0] | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<typeof inStockDoors[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [showPricingModal, setShowPricingModal] = useState(false);
+  const [selectedPricingProduct, setSelectedPricingProduct] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
 
-  const handleQuickView = (door: (typeof inStockDoors)[0]) => {
-    setSelectedDoor(door);
-    setCurrentImageIndex(0);
-    setShowQuickView(true);
+  const handleGetPricing = (productId: string) => {
+    setSelectedPricingProduct(productId);
+    setShowPricingModal(true);
   };
 
-  const handleNextImage = () => {
-    if (selectedDoor) {
-      setCurrentImageIndex((prev) => (prev + 1) % selectedDoor.images.length);
-    }
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handlePrevImage = () => {
-    if (selectedDoor) {
-      setCurrentImageIndex((prev) => (prev - 1 + selectedDoor.images.length) % selectedDoor.images.length);
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData, 'Product:', selectedPricingProduct);
+    setShowPricingModal(false);
+    setFormData({ name: '', email: '', phone: '', message: '' });
   };
-
-  const filteredDoors = inStockDoors.filter((door) =>
-    door.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    door.brand.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   useEffect(() => {
-    document.title = "Entry Doors In Stock | MP Doors & More";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Shop premium mahogany entry doors in stock in Sherman, TX. A-grade quality at B-grade prices.');
-    }
     injectSchema({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: "MP Doors & More - Entry Doors In Stock",
-      description: "Premium entry doors in stock in Sherman, TX",
+      "@type": "CollectionPage",
+      name: "Entry Doors In Stock",
+      description: "Currently available entry doors in stock at MP Doors & More in Sherman, TX",
+      url: "https://mpdoorsnmore.com/entry-doors-in-stock",
     });
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen flex flex-col bg-white">
+      {/* ── BREADCRUMBS ── */}
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Products", href: "/products" },
+          { label: "Doors", href: "/products#doors" },
+          { label: "Entry Doors In Stock" },
+        ]}
+      />
+
       {/* ── PAGE HERO ── */}
-      <section className="relative bg-[#1a2e45] pt-32 pb-16">
+      <section className="relative bg-[#1a2e45] pt-20 pb-16">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${HERO_IMAGE})` }}
@@ -216,89 +224,98 @@ export default function EntryDoorsInStock() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f1e30]/90 via-[#0f1e30]/70 to-transparent" />
 
         <div className="relative container">
-          <div className="mb-6">
-            <Breadcrumbs items={[
-              { label: "Home", href: "/" },
-              { label: "Products", href: "/products" },
-              { label: "Doors", href: "/products/doors" },
-              { label: "Entry Doors In Stock" },
-            ]} />
-          </div>
-          <Link href="/products/doors" className="inline-flex items-center gap-2 text-[#a61c00] font-display font-semibold hover:text-white transition-colors mb-6 text-sm">
+          <Link href="/products#doors" className="inline-flex items-center gap-2 text-[#a61c00] font-display font-semibold hover:text-white transition-colors mb-6 text-sm">
             <ChevronLeft size={16} />
             Back to Doors
           </Link>
-          <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white mb-4">
+          <h1 className="font-display font-black text-4xl sm:text-5xl text-white mb-4">
             Entry Doors In Stock
           </h1>
           <p className="text-white/70 text-lg max-w-2xl">
-            Premium mahogany entry doors available now. Premium materials at honest prices.
+            Premium entry doors, patio doors, and storm doors ready for immediate purchase. A grade quality at B grade prices.
           </p>
         </div>
       </section>
 
-      {/* ── SEARCH BAR ── */}
-      <section className="py-8 bg-gray-50 border-b border-gray-200">
-        <div className="container">
-          <div className="relative max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-            <input
-              type="text"
-              placeholder="Search by name or brand..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a61c00]"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ── PRODUCTS GRID ── */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredDoors.map((door) => (
-              <div key={door.id} className="group">
-                <div className="bg-[#FAF7F2] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+          <h2 className="font-display font-black text-3xl text-[#1e3450] mb-12">Popular In Stock Options</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {inStockDoors.map((door) => (
+              <div key={door.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                {/* Product Image */}
+                <div className="relative h-64 overflow-hidden bg-gray-100 group">
                   <ProductImagePlaceholder imageUrl={door.imageUrl} title={door.title} />
 
-                  <div className="p-6">
-                    <h3 className="font-display font-bold text-lg text-[#1a2e45] mb-2">{door.title}</h3>
-                    <p className="text-gray-600 text-sm mb-3">{door.brand}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{door.description}</p>
+                  {/* In Stock Badge */}
+                  <div className="absolute top-4 right-4 bg-[#1e3450] text-white px-3 py-1 rounded-full text-xs font-bold">
+                    In Stock
+                  </div>
 
-                    {/* Rating */}
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="flex gap-0.5">
-                        {[1, 2, 3, 4, 5].map((i) => (
-                          <Star
-                            key={i}
-                            size={14}
-                            className={i <= door.rating ? "fill-[#a61c00] text-[#a61c00]" : "text-gray-300"}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-sm text-gray-600">{door.rating}</span>
-                    </div>
-
-                    {/* Features */}
-                    <div className="mb-4">
-                      <ul className="space-y-1">
-                        {door.features.map((feature, idx) => (
-                          <li key={idx} className="text-xs text-gray-600 flex items-center gap-2">
-                            <span className="w-1 h-1 rounded-full bg-[#a61c00]" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* CTA */}
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <button
-                      onClick={() => handleQuickView(door)}
-                      className="w-full btn-accent text-sm"
+                      onClick={() => {
+                        setSelectedProduct(door);
+                        setCurrentImageIndex(0);
+                      }}
+                      className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
                     >
+                      <Search size={18} />
                       Quick View
+                    </button>
+                  </div>
+                </div>
+
+                {/* Product Info */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="font-display font-bold text-xl text-[#a61c00] mb-2">{door.title}</h3>
+                  <p className="text-sm text-gray-600 mb-3">{door.brand}</p>
+                  <p className="text-gray-700 text-sm mb-4 flex-grow">{door.description}</p>
+
+                  {/* Rating */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex gap-0.5">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star
+                          key={i}
+                          size={14}
+                          className={i <= door.rating ? "fill-[#a61c00] text-[#a61c00]" : "text-gray-300"}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600">{door.rating}</span>
+                  </div>
+
+                  {/* Features */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-sm text-[#1a2e45] mb-2">Features:</h4>
+                    <ul className="space-y-1">
+                      {door.features.map((feature, idx) => (
+                        <li key={idx} className="text-xs text-gray-600 flex items-center gap-2">
+                          <span className="w-1 h-1 rounded-full bg-[#a61c00]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-3 mt-auto">
+                    <button
+                      onClick={() => setSelectedProduct(door)}
+                      className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
+                    >
+                      <Search size={16} />
+                      Quick View
+                    </button>
+                    <button
+                      onClick={() => window.location.href = "tel:9034211305"}
+                      className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer"
+                    >
+                      Call Now
                     </button>
                   </div>
                 </div>
@@ -308,84 +325,192 @@ export default function EntryDoorsInStock() {
         </div>
       </section>
 
-      {/* ── QUICK VIEW MODAL ── */}
-      {showQuickView && selectedDoor && (
+      {/* ── PRICING REQUEST MODAL ── */}
+      {showPricingModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
-              <h2 className="font-display font-bold text-2xl text-[#1a2e45]">{selectedDoor.title}</h2>
-              <button onClick={() => setShowQuickView(false)} className="text-gray-400 hover:text-gray-600">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <h2 className="text-2xl font-bold text-[#1e3450]">Get Pricing</h2>
+              <button
+                onClick={() => setShowPricingModal(false)}
+                className="text-gray-500 hover:text-gray-700 transition"
+              >
                 <X size={24} />
               </button>
             </div>
 
-            <div className="p-6">
-              {/* Image Gallery */}
-              <div className="mb-6">
-                <div className="relative bg-gray-100 rounded-lg overflow-hidden mb-4">
-                  <ProductImagePlaceholder imageUrl={selectedDoor.images[currentImageIndex]} title={selectedDoor.title} />
-                </div>
-
-                {/* Image Navigation */}
-                {selectedDoor.images.length > 1 && (
-                  <div className="flex items-center justify-between mb-4">
-                    <button
-                      onClick={handlePrevImage}
-                      className="px-4 py-2 bg-[#1a2e45] text-white rounded hover:bg-[#0f1e30] transition"
-                    >
-                      ← Previous
-                    </button>
-                    <div className="flex gap-2">
-                      {selectedDoor.images.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setCurrentImageIndex(idx)}
-                          className={`w-8 h-8 rounded font-semibold transition ${
-                            idx === currentImageIndex
-                              ? "bg-[#a61c00] text-white"
-                              : "bg-gray-200 text-gray-600 hover:bg-gray-300"
-                          }`}
-                        >
-                          {idx + 1}
-                        </button>
-                      ))}
-                    </div>
-                    <button
-                      onClick={handleNextImage}
-                      className="px-4 py-2 bg-[#1a2e45] text-white rounded hover:bg-[#0f1e30] transition"
-                    >
-                      Next →
-                    </button>
-                  </div>
-                )}
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="Your name"
+                />
               </div>
 
-              {/* Details */}
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-display font-semibold text-[#1a2e45] mb-2">Brand</h3>
-                  <p className="text-gray-600">{selectedDoor.brand}</p>
-                </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="your@email.com"
+                />
+              </div>
 
-                <div>
-                  <h3 className="font-display font-semibold text-[#1a2e45] mb-2">Description</h3>
-                  <p className="text-gray-600">{selectedDoor.description}</p>
-                </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleFormChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="(903) 421-1305"
+                />
+              </div>
 
-                <div>
-                  <h3 className="font-display font-semibold text-[#1a2e45] mb-2">Features</h3>
-                  <ul className="space-y-1">
-                    {selectedDoor.features.map((feature, idx) => (
-                      <li key={idx} className="text-gray-600 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#a61c00]" />
-                        {feature}
-                      </li>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleFormChange}
+                  rows={3}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3450]"
+                  placeholder="Tell us about your project..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#a61c00] hover:bg-[#8b1600] text-white font-bold py-2 rounded-lg transition-colors"
+              >
+                Send Request
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ── CTA SECTION ── */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1e3450]">Ready to Upgrade Your Exterior?</h2>
+          <p className="text-lg text-[#1e3450] mb-8 max-w-2xl mx-auto">
+            Don't see what you're looking for? Contact us today and we'll help you find the perfect exterior door solution.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-[#a61c00] text-white px-8 py-3 rounded font-bold hover:bg-[#8a1700] transition-colors"
+          >
+            Contact Us
+          </Link>
+        </div>
+      </section>
+
+      {/* ── QUICK VIEW MODAL ── */}
+      {selectedProduct && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelectedProduct(null)}>
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+              <h3 className="font-display font-bold text-xl text-[#1a2e45]">{selectedProduct.title}</h3>
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors md:p-1"
+              >
+                <X size={24} className="text-gray-600" />
+              </button>
+            </div>
+
+            <div className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Image Section */}
+                <div className="flex flex-col gap-4">
+                  <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center overflow-hidden">
+                    <img
+                      key={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
+                      src={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
+                      alt={selectedProduct.title}
+                      className="w-full h-full object-contain transition-opacity duration-500"
+                    />
+                  </div>
+                  <div className="flex gap-2 overflow-x-auto pb-2">
+                    {(selectedProduct.images || [selectedProduct.imageUrl, selectedProduct.imageUrl2]).map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        className={`flex-shrink-0 px-3 py-2 rounded font-semibold text-sm transition-colors ${
+                          currentImageIndex === idx
+                            ? "bg-[#a61c00] text-white"
+                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                        }`}
+                      >
+                        {idx + 1}
+                      </button>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                <div className="pt-4 border-t border-gray-200">
-                  <button className="w-full btn-accent">Get Pricing</button>
+                {/* Details Section */}
+                <div>
+                  <h4 className="font-display font-bold text-2xl text-[#1a2e45] mb-2">{selectedProduct.title}</h4>
+                  <p className="text-[#a61c00] font-semibold mb-4">{selectedProduct.brand}</p>
+
+                  {/* Rating */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex gap-0.5">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star
+                          key={i}
+                          size={16}
+                          className={i <= selectedProduct.rating ? "fill-[#a61c00] text-[#a61c00]" : "text-gray-300"}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600">{selectedProduct.rating}</span>
+                  </div>
+
+                  <p className="text-gray-700 mb-6">{selectedProduct.description}</p>
+
+                  {/* Features */}
+                  <div className="mb-6">
+                    <h5 className="font-semibold text-[#1a2e45] mb-3">Key Features:</h5>
+                    <ul className="space-y-2">
+                      {selectedProduct.features.map((feature, idx) => (
+                        <li key={idx} className="text-sm text-gray-700 flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#a61c00]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => window.location.href = "tel:9034211305"}
+                      className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-3 rounded font-semibold transition-colors"
+                    >
+                      Call Now
+                    </button>
+                    <button
+                      onClick={() => window.location.href = "mailto:mpdoorsnmore23@gmail.com"}
+                      className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-3 rounded font-semibold transition-colors"
+                    >
+                      Get Pricing
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
