@@ -32,15 +32,15 @@ const inStockDoors = [
   {
     id: "entry-door-jeldwen",
     title: "Half Lite Mini Blind",
-    imageUrl: "/manus-storage/halfminiblind1_81f57c2f.avif",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
     imageUrl2: "/manus-storage/halfminiblind2_de02fcac.jpg",
     imageUrl3: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
-    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
+    imageUrl4: "/manus-storage/halfminiblind1_81f57c2f.avif",
     images: [
-      "/manus-storage/halfminiblind1_81f57c2f.avif",
+      "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
       "/manus-storage/halfminiblind2_de02fcac.jpg",
       "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
-      "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png"
+      "/manus-storage/halfminiblind1_81f57c2f.avif"
     ],
     brand: "Masonite",
     description: "Premium half lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
