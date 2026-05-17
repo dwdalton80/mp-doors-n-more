@@ -143,17 +143,15 @@ const inStockDoors = [
   {
     id: "2-panel-santa-fe-masonite",
     title: "Pre Finished Half Oval TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png",
+    imageUrl: "/manus-storage/03169515_3724e0ba.jpg",
+    imageUrl2: "/manus-storage/00433525_c02293fe.webp",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
-      "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
-      "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png"
+      "/manus-storage/03169515_3724e0ba.jpg",
+      "/manus-storage/00433525_c02293fe.webp"
     ],
-    brand: "Jeld-Wen",
-    description: "Rustic 2-panel Santa Fe style fiberglass door with authentic southwestern character. Adds warmth and charm to any home exterior with durable fiberglass construction.",
-    features: ["Santa Fe style", "Rustic character", "Fiberglass construction", "Weather-resistant"],
+    brand: "Masonite",
+    description: "Elegant pre-finished half oval TX Star fiberglass entry door with beautiful star glass design. Premium fiberglass construction with half oval top provides distinctive architectural appeal and durability. Perfect for traditional and transitional home styles.",
+    features: ["Half oval design", "TX Star glass pattern", "Pre-finished", "Fiberglass construction"],
     rating: 5,
   },
 ];
