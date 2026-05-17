@@ -113,17 +113,14 @@ const inStockDoors = [
   {
     id: "6-panel-fiberglass-masonite",
     title: "3/4 Glass TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
-    imageUrl2: "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
-    imageUrl3: "/manus-storage/6panelfiberglass2_d5650977.webp",
+    imageUrl: "/manus-storage/Untitleddesign3a_68fb832a.png",
+    imageUrl2: "/manus-storage/Untitleddesign3a_68fb832a.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
-      "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
-      "/manus-storage/6panelfiberglass2_d5650977.webp"
+      "/manus-storage/Untitleddesign3a_68fb832a.png"
     ],
-    brand: "Jeld-Wen",
-    description: "Classic 6-panel fiberglass door with traditional styling. Provides excellent insulation and durability for any home exterior with low-maintenance fiberglass construction.",
-    features: ["6-panel design", "Superior insulation", "Fiberglass construction", "Low maintenance"],
+    brand: "Masonite",
+    description: "Beautiful 3/4 glass TX Star fiberglass entry door with elegant star glass design. Premium fiberglass construction with three-quarter lite glass panel provides abundant natural light and distinctive architectural appeal. Perfect for modern and traditional home styles.",
+    features: ["3/4 glass panel", "TX Star glass design", "Fiberglass construction", "Energy-efficient"],
     rating: 5,
   },
   {
