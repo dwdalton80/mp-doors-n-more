@@ -5,7 +5,7 @@
  */
 
 import { useEffect, useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ChevronLeft, Star, X, Search } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
@@ -490,12 +490,12 @@ export default function EntryDoorsInStock() {
                     >
                       Call Now
                     </button>
-                    <button
-                      onClick={() => window.location.href = "mailto:mpdoorsnmore23@gmail.com"}
-                      className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-3 rounded font-semibold transition-colors"
+                    <Link
+                      href={`/contact?product=${encodeURIComponent(selectedProduct.title)}`}
+                      className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-3 rounded font-semibold transition-colors text-center"
                     >
                       Get Pricing
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

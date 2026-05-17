@@ -4,13 +4,15 @@
  * Contact form, business info, Google Map, hours
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin, Clock, Facebook, CheckCircle2 } from "lucide-react";
 import { logPhoneCallClick } from "@/lib/analytics";
 
 export default function Contact() {
+  const [location] = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,6 +22,19 @@ export default function Contact() {
   });
    const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // Pre-fill form with product name from query parameter
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get('product');
+    if (productName) {
+      setFormData(prev => ({
+        ...prev,
+        subject: "pricing",
+        message: `I'm interested in pricing for the ${productName}. Please provide more information.`
+      }));
+    }
+  }, [location]);
 
   const sendMessage = trpc.contact.sendMessage.useMutation({
     onSuccess: () => {

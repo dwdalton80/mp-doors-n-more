@@ -243,3 +243,6 @@
 
 ## UI Enhancements
 - [x] Add hover zoom effect to product card images on EntryDoorsInStock and ExteriorDoorsInStock pages
+
+## Contact Page Integration
+- [x] Update EntryDoorsInStock quick view modal "Get Pricing" button to link to contact page with product name pre-filled
