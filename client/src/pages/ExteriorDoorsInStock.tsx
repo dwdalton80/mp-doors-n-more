@@ -48,19 +48,17 @@ const inStockDoors = [
   {
     id: "patio-door-anderson",
     title: "4 Lite Mahogany Door with Flemish Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
-    imageUrl3: "/manus-storage/9panellite1_0ff4a8a2.jpg",
-    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    imageUrl4: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
-      "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
-      "/manus-storage/9panellite1_0ff4a8a2.jpg",
-      "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png"
+      "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
+      "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png"
     ],
-    brand: "Masonite",
-    description: "Beautiful 9 lite fiberglass exterior door with smooth operation. Low-E glass provides energy efficiency and stunning natural light while durable fiberglass resists warping.",
-    features: ["9 lite glass panel", "Low-E glass", "Fiberglass construction", "Warp-resistant"],
+    brand: "Jeld-Wen",
+    description: "Beautiful 4 lite mahogany entry door with elegant flemish glass pattern. Premium wood construction with authentic mahogany finish and beautiful glass detailing provides timeless elegance and durability for your home entrance.",
+    features: ["4 lite glass panel", "Flemish glass pattern", "Mahogany wood construction", "Classic design"],
     rating: 5,
   },
   {
