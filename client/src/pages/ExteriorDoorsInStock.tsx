@@ -64,20 +64,19 @@ const inStockDoors = [
   {
     id: "storm-door-larson",
     title: "6 Lite Mahogany Door with Clear Glass",
-    imageUrl: "/manus-storage/34litevista3_fba39b1f.webp",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
-    imageUrl3: "/manus-storage/34litevista2_3406cc87.webp",
-    imageUrl4: "/manus-storage/34litevista_eec35dce.webp",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
+    imageUrl4: "/manus-storage/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg",
     images: [
-      "/manus-storage/34litevista3_fba39b1f.webp",
-      "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
-      "/manus-storage/34litevista2_3406cc87.webp",
-      "/manus-storage/34litevista_eec35dce.webp",
-      "/manus-storage/Screenshot2026-05-15at4.54.13PM_858f3699.png"
+      "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
+      "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
+      "/manus-storage/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
+      "/manus-storage/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg"
     ],
-    brand: "Jeld-Wen",
-    description: "Premium 3/4 lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
-    features: ["3/4 lite glass panel", "Vista grand design", "Fiberglass construction", "Energy-efficient"],
+    brand: "Masonite",
+    description: "Beautiful 6 lite mahogany entry door with clear glass panels. Premium wood construction with authentic mahogany finish and clear glass detailing provides timeless elegance and maximum natural light for your home entrance.",
+    features: ["6 lite glass panel", "Clear glass", "Mahogany wood construction", "Classic design"],
     rating: 4.8,
   },
   {
