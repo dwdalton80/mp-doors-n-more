@@ -21,14 +21,14 @@ export default function ProductImagePlaceholder({
       <style>{`
         @keyframes imageZoom {
           from { transform: scale(1); }
-          to { transform: scale(1.12); }
+          to { transform: scale(1.15); }
         }
         @keyframes shimmer {
           0% { left: -100%; }
           100% { left: 100%; }
         }
         .group:hover .product-image {
-          animation: imageZoom 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          animation: imageZoom 700ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
         .group:hover .product-shimmer {
           animation: shimmer 800ms ease-in-out;
@@ -42,7 +42,7 @@ export default function ProductImagePlaceholder({
             alt={alt}
             loading="lazy"
             decoding="async"
-            className="product-image w-full h-full object-cover transition-transform duration-600"
+            className="product-image w-full h-full object-cover transition-transform duration-700 ease-out"
           />
           {/* Gradient overlay that appears on hover */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e45]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />

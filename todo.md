@@ -240,3 +240,6 @@
 - [x] Add EntryDoorsInStock route to App.tsx
 - [x] Add 10 fiberglass door products to EntryDoorsInStock page (matching Exterior Doors structure exactly)
 - [x] Verify Entry Doors page matches reference site https://mpdoorsnmore.com/exterior-doors-in-stock
+
+## UI Enhancements
+- [x] Add hover zoom effect to product card images on EntryDoorsInStock and ExteriorDoorsInStock pages
