@@ -38,8 +38,7 @@ const inStockDoors = [
     images: [
       "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
       "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
-      "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png",
-      "/manus-storage/Screenshot2026-05-15at11.01.36PM_5be621e6.png"
+      "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png"
     ],
     brand: "Masonite",
     description: "Contemporary 4 lite mahogany entry door with beautiful frosted glass panels. Modern design with frosted glass provides privacy while allowing natural light. Premium mahogany construction with elegant contemporary styling.",
