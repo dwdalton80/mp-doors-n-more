@@ -82,17 +82,16 @@ const inStockDoors = [
   {
     id: "full-lite-vista-grand-larson",
     title: "8 Lite Craftsman Mahogany Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
-    imageUrl2: "/manus-storage/fulllitevista4_00111b6c.webp",
-    imageUrl3: "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png",
+    imageUrl: "/manus-storage/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
+    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png",
+    imageUrl3: "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png",
     images: [
-      "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
-      "/manus-storage/fulllitevista4_00111b6c.webp",
-      "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png"
+      "/manus-storage/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
+      "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png"
     ],
-    brand: "Masonite",
-    description: "Premium full lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
-    features: ["Full lite glass panel", "Vista grand design", "Fiberglass construction", "Energy-efficient"],
+    brand: "Jeld-Wen",
+    description: "Beautiful 8 lite craftsman mahogany entry door with classic grid pattern. Premium wood construction with authentic mahogany finish and elegant glass detailing provides timeless craftsman style and durability for your home entrance.",
+    features: ["8 lite glass panel", "Craftsman design", "Mahogany wood construction", "Classic style"],
     rating: 4.8,
   },
   {
