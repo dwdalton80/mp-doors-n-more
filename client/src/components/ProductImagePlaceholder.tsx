@@ -8,6 +8,7 @@ interface ProductImagePlaceholderProps {
   imageUrl?: string;
   title: string;
   alt?: string;
+  priority?: boolean;
 }
 
 export default function ProductImagePlaceholder({
@@ -39,6 +40,8 @@ export default function ProductImagePlaceholder({
           <img
             src={imageUrl}
             alt={alt}
+            loading="lazy"
+            decoding="async"
             className="product-image w-full h-full object-cover transition-transform duration-600"
           />
           {/* Gradient overlay that appears on hover */}

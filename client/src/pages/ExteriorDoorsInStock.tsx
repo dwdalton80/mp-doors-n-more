@@ -442,6 +442,8 @@ export default function ExteriorDoorsInStock() {
                       key={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
                       src={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
                       alt={selectedProduct.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain transition-opacity duration-500"
                     />
                   </div>
