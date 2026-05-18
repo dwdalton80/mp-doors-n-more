@@ -36,6 +36,8 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  // Parse text/plain for sendBeacon analytics tracking
+  app.use(express.text({ type: "text/plain", limit: "50mb" }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
   registerAnalyticsEndpoint(app);

@@ -265,3 +265,6 @@
 
 ## Dashboard Analytics Reset
 - [x] Add reset button to clear quote request, contact form, and phone call conversion numbers
+
+## Mobile Device Tracking Issue
+- [x] Fix mobile device breakdown not showing on dashboard (added text/plain body parser for sendBeacon)
