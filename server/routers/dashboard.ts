@@ -2,7 +2,7 @@ import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 import { z } from "zod";
 import { getDb } from "../db";
 import { analyticsEvents, analyticsMetrics } from "../../drizzle/schema";
-import { gte, lte, desc, and } from "drizzle-orm";
+import { gte, lte, desc, and, eq } from "drizzle-orm";
 
 const analyticsResponseSchema = {
   totalVisitors: 0,
@@ -349,6 +349,60 @@ export const dashboardRouter = router({
       } catch (error) {
         console.error("[Dashboard] Failed to fetch conversions:", error);
         throw new Error("Failed to fetch conversion data");
+      }
+    }),
+
+  // Reset conversion numbers (admin-only access)
+  resetConversions: adminProcedure
+    .input(
+      z.object({
+        eventTypes: z.array(z.enum(["quote_request", "contact_form", "phone_call"])),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const db = await getDb();
+      if (!db) {
+        throw new Error("Database not available");
+      }
+
+      try {
+        // Delete all events of specified types
+        for (const eventType of input.eventTypes) {
+          await db
+            .delete(analyticsEvents)
+            .where(eq(analyticsEvents.eventType, eventType as any));
+        }
+
+        // Reset metrics for these event types
+        const metrics = await db.select().from(analyticsMetrics);
+        
+        for (const metric of metrics) {
+          const updates: any = {};
+          if (input.eventTypes.includes("quote_request")) {
+            updates.quoteRequests = 0;
+          }
+          if (input.eventTypes.includes("contact_form")) {
+            updates.contactFormSubmissions = 0;
+          }
+          if (input.eventTypes.includes("phone_call")) {
+            updates.phoneCallsTracked = 0;
+          }
+          
+          if (Object.keys(updates).length > 0) {
+            await db
+              .update(analyticsMetrics)
+              .set({
+                ...updates,
+                updatedAt: new Date(),
+              })
+              .where(eq(analyticsMetrics.date, metric.date));
+          }
+        }
+
+        return { success: true, message: "Conversion data reset successfully" };
+      } catch (error) {
+        console.error("[Dashboard] Failed to reset conversions:", error);
+        throw new Error("Failed to reset conversion data");
       }
     }),
 });

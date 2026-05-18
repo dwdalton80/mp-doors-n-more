@@ -32,7 +32,7 @@ export default function Dashboard() {
   const queryStartDate = startDate || defaults.start;
   const queryEndDate = endDate || defaults.end;
 
-  const { data: analytics, isLoading: analyticsLoading } = trpc.dashboard.getAnalytics.useQuery(
+  const { data: analytics, isLoading: analyticsLoading, refetch } = trpc.dashboard.getAnalytics.useQuery(
     {
       startDate: queryStartDate,
       endDate: queryEndDate,
@@ -53,6 +53,25 @@ export default function Dashboard() {
     } else {
       toast.error("Incorrect password");
       setPasswordInput("");
+    }
+  };
+
+  const resetConversions = trpc.dashboard.resetConversions.useMutation({
+    onSuccess: () => {
+      toast.success("Conversion numbers reset successfully");
+      // Refetch analytics data
+      setTimeout(() => refetch(), 500);
+    },
+    onError: (err) => {
+      toast.error(err.message || "Failed to reset conversions");
+    },
+  });
+
+  const handleResetConversions = async () => {
+    if (confirm("Are you sure you want to reset quote requests, contact forms, and phone calls to 0? This cannot be undone.")) {
+      resetConversions.mutate({
+        eventTypes: ["quote_request", "contact_form", "phone_call"],
+      });
     }
   };
 
@@ -308,6 +327,21 @@ export default function Dashboard() {
             </div>
           </Card>
         </div>
+
+        {/* Reset Conversions Button - Admin Only */}
+        {isAuthenticated && user?.role === "admin" && (
+          <div className="mb-8">
+            <Button
+              onClick={handleResetConversions}
+              variant="destructive"
+              disabled={resetConversions.isPending}
+              className="bg-red-600 hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {resetConversions.isPending ? "Resetting..." : "Reset Conversion Numbers"}
+            </Button>
+            <p className="text-sm text-gray-500 mt-2">This will reset quote requests, contact forms, and phone calls to 0</p>
+          </div>
+        )}
 
         {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">

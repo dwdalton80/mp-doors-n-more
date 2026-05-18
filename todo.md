@@ -262,3 +262,6 @@
 - [x] Add google_review_click metric to analytics dashboard display
 - [x] Verify Google Review clicks are being aggregated in daily metrics
 - [x] Test end-to-end Google Review click tracking (client to dashboard)
+
+## Dashboard Analytics Reset
+- [x] Add reset button to clear quote request, contact form, and phone call conversion numbers
