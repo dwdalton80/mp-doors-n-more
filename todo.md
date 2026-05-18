@@ -247,3 +247,7 @@
 ## Contact Page Integration
 - [x] Update EntryDoorsInStock quick view modal "Get Pricing" button to link to contact page with product name pre-filled
 - [x] Update ExteriorDoorsInStock quick view modal "Get Pricing" button to link to contact page with product name pre-filled
+
+## Analytics & Tracking Issues
+- [x] Fix Facebook link click tracking not showing in analytics dashboard
+- [x] Add google_review_click event type support to analytics system

@@ -9,7 +9,7 @@ import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin, Clock, Facebook, CheckCircle2 } from "lucide-react";
-import { logPhoneCallClick } from "@/lib/analytics";
+import { logPhoneCallClick, logEvent } from "@/lib/analytics";
 
 export default function Contact() {
   const [location] = useLocation();
@@ -166,6 +166,14 @@ export default function Contact() {
                   href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => logEvent({
+                    eventType: "facebook_click",
+                    eventName: "Facebook Page Visit",
+                    metadata: {
+                      source: "contact_page",
+                      timestamp: new Date().toISOString(),
+                    },
+                  })}
                   className="inline-flex items-center gap-2 bg-[#1877F2] text-white text-sm font-semibold py-2 px-4 rounded hover:bg-[#166FE5] transition-colors"
                 >
                   <Facebook size={14} />
@@ -189,6 +197,14 @@ export default function Contact() {
                   href="https://www.google.com/maps/search/MP+Doors+More+Sherman+TX"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => logEvent({
+                    eventType: "google_review_click",
+                    eventName: "Google Review Click",
+                    metadata: {
+                      source: "contact_page",
+                      timestamp: new Date().toISOString(),
+                    },
+                  })}
                   className="inline-flex items-center gap-2 border border-[#4285F4] text-[#4285F4] text-sm font-semibold py-2 px-4 rounded hover:bg-[#4285F4] hover:text-white transition-colors"
                 >
                   Write a Google Review

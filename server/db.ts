@@ -174,7 +174,7 @@ export async function deleteProductImage(id: number): Promise<boolean> {
 
 // Analytics event tracking functions
 export async function logAnalyticsEvent(event: {
-  eventType: "quote_request" | "contact_form" | "phone_call" | "page_view";
+  eventType: "quote_request" | "contact_form" | "phone_call" | "page_view" | "facebook_click" | "google_review_click";
   eventName: string;
   productName?: string | null;
   userEmail?: string | null;

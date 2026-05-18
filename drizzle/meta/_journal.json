@@ -43,6 +43,13 @@
       "when": 1778539768829,
       "tag": "0005_green_alex_wilder",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1779109853436,
+      "tag": "0006_cool_skin",
+      "breakpoints": true
     }
   ]
 }
