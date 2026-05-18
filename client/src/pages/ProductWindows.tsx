@@ -24,15 +24,6 @@ const products = [
     rating: 5,
   },
   {
-    id: "casement",
-    title: "Casement Windows",
-    imageUrl: "/manus-storage/casement-window_04331195.png",
-    description: "Modern casement windows with superior weather sealing and maximum ventilation.",
-    brands: ["Synergy", "Westlake"],
-    features: ["Crank-operated opening", "Weather-tight seals", "Picture & bay options", "Vinyl frames"],
-    rating: 5,
-  },
-  {
     id: "sliding",
     title: "Sliding Windows",
     imageUrl: "/manus-storage/slidingwindow_174ca486.png",
