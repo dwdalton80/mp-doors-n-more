@@ -268,3 +268,6 @@
 
 ## Mobile Device Tracking Issue
 - [x] Fix mobile device breakdown not showing on dashboard (added text/plain body parser for sendBeacon)
+
+## Dashboard Login Enhancement
+- [x] Add "Login with Manus" button to dashboard for admin OAuth access

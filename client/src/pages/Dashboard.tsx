@@ -128,9 +128,21 @@ export default function Dashboard() {
             </Button>
           </form>
 
-          {isAuthenticated && user?.role === "admin" && (
+          {!isAuthenticated && (
             <div className="mt-6 pt-6 border-t border-gray-200">
               <p className="text-sm text-gray-600 mb-3">Or login as admin:</p>
+              <Button
+                onClick={() => window.location.href = getLoginUrl()}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                Login with Manus
+              </Button>
+            </div>
+          )}
+
+          {isAuthenticated && user?.role === "admin" && (
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <p className="text-sm text-gray-600 mb-3">Admin Access</p>
               <Button
                 onClick={logout}
                 variant="outline"
