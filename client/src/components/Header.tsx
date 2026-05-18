@@ -8,7 +8,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
-import { logPhoneCallClick } from "@/lib/analytics";
+import { logPhoneCallClick, logEvent } from "@/lib/analytics";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -57,6 +57,14 @@ export default function Navbar() {
             href="https://www.facebook.com/p/MP-Doors-More-61550671844372/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => logEvent({
+              eventType: "facebook_click",
+              eventName: "Facebook Page Visit",
+              metadata: {
+                source: "header",
+                timestamp: new Date().toISOString(),
+              },
+            })}
             className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-sm"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">

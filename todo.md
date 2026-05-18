@@ -251,3 +251,4 @@
 ## Analytics & Tracking Issues
 - [x] Fix Facebook link click tracking not showing in analytics dashboard
 - [x] Add google_review_click event type support to analytics system
+- [x] Add Facebook click tracking to "Follow Us" link in header
