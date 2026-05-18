@@ -23,7 +23,7 @@ const inStockDoors = [
       "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
       "/manus-storage/4526628-1_57f1d97a.jpg"
     ],
-    brand: "Jeld-Wen",
+    brand: "GlassCraft",
     description: "Elegant 6 lite mahogany entry door with beautiful flemish glass pattern. Premium wood construction with authentic mahogany finish provides timeless elegance and durability for your home entrance.",
     features: ["6 lite glass panel", "Flemish glass pattern", "Mahogany wood construction", "Classic design"],
     rating: 5,
@@ -40,7 +40,7 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
       "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png"
     ],
-    brand: "Masonite",
+    brand: "GlassCraft",
     description: "Contemporary 4 lite mahogany entry door with beautiful frosted glass panels. Modern design with frosted glass provides privacy while allowing natural light. Premium mahogany construction with elegant contemporary styling.",
     features: ["4 lite frosted glass panel", "Contemporary design", "Mahogany wood construction", "Privacy glass"],
     rating: 5,
@@ -56,7 +56,7 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
       "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png"
     ],
-    brand: "Jeld-Wen",
+    brand: "GlassCraft",
     description: "Beautiful 4 lite mahogany entry door with elegant flemish glass pattern. Premium wood construction with authentic mahogany finish and beautiful glass detailing provides timeless elegance and durability for your home entrance.",
     features: ["4 lite glass panel", "Flemish glass pattern", "Mahogany wood construction", "Classic design"],
     rating: 5,
@@ -74,7 +74,7 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
       "/manus-storage/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg"
     ],
-    brand: "Masonite",
+    brand: "GlassCraft",
     description: "Beautiful 6 lite mahogany entry door with clear glass panels. Premium wood construction with authentic mahogany finish and clear glass detailing provides timeless elegance and maximum natural light for your home entrance.",
     features: ["6 lite glass panel", "Clear glass", "Mahogany wood construction", "Classic design"],
     rating: 4.8,
@@ -89,7 +89,7 @@ const inStockDoors = [
       "/manus-storage/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
       "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png"
     ],
-    brand: "Jeld-Wen",
+    brand: "GlassCraft",
     description: "Beautiful 8 lite craftsman mahogany entry door with classic grid pattern. Premium wood construction with authentic mahogany finish and elegant glass detailing provides timeless craftsman style and durability for your home entrance.",
     features: ["8 lite glass panel", "Craftsman design", "Mahogany wood construction", "Classic style"],
     rating: 4.8,
