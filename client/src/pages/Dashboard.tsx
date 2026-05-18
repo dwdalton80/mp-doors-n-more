@@ -5,7 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BarChart, Bar, LineChart, Line, BarChart as BarChartComponent, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut, Lock, Calendar } from "lucide-react";
+import { Eye, Users, TrendingUp, Phone, MessageSquare, LogOut, Lock, Calendar, Star } from "lucide-react";
 import ReportGenerator from "@/components/ReportGenerator";
 import { toast } from "sonner";
 
@@ -295,6 +295,16 @@ export default function Dashboard() {
                 <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.conversions.facebookClicks}</p>
               </div>
               <MessageSquare className="w-12 h-12 text-[#a61c00] opacity-20" />
+            </div>
+          </Card>
+
+          <Card className="p-6 bg-white shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm font-medium">Google Review Clicks</p>
+                <p className="text-3xl font-bold text-[#1e3450] mt-2">{analytics?.conversions.googleReviewClicks}</p>
+              </div>
+              <Star className="w-12 h-12 text-[#a61c00] opacity-20" />
             </div>
           </Card>
         </div>

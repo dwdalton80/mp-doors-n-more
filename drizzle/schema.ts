@@ -91,6 +91,7 @@ export const analyticsMetrics = mysqlTable("analyticsMetrics", {
   contactFormSubmissions: int("contactFormSubmissions").default(0),
   phoneCallsTracked: int("phoneCallsTracked").default(0),
   facebookClicks: int("facebookClicks").default(0),
+  googleReviewClicks: int("googleReviewClicks").default(0),
   topPage: varchar("topPage", { length: 512 }),
   topTrafficSource: varchar("topTrafficSource", { length: 255 }),
   mobileVisitors: int("mobileVisitors").default(0),

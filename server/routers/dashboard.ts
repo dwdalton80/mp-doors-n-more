@@ -11,7 +11,7 @@ const analyticsResponseSchema = {
   avgSessionDuration: 0,
   topPages: [] as any[],
   trafficSources: [] as any[],
-  conversions: { quoteRequests: 0, contactFormSubmissions: 0, phoneCallsTracked: 0, facebookClicks: 0 },
+  conversions: { quoteRequests: 0, contactFormSubmissions: 0, phoneCallsTracked: 0, facebookClicks: 0, googleReviewClicks: 0 },
   deviceBreakdown: [] as any[],
   dailyVisitors: [] as any[],
 };
@@ -189,6 +189,7 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
           contactFormSubmissions: contactForms,
           phoneCallsTracked: phoneCalls,
           facebookClicks: events.filter(e => e.eventType === 'facebook_click').length,
+          googleReviewClicks: events.filter(e => e.eventType === 'google_review_click').length,
         },
         deviceBreakdown: deviceBreakdown.length > 0 ? deviceBreakdown : [
           { device: "Desktop", percentage: 100, visitors: totalUniqueVisitors },
@@ -218,6 +219,7 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
     const totalContactForms = metrics.reduce((sum, m) => sum + (m.contactFormSubmissions || 0), 0);
     const totalPhoneCalls = metrics.reduce((sum, m) => sum + (m.phoneCallsTracked || 0), 0);
     const totalFacebookClicks = metrics.reduce((sum, m) => sum + (m.facebookClicks || 0), 0);
+    const totalGoogleReviewClicks = metrics.reduce((sum, m) => sum + (m.googleReviewClicks || 0), 0);
 
     // Calculate real device breakdown from metrics
     const totalMobileVisitors = metrics.reduce((sum, m) => sum + (m.mobileVisitors || 0), 0);
@@ -265,6 +267,7 @@ async function getAnalyticsData(input?: { startDate?: string; endDate?: string }
         contactFormSubmissions: totalContactForms,
         phoneCallsTracked: totalPhoneCalls,
         facebookClicks: totalFacebookClicks,
+        googleReviewClicks: totalGoogleReviewClicks,
       },
       deviceBreakdown,
       dailyVisitors: metrics.map((m) => ({

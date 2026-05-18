@@ -1,0 +1,1 @@
+ALTER TABLE `analyticsMetrics` ADD `googleReviewClicks` int DEFAULT 0;

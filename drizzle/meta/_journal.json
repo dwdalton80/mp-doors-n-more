@@ -50,6 +50,13 @@
       "when": 1779109853436,
       "tag": "0006_cool_skin",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1779110620050,
+      "tag": "0007_flawless_thor",
+      "breakpoints": true
     }
   ]
 }
