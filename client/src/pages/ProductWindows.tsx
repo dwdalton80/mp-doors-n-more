@@ -166,7 +166,7 @@ export default function ProductWindows() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string }> = {
-                            'Synergy': { logo: '/manus-storage/Synergy-Logo-1_e6633c2e.jpg' },
+                            'Synergy': { logo: '/manus-storage/IMG_3736_f71c5e2a.JPG' },
                             'Westlake': { logo: '/manus-storage/westlake_ef851210.png' },
                           };
                           const brandInfo = brandMap[brand];

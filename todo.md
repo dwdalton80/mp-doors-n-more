@@ -271,3 +271,6 @@
 
 ## Dashboard Login Enhancement
 - [x] Add "Login with Manus" button to dashboard for admin OAuth access
+
+## Product Page Updates
+- [x] Update Synergy logo on Windows product page with new logo image
