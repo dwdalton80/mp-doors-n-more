@@ -85,6 +85,7 @@ interface Review {
 
 function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
   const touchStartXRef = useRef<number>(0);
   const touchEndXRef = useRef<number>(0);
@@ -99,15 +100,30 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
 
   const resetAutoPlay = () => {
     if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    if (!isHovered) {
+      autoPlayRef.current = setInterval(goToNext, 5000);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     autoPlayRef.current = setInterval(goToNext, 5000);
   };
 
   useEffect(() => {
-    resetAutoPlay();
+    if (!isHovered) {
+      resetAutoPlay();
+    }
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
-  }, []);
+  }, [isHovered]);
 
   const handleNext = () => {
     goToNext();
@@ -149,6 +165,8 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
         className="bg-white rounded-lg p-8 shadow-sm border border-[#e8e0d8] touch-none select-none"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">

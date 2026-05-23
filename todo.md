@@ -290,3 +290,4 @@
 
 ## Reviews Carousel Enhancement
 - [x] Add prominent navigation dots at bottom of carousel showing total reviews and current position
+- [x] Add pause-on-hover feature to reviews carousel
