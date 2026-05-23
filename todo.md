@@ -287,3 +287,6 @@
 
 ## Mobile Gesture Support
 - [x] Add swipe gesture support to reviews carousel for mobile devices
+
+## Reviews Carousel Enhancement
+- [x] Add prominent navigation dots at bottom of carousel showing total reviews and current position
