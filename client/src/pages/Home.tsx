@@ -169,7 +169,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2 text-white/75 text-sm">
                 <Clock size={15} className="text-[#a61c00]" />
-                Mon-Fri 7 AM–5 PM; Sat 7 AM-3 PM
+                Mon - Fri 7 AM – 5 PM; Sat 7 AM - 3 PM
               </div>
             </div>
           </div>
