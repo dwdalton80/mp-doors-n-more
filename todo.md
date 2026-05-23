@@ -274,3 +274,13 @@
 
 ## Product Page Updates
 - [x] Update Synergy logo on Windows product page with new logo image
+- [x] Remove Casement Windows product from Windows product page
+- [x] Update all Mahogany doors to GlassCraft brand on Interior Doors In Stock page
+- [x] Remove "Casement & awning windows" bullet from Windows product card on Products page
+- [x] Remove "Professional installation available" bullet from Flooring product card on Products page
+- [x] Replace door image on Doors product card on Products page
+- [x] Update business hours on Contact page to Monday-Friday 7-5 and Saturday 7-3
+- [x] Update business hours on Home page to match Contact page
+
+## Home Page Reviews Carousel
+- [x] Convert customer reviews section to auto-rotating carousel with manual navigation controls
