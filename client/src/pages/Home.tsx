@@ -160,9 +160,9 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   const currentReview = reviews[currentIndex];
 
   return (
-    <div className="relative mb-10 flex justify-center">
+    <div className="relative mb-10">
       <div
-        className="w-full lg:w-3/4 bg-white rounded-lg p-8 shadow-sm border border-[#e8e0d8] touch-none select-none transition-opacity duration-500 ease-in-out"
+        className="bg-white rounded-lg p-8 shadow-sm border border-[#e8e0d8] touch-none select-none transition-opacity duration-500 ease-in-out"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onMouseEnter={handleMouseEnter}
