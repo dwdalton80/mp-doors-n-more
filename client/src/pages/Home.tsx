@@ -226,7 +226,7 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
 
       {/* Counter */}
       <div className="text-center mt-6">
-        <div className="text-sm font-medium text-gray-600">
+        <div className="text-base font-bold text-[#a61c00]">
           {currentIndex + 1} / {reviews.length}
         </div>
       </div>
