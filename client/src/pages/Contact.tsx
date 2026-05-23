@@ -146,8 +146,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-display font-bold text-[#1a2e45] text-sm mb-0.5">Hours</div>
-                      <div className="text-gray-600 text-sm">Monday – Friday: 7:00 AM – 5:00 PM</div>
-                      <div className="text-gray-600 text-sm">Saturday: 7:00 AM – 3:00 PM</div>
+                      <div className="text-gray-600 text-sm">Monday – Friday: 7 AM – 5 PM</div>
+                      <div className="text-gray-600 text-sm">Saturday: 7 AM – 3 PM</div>
                     </div>
                   </div>
                 </li>
