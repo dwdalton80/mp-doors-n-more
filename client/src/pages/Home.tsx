@@ -162,7 +162,7 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   return (
     <div className="relative mb-10">
       <div
-        className="bg-white rounded-lg p-8 shadow-sm border border-[#e8e0d8] touch-none select-none"
+        className="bg-white rounded-lg p-8 shadow-sm border border-[#e8e0d8] touch-none select-none transition-opacity duration-500 ease-in-out"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onMouseEnter={handleMouseEnter}
@@ -190,7 +190,7 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
       </div>
 
       {/* Navigation Controls */}
-      <div className="flex items-center justify-between mt-6">
+      <div className="flex items-center justify-center gap-4 mt-6">
         <button
           onClick={handlePrev}
           className="p-2 rounded-full bg-[#2D4A6B] text-white hover:bg-[#1a2e45] transition-colors"
@@ -199,9 +199,29 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
           <ChevronLeft size={24} />
         </button>
 
-        {/* Counter */}
-        <div className="text-base font-bold text-[#a61c00] px-4">
-          {currentIndex + 1} / {reviews.length}
+        {/* Center Controls: Dots and Counter */}
+        <div className="flex items-center gap-6">
+          {/* Dot Indicators */}
+          <div className="flex gap-2">
+            {reviews.map((_: Review, idx: number) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setCurrentIndex(idx);
+                  resetAutoPlay();
+                }}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  idx === currentIndex ? "bg-[#a61c00]" : "bg-gray-300"
+                }`}
+                aria-label={`Go to review ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Counter */}
+          <div className="text-base font-bold text-[#a61c00] px-2 whitespace-nowrap">
+            {currentIndex + 1} / {reviews.length}
+          </div>
         </div>
 
         <button
@@ -211,23 +231,6 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
         >
           <ChevronRight size={24} />
         </button>
-
-        {/* Dot Indicators */}
-        <div className="flex gap-2">
-          {reviews.map((_: Review, idx: number) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setCurrentIndex(idx);
-                resetAutoPlay();
-              }}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                idx === currentIndex ? "bg-[#a61c00]" : "bg-gray-300"
-              }`}
-              aria-label={`Go to review ${idx + 1}`}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );
