@@ -199,6 +199,19 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
           <ChevronLeft size={24} />
         </button>
 
+        {/* Counter */}
+        <div className="text-base font-bold text-[#a61c00] px-4">
+          {currentIndex + 1} / {reviews.length}
+        </div>
+
+        <button
+          onClick={handleNext}
+          className="p-2 rounded-full bg-[#2D4A6B] text-white hover:bg-[#1a2e45] transition-colors"
+          aria-label="Next review"
+        >
+          <ChevronRight size={24} />
+        </button>
+
         {/* Dot Indicators */}
         <div className="flex gap-2">
           {reviews.map((_: Review, idx: number) => (
@@ -215,21 +228,6 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
             />
           ))}
         </div>
-
-        <button
-          onClick={handleNext}
-          className="p-2 rounded-full bg-[#2D4A6B] text-white hover:bg-[#1a2e45] transition-colors"
-          aria-label="Next review"
-        >
-          <ChevronRight size={24} />
-        </button>
-
-      {/* Counter */}
-      <div className="text-center mt-6">
-        <div className="text-base font-bold text-[#a61c00]">
-          {currentIndex + 1} / {reviews.length}
-        </div>
-      </div>
       </div>
     </div>
   );
