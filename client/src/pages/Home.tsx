@@ -224,25 +224,8 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
           <ChevronRight size={24} />
         </button>
 
-      {/* Bottom Navigation Dots with Counter */}
-      <div className="flex flex-col items-center gap-4 mt-8">
-        <div className="flex gap-3">
-          {reviews.map((_: Review, idx: number) => (
-            <button
-              key={`bottom-${idx}`}
-              onClick={() => {
-                setCurrentIndex(idx);
-                resetAutoPlay();
-              }}
-              className={`w-3 h-3 rounded-full transition-all ${
-                idx === currentIndex
-                  ? "bg-[#a61c00] w-8"
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-              aria-label={`Go to review ${idx + 1}`}
-            />
-          ))}
-        </div>
+      {/* Counter */}
+      <div className="text-center mt-6">
         <div className="text-sm font-medium text-gray-600">
           {currentIndex + 1} / {reviews.length}
         </div>
