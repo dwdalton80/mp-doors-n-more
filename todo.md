@@ -284,3 +284,6 @@
 
 ## Home Page Reviews Carousel
 - [x] Convert customer reviews section to auto-rotating carousel with manual navigation controls
+
+## Mobile Gesture Support
+- [x] Add swipe gesture support to reviews carousel for mobile devices

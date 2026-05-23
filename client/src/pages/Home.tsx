@@ -86,6 +86,8 @@ interface Review {
 function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const touchStartXRef = useRef<number>(0);
+  const touchEndXRef = useRef<number>(0);
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev + 1) % reviews.length);
@@ -117,11 +119,37 @@ function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
     resetAutoPlay();
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.changedTouches[0].screenX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndXRef.current = e.changedTouches[0].screenX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50;
+    const diff = touchStartXRef.current - touchEndXRef.current;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+  };
+
   const currentReview = reviews[currentIndex];
 
   return (
     <div className="relative mb-10">
-      <div className="bg-white rounded-lg p-8 shadow-sm border border-[#e8e0d8]">
+      <div
+        className="bg-white rounded-lg p-8 shadow-sm border border-[#e8e0d8] touch-none select-none"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-[#2D4A6B] flex items-center justify-center text-white font-display font-bold text-lg">
