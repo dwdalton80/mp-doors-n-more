@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll } from "vitest";
+import { describe, it, expect, beforeAll, vi } from "vitest";
 import { Resend } from "resend";
 import { ENV } from "../_core/env";
 
@@ -15,6 +15,12 @@ describe("Contact Router - Resend API", () => {
   });
 
   it("should be able to send an email via Resend with verified domain", async () => {
+    // Mock the Resend API to avoid sending real emails during tests
+    const mockSend = vi.spyOn(resend.emails, "send").mockResolvedValueOnce({
+      data: { id: "test-email-id-12345" },
+      error: null,
+    } as any);
+
     const result = await resend.emails.send({
       from: "MP Doors & More <noreply@mpdoorsnmore.com>",
       to: ["mpdoorsnmore23@gmail.com"],
@@ -25,5 +31,9 @@ describe("Contact Router - Resend API", () => {
     expect(result.error).toBeNull();
     expect(result.data).toBeDefined();
     expect(result.data?.id).toBeTruthy();
+    expect(mockSend).toHaveBeenCalledOnce();
+
+    // Clean up the mock
+    mockSend.mockRestore();
   });
 });
