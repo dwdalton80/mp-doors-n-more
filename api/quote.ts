@@ -4,7 +4,8 @@
  */
 import { z } from "zod";
 import { renderEmailHtml, sendNotificationEmail, validateHoneypot } from "./_lib/email";
-import { checkRateLimit, getClientIp } from "./_lib/rateLimit";
+import { json, parseJsonBody } from "./_lib/http";
+import { getClientIp, isRateLimited, recordSubmission } from "./_lib/rateLimit";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -20,10 +21,8 @@ export default async function handler(req: Request): Promise<Response> {
     return json({ error: "Method not allowed" }, 405);
   }
 
-  let body: unknown;
-  try {
-    body = await req.json();
-  } catch {
+  const body = await parseJsonBody(req);
+  if (body === null) {
     return json({ error: "Invalid request body" }, 400);
   }
 
@@ -37,7 +36,8 @@ export default async function handler(req: Request): Promise<Response> {
     return json({ error: "Invalid submission. Please try again." }, 400);
   }
 
-  if (!checkRateLimit(getClientIp(req))) {
+  const ip = getClientIp(req);
+  if (isRateLimited(ip)) {
     return json({ error: "Too many submissions. Please try again in 1 hour." }, 429);
   }
 
@@ -65,12 +65,10 @@ export default async function handler(req: Request): Promise<Response> {
     return json({ error: "Failed to send quote request. Please try again or call us directly." }, 502);
   }
 
-  return json({ success: true });
-}
+  // Only record the submission once we know it actually sent — a failed
+  // attempt (bad API key, provider outage) must not burn the caller's
+  // rate-limit window and lock out a legitimate retry.
+  recordSubmission(ip);
 
-function json(data: unknown, status = 200): Response {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: { "Content-Type": "application/json" },
-  });
+  return json({ success: true });
 }

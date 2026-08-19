@@ -30,7 +30,9 @@ export function renderEmailHtml(opts: { heading: string; rows: Row[]; name: stri
       <tr>
         <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #1a2e45; width: 120px; vertical-align: top;">${r.label}</td>
         <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #333; white-space: pre-wrap;">${
-          r.href ? `<a href="${r.href}" style="color: #a61c00;">${escapeHtml(r.value!)}</a>` : escapeHtml(r.value!)
+          r.href
+            ? `<a href="${escapeHtml(r.href)}" style="color: #a61c00;">${escapeHtml(r.value!)}</a>`
+            : escapeHtml(r.value!)
         }</td>
       </tr>`
     )
@@ -46,7 +48,7 @@ export function renderEmailHtml(opts: { heading: string; rows: Row[]; name: stri
         <table style="width: 100%; border-collapse: collapse;">${rowsHtml}</table>
         <div style="margin-top: 24px; padding: 16px; background: #f5f5f5; border-radius: 4px; font-size: 13px; color: #666;">
           <strong>Reply directly</strong> to this email to respond to ${escapeHtml(name)} at
-          <a href="mailto:${email}" style="color: #a61c00;">${email}</a>.
+          <a href="mailto:${escapeHtml(email)}" style="color: #a61c00;">${escapeHtml(email)}</a>.
         </div>
       </div>
     </div>

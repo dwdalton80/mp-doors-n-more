@@ -25,11 +25,13 @@ async function postJSON(path: string, body: unknown): Promise<{ success: true }>
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
-  const data = await res.json().catch(() => ({}));
+  const data = await res.json().catch(() => null);
   if (!res.ok) {
-    throw new Error(data?.error || "Something went wrong. Please try again or call us directly.");
+    throw new Error(
+      data?.error || `Something went wrong (HTTP ${res.status}). Please try again or call us directly.`
+    );
   }
-  return data;
+  return data ?? { success: true };
 }
 
 export function sendContactMessage(payload: ContactPayload) {

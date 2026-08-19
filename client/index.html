@@ -30,7 +30,12 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-QKJMTB678R');
+      // send_page_view: false — this is a client-side-routed SPA (wouter),
+      // so page views are sent manually via logPageView() on every route
+      // change (see client/src/lib/analytics.ts + App.tsx). Without this
+      // flag, gtag's own automatic page_view on load would double-count
+      // the landing page.
+      gtag('config', 'G-QKJMTB678R', { send_page_view: false });
     </script>
     <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
     <link rel="preconnect" href="https://fonts.googleapis.com" />
