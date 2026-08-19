@@ -12,13 +12,13 @@ import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ReviewsSection from "@/components/ReviewsSection";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
+const HERO_IMAGE = "/images/product-doors.webp";
 
 const products = [
   {
     id: "entry-doors",
     title: "Entry Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/entry-doors-product-QKWgV7Duu9whAYXBXvyKxu.webp",
+    imageUrl: "/images/entry-doors-product.webp",
     description: "Premium entry doors with security and style. Modern farmhouse designs with glass sidelights and solid wood construction. Energy-efficient and beautiful.",
     brands: ["Masonite", "Woodgrain", "Thermatru", "Glass Craft"],
     features: ["Solid core construction", "Weather-resistant seals", "Multiple finishes available", "Security glass options"],
@@ -27,7 +27,7 @@ const products = [
   {
     id: "exterior-doors",
     title: "Exterior Doors",
-    imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_405760d2.png",
+    imageUrl: "/images/products/Screenshot2026-05-16at4.45.53PM_405760d2.png",
     description: "Durable exterior doors designed to withstand the Texas climate. Premium materials with weather-resistant construction and beautiful finishes for any home style.",
     brands: ["Masonite", "Woodgrain", "Thermatru", "Glass Craft"],
     features: ["Weather-resistant construction", "Energy-efficient seals", "Multiple style options", "Durable hardware"],
@@ -36,7 +36,7 @@ const products = [
   {
     id: "interior-doors",
     title: "Interior Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/interior-doors-jeldwen-bYvkmHq6wHwg4rQ37t4fCj.webp",
+    imageUrl: "/images/interior-doors-jeldwen.webp",
     description: "Quality interior doors for bedrooms, bathrooms, and closets. Available in various styles and finishes.",
     brands: ["Jeld-Wen", "Trimlite", "Masonite", "Frame Port", "Woodgrain", "Glass Craft"],
     features: ["Pre-hung options", "Hollow & solid core", "Adjustable frames", "Hardware included"],
@@ -45,7 +45,7 @@ const products = [
   {
     id: "patio-doors",
     title: "Patio & Sliding Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
+    imageUrl: "/images/patio-doors-anderson.webp",
     description: "Beautiful patio doors to bring natural light and access to your outdoor spaces.",
     brands: ["Andersen"],
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
@@ -54,7 +54,7 @@ const products = [
   {
     id: "storm-doors",
     title: "Storm Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/storm-doors-larson-MsKDojBrbzmE4jTVEd5Bgw.webp",
+    imageUrl: "/images/storm-doors-larson.webp",
     description: "Protective storm doors that add an extra layer of security and energy efficiency.",
     brands: ["Larson"],
     features: ["Aluminum frames", "Interchangeable glass/screen", "Multiple colors", "Weather-tight seals"],
@@ -177,15 +177,15 @@ export default function ProductDoors() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string }> = {
-                            'Masonite': { logo: '/manus-storage/masonite_f182a41d.png' },
-                            'Woodgrain': { logo: '/manus-storage/woodgrain_407754e1.png' },
-                            'Trimlite': { logo: '/manus-storage/trimlite_cf6ce7db.png' },
-                            'Frame Port': { logo: '/manus-storage/frameport_4e20b9d2.jpg' },
-                            'Thermatru': { logo: '/manus-storage/thermatru_7ccab93c.png' },
-                            'Glass Craft': { logo: '/manus-storage/glasscraft_619348f3.jpg' },
-                            'Jeld-Wen': { logo: '/manus-storage/jeldwen-new_5d78f820.png' },
-                            'Andersen': { logo: '/manus-storage/anderson_fa14d188.png' },
-                            'Larson': { logo: '/manus-storage/larson_aaf43b2e.png' },
+                            'Masonite': { logo: '/images/products/masonite_f182a41d.png' },
+                            'Woodgrain': { logo: '/images/products/woodgrain_407754e1.png' },
+                            'Trimlite': { logo: '/images/products/trimlite_cf6ce7db.png' },
+                            'Frame Port': { logo: '/images/products/frameport_4e20b9d2.jpg' },
+                            'Thermatru': { logo: '/images/products/thermatru_7ccab93c.png' },
+                            'Glass Craft': { logo: '/images/products/glasscraft_619348f3.jpg' },
+                            'Jeld-Wen': { logo: '/images/products/jeldwen-new_5d78f820.png' },
+                            'Andersen': { logo: '/images/products/anderson_fa14d188.png' },
+                            'Larson': { logo: '/images/products/larson_aaf43b2e.png' },
                           };
                           const brandInfo = brandMap[brand];
                           return (

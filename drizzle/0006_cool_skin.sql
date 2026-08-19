@@ -1,1 +1,0 @@
-ALTER TABLE `analyticsEvents` MODIFY COLUMN `eventType` enum('quote_request','contact_form','phone_call','page_view','facebook_click','google_review_click') NOT NULL;

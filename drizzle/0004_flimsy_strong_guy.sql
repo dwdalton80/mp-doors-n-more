@@ -1,1 +1,0 @@
-ALTER TABLE `analyticsMetrics` ADD `facebookClicks` int DEFAULT 0;

@@ -10,13 +10,13 @@ import { ChevronLeft, Star, X } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import ReviewsSection from "@/components/ReviewsSection";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-siding-shingles_ac3e821c.png";
+const HERO_IMAGE = "/images/product-siding-shingles.webp";
 
 const products = [
   {
     id: "lp-smart-siding",
     title: "LP Smart Siding and Trim",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/lp-smartside-siding-trim-E6EvXPacjMJ5knmnZ3NfAx.webp",
+    imageUrl: "/images/lp-smartside-siding-trim.webp",
     description: "Premium LP SmartSide fiber cement siding and trim engineered for superior durability, protection, and beautiful curb appeal.",
     brands: ["LP SmartSide"],
     features: ["Fiber cement durability", "Engineered for performance", "Low maintenance", "Integrated trim solutions"],
@@ -25,7 +25,7 @@ const products = [
   {
     id: "fiber-cement",
     title: "Fiber Cement Siding",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/fiber-cement-james-hardie-BY5HrwRhA4oECsudubk6Jm.webp",
+    imageUrl: "/images/fiber-cement-james-hardie.webp",
     description: "Premium fiber cement siding that mimics the look of wood with superior durability and fire resistance.",
     brands: ["James Hardie", "Nichiha"],
     features: ["Fire resistant", "Realistic wood look", "Long-lasting", "Paintable finishes"],
@@ -34,7 +34,7 @@ const products = [
   {
     id: "asphalt-shingles",
     title: "Asphalt Shingles",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/asphalt-shingles-gaf-N8qChrpSSotvLHumApRL3g.webp",
+    imageUrl: "/images/asphalt-shingles-gaf.webp",
     description: "Affordable and reliable asphalt shingles for residential roofing applications.",
     brands: ["Certainteed", "GAF", "Owens Corning", "Malarkey"],
     features: ["Weather-resistant", "Multiple colors", "Impact resistant", "Warranty included"],
@@ -43,7 +43,7 @@ const products = [
   {
     id: "architectural-shingles",
     title: "Architectural Shingles",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/architectural-shingles-owens-corning-fnVjpTzfvz6JsDJc9Lryg8.webp",
+    imageUrl: "/images/architectural-shingles-owens-corning.webp",
     description: "Premium architectural shingles with enhanced dimension and style for your roof.",
     brands: ["Owens Corning", "GAF Timberline", "Certainteed", "Malarkey"],
     features: ["Dimensional design", "Superior protection", "Long warranty", "Fade resistant"],
@@ -158,14 +158,14 @@ export default function ProductSiding() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string }> = {
-                            'LP SmartSide': { logo: '/manus-storage/lp_smartside_logo_ccb283e1.png' },
-                            'James Hardie': { logo: '/manus-storage/james_hardie_logo_1322fa8e.png' },
-                            'Nichiha': { logo: '/manus-storage/nichiha_logo_6f73c5b7.webp' },
-                            'Certainteed': { logo: '/manus-storage/certainteed_logo_5b6f3130.png' },
-                            'GAF': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg' },
-                            'Owens Corning': { logo: '/manus-storage/owens_corning_logo_dfae2ce4.png' },
-                            'Malarkey': { logo: '/manus-storage/malarkey_logo_0d7e3d2e.png' },
-                            'GAF Timberline': { logo: '/manus-storage/gaf_logo_3ccfe9d8.jpg' },
+                            'LP SmartSide': { logo: '/images/products/lp_smartside_logo_ccb283e1.png' },
+                            'James Hardie': { logo: '/images/products/james_hardie_logo_1322fa8e.png' },
+                            'Nichiha': { logo: '/images/products/nichiha_logo_6f73c5b7.webp' },
+                            'Certainteed': { logo: '/images/products/certainteed_logo_5b6f3130.png' },
+                            'GAF': { logo: '/images/products/gaf_logo_3ccfe9d8.jpg' },
+                            'Owens Corning': { logo: '/images/products/owens_corning_logo_dfae2ce4.png' },
+                            'Malarkey': { logo: '/images/products/malarkey_logo_0d7e3d2e.png' },
+                            'GAF Timberline': { logo: '/images/products/gaf_logo_3ccfe9d8.jpg' },
                           };
                           const brandInfo = brandMap[brand];
                           return (

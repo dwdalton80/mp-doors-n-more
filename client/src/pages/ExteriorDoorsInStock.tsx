@@ -11,18 +11,18 @@ import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
+const HERO_IMAGE = "/images/product-doors.webp";
 
 const inStockDoors = [
   {
     id: "entry-door-masonite",
     title: "Full Lite Mini Blind",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
-    imageUrl2: "/manus-storage/fullminiblind2_69778246.webp",
+    imageUrl: "/images/products/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
+    imageUrl2: "/images/products/fullminiblind2_69778246.webp",
     images: [
-      "/manus-storage/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
-      "/manus-storage/fullminiblind2_69778246.webp",
-      "/manus-storage/Screenshot2026-05-15at4.46.11PM_cca253d7.png"
+      "/images/products/Screenshot2026-05-15at4.49.26PM_5f2d9e60.png",
+      "/images/products/fullminiblind2_69778246.webp",
+      "/images/products/Screenshot2026-05-15at4.46.11PM_cca253d7.png"
     ],
     brand: "Jeld-Wen",
     description: "Premium full lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
@@ -32,15 +32,15 @@ const inStockDoors = [
   {
     id: "entry-door-jeldwen",
     title: "Half Lite Mini Blind",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
-    imageUrl2: "/manus-storage/halfminiblind2_de02fcac.jpg",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
-    imageUrl4: "/manus-storage/halfminiblind1_81f57c2f.avif",
+    imageUrl: "/images/products/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
+    imageUrl2: "/images/products/halfminiblind2_de02fcac.jpg",
+    imageUrl3: "/images/products/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+    imageUrl4: "/images/products/halfminiblind1_81f57c2f.avif",
     images: [
-      "/manus-storage/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
-      "/manus-storage/halfminiblind2_de02fcac.jpg",
-      "/manus-storage/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
-      "/manus-storage/halfminiblind1_81f57c2f.avif"
+      "/images/products/Screenshot2026-05-15at4.49.33PM_ce313af9.png",
+      "/images/products/halfminiblind2_de02fcac.jpg",
+      "/images/products/Screenshot2026-05-15at4.47.50PM_5c4cb25b.png",
+      "/images/products/halfminiblind1_81f57c2f.avif"
     ],
     brand: "Masonite",
     description: "Premium half lite mini blind fiberglass entry door with integrated blinds. Durable fiberglass construction with weather-resistant seals and energy-efficient performance keeps your home comfortable year-round.",
@@ -50,15 +50,15 @@ const inStockDoors = [
   {
     id: "patio-door-anderson",
     title: "9 Lite Exterior Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
-    imageUrl3: "/manus-storage/9panellite1_0ff4a8a2.jpg",
-    imageUrl4: "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png",
+    imageUrl: "/images/products/Screenshot2026-05-15at4.49.49PM_62888c38.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
+    imageUrl3: "/images/products/9panellite1_0ff4a8a2.jpg",
+    imageUrl4: "/images/products/Screenshot2026-05-15at4.49.02PM_2b93c241.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at4.49.49PM_62888c38.png",
-      "/manus-storage/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
-      "/manus-storage/9panellite1_0ff4a8a2.jpg",
-      "/manus-storage/Screenshot2026-05-15at4.49.02PM_2b93c241.png"
+      "/images/products/Screenshot2026-05-15at4.49.49PM_62888c38.png",
+      "/images/products/Screenshot2026-05-15at4.50.05PM_9315ebc4.png",
+      "/images/products/9panellite1_0ff4a8a2.jpg",
+      "/images/products/Screenshot2026-05-15at4.49.02PM_2b93c241.png"
     ],
     brand: "Masonite",
     description: "Beautiful 9 lite fiberglass exterior door with smooth operation. Low-E glass provides energy efficiency and stunning natural light while durable fiberglass resists warping.",
@@ -68,16 +68,16 @@ const inStockDoors = [
   {
     id: "storm-door-larson",
     title: "3/4 Lite Vista Grand Exterior Door",
-    imageUrl: "/manus-storage/34litevista3_fba39b1f.webp",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
-    imageUrl3: "/manus-storage/34litevista2_3406cc87.webp",
-    imageUrl4: "/manus-storage/34litevista_eec35dce.webp",
+    imageUrl: "/images/products/34litevista3_fba39b1f.webp",
+    imageUrl2: "/images/products/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
+    imageUrl3: "/images/products/34litevista2_3406cc87.webp",
+    imageUrl4: "/images/products/34litevista_eec35dce.webp",
     images: [
-      "/manus-storage/34litevista3_fba39b1f.webp",
-      "/manus-storage/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
-      "/manus-storage/34litevista2_3406cc87.webp",
-      "/manus-storage/34litevista_eec35dce.webp",
-      "/manus-storage/Screenshot2026-05-15at4.54.13PM_858f3699.png"
+      "/images/products/34litevista3_fba39b1f.webp",
+      "/images/products/Screenshot2026-05-15at4.54.38PM_e2ba34fa.png",
+      "/images/products/34litevista2_3406cc87.webp",
+      "/images/products/34litevista_eec35dce.webp",
+      "/images/products/Screenshot2026-05-15at4.54.13PM_858f3699.png"
     ],
     brand: "Jeld-Wen",
     description: "Premium 3/4 lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
@@ -87,13 +87,13 @@ const inStockDoors = [
   {
     id: "full-lite-vista-grand-larson",
     title: "Full Lite Vista Grand",
-    imageUrl: "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
-    imageUrl2: "/manus-storage/fulllitevista4_00111b6c.webp",
-    imageUrl3: "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png",
+    imageUrl: "/images/products/Screenshot2026-05-16at4.45.53PM_0b809030.png",
+    imageUrl2: "/images/products/fulllitevista4_00111b6c.webp",
+    imageUrl3: "/images/products/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png",
     images: [
-      "/manus-storage/Screenshot2026-05-16at4.45.53PM_0b809030.png",
-      "/manus-storage/fulllitevista4_00111b6c.webp",
-      "/manus-storage/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png"
+      "/images/products/Screenshot2026-05-16at4.45.53PM_0b809030.png",
+      "/images/products/fulllitevista4_00111b6c.webp",
+      "/images/products/Screenshot2026-05-16at4.46.04PM_4e47f8ce.png"
     ],
     brand: "Masonite",
     description: "Premium full lite vista grand fiberglass exterior door with stunning glass design. Durable fiberglass construction with weather-resistant seals and energy-efficient performance for year-round comfort.",
@@ -103,13 +103,13 @@ const inStockDoors = [
   {
     id: "flush-fiberglass-masonite",
     title: "Flush Fiberglass Exterior Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png",
+    imageUrl: "/images/products/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
+    imageUrl3: "/images/products/Screenshot2026-05-15at10.33.22PM_1ebc5947.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
-      "/manus-storage/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
-      "/manus-storage/Screenshot2026-05-15at10.33.22PM_1ebc5947.png"
+      "/images/products/Screenshot2026-05-15at10.33.44PM_fc7b8f19.png",
+      "/images/products/Screenshot2026-05-15at10.32.43PM_71d6efc6.png",
+      "/images/products/Screenshot2026-05-15at10.33.22PM_1ebc5947.png"
     ],
     brand: "Jeld-Wen",
     description: "Sleek flush fiberglass exterior door with modern minimalist design. Durable fiberglass construction resists warping and weather damage for lasting beauty and performance.",
@@ -119,13 +119,13 @@ const inStockDoors = [
   {
     id: "6-panel-fiberglass-masonite",
     title: "6 Panel Fiberglass Exterior Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
-    imageUrl2: "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
-    imageUrl3: "/manus-storage/6panelfiberglass2_d5650977.webp",
+    imageUrl: "/images/products/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
+    imageUrl2: "/images/products/6panelfiberglass_7b3d70c9.jpg",
+    imageUrl3: "/images/products/6panelfiberglass2_d5650977.webp",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
-      "/manus-storage/6panelfiberglass_7b3d70c9.jpg",
-      "/manus-storage/6panelfiberglass2_d5650977.webp"
+      "/images/products/Screenshot2026-05-15at10.38.44PM_5043dd1c.png",
+      "/images/products/6panelfiberglass_7b3d70c9.jpg",
+      "/images/products/6panelfiberglass2_d5650977.webp"
     ],
     brand: "Jeld-Wen",
     description: "Classic 6-panel fiberglass door with traditional styling. Provides excellent insulation and durability for any home exterior with low-maintenance fiberglass construction.",
@@ -135,11 +135,11 @@ const inStockDoors = [
   {
     id: "2-panel-square-top-masonite",
     title: "2 Panel Square Top Exterior Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png",
+    imageUrl: "/images/products/Screenshot2026-05-15at10.41.09PM_000bde08.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.41.09PM_000bde08.png",
-      "/manus-storage/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png"
+      "/images/products/Screenshot2026-05-15at10.41.09PM_000bde08.png",
+      "/images/products/Screenshot2026-05-15at10.41.21PM_8fd99ea9.png"
     ],
     brand: "Masonite",
     description: "Elegant 2-panel square top fiberglass door with clean lines. Perfect for modern farmhouse and contemporary home styles with durable fiberglass construction.",
@@ -149,13 +149,13 @@ const inStockDoors = [
   {
     id: "2-panel-santa-fe-masonite",
     title: "2 Panel Santa Fe Exterior Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png",
+    imageUrl: "/images/products/Screenshot2026-05-15at10.42.46PM_398a7438.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
+    imageUrl3: "/images/products/Screenshot2026-05-15at10.43.03PM_15383531.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.42.46PM_398a7438.png",
-      "/manus-storage/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
-      "/manus-storage/Screenshot2026-05-15at10.43.03PM_15383531.png"
+      "/images/products/Screenshot2026-05-15at10.42.46PM_398a7438.png",
+      "/images/products/Screenshot2026-05-15at10.42.29PM_04a76bae.png",
+      "/images/products/Screenshot2026-05-15at10.43.03PM_15383531.png"
     ],
     brand: "Jeld-Wen",
     description: "Rustic 2-panel Santa Fe style fiberglass door with authentic southwestern character. Adds warmth and charm to any home exterior with durable fiberglass construction.",

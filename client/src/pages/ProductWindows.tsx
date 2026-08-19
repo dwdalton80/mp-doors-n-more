@@ -11,13 +11,13 @@ import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ReviewsSection from "@/components/ReviewsSection";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-windows_ac3e821c.png";
+const HERO_IMAGE = "/images/product-windows.webp";
 
 const products = [
   {
     id: "single-hung",
     title: "Single Hung Windows",
-    imageUrl: "/manus-storage/doublehungwindows_aee37039.png",
+    imageUrl: "/images/products/doublehungwindows_aee37039.png",
     description: "Classic single hung windows with smooth operation and excellent ventilation control.",
     brands: ["Synergy", "Westlake"],
     features: ["Tilt-in sashes for easy cleaning", "Low-E glass", "Multiple color options", "Energy Star certified"],
@@ -26,7 +26,7 @@ const products = [
   {
     id: "sliding",
     title: "Sliding Windows",
-    imageUrl: "/manus-storage/slidingwindow_174ca486.png",
+    imageUrl: "/images/products/slidingwindow_174ca486.png",
     description: "Sleek sliding windows perfect for contemporary and traditional homes.",
     brands: ["Synergy", "Westlake"],
     features: ["Smooth gliding operation", "Low maintenance", "Energy efficient", "Multiple sizes"],
@@ -35,7 +35,7 @@ const products = [
   {
     id: "specialty",
     title: "Specialty Windows",
-    imageUrl: "/manus-storage/baywindows_3367388a.jpg",
+    imageUrl: "/images/products/baywindows_3367388a.jpg",
     description: "Picture, bay, and bow windows to add character and natural light to any room.",
     brands: ["Synergy", "Westlake"],
     features: ["Custom shapes available", "Premium glass options", "Structural support included", "Design flexibility"],
@@ -157,8 +157,8 @@ export default function ProductWindows() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string }> = {
-                            'Synergy': { logo: '/manus-storage/IMG_3736_f71c5e2a.JPG' },
-                            'Westlake': { logo: '/manus-storage/westlake_ef851210.png' },
+                            'Synergy': { logo: '/images/products/IMG_3736_f71c5e2a.JPG' },
+                            'Westlake': { logo: '/images/products/westlake_ef851210.png' },
                           };
                           const brandInfo = brandMap[brand];
                           return (

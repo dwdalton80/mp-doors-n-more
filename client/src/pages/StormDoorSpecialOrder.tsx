@@ -6,25 +6,26 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { ChevronLeft, Star, X, Search, Loader2 } from "lucide-react";
+import { ChevronLeft, Star, Search } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
+import QuickViewModal from "@/components/QuickViewModal";
+import QuoteModal from "@/components/QuoteModal";
+import { useQuoteModal } from "@/hooks/useQuoteModal";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { trpc } from "@/lib/trpc";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
+const HERO_IMAGE = "/images/product-doors.webp";
 
 const specialOrderDoors = [
   {
     id: "storm-door-aluminum",
     title: "Aluminum Storm Doors",
-    imageUrl: "/manus-storage/aluminumstormdoor_d5e569ab.jpeg",
-    imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    imageUrl: "/images/products/aluminumstormdoor_d5e569ab.jpeg",
     images: [
-      "/manus-storage/aluminumstormdoor_d5e569ab.jpeg",
-      "/manus-storage/aluminumstormdoor2_6dfc9b77.jpeg",
-      "/manus-storage/aluminumstormdoor3_376ed931.jpeg",
-      "/manus-storage/aluminumstormdoor5_f8fa2706.jpeg"
+      "/images/products/aluminumstormdoor_d5e569ab.jpeg",
+      "/images/products/aluminumstormdoor2_6dfc9b77.jpeg",
+      "/images/products/aluminumstormdoor3_376ed931.jpeg",
+      "/images/products/aluminumstormdoor5_f8fa2706.jpeg"
     ],
     brand: "Larson",
     description: "Durable aluminum storm doors with interchangeable glass and screen. Perfect for year-round protection.",
@@ -34,12 +35,11 @@ const specialOrderDoors = [
   {
     id: "storm-door-vinyl",
     title: "Vinyl Storm Doors",
-    imageUrl: "/manus-storage/ScreenShot2026-05-08at11.45.34AM_a0736ed5.jpeg",
-    imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    imageUrl: "/images/products/ScreenShot2026-05-08at11.45.34AM_a0736ed5.jpeg",
     images: [
-      "/manus-storage/ScreenShot2026-05-08at11.45.34AM_a0736ed5.jpeg",
-      "/manus-storage/vinylstormdoor_b0598d4a.jpeg",
-      "/manus-storage/ScreenShot2026-05-08at11.46.02AM_019e49df.jpeg"
+      "/images/products/ScreenShot2026-05-08at11.45.34AM_a0736ed5.jpeg",
+      "/images/products/vinylstormdoor_b0598d4a.jpeg",
+      "/images/products/ScreenShot2026-05-08at11.46.02AM_019e49df.jpeg"
     ],
     brand: "Larson",
     description: "Maintenance-free vinyl storm doors with superior insulation. Ideal for energy-conscious homeowners.",
@@ -49,12 +49,11 @@ const specialOrderDoors = [
   {
     id: "storm-door-wood",
     title: "Wood Storm Doors",
-    imageUrl: "/manus-storage/woodstormdoor2_b52dcb3b.jpeg",
-    imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    imageUrl: "/images/products/woodstormdoor2_b52dcb3b.jpeg",
     images: [
-      "/manus-storage/woodstormdoor2_b52dcb3b.jpeg",
-      "/manus-storage/vinylstormdoor_b0598d4a.jpeg",
-      "/manus-storage/doodstormdoor2_bcb6e611.jpeg"
+      "/images/products/woodstormdoor2_b52dcb3b.jpeg",
+      "/images/products/vinylstormdoor_b0598d4a.jpeg",
+      "/images/products/doodstormdoor2_bcb6e611.jpeg"
     ],
     brand: "Larson",
     description: "Classic wood storm doors with timeless appeal. Customizable finishes to match your home's style.",
@@ -64,12 +63,11 @@ const specialOrderDoors = [
   {
     id: "storm-door-retractable",
     title: "Retractable Storm Doors",
-    imageUrl: "/manus-storage/retractablescreendoor3_303ad9fa.jpeg",
-    imageUrl2: "/manus-storage/storm-door-diagram.jpg",
+    imageUrl: "/images/products/retractablescreendoor3_303ad9fa.jpeg",
     images: [
-      "/manus-storage/retractablescreendoor2_0754d5ba.jpeg",
-      "/manus-storage/retractablescreendoors_e878e999.jpeg",
-      "/manus-storage/retractablescreendoor3_303ad9fa.jpeg"
+      "/images/products/retractablescreendoor2_0754d5ba.jpeg",
+      "/images/products/retractablescreendoors_e878e999.jpeg",
+      "/images/products/retractablescreendoor3_303ad9fa.jpeg"
     ],
     brand: "Larson",
     description: "Innovative retractable storm doors that hide away when not needed. Modern solution for contemporary homes.",
@@ -81,49 +79,7 @@ const specialOrderDoors = [
 export default function StormDoorSpecialOrder() {
   const [selectedProduct, setSelectedProduct] = useState<typeof specialOrderDoors[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showQuoteModal, setShowQuoteModal] = useState(false);
-  const [selectedProductForQuote, setSelectedProductForQuote] = useState<typeof specialOrderDoors[0] | null>(null);
-  const [quoteFormData, setQuoteFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [quoteError, setQuoteError] = useState("");
-  const [quoteSuccess, setQuoteSuccess] = useState(false);
-
-  const sendQuoteMutation = trpc.quotes.sendQuoteRequest.useMutation();
-
-  const handleGetQuote = (doorId: string) => {
-    const door = specialOrderDoors.find(d => d.id === doorId);
-    if (door) {
-      setSelectedProductForQuote(door);
-      setShowQuoteModal(true);
-      setQuoteError("");
-      setQuoteSuccess(false);
-    }
-  };
-
-  const handleQuoteSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setQuoteError("");
-    setQuoteSuccess(false);
-
-    try {
-      await sendQuoteMutation.mutateAsync({
-        name: quoteFormData.name,
-        email: quoteFormData.email,
-        phone: quoteFormData.phone || undefined,
-        message: quoteFormData.message || undefined,
-        product: selectedProductForQuote?.title,
-      });
-
-      setQuoteSuccess(true);
-      setQuoteFormData({ name: "", email: "", phone: "", message: "" });
-      setTimeout(() => {
-        setShowQuoteModal(false);
-        setQuoteSuccess(false);
-      }, 2000);
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "Failed to send quote request";
-      setQuoteError(errorMessage);
-    }
-  };
+  const quote = useQuoteModal(specialOrderDoors);
 
   useEffect(() => {
     injectSchema({
@@ -244,7 +200,7 @@ export default function StormDoorSpecialOrder() {
                       Quick View
                     </button>
                     <button
-                      onClick={() => handleGetQuote(door.id)}
+                      onClick={() => quote.open(door.id)}
                       className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer"
                     >
                       Get Quote
@@ -275,183 +231,27 @@ export default function StormDoorSpecialOrder() {
 
       {/* ── QUICK VIEW MODAL ── */}
       {selectedProduct && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelectedProduct(null)}>
-          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
-              <h3 className="font-display font-bold text-xl text-[#1a2e45]">{selectedProduct.title}</h3>
-              <button
-                onClick={() => setSelectedProduct(null)}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors md:p-1"
-              >
-                <X size={24} className="text-gray-600" />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Image Section */}
-                <div className="flex flex-col gap-4">
-                  <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center overflow-hidden">
-                    <img
-                      key={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
-                      src={selectedProduct.images?.[currentImageIndex] || selectedProduct.imageUrl}
-                      alt={selectedProduct.title}
-                      className="w-full h-full object-contain transition-opacity duration-500"
-                    />
-                  </div>
-                  <div className="flex gap-2 overflow-x-auto pb-2">
-                    {(selectedProduct.images || [selectedProduct.imageUrl, selectedProduct.imageUrl2]).map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentImageIndex(idx)}
-                        className={`flex-shrink-0 px-3 py-2 rounded font-semibold text-sm transition-colors ${
-                          currentImageIndex === idx
-                            ? "bg-[#a61c00] text-white"
-                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                        }`}
-                      >
-                        {idx + 1}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Details Section */}
-                <div>
-                  <h4 className="font-display font-bold text-2xl text-[#1a2e45] mb-2">{selectedProduct.title}</h4>
-                  <p className="text-[#a61c00] font-semibold mb-4">{selectedProduct.brand}</p>
-
-                  {/* Rating */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex gap-0.5">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star
-                          key={i}
-                          size={16}
-                          className={i <= selectedProduct.rating ? "fill-[#a61c00] text-[#a61c00]" : "text-gray-300"}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">{selectedProduct.rating}</span>
-                  </div>
-
-                  <p className="text-gray-700 mb-6">{selectedProduct.description}</p>
-
-                  {/* Features */}
-                  <div className="mb-6">
-                    <h5 className="font-semibold text-[#1a2e45] mb-3">Key Features:</h5>
-                    <ul className="space-y-2">
-                      {selectedProduct.features.map((feature, idx) => (
-                        <li key={idx} className="text-sm text-gray-700 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#a61c00]" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => window.location.href = "tel:9034211305"}
-                      className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-3 rounded font-semibold transition-colors"
-                    >
-                      Call Now
-                    </button>
-                    <button
-                      onClick={() => {
-                        handleGetQuote(selectedProduct.id);
-                        setSelectedProduct(null);
-                      }}
-                      className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-3 rounded font-semibold transition-colors"
-                    >
-                      Get Quote
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <QuickViewModal
+          product={selectedProduct}
+          currentImageIndex={currentImageIndex}
+          onSelectImage={setCurrentImageIndex}
+          onClose={() => setSelectedProduct(null)}
+          onGetQuote={quote.open}
+        />
       )}
 
       {/* ── GET QUOTE MODAL ── */}
-      {showQuoteModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setShowQuoteModal(false)}>
-          <div className="bg-white rounded-lg max-w-md w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-[#1e3450] text-white p-6 flex justify-between items-center">
-              <h3 className="font-bold text-lg">Get Quote for {selectedProductForQuote?.title}</h3>
-              <button
-                onClick={() => setShowQuoteModal(false)}
-                className="p-1 hover:bg-[#152a3a] rounded transition-colors"
-              >
-                <X size={24} />
-              </button>
-            </div>
-            <form onSubmit={handleQuoteSubmit} className="p-6 space-y-4">
-              {quoteSuccess && (
-                <div className="p-3 bg-green-100 text-green-800 rounded text-sm">
-                  Quote request sent successfully! We'll be in touch soon.
-                </div>
-              )}
-              {quoteError && (
-                <div className="p-3 bg-red-100 text-red-800 rounded text-sm">
-                  {quoteError}
-                </div>
-              )}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Name</label>
-                <input
-                  type="text"
-                  required
-                  value={quoteFormData.name}
-                  onChange={(e) => setQuoteFormData({ ...quoteFormData, name: e.target.value })}
-                  disabled={sendQuoteMutation.isPending}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Email</label>
-                <input
-                  type="email"
-                  required
-                  value={quoteFormData.email}
-                  onChange={(e) => setQuoteFormData({ ...quoteFormData, email: e.target.value })}
-                  disabled={sendQuoteMutation.isPending}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Phone</label>
-                <input
-                  type="tel"
-                  value={quoteFormData.phone}
-                  onChange={(e) => setQuoteFormData({ ...quoteFormData, phone: e.target.value })}
-                  disabled={sendQuoteMutation.isPending}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Message</label>
-                <textarea
-                  value={quoteFormData.message}
-                  onChange={(e) => setQuoteFormData({ ...quoteFormData, message: e.target.value })}
-                  rows={4}
-                  disabled={sendQuoteMutation.isPending}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={sendQuoteMutation.isPending}
-                className="w-full bg-[#a61c00] hover:bg-[#8a1700] disabled:bg-gray-400 text-white font-bold py-2 rounded transition-colors flex items-center justify-center gap-2"
-              >
-                {sendQuoteMutation.isPending && <Loader2 size={16} className="animate-spin" />}
-                {sendQuoteMutation.isPending ? "Sending..." : "Submit Quote Request"}
-              </button>
-            </form>
-          </div>
-        </div>
+      {quote.isOpen && (
+        <QuoteModal
+          productTitle={quote.selectedProduct?.title}
+          formData={quote.formData}
+          onFormDataChange={quote.setFormData}
+          error={quote.error}
+          success={quote.success}
+          isSubmitting={quote.isSubmitting}
+          onClose={quote.close}
+          onSubmit={quote.submit}
+        />
       )}
     </div>
   );
