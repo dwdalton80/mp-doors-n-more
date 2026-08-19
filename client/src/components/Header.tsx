@@ -79,7 +79,7 @@ export default function Navbar() {
       <div className="container flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/mp-doors-logo_9851a1c6.png" alt="MP Doors & More Logo" className="h-14 w-auto" />
+          <img src="/images/mp-doors-logo.png" alt="MP Doors & More Logo" className="h-14 w-auto" />
           <div>
             <div className="text-white font-display font-bold text-lg leading-tight tracking-tight">
               MP Doors & More

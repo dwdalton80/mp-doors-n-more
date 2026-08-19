@@ -11,14 +11,14 @@ import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
+const HERO_IMAGE = "/images/product-doors.webp";
 
 const inStockDoors = [
   {
     id: "hollow-core-6panel",
     title: "Hollow Core 6-Panel",
-    imageUrl: "/manus-storage/07662845.jpg_61295038.avif",
-    imageUrl2: "/manus-storage/6PanelHollowCore_133c7461.jpeg",
+    imageUrl: "/images/products/07662845.jpg_61295038.avif",
+    imageUrl2: "/images/products/6PanelHollowCore_133c7461.jpeg",
     brand: "Jeld-Wen",
     description: "Classic 6-panel design with timeless appeal. Ideal for creating a traditional look in any room.",
     price: "$89 - $129",
@@ -29,8 +29,8 @@ const inStockDoors = [
   {
     id: "solid-core-flush",
     title: "Santa Fe Hollow Core",
-    imageUrl: "/manus-storage/primed-jeld-wen-single-prehung-doors-thdjw136700668-e1_600.jpg_a36eb55b.avif",
-    imageUrl2: "/manus-storage/SantaFeHollowCore_54353546.jpeg",
+    imageUrl: "/images/products/primed-jeld-wen-single-prehung-doors-thdjw136700668-e1_600.jpg_a36eb55b.avif",
+    imageUrl2: "/images/products/SantaFeHollowCore_54353546.jpeg",
     brand: "Masonite",
     description: "Modern Santa Fe style with clean lines and contemporary design. Perfect for contemporary interiors.",
     price: "$149 - $199",
@@ -41,8 +41,8 @@ const inStockDoors = [
   {
     id: "bifold-closet",
     title: "Two-Panel Arch Top Hollow Core",
-    imageUrl: "/manus-storage/primed-white-masonite-slab-doors-33334-e1_600.jpg_4d0837d9.avif",
-    imageUrl2: "/manus-storage/TwoPanelArchTopHollowCore_87a12a6d.jpeg",
+    imageUrl: "/images/products/primed-white-masonite-slab-doors-33334-e1_600.jpg_4d0837d9.avif",
+    imageUrl2: "/images/products/TwoPanelArchTopHollowCore_87a12a6d.jpeg",
     brand: "Woodgrain",
     description: "Elegant arch top design adds architectural interest. Perfect for creating a sophisticated, refined entrance.",
     price: "$79 - $119",
@@ -53,8 +53,8 @@ const inStockDoors = [
   {
     id: "french-glass",
     title: "2-Panel Square Top Hollow Core",
-    imageUrl: "/manus-storage/09738639.jpg_a8a4f3c4.avif",
-    imageUrl2: "/manus-storage/2PanelSquareTopHollowCore_d4029640.jpeg",
+    imageUrl: "/images/products/09738639.jpg_a8a4f3c4.avif",
+    imageUrl2: "/images/products/2PanelSquareTopHollowCore_d4029640.jpeg",
     brand: "Woodgrain",
     description: "Clean square top design with classic 2-panel styling. Versatile option for any interior space.",
     price: "$199 - $299",
@@ -65,8 +65,8 @@ const inStockDoors = [
   {
     id: "pocket-slide",
     title: "5 Panel Raised Hollow Core",
-    imageUrl: "/manus-storage/light-gray-jeld-wen-slab-doors-thdjw137400019-40_600.jpg_72f99564.avif",
-    imageUrl2: "/manus-storage/5panelhollowcore_d85f19ce.jpeg",
+    imageUrl: "/images/products/light-gray-jeld-wen-slab-doors-thdjw137400019-40_600.jpg_72f99564.avif",
+    imageUrl2: "/images/products/5panelhollowcore_d85f19ce.jpeg",
     brand: "Jeld-Wen",
     description: "Elegant 5-panel raised design with traditional charm. Adds character and sophistication to any room.",
     price: "$249 - $349",
@@ -77,8 +77,8 @@ const inStockDoors = [
   {
     id: "knotty-pine-arch",
     title: "Knotty Pine 2 Panel Arch Top with V-Grooves",
-    imageUrl: "/manus-storage/IMG_3653_d48ca6ac.AVIF",
-    imageUrl2: "/manus-storage/IMG_3654_5b4ce6ed.HEIC",
+    imageUrl: "/images/products/IMG_3653_d48ca6ac.AVIF",
+    imageUrl2: "/images/products/IMG_3654_5b4ce6ed.HEIC",
     brand: "Woodgrain",
     description: "Beautiful knotty pine construction with elegant arch top design and V-groove detailing. Adds warmth and character to any interior space.",
     price: "$179 - $249",

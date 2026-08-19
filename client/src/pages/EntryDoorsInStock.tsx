@@ -11,17 +11,17 @@ import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
+const HERO_IMAGE = "/images/product-doors.webp";
 
 const inStockDoors = [
   {
     id: "entry-door-masonite",
     title: "6 Lite Mahogany with Flemish Glass",
-    imageUrl: "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
-    imageUrl2: "/manus-storage/4526628-1_57f1d97a.jpg",
+    imageUrl: "/images/products/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
+    imageUrl2: "/images/products/4526628-1_57f1d97a.jpg",
     images: [
-      "/manus-storage/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
-      "/manus-storage/4526628-1_57f1d97a.jpg"
+      "/images/products/Door_Southwood_Double_Wood_Mahogany_Front_Entry_Door_6_Lite_2a__59869-Edited_02505368.jpg",
+      "/images/products/4526628-1_57f1d97a.jpg"
     ],
     brand: "GlassCraft",
     description: "Elegant 6 lite mahogany entry door with beautiful flemish glass pattern. Premium wood construction with authentic mahogany finish provides timeless elegance and durability for your home entrance.",
@@ -31,14 +31,14 @@ const inStockDoors = [
   {
     id: "entry-door-jeldwen",
     title: "4 Lite Contemporary Mahogany With Frosted Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png",
-    imageUrl4: "/manus-storage/Screenshot2026-05-15at11.01.36PM_5be621e6.png",
+    imageUrl: "/images/products/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
+    imageUrl3: "/images/products/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png",
+    imageUrl4: "/images/products/Screenshot2026-05-15at11.01.36PM_5be621e6.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
-      "/manus-storage/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
-      "/manus-storage/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png"
+      "/images/products/Screenshot2026-05-15at10.49.16PM_55ed9169.png",
+      "/images/products/Screenshot2026-05-15at10.48.11PM_3f1d3511.png",
+      "/images/products/Screenshot2026-05-15at10.49.11PM_ba55a7e9.png"
     ],
     brand: "GlassCraft",
     description: "Contemporary 4 lite mahogany entry door with beautiful frosted glass panels. Modern design with frosted glass provides privacy while allowing natural light. Premium mahogany construction with elegant contemporary styling.",
@@ -48,13 +48,13 @@ const inStockDoors = [
   {
     id: "patio-door-anderson",
     title: "4 Lite Mahogany Door with Flemish Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
-    imageUrl4: "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    imageUrl: "/images/products/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    imageUrl3: "/images/products/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
+    imageUrl4: "/images/products/Screenshot2026-05-15at10.57.35PM_63cc0e36.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
-      "/manus-storage/Screenshot2026-05-15at10.57.35PM_63cc0e36.png"
+      "/images/products/Screenshot2026-05-15at10.59.47PM_c9a22b59.png",
+      "/images/products/Screenshot2026-05-15at10.57.35PM_63cc0e36.png"
     ],
     brand: "GlassCraft",
     description: "Beautiful 4 lite mahogany entry door with elegant flemish glass pattern. Premium wood construction with authentic mahogany finish and beautiful glass detailing provides timeless elegance and durability for your home entrance.",
@@ -64,15 +64,15 @@ const inStockDoors = [
   {
     id: "storm-door-larson",
     title: "6 Lite Mahogany Door with Clear Glass",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
-    imageUrl4: "/manus-storage/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg",
+    imageUrl: "/images/products/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
+    imageUrl3: "/images/products/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
+    imageUrl4: "/images/products/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg",
     images: [
-      "/manus-storage/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
-      "/manus-storage/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
-      "/manus-storage/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
-      "/manus-storage/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg"
+      "/images/products/Screenshot2026-05-15at11.02.45PM_afaa9b39.png",
+      "/images/products/Screenshot2026-05-15at11.02.10PM_5e1314d0.png",
+      "/images/products/Screenshot2026-05-15at10.45.56PM_fd468fe3.png",
+      "/images/products/7231-1_5f2b9e4b-0523-4eb9-bfee-bdcee1d8a6f7_1cd4a6f3.jpeg"
     ],
     brand: "GlassCraft",
     description: "Beautiful 6 lite mahogany entry door with clear glass panels. Premium wood construction with authentic mahogany finish and clear glass detailing provides timeless elegance and maximum natural light for your home entrance.",
@@ -82,12 +82,12 @@ const inStockDoors = [
   {
     id: "full-lite-vista-grand-larson",
     title: "8 Lite Craftsman Mahogany Door",
-    imageUrl: "/manus-storage/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
-    imageUrl2: "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png",
-    imageUrl3: "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png",
+    imageUrl: "/images/products/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
+    imageUrl2: "/images/products/Screenshot2026-05-15at11.09.55PM_1bab30be.png",
+    imageUrl3: "/images/products/Screenshot2026-05-15at11.09.55PM_1bab30be.png",
     images: [
-      "/manus-storage/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
-      "/manus-storage/Screenshot2026-05-15at11.09.55PM_1bab30be.png"
+      "/images/products/Screenshot2026-05-15at11.09.47PM_80d00f3c.png",
+      "/images/products/Screenshot2026-05-15at11.09.55PM_1bab30be.png"
     ],
     brand: "GlassCraft",
     description: "Beautiful 8 lite craftsman mahogany entry door with classic grid pattern. Premium wood construction with authentic mahogany finish and elegant glass detailing provides timeless craftsman style and durability for your home entrance.",
@@ -97,10 +97,10 @@ const inStockDoors = [
   {
     id: "flush-fiberglass-masonite",
     title: "Full Glass TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/Untitleddesign2a_a65eb064.png",
-    imageUrl2: "/manus-storage/Untitleddesign2a_a65eb064.png",
+    imageUrl: "/images/products/Untitleddesign2a_a65eb064.png",
+    imageUrl2: "/images/products/Untitleddesign2a_a65eb064.png",
     images: [
-      "/manus-storage/Untitleddesign2a_a65eb064.png"
+      "/images/products/Untitleddesign2a_a65eb064.png"
     ],
     brand: "Masonite",
     description: "Elegant full glass TX Star fiberglass entry door with distinctive star glass design. Premium fiberglass construction with full lite glass panel maximizes natural light and creates a welcoming entryway. Perfect for contemporary and traditional home styles.",
@@ -110,10 +110,10 @@ const inStockDoors = [
   {
     id: "6-panel-fiberglass-masonite",
     title: "3/4 Glass TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/Untitleddesign3a_68fb832a.png",
-    imageUrl2: "/manus-storage/Untitleddesign3a_68fb832a.png",
+    imageUrl: "/images/products/Untitleddesign3a_68fb832a.png",
+    imageUrl2: "/images/products/Untitleddesign3a_68fb832a.png",
     images: [
-      "/manus-storage/Untitleddesign3a_68fb832a.png"
+      "/images/products/Untitleddesign3a_68fb832a.png"
     ],
     brand: "Masonite",
     description: "Beautiful 3/4 glass TX Star fiberglass entry door with elegant star glass design. Premium fiberglass construction with three-quarter lite glass panel provides abundant natural light and distinctive architectural appeal. Perfect for modern and traditional home styles.",
@@ -123,11 +123,11 @@ const inStockDoors = [
   {
     id: "2-panel-square-top-masonite",
     title: "Half Glass TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/fiberglass-star-door-fg40-home_644f7fb7.webp",
-    imageUrl2: "/manus-storage/fiberglass-half-lite-door-star-glass_0785030f.webp",
+    imageUrl: "/images/products/fiberglass-star-door-fg40-home_644f7fb7.webp",
+    imageUrl2: "/images/products/fiberglass-half-lite-door-star-glass_0785030f.webp",
     images: [
-      "/manus-storage/fiberglass-star-door-fg40-home_644f7fb7.webp",
-      "/manus-storage/fiberglass-half-lite-door-star-glass_0785030f.webp"
+      "/images/products/fiberglass-star-door-fg40-home_644f7fb7.webp",
+      "/images/products/fiberglass-half-lite-door-star-glass_0785030f.webp"
     ],
     brand: "Jeld-Wen",
     description: "Beautiful half glass TX Star fiberglass entry door with elegant star glass design. Premium fiberglass construction with half lite glass panel provides natural light and durability. Perfect for modern farmhouse and contemporary home styles.",
@@ -137,11 +137,11 @@ const inStockDoors = [
   {
     id: "2-panel-santa-fe-masonite",
     title: "Pre Finished Half Oval TX Star Fiberglass Door",
-    imageUrl: "/manus-storage/03169515_3724e0ba.jpg",
-    imageUrl2: "/manus-storage/00433525_c02293fe.webp",
+    imageUrl: "/images/products/03169515_3724e0ba.jpg",
+    imageUrl2: "/images/products/00433525_c02293fe.webp",
     images: [
-      "/manus-storage/03169515_3724e0ba.jpg",
-      "/manus-storage/00433525_c02293fe.webp"
+      "/images/products/03169515_3724e0ba.jpg",
+      "/images/products/00433525_c02293fe.webp"
     ],
     brand: "Masonite",
     description: "Elegant pre-finished half oval TX Star fiberglass entry door with beautiful star glass design. Premium fiberglass construction with half oval top provides distinctive architectural appeal and durability. Perfect for traditional and transitional home styles.",

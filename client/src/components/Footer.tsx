@@ -6,7 +6,7 @@
 
 import { useEffect } from "react";
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Facebook, BarChart3 } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook } from "lucide-react";
 import { logEvent } from "@/lib/analytics";
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "MP Doors & More",
-      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/mp-doors-logo_9851a1c6.png",
+      "image": "https://www.mpdoorsnmore.com/images/mp-doors-logo.png",
       "description": "Premium doors, windows, vinyl flooring, siding, and trim & molding supplier in Sherman, TX",
       "address": {
         "@type": "PostalAddress",
@@ -66,7 +66,7 @@ export default function Footer() {
         {/* Brand column */}
         <div className="lg:col-span-1">
           <div className="flex items-center gap-3 mb-4">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/mp-doors-logo_9851a1c6.png" alt="MP Doors & More Logo" className="h-12 w-auto" />
+            <img src="/images/mp-doors-logo.png" alt="MP Doors & More Logo" className="h-12 w-auto" />
             <div>
               <div className="font-display font-bold text-base leading-tight">MP Doors & More</div>
               <div className="text-white/50 text-xs font-label tracking-widest uppercase">Sherman, Texas</div>
@@ -86,13 +86,6 @@ export default function Footer() {
               <Facebook size={16} />
               Follow on Facebook
             </a>
-            <Link
-              href="/dashboard"
-              className="inline-flex items-center gap-2 bg-[#a61c00] hover:bg-[#8b1600] text-white text-sm font-semibold py-2 px-4 rounded transition-colors w-full justify-center"
-            >
-              <BarChart3 size={16} />
-              Dashboard
-            </Link>
           </div>
         </div>
 

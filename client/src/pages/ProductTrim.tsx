@@ -11,13 +11,13 @@ import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ReviewsSection from "@/components/ReviewsSection";
 
-const HERO_IMAGE = "/manus-storage/Trim-moulding_7a9873c5.jpg";
+const HERO_IMAGE = "/images/trim-moulding.jpg";
 
 const products = [
   {
     id: "baseboards",
     title: "Baseboards & Shoe Molding",
-    imageUrl: "/manus-storage/baseboard-shoe_0278999b.png",
+    imageUrl: "/images/products/baseboard-shoe_0278999b.png",
     description: "Quality baseboards and shoe molding to finish the bottom of your walls. Available in various profiles and materials.",
     brands: ["Novo", "Woodgrain"],
     features: ["Multiple profile options", "Pre-primed & paintable", "Easy installation", "Durable materials"],
@@ -26,7 +26,7 @@ const products = [
   {
     id: "crown-molding",
     title: "Crown Molding",
-    imageUrl: "/manus-storage/crown-moulding_243def21.png",
+    imageUrl: "/images/products/crown-moulding_243def21.png",
     description: "Elegant crown molding to add architectural detail where walls meet ceilings. Transform any room with classic elegance.",
     brands: ["Novo", "Woodgrain"],
     features: ["Decorative profiles", "Pre-primed options", "Easy to install", "Adds visual interest"],
@@ -35,7 +35,7 @@ const products = [
   {
     id: "door-casings",
     title: "Door & Window Casings",
-    imageUrl: "/manus-storage/door-trim_27e16ea0.png",
+    imageUrl: "/images/products/door-trim_27e16ea0.png",
     description: "Professional door and window casings to frame your openings beautifully. Available in multiple styles and finishes.",
     brands: ["Novo", "Woodgrain"],
     features: ["Standard & custom profiles", "Pre-finished options", "Quality construction", "Professional appearance"],
@@ -44,7 +44,7 @@ const products = [
   {
     id: "decorative-trim",
     title: "Decorative Trim Boards",
-    imageUrl: "/manus-storage/decorative-trim_4f46313b.png",
+    imageUrl: "/images/products/decorative-trim_4f46313b.png",
     description: "Add character and charm with decorative trim boards. Perfect for wainscoting, accents, and architectural details.",
     brands: ["Novo", "Woodgrain"],
     features: ["Various styles", "Paintable surfaces", "Durable construction", "Design flexibility"],
@@ -166,8 +166,8 @@ export default function ProductTrim() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string }> = {
-                            'Novo': { logo: '/manus-storage/novo_logo_ce6a589d.jpg' },
-                            'Woodgrain': { logo: '/manus-storage/woodgrain_logo_ca65de93.jpg' },
+                            'Novo': { logo: '/images/products/novo_logo_ce6a589d.jpg' },
+                            'Woodgrain': { logo: '/images/products/woodgrain_logo_ca65de93.jpg' },
                           };
                           const brandInfo = brandMap[brand];
                           return (

@@ -10,22 +10,22 @@ import { ChevronLeft, Star, X, Search, Loader2 } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import { injectSchema } from "@/lib/schema";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { trpc } from "@/lib/trpc";
+import { sendQuoteRequest } from "@/lib/api";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors_ac3e821c.png";
+const HERO_IMAGE = "/images/product-doors.webp";
 
 const specialOrderDoors = [
   {
     id: "patio-french-doors",
     title: "French Patio Doors",
-    imageUrl: "/manus-storage/IMG_3578_2d2e4a07.WEBP",
+    imageUrl: "/images/products/IMG_3578_2d2e4a07.WEBP",
     images: [
-      "/manus-storage/IMG_3578_2d2e4a07.WEBP",
-      "/manus-storage/IMG_3580_63de9df7.JPG",
-      "/manus-storage/IMG_3581_e82caeea.PNG",
-      "/manus-storage/IMG_3582_14d1f7b8.PNG",
-      "/manus-storage/IMG_3583_4acccc85.PNG",
-      "/manus-storage/IMG_3584_5e5464ba.PNG"
+      "/images/products/IMG_3578_2d2e4a07.WEBP",
+      "/images/products/IMG_3580_63de9df7.JPG",
+      "/images/products/IMG_3581_e82caeea.PNG",
+      "/images/products/IMG_3582_14d1f7b8.PNG",
+      "/images/products/IMG_3583_4acccc85.PNG",
+      "/images/products/IMG_3584_5e5464ba.PNG"
     ],
     brand: "Anderson",
     description: "Elegant French-style patio doors with multiple glass panes. Perfect for traditional and transitional home designs.",
@@ -35,13 +35,12 @@ const specialOrderDoors = [
   {
     id: "patio-bifold-doors",
     title: "Bifold Patio Doors",
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
-    imageUrl2: "/manus-storage/patio-door-diagram.jpg",
+    imageUrl: "/images/patio-doors-anderson.webp",
     images: [
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663585381002/ewrgsBYn5kz4enQN79TrkM/patio-doors-anderson-453ALUekUqfU6wxXFg5Wd6.webp",
-      "/manus-storage/IMG_3593_04eafb59.JPG",
-      "/manus-storage/IMG_3594_0ef4930b.WEBP",
-      "/manus-storage/IMG_3595_b193e8ba.JPG"
+      "/images/patio-doors-anderson.webp",
+      "/images/products/IMG_3593_04eafb59.JPG",
+      "/images/products/IMG_3594_0ef4930b.WEBP",
+      "/images/products/IMG_3595_b193e8ba.JPG"
     ],
     brand: "Anderson",
     description: "Space-saving bifold doors that fold to the side for maximum opening. Ideal for modern and contemporary homes.",
@@ -51,13 +50,12 @@ const specialOrderDoors = [
   {
     id: "patio-sliding-glass",
     title: "Sliding Glass Patio Doors",
-    imageUrl: "/manus-storage/slidingglassdoor_7d2e02cf.jpeg",
-    imageUrl2: "/manus-storage/patio-door-diagram.jpg",
+    imageUrl: "/images/products/slidingglassdoor_7d2e02cf.jpeg",
     images: [
-      "/manus-storage/slidingglassdoor2_3c693638.jpeg",
-      "/manus-storage/slidingglassdoor_7d2e02cf.jpeg",
-      "/manus-storage/slidingpatiodoor4_cba34098.jpeg",
-      "/manus-storage/slidingpatiodoor3_aa8461e5.jpeg"
+      "/images/products/slidingglassdoor2_3c693638.jpeg",
+      "/images/products/slidingglassdoor_7d2e02cf.jpeg",
+      "/images/products/slidingpatiodoor4_cba34098.jpeg",
+      "/images/products/slidingpatiodoor3_aa8461e5.jpeg"
     ],
     brand: "Anderson",
     description: "Classic sliding glass doors with smooth operation and excellent weather protection. Timeless design.",
@@ -75,7 +73,7 @@ export default function PatioDoorSpecialOrder() {
   const [quoteError, setQuoteError] = useState("");
   const [quoteSuccess, setQuoteSuccess] = useState(false);
 
-  const sendQuoteMutation = trpc.quotes.sendQuoteRequest.useMutation();
+  const [isSubmittingQuote, setIsSubmittingQuote] = useState(false);
 
   const handleGetQuote = (doorId: string) => {
     const door = specialOrderDoors.find(d => d.id === doorId);
@@ -91,9 +89,10 @@ export default function PatioDoorSpecialOrder() {
     e.preventDefault();
     setQuoteError("");
     setQuoteSuccess(false);
+    setIsSubmittingQuote(true);
 
     try {
-      await sendQuoteMutation.mutateAsync({
+      await sendQuoteRequest({
         name: quoteFormData.name,
         email: quoteFormData.email,
         phone: quoteFormData.phone || undefined,
@@ -110,6 +109,8 @@ export default function PatioDoorSpecialOrder() {
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "Failed to send quote request";
       setQuoteError(errorMessage);
+    } finally {
+      setIsSubmittingQuote(false);
     }
   };
 
@@ -408,7 +409,7 @@ export default function PatioDoorSpecialOrder() {
                   required
                   value={quoteFormData.name}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, name: e.target.value })}
-                  disabled={sendQuoteMutation.isPending}
+                  disabled={isSubmittingQuote}
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
@@ -419,7 +420,7 @@ export default function PatioDoorSpecialOrder() {
                   required
                   value={quoteFormData.email}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, email: e.target.value })}
-                  disabled={sendQuoteMutation.isPending}
+                  disabled={isSubmittingQuote}
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
@@ -429,7 +430,7 @@ export default function PatioDoorSpecialOrder() {
                   type="tel"
                   value={quoteFormData.phone}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, phone: e.target.value })}
-                  disabled={sendQuoteMutation.isPending}
+                  disabled={isSubmittingQuote}
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
@@ -439,17 +440,17 @@ export default function PatioDoorSpecialOrder() {
                   value={quoteFormData.message}
                   onChange={(e) => setQuoteFormData({ ...quoteFormData, message: e.target.value })}
                   rows={4}
-                  disabled={sendQuoteMutation.isPending}
+                  disabled={isSubmittingQuote}
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e3450] disabled:bg-gray-100"
                 />
               </div>
               <button
                 type="submit"
-                disabled={sendQuoteMutation.isPending}
+                disabled={isSubmittingQuote}
                 className="w-full bg-[#a61c00] hover:bg-[#8a1700] disabled:bg-gray-400 text-white font-bold py-2 rounded transition-colors flex items-center justify-center gap-2"
               >
-                {sendQuoteMutation.isPending && <Loader2 size={16} className="animate-spin" />}
-                {sendQuoteMutation.isPending ? "Sending..." : "Submit Quote Request"}
+                {isSubmittingQuote && <Loader2 size={16} className="animate-spin" />}
+                {isSubmittingQuote ? "Sending..." : "Submit Quote Request"}
               </button>
             </form>
           </div>

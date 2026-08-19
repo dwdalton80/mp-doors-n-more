@@ -7,11 +7,11 @@
 import { Link } from "wouter";
 import { ChevronRight, Phone } from "lucide-react";
 
-const DOORS_IMAGE = "/manus-storage/Screenshot2026-05-15at10.45.56PM_8e901483.png";
-const WINDOWS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-windows-PXTs3yR42MpCtjM66Wo53F.webp";
-const FLOORING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-flooring-RfCxtdvLU9XE8VY2nSVEwA.webp";
-const SIDING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-siding-shingles-fKLGGBqMKdEog8eBUzkgpC.webp";
-const TRIM_IMAGE = "/manus-storage/Trim-moulding_7a9873c5.jpg";
+const DOORS_IMAGE = "/images/products/Screenshot2026-05-15at10.45.56PM_8e901483.png";
+const WINDOWS_IMAGE = "/images/product-windows.webp";
+const FLOORING_IMAGE = "/images/product-flooring.webp";
+const SIDING_IMAGE = "/images/product-siding-shingles.webp";
+const TRIM_IMAGE = "/images/trim-moulding.jpg";
 
 const categories = [
   {

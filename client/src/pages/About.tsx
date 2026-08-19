@@ -7,8 +7,8 @@
 import { Link } from "wouter";
 import { CheckCircle2, MapPin, Phone, Mail, Facebook } from "lucide-react";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/hero-banner-JGKqZgmMvV9heZ7iiLwaZQ.webp";
-const SIDING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-siding-shingles-fKLGGBqMKdEog8eBUzkgpC.webp";
+const HERO_IMAGE = "/images/hero-banner.webp";
+const SIDING_IMAGE = "/images/product-siding-shingles.webp";
 
 const values = [
   { title: "Quality First", desc: "We only carry A grade construction materials — the same products used by professional contractors and builders." },

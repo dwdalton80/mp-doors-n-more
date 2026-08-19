@@ -7,7 +7,7 @@ export const generateLocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "MP Doors & More",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/hero-banner-JGKqZgmMvV9heZ7iiLwaZQ.webp",
+    "image": "https://www.mpdoorsnmore.com/images/hero-banner.webp",
     "description": "Premium doors, windows, vinyl flooring, and trim & molding supplier in Sherman, TX",
     "address": {
       "@type": "PostalAddress",

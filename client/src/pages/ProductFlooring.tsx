@@ -10,13 +10,13 @@ import { ChevronLeft, Star, X } from "lucide-react";
 import ProductImagePlaceholder from "@/components/ProductImagePlaceholder";
 import ReviewsSection from "@/components/ReviewsSection";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-flooring_ac3e821c.png";
+const HERO_IMAGE = "/images/product-flooring.webp";
 
 const products = [
   {
     id: "spc",
     title: "SPC Flooring",
-    imageUrl: "/manus-storage/IMG_3510_bf1f5299.JPG",
+    imageUrl: "/images/products/IMG_3510_bf1f5299.JPG",
     description: "Stone Plastic Composite flooring with superior durability and waterproof protection for any room.",
     brands: ["Lawson"],
     features: ["Waterproof construction", "Realistic wood grain", "Easy installation", "Scratch resistant"],
@@ -25,7 +25,7 @@ const products = [
   {
     id: "lvp-glue-down",
     title: "LVP (Glue-Down)",
-    imageUrl: "/manus-storage/IMG_3511_be4494b4.JPG",
+    imageUrl: "/images/products/IMG_3511_be4494b4.JPG",
     description: "Luxury Vinyl Plank with glue-down installation for a secure, professional finish.",
     brands: ["Lawson"],
     features: ["Stone-look options", "Slip-resistant", "Low maintenance", "Multiple colors"],
@@ -34,7 +34,7 @@ const products = [
   {
     id: "laminate",
     title: "Laminate Flooring",
-    imageUrl: "/manus-storage/IMG_3512_15a2d594.JPG",
+    imageUrl: "/images/products/IMG_3512_15a2d594.JPG",
     description: "Durable laminate flooring with authentic wood appearance and superior scratch resistance.",
     brands: ["Lawson"],
     features: ["Seamless installation", "Waterproof", "Comfortable underfoot", "Easy to clean"],
@@ -43,7 +43,7 @@ const products = [
   {
     id: "hardwood",
     title: "Hardwood Flooring",
-    imageUrl: "/manus-storage/IMG_3513_30148280.JPG",
+    imageUrl: "/images/products/IMG_3513_30148280.JPG",
     description: "Premium hardwood flooring with natural beauty and timeless elegance for any home.",
     brands: ["Lawson"],
     features: ["Durable construction", "Commercial grade", "Cost-effective", "Wide color range"],
@@ -158,7 +158,7 @@ export default function ProductFlooring() {
                       <div className="flex flex-wrap gap-3">
                         {product.brands.map((brand) => {
                           const brandMap: Record<string, { logo: string }> = {
-                            'Lawson': { logo: '/manus-storage/lawson_ee7b2882.webp' },
+                            'Lawson': { logo: '/images/products/lawson_ee7b2882.webp' },
                           };
                           const brandInfo = brandMap[brand];
                           return (

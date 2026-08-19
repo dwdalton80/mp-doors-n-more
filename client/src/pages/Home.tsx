@@ -10,11 +10,11 @@ import { Link } from "wouter";
 import { Star, ChevronRight, Phone, MapPin, Clock, CheckCircle2, Facebook, ChevronLeft } from "lucide-react";
 import { generateLocalBusinessSchema, injectSchema } from "@/lib/schema";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/hero-banner-JGKqZgmMvV9heZ7iiLwaZQ.webp";
-const DOORS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-doors-k6uQ2prwjDGFQjGmGhVFk3.webp";
-const WINDOWS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-windows-PXTs3yR42MpCtjM66Wo53F.webp";
-const FLOORING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663550653372/5TbzSUw4BV9iqQ6METysLN/product-flooring-RfCxtdvLU9XE8VY2nSVEwA.webp";
-const TRIM_IMAGE = "/manus-storage/Trim-moulding_7a9873c5.jpg";
+const HERO_IMAGE = "/images/hero-banner.webp";
+const DOORS_IMAGE = "/images/product-doors.webp";
+const WINDOWS_IMAGE = "/images/product-windows.webp";
+const FLOORING_IMAGE = "/images/product-flooring.webp";
+const TRIM_IMAGE = "/images/trim-moulding.jpg";
 
 const products = [
   { title: "Doors", desc: "Interior & exterior doors in every style — from solid wood entry doors to French doors and barn doors.", image: DOORS_IMAGE, href: "/products#doors" },

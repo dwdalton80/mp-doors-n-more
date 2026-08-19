@@ -6,7 +6,7 @@
 
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
-import { trpc } from "@/lib/trpc";
+import { sendContactMessage } from "@/lib/api";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin, Clock, Facebook, CheckCircle2 } from "lucide-react";
 import { logPhoneCallClick, logEvent } from "@/lib/analytics";
@@ -36,31 +36,27 @@ export default function Contact() {
     }
   }, [location]);
 
-  const sendMessage = trpc.contact.sendMessage.useMutation({
-    onSuccess: () => {
-      setSubmitted(true);
-      setLoading(false);
-    },
-    onError: (err) => {
-      setLoading(false);
-      toast.error(err.message || "Failed to send message. Please try again or call us directly.");
-    },
-  });
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    sendMessage.mutate({
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone || undefined,
-      subject: formData.subject || undefined,
-      message: formData.message,
-    });
-  };;
+    try {
+      await sendContactMessage({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        subject: formData.subject || undefined,
+        message: formData.message,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Failed to send message. Please try again or call us directly.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen">
