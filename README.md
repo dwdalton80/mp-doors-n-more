@@ -7,6 +7,17 @@ This is a static React + Vite site with two small serverless functions for the
 contact/quote forms. It was migrated off the Manus platform — see
 [MIGRATION.md](./MIGRATION.md) for what changed and why.
 
+## Documentation
+
+- **[docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md)** — tech stack, repo
+  structure, routes, data flow, conventions
+- **[docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)** — build, hosting, DNS,
+  environment variables, how to redeploy elsewhere
+- **[docs/HANDOFF.md](./docs/HANDOFF.md)** — full ownership/acquisition
+  handoff: every external account and credential this project touches, a
+  transfer checklist, and known limitations
+- **[MIGRATION.md](./MIGRATION.md)** — history of the move off Manus
+
 ## Stack
 
 - **Frontend**: React 19 + Vite + Tailwind CSS + wouter (routing), built as a
@@ -31,21 +42,17 @@ locally (see below).
 
 ## Environment variables
 
-Create a `.env` file (never committed — already in `.gitignore`):
-
-```
-RESEND_API_KEY=your_resend_api_key
+```bash
+cp .env.example .env
 ```
 
-Optional overrides (defaults shown):
-
-```
-TO_EMAIL=mpdoorsnmore23@gmail.com
-FROM_EMAIL=MP Doors & More <noreply@mpdoorsnmore.com>
-```
-
-`FROM_EMAIL`'s domain must be a verified sending domain in your Resend
-account (mpdoorsnmore.com already is).
+Then fill in `RESEND_API_KEY` (get one at [resend.com](https://resend.com)).
+`TO_EMAIL`/`FROM_EMAIL` are optional overrides — see
+[.env.example](./.env.example) and
+[docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md#environment-variables-vercel-project-settings)
+for details. `FROM_EMAIL`'s domain must be a verified sending domain in your
+Resend account (mpdoorsnmore.com already is). `.env` is gitignored and never
+committed.
 
 ## Deploying to Vercel
 
@@ -57,7 +64,10 @@ account (mpdoorsnmore.com already is).
 4. Deploy. `vercel.json` already contains the SPA rewrite rule so client-side
    routes (`/products/doors`, `/contact`, etc.) work on direct load/refresh.
 5. Point your domain (`mpdoorsnmore.com`) at the Vercel project in
-   **Settings → Domains**.
+   **Settings → Domains**. See
+   [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md#dns--current-state-important-read-before-changing-anything)
+   for the current DNS state before touching this — the live domain may not
+   be pointed here yet.
 
 To test the serverless functions locally before deploying:
 
@@ -75,4 +85,8 @@ client/               React app (Vite root)
   public/images/        All site images (self-hosted, see MIGRATION.md)
 api/                   Vercel serverless functions (contact + quote forms)
   _lib/                 Shared email/rate-limit helpers
+docs/                  Architecture, deployment, and ownership-handoff docs
 ```
+
+Full structure and route-by-route breakdown:
+[docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md#repository-structure).

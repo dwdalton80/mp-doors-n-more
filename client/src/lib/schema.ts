@@ -18,7 +18,7 @@ export const generateLocalBusinessSchema = () => {
       "addressCountry": "US"
     },
     "telephone": "(903) 421-1305",
-    "url": "https://mpdoorsmore.com",
+    "url": "https://mpdoorsnmore.com",
     "priceRange": "$$",
     "openingHoursSpecification": [
       {
