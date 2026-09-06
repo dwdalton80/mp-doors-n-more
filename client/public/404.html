@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page Not Found | MP Doors & More</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #1a2e45;
+    color: #ffffff;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    padding: 24px;
+  }
+  img { height: 56px; width: auto; margin-bottom: 24px; }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    margin: 0 0 12px;
+  }
+  h1 span { color: #a61c00; }
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+    max-width: 34rem;
+    margin: 0 0 32px;
+    line-height: 1.6;
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  a.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: opacity 0.15s ease;
+  }
+  a.btn:hover { opacity: 0.9; }
+  a.btn-primary { background: #a61c00; color: #fff; }
+  a.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); }
+  .phone { margin-top: 32px; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+  .phone a { color: rgba(255,255,255,0.8); text-decoration: none; }
+</style>
+</head>
+<body>
+  <img src="/images/mp-doors-logo.png" alt="MP Doors & More" />
+  <h1>404 <span>&mdash;</span> Page Not Found</h1>
+  <p>
+    The page you're looking for doesn't exist or may have moved. Head back
+    home, browse our products, or get in touch and we'll help you find what
+    you need.
+  </p>
+  <div class="links">
+    <a class="btn btn-primary" href="/">Go Home</a>
+    <a class="btn btn-secondary" href="/products">Browse Products</a>
+    <a class="btn btn-secondary" href="/contact">Contact Us</a>
+  </div>
+  <p class="phone">Or call us directly: <a href="tel:9034211305">(903) 421-1305</a></p>
+</body>
+</html>
