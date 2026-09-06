@@ -1,3 +1,20 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/products", "destination": "/index.html" },
+    { "source": "/products/doors", "destination": "/index.html" },
+    { "source": "/products/windows", "destination": "/index.html" },
+    { "source": "/products/flooring", "destination": "/index.html" },
+    { "source": "/products/siding", "destination": "/index.html" },
+    { "source": "/products/trim", "destination": "/index.html" },
+    { "source": "/entry-doors-in-stock", "destination": "/index.html" },
+    { "source": "/interior-doors-in-stock", "destination": "/index.html" },
+    { "source": "/exterior-doors-in-stock", "destination": "/index.html" },
+    { "source": "/patio-doors-special-order", "destination": "/index.html" },
+    { "source": "/storm-doors-special-order", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/404", "destination": "/index.html" }
+  ]
 }
