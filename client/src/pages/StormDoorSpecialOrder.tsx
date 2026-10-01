@@ -47,20 +47,6 @@ const specialOrderDoors = [
     rating: 4.9,
   },
   {
-    id: "storm-door-wood",
-    title: "Wood Storm Doors",
-    imageUrl: "/images/products/woodstormdoor2_b52dcb3b.jpeg",
-    images: [
-      "/images/products/woodstormdoor2_b52dcb3b.jpeg",
-      "/images/products/vinylstormdoor_b0598d4a.jpeg",
-      "/images/products/doodstormdoor2_bcb6e611.jpeg"
-    ],
-    brand: "Larson",
-    description: "Classic wood storm doors with timeless appeal. Customizable finishes to match your home's style.",
-    features: ["Solid wood construction", "Customizable finishes", "Traditional design", "Premium hardware"],
-    rating: 5,
-  },
-  {
     id: "storm-door-retractable",
     title: "Retractable Storm Doors",
     imageUrl: "/images/products/retractablescreendoor3_303ad9fa.jpeg",
