@@ -29,24 +29,8 @@ const specialOrderDoors = [
       "/images/products/IMG_3583_4acccc85.PNG",
       "/images/products/IMG_3584_5e5464ba.PNG"
     ],
-    brand: "Anderson",
     description: "Elegant French-style patio doors with multiple glass panes. Perfect for traditional and transitional home designs.",
     features: ["Multiple glass pane options", "Custom sizing available", "Weather-resistant seals", "Various frame colors"],
-    rating: 5,
-  },
-  {
-    id: "patio-bifold-doors",
-    title: "Bifold Patio Doors",
-    imageUrl: "/images/patio-doors-anderson.webp",
-    images: [
-      "/images/patio-doors-anderson.webp",
-      "/images/products/IMG_3593_04eafb59.JPG",
-      "/images/products/IMG_3594_0ef4930b.WEBP",
-      "/images/products/IMG_3595_b193e8ba.JPG"
-    ],
-    brand: "Anderson",
-    description: "Space-saving bifold doors that fold to the side for maximum opening. Ideal for modern and contemporary homes.",
-    features: ["Space-saving design", "Smooth operation", "Custom configurations", "Energy-efficient glass"],
     rating: 5,
   },
   {
@@ -59,12 +43,14 @@ const specialOrderDoors = [
       "/images/products/slidingpatiodoor4_cba34098.jpeg",
       "/images/products/slidingpatiodoor3_aa8461e5.jpeg"
     ],
-    brand: "Anderson",
     description: "Classic sliding glass doors with smooth operation and excellent weather protection. Timeless design.",
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
     rating: 5,
   },
 ];
+
+// Quick View is temporarily hidden on this page. Set to true to bring it back.
+const SHOW_QUICK_VIEW = false;
 
 export default function PatioDoorSpecialOrder() {
   const [selectedProduct, setSelectedProduct] = useState<typeof specialOrderDoors[0] | null>(null);
@@ -132,25 +118,26 @@ export default function PatioDoorSpecialOrder() {
                     Special Order
                   </div>
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button
-                      onClick={() => {
-                        setSelectedProduct(door);
-                        setCurrentImageIndex(0);
-                      }}
-                      className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
-                    >
-                      <Search size={18} />
-                      Quick View
-                    </button>
-                  </div>
+                  {/* Hover Overlay (Quick View hidden for now) */}
+                  {SHOW_QUICK_VIEW && (
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <button
+                        onClick={() => {
+                          setSelectedProduct(door);
+                          setCurrentImageIndex(0);
+                        }}
+                        className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
+                      >
+                        <Search size={18} />
+                        Quick View
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Product Info */}
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="font-display font-bold text-xl text-[#a61c00] mb-2">{door.title}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{door.brand}</p>
                   <p className="text-gray-700 text-sm mb-4 flex-grow">{door.description}</p>
 
                   {/* Rating */}
@@ -182,16 +169,18 @@ export default function PatioDoorSpecialOrder() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 mt-auto">
-                    <button
-                      onClick={() => {
-                        setSelectedProduct(door);
-                        setCurrentImageIndex(0);
-                      }}
-                      className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
-                    >
-                      <Search size={16} />
-                      Quick View
-                    </button>
+                    {SHOW_QUICK_VIEW && (
+                      <button
+                        onClick={() => {
+                          setSelectedProduct(door);
+                          setCurrentImageIndex(0);
+                        }}
+                        className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
+                      >
+                        <Search size={16} />
+                        Quick View
+                      </button>
+                    )}
                     <button
                       onClick={() => quote.open(door.id)}
                       className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer"

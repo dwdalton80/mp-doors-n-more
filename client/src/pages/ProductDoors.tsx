@@ -47,7 +47,7 @@ const products = [
     title: "Patio & Sliding Doors",
     imageUrl: "/images/patio-doors-anderson.webp",
     description: "Beautiful patio doors to bring natural light and access to your outdoor spaces.",
-    brands: ["Andersen"],
+    brands: [],
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
     rating: 5,
   },
@@ -172,6 +172,7 @@ export default function ProductDoors() {
                     </div>
 
                     {/* Brands */}
+                    {product.brands.length > 0 && (
                     <div className="mb-6">
                       <h4 className="font-display font-semibold text-sm text-[#1a2e45] mb-3">Available Brands:</h4>
                       <div className="flex flex-wrap gap-3">
@@ -203,6 +204,7 @@ export default function ProductDoors() {
                         })}
                       </div>
                     </div>
+                    )}
 
                     {/* CTA */}
                     <div className="flex gap-3">

@@ -32,15 +32,6 @@ const products = [
     features: ["Smooth gliding operation", "Low maintenance", "Energy efficient", "Multiple sizes"],
     rating: 4.9,
   },
-  {
-    id: "specialty",
-    title: "Specialty Windows",
-    imageUrl: "/images/products/baywindows_3367388a.jpg",
-    description: "Picture, bay, and bow windows to add character and natural light to any room.",
-    brands: ["Synergy", "Westlake"],
-    features: ["Custom shapes available", "Premium glass options", "Structural support included", "Design flexibility"],
-    rating: 5,
-  },
 ];
 
 export default function ProductWindows() {
