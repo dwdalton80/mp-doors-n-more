@@ -63,6 +63,9 @@ const specialOrderDoors = [
   },
 ];
 
+// Quick View is temporarily hidden on this page. Set to true to bring it back.
+const SHOW_QUICK_VIEW = false;
+
 export default function PatioDoorSpecialOrder() {
   const [selectedProduct, setSelectedProduct] = useState<typeof specialOrderDoors[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -129,19 +132,21 @@ export default function PatioDoorSpecialOrder() {
                     Special Order
                   </div>
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button
-                      onClick={() => {
-                        setSelectedProduct(door);
-                        setCurrentImageIndex(0);
-                      }}
-                      className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
-                    >
-                      <Search size={18} />
-                      Quick View
-                    </button>
-                  </div>
+                  {/* Hover Overlay (Quick View hidden for now) */}
+                  {SHOW_QUICK_VIEW && (
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <button
+                        onClick={() => {
+                          setSelectedProduct(door);
+                          setCurrentImageIndex(0);
+                        }}
+                        className="bg-white text-[#1a2e45] px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#a61c00] hover:text-white transition-colors"
+                      >
+                        <Search size={18} />
+                        Quick View
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Product Info */}
@@ -178,16 +183,18 @@ export default function PatioDoorSpecialOrder() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 mt-auto">
-                    <button
-                      onClick={() => {
-                        setSelectedProduct(door);
-                        setCurrentImageIndex(0);
-                      }}
-                      className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
-                    >
-                      <Search size={16} />
-                      Quick View
-                    </button>
+                    {SHOW_QUICK_VIEW && (
+                      <button
+                        onClick={() => {
+                          setSelectedProduct(door);
+                          setCurrentImageIndex(0);
+                        }}
+                        className="flex-1 bg-[#1e3450] hover:bg-[#152a3a] text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
+                      >
+                        <Search size={16} />
+                        Quick View
+                      </button>
+                    )}
                     <button
                       onClick={() => quote.open(door.id)}
                       className="flex-1 border-2 border-[#a61c00] text-[#a61c00] hover:bg-[#a61c00] hover:text-white px-4 py-2 rounded font-semibold text-sm transition-colors cursor-pointer"
