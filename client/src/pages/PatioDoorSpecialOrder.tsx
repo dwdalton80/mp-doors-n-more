@@ -34,20 +34,6 @@ const specialOrderDoors = [
     rating: 5,
   },
   {
-    id: "patio-bifold-doors",
-    title: "Bifold Patio Doors",
-    imageUrl: "/images/patio-doors-anderson.webp",
-    images: [
-      "/images/patio-doors-anderson.webp",
-      "/images/products/IMG_3593_04eafb59.JPG",
-      "/images/products/IMG_3594_0ef4930b.WEBP",
-      "/images/products/IMG_3595_b193e8ba.JPG"
-    ],
-    description: "Space-saving bifold doors that fold to the side for maximum opening. Ideal for modern and contemporary homes.",
-    features: ["Space-saving design", "Smooth operation", "Custom configurations", "Energy-efficient glass"],
-    rating: 5,
-  },
-  {
     id: "patio-sliding-glass",
     title: "Sliding Glass Patio Doors",
     imageUrl: "/images/products/slidingglassdoor_7d2e02cf.jpeg",
