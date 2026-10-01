@@ -29,7 +29,6 @@ const specialOrderDoors = [
       "/images/products/IMG_3583_4acccc85.PNG",
       "/images/products/IMG_3584_5e5464ba.PNG"
     ],
-    brand: "Anderson",
     description: "Elegant French-style patio doors with multiple glass panes. Perfect for traditional and transitional home designs.",
     features: ["Multiple glass pane options", "Custom sizing available", "Weather-resistant seals", "Various frame colors"],
     rating: 5,
@@ -44,7 +43,6 @@ const specialOrderDoors = [
       "/images/products/IMG_3594_0ef4930b.WEBP",
       "/images/products/IMG_3595_b193e8ba.JPG"
     ],
-    brand: "Anderson",
     description: "Space-saving bifold doors that fold to the side for maximum opening. Ideal for modern and contemporary homes.",
     features: ["Space-saving design", "Smooth operation", "Custom configurations", "Energy-efficient glass"],
     rating: 5,
@@ -59,7 +57,6 @@ const specialOrderDoors = [
       "/images/products/slidingpatiodoor4_cba34098.jpeg",
       "/images/products/slidingpatiodoor3_aa8461e5.jpeg"
     ],
-    brand: "Anderson",
     description: "Classic sliding glass doors with smooth operation and excellent weather protection. Timeless design.",
     features: ["Smooth sliding operation", "Low-E glass", "Durable frames", "Easy maintenance"],
     rating: 5,
@@ -150,7 +147,6 @@ export default function PatioDoorSpecialOrder() {
                 {/* Product Info */}
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="font-display font-bold text-xl text-[#a61c00] mb-2">{door.title}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{door.brand}</p>
                   <p className="text-gray-700 text-sm mb-4 flex-grow">{door.description}</p>
 
                   {/* Rating */}

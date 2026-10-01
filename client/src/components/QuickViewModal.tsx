@@ -5,7 +5,7 @@ export type QuickViewProduct = {
   title: string;
   imageUrl: string;
   images?: string[];
-  brand: string;
+  brand?: string;
   description: string;
   features: string[];
   rating: number;
@@ -82,7 +82,7 @@ export default function QuickViewModal({
             {/* Details Section */}
             <div>
               <h4 className="font-display font-bold text-2xl text-[#1a2e45] mb-2">{product.title}</h4>
-              <p className="text-[#a61c00] font-semibold mb-4">{product.brand}</p>
+              {product.brand && <p className="text-[#a61c00] font-semibold mb-4">{product.brand}</p>}
 
               {/* Rating */}
               <div className="flex items-center gap-2 mb-4">
